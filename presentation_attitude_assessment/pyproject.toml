@@ -1,0 +1,39 @@
+[project]
+name = "presentation-attitude-assessment"
+version = "0.1.0"
+description = "Public-video landmark extraction audit for a presentation attitude reconstruction"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "fastapi>=0.121.2,<1",
+    "uvicorn>=0.38,<1",
+    "python-multipart>=0.0.20,<1",
+    "mediapipe==0.10.32",
+    "numpy>=2,<3",
+    "opencv-contrib-python>=4.12,<5",
+    "torch>=2.8,<3",
+]
+
+[build-system]
+requires = ["uv_build>=0.12,<0.13"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "presentation_attitude"
+
+[tool.ruff]
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[project.scripts]
+presentation-evaluate = "presentation_attitude.cli.evaluate:main"
+presentation-serve = "presentation_attitude.cli.serve:main"
+presentation-worker = "presentation_attitude.cli.worker:main"
+presentation-train = "presentation_attitude.cli.train:main"
+presentation-training-smoke = "presentation_attitude.cli.training_smoke:main"
+presentation-process = "presentation_attitude.cli.process:main"
+presentation-audit = "presentation_attitude.cli.audit:main"
+presentation-preprocess = "presentation_attitude.cli.preprocess:main"
+presentation-continuity = "presentation_attitude.cli.continuity:main"
+presentation-render = "presentation_attitude.cli.render:main"

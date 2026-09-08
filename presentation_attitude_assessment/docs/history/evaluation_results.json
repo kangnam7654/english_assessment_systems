@@ -1,0 +1,136 @@
+{
+  "verified_on": "2026-09-08",
+  "scope": "Standalone held-out classification evaluation CLI; synthetic numeric sequences only, not actual presentation attitude performance.",
+  "environment": {
+    "hardware": "Apple M4",
+    "python": "3.13.15",
+    "torch": "2.14.0"
+  },
+  "verification": {
+    "vision_tests_passed": 66,
+    "new_evaluation_tests": 11,
+    "mps_parity_test": "passed, not skipped",
+    "ruff_check": "passed",
+    "ruff_format_check": "passed, 73 files already formatted",
+    "uv_sync_locked": "passed",
+    "wheel_and_sdist_build": "passed"
+  },
+  "training": {
+    "device": "cpu",
+    "train_samples": 8,
+    "validation_samples": 4,
+    "epochs": 3
+  },
+  "test": {
+    "samples": 4,
+    "separate_seed": 43,
+    "purpose": "pipeline_smoke",
+    "provenance_basis": "checkpoint_snapshot"
+  },
+  "evaluations": {
+    "cpu": {
+      "status": "complete",
+      "device": "cpu",
+      "metrics": {
+        "samples": 4,
+        "threshold": 0.5,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "0": {
+            "support": 2,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "1": {
+            "support": 2,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            0,
+            1
+          ],
+          "rows": "true",
+          "columns": "predicted",
+          "values": [
+            [
+              2,
+              0
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        "undefined_metric_policy": "null when denominator is zero; macro_f1 null if a class F1 is undefined"
+      },
+      "checkpoint_sha256": "a9209fb419b4138349ce4d9d841114e82d03fc83e05bc1310f1a4b160510d262",
+      "manifest_sha256": "2fb1617cebaa63d71e040fd75cb827cd1861c9f2aabc3a073ca14271ac48cc11",
+      "summary_path": ".local-data/evaluation-cli-check-20260908/evaluation-cpu/summary.json"
+    },
+    "mps": {
+      "status": "complete",
+      "device": "mps",
+      "metrics": {
+        "samples": 4,
+        "threshold": 0.5,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "0": {
+            "support": 2,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "1": {
+            "support": 2,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            0,
+            1
+          ],
+          "rows": "true",
+          "columns": "predicted",
+          "values": [
+            [
+              2,
+              0
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        "undefined_metric_policy": "null when denominator is zero; macro_f1 null if a class F1 is undefined"
+      },
+      "checkpoint_sha256": "a9209fb419b4138349ce4d9d841114e82d03fc83e05bc1310f1a4b160510d262",
+      "manifest_sha256": "2fb1617cebaa63d71e040fd75cb827cd1861c9f2aabc3a073ca14271ac48cc11",
+      "summary_path": ".local-data/evaluation-cli-check-20260908/evaluation-mps/summary.json"
+    }
+  },
+  "max_cpu_mps_probability_difference": 5.960464477539063e-08,
+  "limitations": [
+    "No real labeled attitude test set or validated attitude checkpoint.",
+    "MPS evaluation verified; MPS training not validated by this run.",
+    "No latency or throughput benchmark."
+  ]
+}

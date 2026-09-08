@@ -1,0 +1,61 @@
+{
+  "status": "complete",
+  "purpose": "pipeline_smoke",
+  "torch_version": "2.14.0",
+  "device": "cpu",
+  "model_config": {
+    "hidden_size": 32
+  },
+  "parameter_count": 103425,
+  "sample_counts": {
+    "train": 8,
+    "validation": 4
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.7298999428749084,
+      "validation_loss": 0.5544577240943909
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.5061100125312805,
+      "validation_loss": 0.3881605565547943
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.35490718483924866,
+      "validation_loss": 0.2808057963848114
+    }
+  ],
+  "optimizer_steps": 6,
+  "parameters_changed": true,
+  "checkpoint_reload_logits_identical": true,
+  "checkpoint_sha256": "aca1e8078fdbcb5ccf707e8fa7541f9080ce0003bbfc7d8f298109c7b130728c",
+  "classification_performance_verified": false,
+  "tests": {
+    "vision": 39,
+    "writing_stub_llm": 4
+  },
+  "run": ".local-data/gru-training-check/smoke/training",
+  "run_summary_sha256": "8bdf1e6b10b6e8e8999839d990762ec1d5f2ec7c8a3cf72d83114e0345322994",
+  "existing_dependency_versions_changed": {},
+  "real_unlabeled_input_check": {
+    "frames": 1317,
+    "input_features": 1043,
+    "output_logits": 1,
+    "finite": true,
+    "mediapipe_imported": false,
+    "model_weights": "random_untrained"
+  },
+  "runtime_checks": [
+    "padding_invariance",
+    "hidden_state_isolation",
+    "checkpoint_weights_reused"
+  ],
+  "not_verified": [
+    "real_attitude_performance",
+    "RTX_5090_CUDA",
+    "MediaPipe_initialization_latency"
+  ]
+}

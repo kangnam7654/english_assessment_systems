@@ -1,0 +1,110 @@
+{
+  "date": "2026-09-07",
+  "scope": "local FastAPI plus single POSIX worker; feature extraction and job lifecycle",
+  "python": "3.13.15",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "packages": {
+    "fastapi": "0.121.2",
+    "uvicorn": "0.38.0",
+    "python-multipart": "0.0.32",
+    "torch": "2.14.0",
+    "mediapipe": "0.10.32"
+  },
+  "tests": {
+    "presentation_attitude": 55,
+    "writing_data_synthesis": 4,
+    "passed": true,
+    "notes": "API contract, simultaneous status access, retry history, atomic claim, stale completion rejection, killed lock-holder recovery, upload limits, API import isolation; attitude adapter tests use a mocked runtime"
+  },
+  "live_http": {
+    "api_pid": 49016,
+    "worker_pid": 49033,
+    "distinct_processes": true,
+    "source": ".local-data/presentation-attitude/gesres/1618_Lecturer1_pray_forward.mp4",
+    "jobs": [
+      "fde608943f824d1ca093845b0ae2a757",
+      "40fa40c1a16e43fa8c5be16fbffa59b6"
+    ],
+    "results": [
+      {
+        "mode": "features",
+        "source_sha256": "bfff4fe69bec47b432b7b02d779a1e8bd2c73db9db6d846e847a66ba05114de4",
+        "features": {
+          "sampled_frames": 9,
+          "sample_fps": 5,
+          "detected_frame_ratios": {
+            "face": 0.7777777777777778,
+            "at_least_one_hand": 0.8888888888888888,
+            "two_hands": 0.4444444444444444
+          },
+          "valid_frame_ratios": {
+            "face": 0.7777777777777778,
+            "Left": 0.2222222222222222,
+            "Right": 0.6666666666666666
+          },
+          "has_valid_features": true,
+          "sequence_sha256": "f927c7323c5c1d81bfa14ed8ce018a025060c390da367b95de6b5cc75e1e14b8"
+        },
+        "assessment": null,
+        "notice": "Landmark detection ratios describe feature availability, not presentation attitude."
+      },
+      {
+        "mode": "features",
+        "source_sha256": "bfff4fe69bec47b432b7b02d779a1e8bd2c73db9db6d846e847a66ba05114de4",
+        "features": {
+          "sampled_frames": 9,
+          "sample_fps": 5,
+          "detected_frame_ratios": {
+            "face": 0.7777777777777778,
+            "at_least_one_hand": 0.8888888888888888,
+            "two_hands": 0.4444444444444444
+          },
+          "valid_frame_ratios": {
+            "face": 0.7777777777777778,
+            "Left": 0.2222222222222222,
+            "Right": 0.6666666666666666
+          },
+          "has_valid_features": true,
+          "sequence_sha256": "f927c7323c5c1d81bfa14ed8ce018a025060c390da367b95de6b5cc75e1e14b8"
+        },
+        "assessment": null,
+        "notice": "Landmark detection ratios describe feature availability, not presentation attitude."
+      }
+    ],
+    "observed_states": [
+      "queued",
+      "running",
+      "succeeded"
+    ],
+    "health_checks_during_work": 16,
+    "malformed_video_retry_statuses": [
+      "failed",
+      "failed"
+    ],
+    "assessment_without_checkpoint": "failed without prediction",
+    "swagger_and_openapi": "passed",
+    "actual_attitude_accuracy": "not evaluated"
+  },
+  "checks": {
+    "ruff": "passed",
+    "ruff_format": "passed",
+    "uv_lock_check": "passed",
+    "uv_pip_check": "passed",
+    "package_build": "passed",
+    "actual_smoke_checkpoint_rejected_at_startup": "passed"
+  },
+  "artifacts": {
+    ".local-data/serving-check/tests.log": "735d88c312e53304d20416f41cfb5358a4cc59fbda38c00f8eef8a35d11d8aea",
+    ".local-data/serving-check/live-results.json": "b31c080c0d857ba97b4bb8cb02b96359ee4d62c2c90cb6519b80daa8cf1e48bc",
+    ".local-data/serving-check/checkpoint-rejection.log": "4ae847aaaad985bb69438aaa4f388aea0e294b3ec3f86291de336eba65ef9bc4"
+  },
+  "unverified_or_not_implemented": [
+    "real attitude accuracy and calibrated probabilities",
+    "real attitude-trained checkpoint serving",
+    "RTX 5090/CUDA",
+    "custom frontend",
+    "public authenticated deployment",
+    "multi-worker or multi-host queue",
+    "automatic file retention and processing deadlines"
+  ]
+}

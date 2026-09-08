@@ -1,0 +1,166 @@
+{
+  "purpose": "pipeline_smoke_not_attitude_performance",
+  "training": {
+    "samples": 8,
+    "epochs": 3,
+    "optimizer_steps": 6,
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 0.7298999428749084,
+        "validation_loss": 0.5544577240943909
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.5061100125312805,
+        "validation_loss": 0.3881605565547943
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.35490718483924866,
+        "validation_loss": 0.2808057963848114
+      }
+    ],
+    "checkpoint": ".local-data/mock-pipeline-pffgn7x2/run/training/best.pt"
+  },
+  "evaluation": {
+    "split": "validation_used_for_checkpoint_selection_not_independent_test",
+    "samples": 4,
+    "label_mapping": {
+      "0": "test_pattern_a",
+      "1": "test_pattern_b"
+    },
+    "threshold": 0.5,
+    "confusion_matrix": {
+      "tn": 2,
+      "fp": 0,
+      "fn": 0,
+      "tp": 2
+    },
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "predictions": [
+      {
+        "id": "fixture_08",
+        "expected": 0,
+        "predicted": 0,
+        "prediction": {
+          "purpose": "pipeline_smoke",
+          "positive_class_probability": 0.20794901251792908,
+          "label_mapping": {
+            "0": "test_pattern_a",
+            "1": "test_pattern_b"
+          },
+          "frames": 17
+        }
+      },
+      {
+        "id": "fixture_09",
+        "expected": 1,
+        "predicted": 1,
+        "prediction": {
+          "purpose": "pipeline_smoke",
+          "positive_class_probability": 0.7726327180862427,
+          "label_mapping": {
+            "0": "test_pattern_a",
+            "1": "test_pattern_b"
+          },
+          "frames": 20
+        }
+      },
+      {
+        "id": "fixture_10",
+        "expected": 0,
+        "predicted": 0,
+        "prediction": {
+          "purpose": "pipeline_smoke",
+          "positive_class_probability": 0.22206473350524902,
+          "label_mapping": {
+            "0": "test_pattern_a",
+            "1": "test_pattern_b"
+          },
+          "frames": 8
+        }
+      },
+      {
+        "id": "fixture_11",
+        "expected": 1,
+        "predicted": 1,
+        "prediction": {
+          "purpose": "pipeline_smoke",
+          "positive_class_probability": 0.6831572651863098,
+          "label_mapping": {
+            "0": "test_pattern_a",
+            "1": "test_pattern_b"
+          },
+          "frames": 11
+        }
+      }
+    ]
+  },
+  "verification_dir": ".local-data/mock-pipeline-pffgn7x2",
+  "serving": {
+    "transport": "in-process FastAPI TestClient; not live HTTP socket",
+    "worker": "separate Python subprocess; checkpoint loaded once",
+    "real_components": [
+      "multipart upload",
+      "SQLite jobs",
+      "JobWorker",
+      "FFmpeg decoding",
+      "trained GRU",
+      "result lookup"
+    ],
+    "mock_components": [
+      "generated solid-color videos",
+      "MediaPipe+preprocessing replaced by fixed synthetic sequences"
+    ],
+    "production_assessment_mode_tested": false,
+    "submitted_jobs": 2,
+    "succeeded_jobs": 2,
+    "predictions_match_direct_runtime": true,
+    "results": [
+      {
+        "purpose": "mock_pipeline_integration_not_attitude_assessment",
+        "mode": "features",
+        "assessment": null,
+        "mock_feature_source": "fixture_08",
+        "decoded_synthetic_video_frames": 8,
+        "mock_prediction": {
+          "purpose": "pipeline_smoke",
+          "positive_class_probability": 0.20794901251792908,
+          "label_mapping": {
+            "0": "test_pattern_a",
+            "1": "test_pattern_b"
+          },
+          "frames": 17
+        }
+      },
+      {
+        "purpose": "mock_pipeline_integration_not_attitude_assessment",
+        "mode": "features",
+        "assessment": null,
+        "mock_feature_source": "fixture_09",
+        "decoded_synthetic_video_frames": 8,
+        "mock_prediction": {
+          "purpose": "pipeline_smoke",
+          "positive_class_probability": 0.7726327180862427,
+          "label_mapping": {
+            "0": "test_pattern_a",
+            "1": "test_pattern_b"
+          },
+          "frames": 20
+        }
+      }
+    ]
+  },
+  "date": "2026-09-08",
+  "preprocessing": {
+    "verification": "separate synthetic raw-landmark unit tests; not the source of the training fixtures",
+    "tests_passed": 10
+  },
+  "serving_regression_tests_passed": 11,
+  "real_attitude_performance_measured": false,
+  "verification_script": ".local-data/mock-pipeline-pffgn7x2/verify_serving.py"
+}

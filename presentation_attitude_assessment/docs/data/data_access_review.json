@@ -1,0 +1,195 @@
+{
+  "checked_at": "2026-09-07",
+  "scope": "access_and_source_terms_review_not_training_approval",
+  "registrations_submitted": false,
+  "media_redistributed": false,
+  "new_downloads": [
+    {
+      "file_name": "3Educator_id1_psych_vid1.mp4",
+      "source_url": "https://osf.io/download/pae7w/",
+      "local_path": ".local-data/presentation-attitude/gesres/3Educator_id1_psych_vid1.mp4",
+      "http_status": 200,
+      "bytes": 112385636,
+      "sha256": "128f2c5f85f3e0a23273e124f787530f4aba48a7e787e52969bfba4fefa823b9",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 640,
+            "height": 360,
+            "r_frame_rate": "30000/1001"
+          },
+          {
+            "codec_type": "audio",
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "2983.949932"
+        }
+      },
+      "osf_md5": "2dabe2017a770aaaae07d52e72a5376c"
+    },
+    {
+      "file_name": "1Politician_id1_AOC_vid1_speechCongress2019.mp4",
+      "source_url": "https://osf.io/download/ybz85/",
+      "local_path": ".local-data/presentation-attitude/gesres/1Politician_id1_AOC_vid1_speechCongress2019.mp4",
+      "http_status": 200,
+      "bytes": 8393532,
+      "sha256": "cac2ac82626be0381ec4148d862b79802b74cb51be7dd32c180812dadf1057e3",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 640,
+            "height": 360,
+            "r_frame_rate": "24000/1001"
+          },
+          {
+            "codec_type": "audio",
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "263.299667"
+        }
+      },
+      "osf_md5": "d8ebc94490e50dd149b1323f05bf38e8"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "GESRes",
+      "url": "https://osf.io/9zkfm/",
+      "access": "two_additional_full_videos_downloaded",
+      "terms": "Per-video terms; see report. MIT CC BY-NC-SA 4.0; AOC public domain according to distributor.",
+      "suitability": "Live audience domain; continuous face and hand extraction not yet checked for new originals.",
+      "next_action": "Audit continuous intervals of MIT psychology original."
+    },
+    {
+      "id": "First Impressions V2",
+      "url": "https://chalearnlap.cvc.uab.cat/dataset/24/description/",
+      "access": "files_redirect_to_login",
+      "access_url": "https://chalearnlap.cvc.uab.es/dataset/24/data/41/files/",
+      "terms": "Site default CC BY-NC 4.0 unless otherwise specified; archive-specific conditions not checked.",
+      "suitability": "Camera-facing speech; short clips; hand visibility unverified; existing labels are not attitude labels.",
+      "next_action": "Account access is required before archive inspection."
+    },
+    {
+      "id": "MIT Interview",
+      "url": "https://roc-hci.com/past-projects/automated-prediction-of-job-interview-performances/",
+      "access": "academic_email_application_required",
+      "terms": "Terms acceptance required; full downstream terms not verified.",
+      "suitability": "Interview context; not a verified camera-facing presentation set.",
+      "evidence": "Official page read with web browser tool; separate urllib snapshot returned HTTP 406.",
+      "next_action": "Check academic-email eligibility before any access request."
+    },
+    {
+      "id": "3MT_French",
+      "url": "https://zenodo.org/records/7603511",
+      "access": "restricted",
+      "api_url": "https://zenodo.org/api/records/7603511",
+      "terms": "No license/access_conditions field in unauthenticated API response; files array empty.",
+      "suitability": "French live public speaking; target attitude labels unavailable.",
+      "next_action": "Access needed before raw-video availability and terms can be verified."
+    },
+    {
+      "id": "POM",
+      "url": "https://github.com/eusip/POM",
+      "access": "registration_required",
+      "access_url": "https://service.tsi.telecom-paristech.fr/cgi-bin/user-service/subscribe.cgi?form=&ident=POM&license=1",
+      "terms": "Registration asks for research-only use confirmation; complete license not present in inspected form.",
+      "suitability": "Opinion videos; hand visibility and full-context suitability unverified.",
+      "next_action": "Registration and downstream terms need review before download."
+    },
+    {
+      "id": "PATS",
+      "url": "https://github.com/chahuja/pats",
+      "access": "feature_audio_downloads_and_original_video_links_documented",
+      "terms": "Repository README states CC BY-NC 2.0.",
+      "suitability": "Processed pose/audio/text plus original links; not a verified raw face-and-hand video bundle.",
+      "next_action": "Lower priority; raw video link availability remains unverified."
+    }
+  ],
+  "local_evidence": [
+    {
+      "local_path": ".local-data/presentation-attitude/access-review/GESRes_dataset.csv",
+      "bytes": 857929,
+      "sha256": "d78eac67bcb48eb36733117de56b79247d2092356cfec1369e8c6e4ad3879919"
+    },
+    {
+      "local_path": ".local-data/presentation-attitude/access-review/Licensing_information.pdf",
+      "bytes": 119165,
+      "sha256": "87714f495e7bd3b4d27d1ad87e2fe64eff1e8bc6d0dcc4b916bd9d04c03866aa"
+    },
+    {
+      "local_path": ".local-data/presentation-attitude/access-review/additional-page-access.json",
+      "bytes": 1153,
+      "sha256": "5db7c3e56333fdc497d904b7ed1a6c3ebee287a9eaa30866a96d4478444bdae5"
+    },
+    {
+      "local_path": ".local-data/presentation-attitude/access-review/chalearn-terms.txt",
+      "bytes": 35992,
+      "sha256": "deb0205d24e91aadc621b3a07fc60dada79b3ff8007b08d5c5b7aa6f1381d79d"
+    },
+    {
+      "local_path": ".local-data/presentation-attitude/access-review/downloads.json",
+      "bytes": 1575,
+      "sha256": "05e83d46c7f7c38c1ce1d77403e47398b9d7db977d8b6e16ee6b0c540b4a31c9"
+    },
+    {
+      "local_path": ".local-data/presentation-attitude/access-review/first-impressions-description.html",
+      "bytes": 39259,
+      "sha256": "e814b96542045902fca312695e555a11da44176b6a12454b2f7e6627c82cf356"
+    },
+    {
+      "local_path": ".local-data/presentation-attitude/access-review/first-impressions-files.html",
+      "bytes": 30893,
+      "sha256": "ac0d6d311a6ac958b4f347799046fb085bcb293ee38d33f77634af16e47d49c3"
+    },
+    {
+      "local_path": ".local-data/presentation-attitude/access-review/licensing.txt",
+      "bytes": 3636,
+      "sha256": "a4841fd2531910804477a1f43f62e22bf49ca93f1dc65e4910baad38d071bb45"
+    },
+    {
+      "local_path": ".local-data/presentation-attitude/access-review/mit-terms.txt",
+      "bytes": 27702,
+      "sha256": "8b54314bea5c779236d461eaf3bb7eee17697f71ff658cf8cf14e83fd322d113"
+    },
+    {
+      "local_path": ".local-data/presentation-attitude/access-review/osf-full-videos.json",
+      "bytes": 15339,
+      "sha256": "1faef9e54d823e19ff0a01fc5993e6d79db3ac01bc6aa9a3c164000a64939bba"
+    },
+    {
+      "local_path": ".local-data/presentation-attitude/access-review/osf-root.json",
+      "bytes": 30715,
+      "sha256": "bfbd7a868e994cfe2fcec990cadef804feee84381a1b3819beefa54990907c83"
+    },
+    {
+      "local_path": ".local-data/presentation-attitude/access-review/page-access.json",
+      "bytes": 885,
+      "sha256": "1de9f400296ec891182c3c6090cc82e80e3f6f9691c31e2483dcc0e86d92e715"
+    },
+    {
+      "local_path": ".local-data/presentation-attitude/access-review/pats-readme.html",
+      "bytes": 11254,
+      "sha256": "27a43c8a402394d6e9c2a9a5f503a77d98c52b6c41c6fe99e078a733a7febd83"
+    },
+    {
+      "local_path": ".local-data/presentation-attitude/access-review/pom-registration.txt",
+      "bytes": 3539,
+      "sha256": "743738d734d45be333a6784e23b1dcedddd7d08eaa8f810614e7a8aaac16b99b"
+    },
+    {
+      "local_path": ".local-data/presentation-attitude/access-review/zenodo.txt",
+      "bytes": 4463,
+      "sha256": "17fdf9d2bf7034ee32f8bc1e7d53a868d0e091b1faa5bb63e4ac2c36b4093593"
+    }
+  ]
+}

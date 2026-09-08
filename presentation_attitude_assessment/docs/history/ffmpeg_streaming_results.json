@@ -1,0 +1,572 @@
+{
+  "checked_at": "2026-09-07",
+  "pixel_identical_frames": 700,
+  "inference_and_preprocessing_imread_blocked": true,
+  "default_png_count": 0,
+  "intervals": [
+    {
+      "id": "mit_05pct",
+      "pixel_identical_frames": 100,
+      "rgb_stream_sha256": "24000744a54b231e7b5af82d14302518ae3ba9fa9a875e709bd2c0d0df07519a",
+      "raw_landmarks_byte_identical": true,
+      "preprocessed_records_byte_identical": true,
+      "preview_jpeg_byte_identical": true
+    },
+    {
+      "id": "mit_20pct",
+      "pixel_identical_frames": 100,
+      "rgb_stream_sha256": "3ca979f2fdb8041ae6b37753c79a9031a4dd27bf96170c5c7116cc359b7569d2",
+      "raw_landmarks_byte_identical": true,
+      "preprocessed_records_byte_identical": true,
+      "preview_jpeg_byte_identical": true
+    },
+    {
+      "id": "mit_40pct",
+      "pixel_identical_frames": 100,
+      "rgb_stream_sha256": "b329c36dfa366bf65969f500b447b40998341d7e058f433b6df053e47adf680b",
+      "raw_landmarks_byte_identical": true,
+      "preprocessed_records_byte_identical": true,
+      "preview_jpeg_byte_identical": true
+    },
+    {
+      "id": "mit_60pct",
+      "pixel_identical_frames": 100,
+      "rgb_stream_sha256": "9f2b37c4e303ff952de4c7468c5b733826db24a272302d9cb16c00e469b6140e",
+      "raw_landmarks_byte_identical": true,
+      "preprocessed_records_byte_identical": true,
+      "preview_jpeg_byte_identical": true
+    },
+    {
+      "id": "mit_80pct",
+      "pixel_identical_frames": 100,
+      "rgb_stream_sha256": "e8561e7794c9781e802cad4cca237075ba5b7a8f4478594c41d7427e37d3bed7",
+      "raw_landmarks_byte_identical": true,
+      "preprocessed_records_byte_identical": true,
+      "preview_jpeg_byte_identical": true
+    },
+    {
+      "id": "mit_95pct",
+      "pixel_identical_frames": 100,
+      "rgb_stream_sha256": "54e010cfba1db2c5fe1fb43988f6e147209626bf4796b837ee17478369edc78b",
+      "raw_landmarks_byte_identical": true,
+      "preprocessed_records_byte_identical": true,
+      "preview_jpeg_byte_identical": true
+    },
+    {
+      "id": "mit_known_gesture",
+      "pixel_identical_frames": 100,
+      "rgb_stream_sha256": "4140dc1970db808d05cb06c7d56789692fba30348042ebbb8c20d7d0773843c1",
+      "raw_landmarks_byte_identical": true,
+      "preprocessed_records_byte_identical": true,
+      "preview_jpeg_byte_identical": true
+    }
+  ],
+  "baseline_audit": ".local-data/presentation-attitude/mit-audit-5fps",
+  "streaming_audit": ".local-data/presentation-attitude/mit-pipe-audit",
+  "streaming_preprocessing": ".local-data/presentation-attitude/mit-pipe-preprocess",
+  "tests_passed": 25,
+  "speed_benchmark_performed": false,
+  "diagnostic_png_count": 9,
+  "diagnostic_inference_imread_blocked": true,
+  "implementation_sha256": {
+    "ffmpeg_video.py": "3e50aa9b16a5a1be926df47be5624e509064ce0936195daa33ac6349f980332c",
+    "audit_landmarks.py": "1c167b0440426b02f4cd2db8ffe4495eb9d3d9e5cee0db14556958f817b3c4f5",
+    "preprocess_landmarks.py": "b262c86d666103bcf25ac86d83bc6d575af66dcb766264736eb02cc2b2083ef1",
+    "render_preprocessing.py": "9fc1267ce628005600d05d9e39926a2837b1f9597e20b167769da846ab4dfb12",
+    "test_ffmpeg_video.py": "1860201f0f90e82f47d1a04f690ae85bac240d40667fe7270bfece5d9e9c1735"
+  },
+  "evidence": {
+    ".local-data/presentation-attitude/mit-audit-5fps/summary.json": "ace58ebd454c8f333103dab94c069c3d8ec94ecfc397a8daafd5bebd53b72e18",
+    ".local-data/presentation-attitude/mit-pipe-audit/summary.json": "f88013df94e75573c8a7566e68f3fdff816bc5ff21976f282af7f16fef3e7a88",
+    ".local-data/presentation-attitude/mit-pipe-preprocess/summary.json": "525dc49f2e66cc0b2af9d72cd628b98a2b9506cae6d7ae465c3d598b3077d3cf",
+    ".local-data/presentation-attitude/pipe-diagnostic-audit/summary.json": "8b0e7f284d5091ba34c7729627ba08cd9b56d4ed3019de827b035049cb772170",
+    ".local-data/presentation-attitude/ffmpeg-reader-tests.log": "b1c580a184a535f50ed516b80f082021d9d55c12228bdb7add74895e2a00caca"
+  },
+  "audit_summary": {
+    "schema_version": 2,
+    "purpose": "detector_availability_not_attitude_evaluation",
+    "created_at": "2026-09-07T08:30:41.374438+00:00",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.14",
+    "packages": {
+      "mediapipe": "0.10.32",
+      "numpy": "2.5.3",
+      "opencv-contrib-python": "4.14.0.94"
+    },
+    "ffmpeg_version": "ffmpeg version 9.0.1 Copyright (c) 2000-2026 the FFmpeg developers",
+    "sample_fps": 5,
+    "running_mode": "VIDEO",
+    "delegate": "CPU",
+    "num_faces": 1,
+    "num_hands": 2,
+    "all_detection_presence_tracking_thresholds": 0.5,
+    "custom_smoothing": false,
+    "distance_normalization": false,
+    "video_input": "ffmpeg_rgb24_stdout_numpy",
+    "saved_frames": false,
+    "implementation_sha256": {
+      "audit_landmarks.py": "1c167b0440426b02f4cd2db8ffe4495eb9d3d9e5cee0db14556958f817b3c4f5",
+      "ffmpeg_video.py": "3e50aa9b16a5a1be926df47be5624e509064ce0936195daa33ac6349f980332c"
+    },
+    "timestamp_semantics": "resampled grid; approximate source time, not original frame PTS",
+    "models": {
+      "face": {
+        "url": "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/latest/face_landmarker.task",
+        "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+        "bytes": 3758596
+      },
+      "hand": {
+        "url": "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/latest/hand_landmarker.task",
+        "sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1",
+        "bytes": 7819105
+      }
+    },
+    "plan": {
+      "purpose": "continuous_landmark_availability_not_attitude_labels",
+      "sample_fps": 5,
+      "selection": "Six fixed positions plus one separately reported known-positive gesture context; not a random sample or whole-video estimate.",
+      "intervals": [
+        {
+          "id": "mit_05pct",
+          "file_name": "3Educator_id1_psych_vid1.mp4",
+          "start_seconds": 139,
+          "duration_seconds": 20,
+          "selection": "fixed_position"
+        },
+        {
+          "id": "mit_20pct",
+          "file_name": "3Educator_id1_psych_vid1.mp4",
+          "start_seconds": 587,
+          "duration_seconds": 20,
+          "selection": "fixed_position"
+        },
+        {
+          "id": "mit_40pct",
+          "file_name": "3Educator_id1_psych_vid1.mp4",
+          "start_seconds": 1184,
+          "duration_seconds": 20,
+          "selection": "fixed_position"
+        },
+        {
+          "id": "mit_60pct",
+          "file_name": "3Educator_id1_psych_vid1.mp4",
+          "start_seconds": 1780,
+          "duration_seconds": 20,
+          "selection": "fixed_position"
+        },
+        {
+          "id": "mit_80pct",
+          "file_name": "3Educator_id1_psych_vid1.mp4",
+          "start_seconds": 2377,
+          "duration_seconds": 20,
+          "selection": "fixed_position"
+        },
+        {
+          "id": "mit_95pct",
+          "file_name": "3Educator_id1_psych_vid1.mp4",
+          "start_seconds": 2825,
+          "duration_seconds": 20,
+          "selection": "fixed_position"
+        },
+        {
+          "id": "mit_known_gesture",
+          "file_name": "3Educator_id1_psych_vid1.mp4",
+          "start_seconds": 865,
+          "duration_seconds": 20,
+          "selection": "known_positive_context_not_representative"
+        }
+      ]
+    },
+    "source_sha256": {
+      "3Educator_id1_psych_vid1.mp4": "128f2c5f85f3e0a23273e124f787530f4aba48a7e787e52969bfba4fefa823b9"
+    },
+    "intervals": [
+      {
+        "id": "mit_05pct",
+        "file_name": "3Educator_id1_psych_vid1.mp4",
+        "start_seconds": 139,
+        "duration_seconds": 20,
+        "selection": "fixed_position",
+        "sampled_frames": 100,
+        "detected_frame_counts": {
+          "face": 48,
+          "at_least_one_hand": 1,
+          "two_hands": 0,
+          "face_and_at_least_one_hand": 0
+        },
+        "detected_frame_ratios": {
+          "face": 0.48,
+          "at_least_one_hand": 0.01,
+          "two_hands": 0.0,
+          "face_and_at_least_one_hand": 0.0
+        },
+        "ffmpeg_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-nostdin",
+          "-xerror",
+          "-ss",
+          "139",
+          "-i",
+          "/Users/kangnam/projects/english_assessment_systems/.local-data/presentation-attitude/gesres/3Educator_id1_psych_vid1.mp4",
+          "-t",
+          "20",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-sn",
+          "-dn",
+          "-vf",
+          "fps=fps=5:start_time=0,scale=640:360",
+          "-fps_mode",
+          "passthrough",
+          "-pix_fmt",
+          "rgb24",
+          "-c:v",
+          "rawvideo",
+          "-f",
+          "rawvideo",
+          "pipe:1"
+        ],
+        "width": 640,
+        "height": 360,
+        "saved_frames": false,
+        "landmarks_file": "mit_05pct/landmarks.jsonl",
+        "contact_sheet": "mit_05pct/contact_sheet.jpg"
+      },
+      {
+        "id": "mit_20pct",
+        "file_name": "3Educator_id1_psych_vid1.mp4",
+        "start_seconds": 587,
+        "duration_seconds": 20,
+        "selection": "fixed_position",
+        "sampled_frames": 100,
+        "detected_frame_counts": {
+          "face": 2,
+          "at_least_one_hand": 0,
+          "two_hands": 0,
+          "face_and_at_least_one_hand": 0
+        },
+        "detected_frame_ratios": {
+          "face": 0.02,
+          "at_least_one_hand": 0.0,
+          "two_hands": 0.0,
+          "face_and_at_least_one_hand": 0.0
+        },
+        "ffmpeg_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-nostdin",
+          "-xerror",
+          "-ss",
+          "587",
+          "-i",
+          "/Users/kangnam/projects/english_assessment_systems/.local-data/presentation-attitude/gesres/3Educator_id1_psych_vid1.mp4",
+          "-t",
+          "20",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-sn",
+          "-dn",
+          "-vf",
+          "fps=fps=5:start_time=0,scale=640:360",
+          "-fps_mode",
+          "passthrough",
+          "-pix_fmt",
+          "rgb24",
+          "-c:v",
+          "rawvideo",
+          "-f",
+          "rawvideo",
+          "pipe:1"
+        ],
+        "width": 640,
+        "height": 360,
+        "saved_frames": false,
+        "landmarks_file": "mit_20pct/landmarks.jsonl",
+        "contact_sheet": "mit_20pct/contact_sheet.jpg"
+      },
+      {
+        "id": "mit_40pct",
+        "file_name": "3Educator_id1_psych_vid1.mp4",
+        "start_seconds": 1184,
+        "duration_seconds": 20,
+        "selection": "fixed_position",
+        "sampled_frames": 100,
+        "detected_frame_counts": {
+          "face": 99,
+          "at_least_one_hand": 0,
+          "two_hands": 0,
+          "face_and_at_least_one_hand": 0
+        },
+        "detected_frame_ratios": {
+          "face": 0.99,
+          "at_least_one_hand": 0.0,
+          "two_hands": 0.0,
+          "face_and_at_least_one_hand": 0.0
+        },
+        "ffmpeg_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-nostdin",
+          "-xerror",
+          "-ss",
+          "1184",
+          "-i",
+          "/Users/kangnam/projects/english_assessment_systems/.local-data/presentation-attitude/gesres/3Educator_id1_psych_vid1.mp4",
+          "-t",
+          "20",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-sn",
+          "-dn",
+          "-vf",
+          "fps=fps=5:start_time=0,scale=640:360",
+          "-fps_mode",
+          "passthrough",
+          "-pix_fmt",
+          "rgb24",
+          "-c:v",
+          "rawvideo",
+          "-f",
+          "rawvideo",
+          "pipe:1"
+        ],
+        "width": 640,
+        "height": 360,
+        "saved_frames": false,
+        "landmarks_file": "mit_40pct/landmarks.jsonl",
+        "contact_sheet": "mit_40pct/contact_sheet.jpg"
+      },
+      {
+        "id": "mit_60pct",
+        "file_name": "3Educator_id1_psych_vid1.mp4",
+        "start_seconds": 1780,
+        "duration_seconds": 20,
+        "selection": "fixed_position",
+        "sampled_frames": 100,
+        "detected_frame_counts": {
+          "face": 81,
+          "at_least_one_hand": 79,
+          "two_hands": 11,
+          "face_and_at_least_one_hand": 73
+        },
+        "detected_frame_ratios": {
+          "face": 0.81,
+          "at_least_one_hand": 0.79,
+          "two_hands": 0.11,
+          "face_and_at_least_one_hand": 0.73
+        },
+        "ffmpeg_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-nostdin",
+          "-xerror",
+          "-ss",
+          "1780",
+          "-i",
+          "/Users/kangnam/projects/english_assessment_systems/.local-data/presentation-attitude/gesres/3Educator_id1_psych_vid1.mp4",
+          "-t",
+          "20",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-sn",
+          "-dn",
+          "-vf",
+          "fps=fps=5:start_time=0,scale=640:360",
+          "-fps_mode",
+          "passthrough",
+          "-pix_fmt",
+          "rgb24",
+          "-c:v",
+          "rawvideo",
+          "-f",
+          "rawvideo",
+          "pipe:1"
+        ],
+        "width": 640,
+        "height": 360,
+        "saved_frames": false,
+        "landmarks_file": "mit_60pct/landmarks.jsonl",
+        "contact_sheet": "mit_60pct/contact_sheet.jpg"
+      },
+      {
+        "id": "mit_80pct",
+        "file_name": "3Educator_id1_psych_vid1.mp4",
+        "start_seconds": 2377,
+        "duration_seconds": 20,
+        "selection": "fixed_position",
+        "sampled_frames": 100,
+        "detected_frame_counts": {
+          "face": 92,
+          "at_least_one_hand": 0,
+          "two_hands": 0,
+          "face_and_at_least_one_hand": 0
+        },
+        "detected_frame_ratios": {
+          "face": 0.92,
+          "at_least_one_hand": 0.0,
+          "two_hands": 0.0,
+          "face_and_at_least_one_hand": 0.0
+        },
+        "ffmpeg_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-nostdin",
+          "-xerror",
+          "-ss",
+          "2377",
+          "-i",
+          "/Users/kangnam/projects/english_assessment_systems/.local-data/presentation-attitude/gesres/3Educator_id1_psych_vid1.mp4",
+          "-t",
+          "20",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-sn",
+          "-dn",
+          "-vf",
+          "fps=fps=5:start_time=0,scale=640:360",
+          "-fps_mode",
+          "passthrough",
+          "-pix_fmt",
+          "rgb24",
+          "-c:v",
+          "rawvideo",
+          "-f",
+          "rawvideo",
+          "pipe:1"
+        ],
+        "width": 640,
+        "height": 360,
+        "saved_frames": false,
+        "landmarks_file": "mit_80pct/landmarks.jsonl",
+        "contact_sheet": "mit_80pct/contact_sheet.jpg"
+      },
+      {
+        "id": "mit_95pct",
+        "file_name": "3Educator_id1_psych_vid1.mp4",
+        "start_seconds": 2825,
+        "duration_seconds": 20,
+        "selection": "fixed_position",
+        "sampled_frames": 100,
+        "detected_frame_counts": {
+          "face": 26,
+          "at_least_one_hand": 26,
+          "two_hands": 24,
+          "face_and_at_least_one_hand": 26
+        },
+        "detected_frame_ratios": {
+          "face": 0.26,
+          "at_least_one_hand": 0.26,
+          "two_hands": 0.24,
+          "face_and_at_least_one_hand": 0.26
+        },
+        "ffmpeg_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-nostdin",
+          "-xerror",
+          "-ss",
+          "2825",
+          "-i",
+          "/Users/kangnam/projects/english_assessment_systems/.local-data/presentation-attitude/gesres/3Educator_id1_psych_vid1.mp4",
+          "-t",
+          "20",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-sn",
+          "-dn",
+          "-vf",
+          "fps=fps=5:start_time=0,scale=640:360",
+          "-fps_mode",
+          "passthrough",
+          "-pix_fmt",
+          "rgb24",
+          "-c:v",
+          "rawvideo",
+          "-f",
+          "rawvideo",
+          "pipe:1"
+        ],
+        "width": 640,
+        "height": 360,
+        "saved_frames": false,
+        "landmarks_file": "mit_95pct/landmarks.jsonl",
+        "contact_sheet": "mit_95pct/contact_sheet.jpg"
+      },
+      {
+        "id": "mit_known_gesture",
+        "file_name": "3Educator_id1_psych_vid1.mp4",
+        "start_seconds": 865,
+        "duration_seconds": 20,
+        "selection": "known_positive_context_not_representative",
+        "sampled_frames": 100,
+        "detected_frame_counts": {
+          "face": 81,
+          "at_least_one_hand": 90,
+          "two_hands": 31,
+          "face_and_at_least_one_hand": 72
+        },
+        "detected_frame_ratios": {
+          "face": 0.81,
+          "at_least_one_hand": 0.9,
+          "two_hands": 0.31,
+          "face_and_at_least_one_hand": 0.72
+        },
+        "ffmpeg_command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-nostdin",
+          "-xerror",
+          "-ss",
+          "865",
+          "-i",
+          "/Users/kangnam/projects/english_assessment_systems/.local-data/presentation-attitude/gesres/3Educator_id1_psych_vid1.mp4",
+          "-t",
+          "20",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-sn",
+          "-dn",
+          "-vf",
+          "fps=fps=5:start_time=0,scale=640:360",
+          "-fps_mode",
+          "passthrough",
+          "-pix_fmt",
+          "rgb24",
+          "-c:v",
+          "rawvideo",
+          "-f",
+          "rawvideo",
+          "pipe:1"
+        ],
+        "width": 640,
+        "height": 360,
+        "saved_frames": false,
+        "landmarks_file": "mit_known_gesture/landmarks.jsonl",
+        "contact_sheet": "mit_known_gesture/contact_sheet.jpg"
+      }
+    ],
+    "status": "complete"
+  }
+}

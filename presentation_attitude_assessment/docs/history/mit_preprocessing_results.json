@@ -1,0 +1,518 @@
+{
+  "schema_version": 1,
+  "purpose": "preprocessing_diagnostic_not_training_data",
+  "created_at": "2026-09-07T07:57:46.943818+00:00",
+  "audit_summary_sha256": "ace58ebd454c8f333103dab94c069c3d8ec94ecfc397a8daafd5bebd53b72e18",
+  "implementation_sha256": "6c9d22d8391975271724911696ef6451157f2405c855ac82e983322c28a8f36d",
+  "numpy_version": "2.5.3",
+  "sample_fps": 5,
+  "settings": {
+    "window": 3,
+    "handedness_min_score": 0.7,
+    "minimum_face_scale_px": 1.0,
+    "max_gap_in_frame_periods": 1.5,
+    "anchor_jump_in_face_scales": 1.0,
+    "anchor_scale_ratio_limit": 2.0,
+    "hand_switch_margin_in_frame_diagonals": 0.02
+  },
+  "smoothing": "centered, segment-local, full window only; boundaries unchanged",
+  "z_policy": "preserved only in raw; excluded from normalized and smoothed features",
+  "status": "complete",
+  "intervals": [
+    {
+      "id": "mit_05pct",
+      "source_sha256": "34880a7dd7ea80ed09b6aa51311f70a3dc7f49ad0add6875c78549af135f405d",
+      "width": 640,
+      "height": 360,
+      "frames": 100,
+      "parts": {
+        "face": {
+          "valid_frames": 48,
+          "missing_reasons": {
+            "not_detected": 52
+          },
+          "support_histogram": {
+            "1": 4,
+            "3": 44
+          },
+          "adjacent_pairs": 46,
+          "consecutive_triples": 44,
+          "step_rms_face_units": {
+            "normalized_xy": 0.0322328980166726,
+            "smoothed_xy": 0.022202391819993516
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": 0.039741003729044065,
+            "smoothed_xy": 0.015469759025698242
+          }
+        },
+        "Left": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 100
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Right": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 99,
+            "face_anchor_unavailable": 1
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        }
+      },
+      "hand_switch_warning_frames": 0,
+      "anchor_jump_frames": 0
+    },
+    {
+      "id": "mit_20pct",
+      "source_sha256": "6f57a62d43257181717bf7bbd0b0e15664214cea6b83efe9199b26d4903d945c",
+      "width": 640,
+      "height": 360,
+      "frames": 100,
+      "parts": {
+        "face": {
+          "valid_frames": 2,
+          "missing_reasons": {
+            "not_detected": 98
+          },
+          "support_histogram": {
+            "1": 2
+          },
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Left": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 100
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Right": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 100
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        }
+      },
+      "hand_switch_warning_frames": 0,
+      "anchor_jump_frames": 0
+    },
+    {
+      "id": "mit_40pct",
+      "source_sha256": "ab228ce722c331ed0df7e49324cf6c61c34960ef84e05856dede3c4f3404b17a",
+      "width": 640,
+      "height": 360,
+      "frames": 100,
+      "parts": {
+        "face": {
+          "valid_frames": 99,
+          "missing_reasons": {
+            "not_detected": 1
+          },
+          "support_histogram": {
+            "1": 4,
+            "3": 95
+          },
+          "adjacent_pairs": 97,
+          "consecutive_triples": 95,
+          "step_rms_face_units": {
+            "normalized_xy": 0.02222862134971043,
+            "smoothed_xy": 0.01643389391234413
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": 0.02470070914894821,
+            "smoothed_xy": 0.009799816926629132
+          }
+        },
+        "Left": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 100
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Right": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 100
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        }
+      },
+      "hand_switch_warning_frames": 0,
+      "anchor_jump_frames": 0
+    },
+    {
+      "id": "mit_60pct",
+      "source_sha256": "bb7a5ff20a1fd7efe3e5ab9f0ada50fd8319a8d919026efdca71a42a9a43cb1a",
+      "width": 640,
+      "height": 360,
+      "frames": 100,
+      "parts": {
+        "face": {
+          "valid_frames": 81,
+          "missing_reasons": {
+            "not_detected": 19
+          },
+          "support_histogram": {
+            "1": 4,
+            "3": 77
+          },
+          "adjacent_pairs": 79,
+          "consecutive_triples": 77,
+          "step_rms_face_units": {
+            "normalized_xy": 0.04289098040476438,
+            "smoothed_xy": 0.029305214117628237
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": 0.04797466311143792,
+            "smoothed_xy": 0.023673202232871955
+          }
+        },
+        "Left": {
+          "valid_frames": 16,
+          "missing_reasons": {
+            "not_detected": 79,
+            "face_anchor_unavailable": 5
+          },
+          "support_histogram": {
+            "1": 3,
+            "3": 13
+          },
+          "adjacent_pairs": 14,
+          "consecutive_triples": 13,
+          "step_rms_face_units": {
+            "normalized_xy": 0.06931508458040204,
+            "smoothed_xy": 0.03992270365110518
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": 0.10109721968222754,
+            "smoothed_xy": 0.02821319157702645
+          }
+        },
+        "Right": {
+          "valid_frames": 66,
+          "missing_reasons": {
+            "not_detected": 32,
+            "duplicate_handedness": 1,
+            "face_anchor_unavailable": 1
+          },
+          "support_histogram": {
+            "1": 10,
+            "3": 56
+          },
+          "adjacent_pairs": 61,
+          "consecutive_triples": 56,
+          "step_rms_face_units": {
+            "normalized_xy": 0.18858210381699955,
+            "smoothed_xy": 0.12421884458251153
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": 0.24010657212265635,
+            "smoothed_xy": 0.08276322177858422
+          }
+        }
+      },
+      "hand_switch_warning_frames": 0,
+      "anchor_jump_frames": 0
+    },
+    {
+      "id": "mit_80pct",
+      "source_sha256": "7cf0af3d189720828e21eb8bfc45e123734e2a7b20677b7692548e469e2a3bfc",
+      "width": 640,
+      "height": 360,
+      "frames": 100,
+      "parts": {
+        "face": {
+          "valid_frames": 92,
+          "missing_reasons": {
+            "not_detected": 8
+          },
+          "support_histogram": {
+            "1": 9,
+            "3": 83
+          },
+          "adjacent_pairs": 87,
+          "consecutive_triples": 83,
+          "step_rms_face_units": {
+            "normalized_xy": 0.040330277647842507,
+            "smoothed_xy": 0.029659159997131288
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": 0.04410864352916085,
+            "smoothed_xy": 0.01955383487902256
+          }
+        },
+        "Left": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 100
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Right": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 100
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        }
+      },
+      "hand_switch_warning_frames": 0,
+      "anchor_jump_frames": 0
+    },
+    {
+      "id": "mit_95pct",
+      "source_sha256": "83e25beda4d35b3e395a8e20189c31d88c5c6034041a22598880e9185194c8bb",
+      "width": 640,
+      "height": 360,
+      "frames": 100,
+      "parts": {
+        "face": {
+          "valid_frames": 26,
+          "missing_reasons": {
+            "not_detected": 74
+          },
+          "support_histogram": {
+            "1": 2,
+            "3": 24
+          },
+          "adjacent_pairs": 25,
+          "consecutive_triples": 24,
+          "step_rms_face_units": {
+            "normalized_xy": 0.024377011714730737,
+            "smoothed_xy": 0.01894461557596016
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": 0.025333819743376187,
+            "smoothed_xy": 0.011064905070936423
+          }
+        },
+        "Left": {
+          "valid_frames": 25,
+          "missing_reasons": {
+            "not_detected": 75
+          },
+          "support_histogram": {
+            "1": 4,
+            "3": 21
+          },
+          "adjacent_pairs": 23,
+          "consecutive_triples": 21,
+          "step_rms_face_units": {
+            "normalized_xy": 0.12093005867517387,
+            "smoothed_xy": 0.0793924123352615
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": 0.14959545341301034,
+            "smoothed_xy": 0.05976524834563959
+          }
+        },
+        "Right": {
+          "valid_frames": 25,
+          "missing_reasons": {
+            "not_detected": 75
+          },
+          "support_histogram": {
+            "1": 4,
+            "3": 21
+          },
+          "adjacent_pairs": 23,
+          "consecutive_triples": 21,
+          "step_rms_face_units": {
+            "normalized_xy": 0.15411403891188394,
+            "smoothed_xy": 0.10830459321506533
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": 0.18228203541377153,
+            "smoothed_xy": 0.06555949183352497
+          }
+        }
+      },
+      "hand_switch_warning_frames": 0,
+      "anchor_jump_frames": 0
+    },
+    {
+      "id": "mit_known_gesture",
+      "source_sha256": "642a486e7ada57d0e6bcebec89a7ffd66f75a5ebec1cc9e64df1c443711e5e65",
+      "width": 640,
+      "height": 360,
+      "frames": 100,
+      "parts": {
+        "face": {
+          "valid_frames": 81,
+          "missing_reasons": {
+            "not_detected": 19
+          },
+          "support_histogram": {
+            "1": 19,
+            "3": 62
+          },
+          "adjacent_pairs": 70,
+          "consecutive_triples": 62,
+          "step_rms_face_units": {
+            "normalized_xy": 0.08101938385832541,
+            "smoothed_xy": 0.05788519965819181
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": 0.09610001321968996,
+            "smoothed_xy": 0.037291917380144646
+          }
+        },
+        "Left": {
+          "valid_frames": 25,
+          "missing_reasons": {
+            "handedness_switch_suspected": 10,
+            "not_detected": 53,
+            "face_anchor_unavailable": 10,
+            "duplicate_handedness": 1,
+            "low_handedness_score": 1
+          },
+          "support_histogram": {
+            "1": 16,
+            "3": 9
+          },
+          "adjacent_pairs": 15,
+          "consecutive_triples": 9,
+          "step_rms_face_units": {
+            "normalized_xy": 0.31618477011117163,
+            "smoothed_xy": 0.3072637213079439
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": 0.14664300065550417,
+            "smoothed_xy": 0.06804895677804335
+          }
+        },
+        "Right": {
+          "valid_frames": 55,
+          "missing_reasons": {
+            "not_detected": 23,
+            "handedness_switch_suspected": 10,
+            "low_handedness_score": 2,
+            "face_anchor_unavailable": 9,
+            "duplicate_handedness": 1
+          },
+          "support_histogram": {
+            "1": 28,
+            "3": 27
+          },
+          "adjacent_pairs": 38,
+          "consecutive_triples": 27,
+          "step_rms_face_units": {
+            "normalized_xy": 0.23046602970946292,
+            "smoothed_xy": 0.18169630293685926
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": 0.26532535046422645,
+            "smoothed_xy": 0.10447630525865546
+          }
+        }
+      },
+      "hand_switch_warning_frames": 10,
+      "anchor_jump_frames": 0
+    }
+  ],
+  "artifact_path": ".local-data/presentation-attitude/mit-preprocess-5fps",
+  "validation": {
+    "tests_passed": 17,
+    "raw_preserved_frames": 700,
+    "maximum_normalization_roundtrip_error": 1.1102230246251565e-16,
+    "comparison_videos_verified": 7,
+    "comparison_video_frame_count_each": 100,
+    "visual_review": "7 extraction contact sheets and 5 preprocessing sheets (15 comparison frames); not full video viewing",
+    "attitude_labels": 0,
+    "classifier_trained": false
+  }
+}

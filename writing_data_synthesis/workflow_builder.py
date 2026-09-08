@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from langchain_ollama import ChatOllama
 from langgraph.graph import END, StateGraph
 
@@ -17,10 +19,11 @@ def build_workflow(llm: ChatOllama):
 
     agent_student = AgentStudent()
     agent_assessor = AgentAssessor()
+    prompt_root = Path(__file__).resolve().parent / "prompts"
     agent_orchestrator = AgentOrchestrator(
-        student_template_path="prompts/system_prompts/student.md",
-        assessor_template_path="prompts/system_prompts/assessor.md",
-        rubric_path="prompts/rubric/rubric.json",
+        student_template_path=str(prompt_root / "system_prompts/student.md"),
+        assessor_template_path=str(prompt_root / "system_prompts/assessor.md"),
+        rubric_path=str(prompt_root / "rubric/rubric.json"),
     )
 
     workflow = StateGraph(state_schema=AgentState, context_schema=ContextState)

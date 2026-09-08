@@ -1,14 +1,19 @@
 [project]
-name = "agent"
+name = "english-assessment-systems"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-requires-python = ">=3.12"
+description = "Shared Python workspace for Creverse assessment portfolio modules"
+requires-python = ">=3.13,<3.14"
 dependencies = [
-    "fastapi>=0.121.2",
-    "langchain-core>=1.0.3",
-    "langchain-ollama>=1.0.0",
-    "langgraph>=1.0.2",
-    "pyyaml>=6.0.3",
-    "uvicorn>=0.38.0",
+    "presentation-attitude-assessment",
+    "writing-data-synthesis",
 ]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+presentation-attitude-assessment = { workspace = true }
+writing-data-synthesis = { workspace = true }
+
+[tool.uv.workspace]
+members = ["presentation_attitude_assessment", "writing_data_synthesis"]

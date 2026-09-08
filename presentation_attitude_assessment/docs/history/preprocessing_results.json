@@ -1,0 +1,700 @@
+{
+  "schema_version": 1,
+  "purpose": "preprocessing_diagnostic_not_training_data",
+  "created_at": "2026-09-07T06:27:45.249918+00:00",
+  "audit_summary_sha256": "fd184daa98246dc34b08b08e062493cb29ae0a45c71d76b98672d3a34c6e4294",
+  "implementation_sha256": "6c9d22d8391975271724911696ef6451157f2405c855ac82e983322c28a8f36d",
+  "numpy_version": "2.5.3",
+  "sample_fps": 5,
+  "settings": {
+    "window": 3,
+    "handedness_min_score": 0.7,
+    "minimum_face_scale_px": 1.0,
+    "max_gap_in_frame_periods": 1.5,
+    "anchor_jump_in_face_scales": 1.0,
+    "anchor_scale_ratio_limit": 2.0,
+    "hand_switch_margin_in_frame_diagonals": 0.02
+  },
+  "smoothing": "centered, segment-local, full window only; boundaries unchanged",
+  "z_policy": "preserved only in raw; excluded from normalized and smoothed features",
+  "status": "complete",
+  "intervals": [
+    {
+      "id": "lecturer2_sweep",
+      "source_sha256": "3690fcbf05016a96a9b7a38f59a55ad938ff252a27848c6db489822341d4eb3f",
+      "width": 640,
+      "height": 360,
+      "frames": 6,
+      "parts": {
+        "face": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 6
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Left": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 2,
+            "face_anchor_unavailable": 3,
+            "low_handedness_score": 1
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Right": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 4,
+            "face_anchor_unavailable": 2
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        }
+      },
+      "hand_switch_warning_frames": 0,
+      "anchor_jump_frames": 0
+    },
+    {
+      "id": "politician1_fling",
+      "source_sha256": "be844e41b4face213d361b180fb4db979b852118f5624c7e7b738253f97a355a",
+      "width": 640,
+      "height": 360,
+      "frames": 2,
+      "parts": {
+        "face": {
+          "valid_frames": 2,
+          "missing_reasons": {},
+          "support_histogram": {
+            "1": 2
+          },
+          "adjacent_pairs": 1,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": 0.3393037579336233,
+            "smoothed_xy": 0.3393037579336233
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Left": {
+          "valid_frames": 1,
+          "missing_reasons": {
+            "not_detected": 1
+          },
+          "support_histogram": {
+            "1": 1
+          },
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Right": {
+          "valid_frames": 1,
+          "missing_reasons": {
+            "duplicate_handedness": 1
+          },
+          "support_histogram": {
+            "1": 1
+          },
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        }
+      },
+      "hand_switch_warning_frames": 0,
+      "anchor_jump_frames": 0
+    },
+    {
+      "id": "lecturer1_pray",
+      "source_sha256": "5299180885a25f1bddd17984be49bec1242163fc9bc26ead86f76fc3f92efaaa",
+      "width": 640,
+      "height": 360,
+      "frames": 9,
+      "parts": {
+        "face": {
+          "valid_frames": 7,
+          "missing_reasons": {
+            "not_detected": 2
+          },
+          "support_histogram": {
+            "1": 5,
+            "3": 2
+          },
+          "adjacent_pairs": 4,
+          "consecutive_triples": 2,
+          "step_rms_face_units": {
+            "normalized_xy": 0.037810508349389274,
+            "smoothed_xy": 0.034769807195416384
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": 0.031513929008418304,
+            "smoothed_xy": 0.010504643002806102
+          }
+        },
+        "Left": {
+          "valid_frames": 2,
+          "missing_reasons": {
+            "not_detected": 7
+          },
+          "support_histogram": {
+            "1": 2
+          },
+          "adjacent_pairs": 1,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": 0.24607981387045094,
+            "smoothed_xy": 0.24607981387045094
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Right": {
+          "valid_frames": 6,
+          "missing_reasons": {
+            "not_detected": 1,
+            "duplicate_handedness": 2
+          },
+          "support_histogram": {
+            "1": 4,
+            "3": 2
+          },
+          "adjacent_pairs": 4,
+          "consecutive_triples": 2,
+          "step_rms_face_units": {
+            "normalized_xy": 0.23626442434664216,
+            "smoothed_xy": 0.2307023378824432
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": 0.10811055814957858,
+            "smoothed_xy": 0.036036852716526145
+          }
+        }
+      },
+      "hand_switch_warning_frames": 0,
+      "anchor_jump_frames": 0
+    },
+    {
+      "id": "lecturer3_throw",
+      "source_sha256": "66775d14b0ba262dab9bd5c8cabceea779d3bf320ac92cf80fd319a419c467e5",
+      "width": 640,
+      "height": 360,
+      "frames": 6,
+      "parts": {
+        "face": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 6
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Left": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "face_anchor_unavailable": 5,
+            "duplicate_handedness": 1
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Right": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "face_anchor_unavailable": 3,
+            "not_detected": 3
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        }
+      },
+      "hand_switch_warning_frames": 0,
+      "anchor_jump_frames": 0
+    },
+    {
+      "id": "lecture_05pct",
+      "source_sha256": "a71ad57621716ea6b36309dbd7e37864cca7b994fe018e5cbde552818abd6a39",
+      "width": 640,
+      "height": 360,
+      "frames": 50,
+      "parts": {
+        "face": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 50
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Left": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 11,
+            "handedness_switch_suspected": 3,
+            "face_anchor_unavailable": 33,
+            "duplicate_handedness": 3
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Right": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "face_anchor_unavailable": 11,
+            "handedness_switch_suspected": 3,
+            "not_detected": 34,
+            "duplicate_handedness": 1,
+            "low_handedness_score": 1
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        }
+      },
+      "hand_switch_warning_frames": 3,
+      "anchor_jump_frames": 0
+    },
+    {
+      "id": "lecture_20pct",
+      "source_sha256": "9500803114ed528914e9db38f8fd906cd0fb6db07b251280ae0609310a7acce4",
+      "width": 640,
+      "height": 360,
+      "frames": 50,
+      "parts": {
+        "face": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 50
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Left": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 50
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Right": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 50
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        }
+      },
+      "hand_switch_warning_frames": 0,
+      "anchor_jump_frames": 0
+    },
+    {
+      "id": "lecture_40pct",
+      "source_sha256": "38958f3018f25ab6fd3ffa79d57fb3080b79fa64570be248144ed56c560288d4",
+      "width": 640,
+      "height": 360,
+      "frames": 50,
+      "parts": {
+        "face": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 50
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Left": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "face_anchor_unavailable": 21,
+            "not_detected": 27,
+            "handedness_switch_suspected": 2
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Right": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 16,
+            "face_anchor_unavailable": 28,
+            "duplicate_handedness": 3,
+            "handedness_switch_suspected": 2,
+            "low_handedness_score": 1
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        }
+      },
+      "hand_switch_warning_frames": 2,
+      "anchor_jump_frames": 0
+    },
+    {
+      "id": "lecture_60pct",
+      "source_sha256": "16f76d9ce91bda9310e392deea4389a1b5b426b8bb24ded3633bd5ff61770ba7",
+      "width": 640,
+      "height": 360,
+      "frames": 50,
+      "parts": {
+        "face": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 50
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Left": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 34,
+            "face_anchor_unavailable": 12,
+            "duplicate_handedness": 1,
+            "handedness_switch_suspected": 1,
+            "low_handedness_score": 2
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Right": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 33,
+            "face_anchor_unavailable": 14,
+            "low_handedness_score": 2,
+            "handedness_switch_suspected": 1
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        }
+      },
+      "hand_switch_warning_frames": 1,
+      "anchor_jump_frames": 0
+    },
+    {
+      "id": "lecture_80pct",
+      "source_sha256": "79615d08ee461e140831de9631c017a721c6b029fa74ceb75b212a96a9dd06a8",
+      "width": 640,
+      "height": 360,
+      "frames": 50,
+      "parts": {
+        "face": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 50
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Left": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 34,
+            "handedness_switch_suspected": 5,
+            "face_anchor_unavailable": 8,
+            "low_handedness_score": 3
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Right": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "face_anchor_unavailable": 15,
+            "handedness_switch_suspected": 5,
+            "not_detected": 20,
+            "duplicate_handedness": 8,
+            "low_handedness_score": 2
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        }
+      },
+      "hand_switch_warning_frames": 5,
+      "anchor_jump_frames": 0
+    },
+    {
+      "id": "lecture_95pct",
+      "source_sha256": "4ccd93c3a714e5f71040a9ee484ec0333b1ca24b2f779fe41597ce1a6b6d94b5",
+      "width": 640,
+      "height": 360,
+      "frames": 50,
+      "parts": {
+        "face": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 50
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Left": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "not_detected": 50
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        },
+        "Right": {
+          "valid_frames": 0,
+          "missing_reasons": {
+            "face_anchor_unavailable": 33,
+            "duplicate_handedness": 9,
+            "not_detected": 8
+          },
+          "support_histogram": {},
+          "adjacent_pairs": 0,
+          "consecutive_triples": 0,
+          "step_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          },
+          "second_difference_rms_face_units": {
+            "normalized_xy": null,
+            "smoothed_xy": null
+          }
+        }
+      },
+      "hand_switch_warning_frames": 0,
+      "anchor_jump_frames": 0
+    }
+  ],
+  "artifact_root": ".local-data/presentation-attitude/preprocess-v1-final",
+  "visual_artifact_root": ".local-data/presentation-attitude/preprocess-v1-final-visuals",
+  "validation": {
+    "unit_tests_passed": 14,
+    "raw_records_verified_unchanged": 323,
+    "maximum_xy_round_trip_absolute_error": 2.7755575615628914e-17,
+    "visual_review": "all 11 sampled frames in politician1_fling and lecturer1_pray comparison sheets",
+    "attitude_labels": 0,
+    "classifier_trained": false
+  }
+}

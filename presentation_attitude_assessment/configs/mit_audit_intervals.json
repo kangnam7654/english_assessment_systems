@@ -1,0 +1,56 @@
+{
+  "purpose": "continuous_landmark_availability_not_attitude_labels",
+  "sample_fps": 5,
+  "selection": "Six fixed positions plus one separately reported known-positive gesture context; not a random sample or whole-video estimate.",
+  "intervals": [
+    {
+      "id": "mit_05pct",
+      "file_name": "3Educator_id1_psych_vid1.mp4",
+      "start_seconds": 139,
+      "duration_seconds": 20,
+      "selection": "fixed_position"
+    },
+    {
+      "id": "mit_20pct",
+      "file_name": "3Educator_id1_psych_vid1.mp4",
+      "start_seconds": 587,
+      "duration_seconds": 20,
+      "selection": "fixed_position"
+    },
+    {
+      "id": "mit_40pct",
+      "file_name": "3Educator_id1_psych_vid1.mp4",
+      "start_seconds": 1184,
+      "duration_seconds": 20,
+      "selection": "fixed_position"
+    },
+    {
+      "id": "mit_60pct",
+      "file_name": "3Educator_id1_psych_vid1.mp4",
+      "start_seconds": 1780,
+      "duration_seconds": 20,
+      "selection": "fixed_position"
+    },
+    {
+      "id": "mit_80pct",
+      "file_name": "3Educator_id1_psych_vid1.mp4",
+      "start_seconds": 2377,
+      "duration_seconds": 20,
+      "selection": "fixed_position"
+    },
+    {
+      "id": "mit_95pct",
+      "file_name": "3Educator_id1_psych_vid1.mp4",
+      "start_seconds": 2825,
+      "duration_seconds": 20,
+      "selection": "fixed_position"
+    },
+    {
+      "id": "mit_known_gesture",
+      "file_name": "3Educator_id1_psych_vid1.mp4",
+      "start_seconds": 865,
+      "duration_seconds": 20,
+      "selection": "known_positive_context_not_representative"
+    }
+  ]
+}

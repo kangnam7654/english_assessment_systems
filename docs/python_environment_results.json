@@ -1,0 +1,55 @@
+{
+  "checked_at": "2026-09-07",
+  "python_previous": "3.12.14",
+  "python_current": "3.13.15",
+  "tests_passed": 29,
+  "mediapipe_smoke_frames": 109,
+  "dependency_versions_changed": false,
+  "pip_check_passed": true,
+  "root_lock_sha256": "7abbd80531bcff3ba13f8dc1ca4b30287da67c571861a3fb84555c88e49cb86d",
+  "environments": [
+    {
+      "cwd": ".",
+      "prefix": "/Users/kangnam/projects/english_assessment_systems/.venv",
+      "python": "3.13.15",
+      "mediapipe": "0.10.32",
+      "langgraph": "1.0.3"
+    },
+    {
+      "cwd": "presentation_attitude_assessment",
+      "prefix": "/Users/kangnam/projects/english_assessment_systems/.venv",
+      "python": "3.13.15",
+      "mediapipe": "0.10.32",
+      "langgraph": "1.0.3"
+    },
+    {
+      "cwd": "writing_data_synthesis",
+      "prefix": "/Users/kangnam/projects/english_assessment_systems/.venv",
+      "python": "3.13.15",
+      "mediapipe": "0.10.32",
+      "langgraph": "1.0.3"
+    }
+  ],
+  "comparisons": [
+    {
+      "interval": "lecturer1_pray",
+      "frames": 9,
+      "landmarks_byte_identical": true,
+      "preprocessing_byte_identical": true
+    },
+    {
+      "interval": "mit_60pct",
+      "frames": 100,
+      "landmarks_byte_identical": true,
+      "preprocessing_byte_identical": true
+    }
+  ],
+  "live_ollama_inference_tested": false,
+  "platform_tested": "macOS arm64 Apple M4",
+  "evidence_sha256": {
+    ".local-data/python313-upgrade/vision-tests.log": "abe7ca1ac8a32cddb3e7ef17c29e45eaa4b1c698eab09ce42329886c9968dffb",
+    ".local-data/python313-upgrade/writing-tests.log": "37cf5f6e27af6ffa77fbf2e8f5e26b154e6e5b95be77a860ef2b05b31f469449",
+    ".local-data/python313-upgrade/audit/summary.json": "d5c087e8d8da8dc9827a08c9bfdf9c820131d5900ffd1a33a5eee1928e12f4ac",
+    ".local-data/python313-upgrade/preprocess/summary.json": "b09fa62f883b81913e5f70445e528634cd1ae7b3cb840081c693411437dccc54"
+  }
+}

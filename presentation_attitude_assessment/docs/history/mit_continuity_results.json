@@ -1,0 +1,2640 @@
+{
+  "purpose": "sampled_continuity_not_attitude_or_whole_video_visibility",
+  "sample_fps": 5,
+  "raw_preserved_frames": 700,
+  "audit_summary_sha256": "ace58ebd454c8f333103dab94c069c3d8ec94ecfc397a8daafd5bebd53b72e18",
+  "processed_summary_sha256": "8d9b8d4ea152e28f134b84daf332ff19d61d15195308cb4e00738043de9a3b96",
+  "implementation_sha256": "3f06c6a046c1c9917f50fdee5eb793c0b46c0aa8f7698f8cf7eb97f0b6abdabf",
+  "semantics": "Runs never cross intervals. N/fps is sampled coverage; (N-1)/fps is sample timestamp span. Hand presence does not establish identity.",
+  "intervals": [
+    {
+      "id": "mit_05pct",
+      "selection": "fixed_position",
+      "start_seconds": 139,
+      "raw_sha256": "34880a7dd7ea80ed09b6aa51311f70a3dc7f49ad0add6875c78549af135f405d",
+      "processed_sha256": "54ba84e6ba889084baa46bb12efdce9a4b412aeb565021b5f345be96a55bf124",
+      "raw_detection": {
+        "face": {
+          "present_frames": 48,
+          "total_frames": 100,
+          "present_ratio": 0.48,
+          "longest_present_frames": 36,
+          "longest_missing_frames": 39,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 12,
+              "sampled_coverage_seconds": 2.4,
+              "first_to_last_sample_seconds": 2.2
+            },
+            {
+              "present": true,
+              "start_frame": 12,
+              "frames": 12,
+              "sampled_coverage_seconds": 2.4,
+              "first_to_last_sample_seconds": 2.2
+            },
+            {
+              "present": false,
+              "start_frame": 24,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 25,
+              "frames": 36,
+              "sampled_coverage_seconds": 7.2,
+              "first_to_last_sample_seconds": 7.0
+            },
+            {
+              "present": false,
+              "start_frame": 61,
+              "frames": 39,
+              "sampled_coverage_seconds": 7.8,
+              "first_to_last_sample_seconds": 7.6
+            }
+          ]
+        },
+        "any_hand": {
+          "present_frames": 1,
+          "total_frames": 100,
+          "present_ratio": 0.01,
+          "longest_present_frames": 1,
+          "longest_missing_frames": 94,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 5,
+              "sampled_coverage_seconds": 1.0,
+              "first_to_last_sample_seconds": 0.8
+            },
+            {
+              "present": true,
+              "start_frame": 5,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 6,
+              "frames": 94,
+              "sampled_coverage_seconds": 18.8,
+              "first_to_last_sample_seconds": 18.6
+            }
+          ]
+        },
+        "two_hands": {
+          "present_frames": 0,
+          "total_frames": 100,
+          "present_ratio": 0.0,
+          "longest_present_frames": 0,
+          "longest_missing_frames": 100,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 100,
+              "sampled_coverage_seconds": 20.0,
+              "first_to_last_sample_seconds": 19.8
+            }
+          ]
+        },
+        "face_and_any_hand": {
+          "present_frames": 0,
+          "total_frames": 100,
+          "present_ratio": 0.0,
+          "longest_present_frames": 0,
+          "longest_missing_frames": 100,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 100,
+              "sampled_coverage_seconds": 20.0,
+              "first_to_last_sample_seconds": 19.8
+            }
+          ]
+        }
+      },
+      "valid_features": {
+        "face": {
+          "present_frames": 48,
+          "total_frames": 100,
+          "present_ratio": 0.48,
+          "longest_present_frames": 36,
+          "longest_missing_frames": 39,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 12,
+              "sampled_coverage_seconds": 2.4,
+              "first_to_last_sample_seconds": 2.2
+            },
+            {
+              "present": true,
+              "start_frame": 12,
+              "frames": 12,
+              "sampled_coverage_seconds": 2.4,
+              "first_to_last_sample_seconds": 2.2
+            },
+            {
+              "present": false,
+              "start_frame": 24,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 25,
+              "frames": 36,
+              "sampled_coverage_seconds": 7.2,
+              "first_to_last_sample_seconds": 7.0
+            },
+            {
+              "present": false,
+              "start_frame": 61,
+              "frames": 39,
+              "sampled_coverage_seconds": 7.8,
+              "first_to_last_sample_seconds": 7.6
+            }
+          ]
+        },
+        "Left": {
+          "present_frames": 0,
+          "total_frames": 100,
+          "present_ratio": 0.0,
+          "longest_present_frames": 0,
+          "longest_missing_frames": 100,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 100,
+              "sampled_coverage_seconds": 20.0,
+              "first_to_last_sample_seconds": 19.8
+            }
+          ]
+        },
+        "Right": {
+          "present_frames": 0,
+          "total_frames": 100,
+          "present_ratio": 0.0,
+          "longest_present_frames": 0,
+          "longest_missing_frames": 100,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 100,
+              "sampled_coverage_seconds": 20.0,
+              "first_to_last_sample_seconds": 19.8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "mit_20pct",
+      "selection": "fixed_position",
+      "start_seconds": 587,
+      "raw_sha256": "6f57a62d43257181717bf7bbd0b0e15664214cea6b83efe9199b26d4903d945c",
+      "processed_sha256": "7027cc64e950a83724f372d2cfb6f669e8f2edbac2c88727bde3577a755d71f0",
+      "raw_detection": {
+        "face": {
+          "present_frames": 2,
+          "total_frames": 100,
+          "present_ratio": 0.02,
+          "longest_present_frames": 1,
+          "longest_missing_frames": 91,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 6,
+              "sampled_coverage_seconds": 1.2,
+              "first_to_last_sample_seconds": 1.0
+            },
+            {
+              "present": true,
+              "start_frame": 6,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 7,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 8,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 9,
+              "frames": 91,
+              "sampled_coverage_seconds": 18.2,
+              "first_to_last_sample_seconds": 18.0
+            }
+          ]
+        },
+        "any_hand": {
+          "present_frames": 0,
+          "total_frames": 100,
+          "present_ratio": 0.0,
+          "longest_present_frames": 0,
+          "longest_missing_frames": 100,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 100,
+              "sampled_coverage_seconds": 20.0,
+              "first_to_last_sample_seconds": 19.8
+            }
+          ]
+        },
+        "two_hands": {
+          "present_frames": 0,
+          "total_frames": 100,
+          "present_ratio": 0.0,
+          "longest_present_frames": 0,
+          "longest_missing_frames": 100,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 100,
+              "sampled_coverage_seconds": 20.0,
+              "first_to_last_sample_seconds": 19.8
+            }
+          ]
+        },
+        "face_and_any_hand": {
+          "present_frames": 0,
+          "total_frames": 100,
+          "present_ratio": 0.0,
+          "longest_present_frames": 0,
+          "longest_missing_frames": 100,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 100,
+              "sampled_coverage_seconds": 20.0,
+              "first_to_last_sample_seconds": 19.8
+            }
+          ]
+        }
+      },
+      "valid_features": {
+        "face": {
+          "present_frames": 2,
+          "total_frames": 100,
+          "present_ratio": 0.02,
+          "longest_present_frames": 1,
+          "longest_missing_frames": 91,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 6,
+              "sampled_coverage_seconds": 1.2,
+              "first_to_last_sample_seconds": 1.0
+            },
+            {
+              "present": true,
+              "start_frame": 6,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 7,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 8,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 9,
+              "frames": 91,
+              "sampled_coverage_seconds": 18.2,
+              "first_to_last_sample_seconds": 18.0
+            }
+          ]
+        },
+        "Left": {
+          "present_frames": 0,
+          "total_frames": 100,
+          "present_ratio": 0.0,
+          "longest_present_frames": 0,
+          "longest_missing_frames": 100,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 100,
+              "sampled_coverage_seconds": 20.0,
+              "first_to_last_sample_seconds": 19.8
+            }
+          ]
+        },
+        "Right": {
+          "present_frames": 0,
+          "total_frames": 100,
+          "present_ratio": 0.0,
+          "longest_present_frames": 0,
+          "longest_missing_frames": 100,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 100,
+              "sampled_coverage_seconds": 20.0,
+              "first_to_last_sample_seconds": 19.8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "mit_40pct",
+      "selection": "fixed_position",
+      "start_seconds": 1184,
+      "raw_sha256": "ab228ce722c331ed0df7e49324cf6c61c34960ef84e05856dede3c4f3404b17a",
+      "processed_sha256": "8664cf69e5f4875393b1cf5594c0ea9895dca27982eb8b28d2376ca791e77d49",
+      "raw_detection": {
+        "face": {
+          "present_frames": 99,
+          "total_frames": 100,
+          "present_ratio": 0.99,
+          "longest_present_frames": 85,
+          "longest_missing_frames": 1,
+          "runs": [
+            {
+              "present": true,
+              "start_frame": 0,
+              "frames": 14,
+              "sampled_coverage_seconds": 2.8,
+              "first_to_last_sample_seconds": 2.6
+            },
+            {
+              "present": false,
+              "start_frame": 14,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 15,
+              "frames": 85,
+              "sampled_coverage_seconds": 17.0,
+              "first_to_last_sample_seconds": 16.8
+            }
+          ]
+        },
+        "any_hand": {
+          "present_frames": 0,
+          "total_frames": 100,
+          "present_ratio": 0.0,
+          "longest_present_frames": 0,
+          "longest_missing_frames": 100,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 100,
+              "sampled_coverage_seconds": 20.0,
+              "first_to_last_sample_seconds": 19.8
+            }
+          ]
+        },
+        "two_hands": {
+          "present_frames": 0,
+          "total_frames": 100,
+          "present_ratio": 0.0,
+          "longest_present_frames": 0,
+          "longest_missing_frames": 100,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 100,
+              "sampled_coverage_seconds": 20.0,
+              "first_to_last_sample_seconds": 19.8
+            }
+          ]
+        },
+        "face_and_any_hand": {
+          "present_frames": 0,
+          "total_frames": 100,
+          "present_ratio": 0.0,
+          "longest_present_frames": 0,
+          "longest_missing_frames": 100,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 100,
+              "sampled_coverage_seconds": 20.0,
+              "first_to_last_sample_seconds": 19.8
+            }
+          ]
+        }
+      },
+      "valid_features": {
+        "face": {
+          "present_frames": 99,
+          "total_frames": 100,
+          "present_ratio": 0.99,
+          "longest_present_frames": 85,
+          "longest_missing_frames": 1,
+          "runs": [
+            {
+              "present": true,
+              "start_frame": 0,
+              "frames": 14,
+              "sampled_coverage_seconds": 2.8,
+              "first_to_last_sample_seconds": 2.6
+            },
+            {
+              "present": false,
+              "start_frame": 14,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 15,
+              "frames": 85,
+              "sampled_coverage_seconds": 17.0,
+              "first_to_last_sample_seconds": 16.8
+            }
+          ]
+        },
+        "Left": {
+          "present_frames": 0,
+          "total_frames": 100,
+          "present_ratio": 0.0,
+          "longest_present_frames": 0,
+          "longest_missing_frames": 100,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 100,
+              "sampled_coverage_seconds": 20.0,
+              "first_to_last_sample_seconds": 19.8
+            }
+          ]
+        },
+        "Right": {
+          "present_frames": 0,
+          "total_frames": 100,
+          "present_ratio": 0.0,
+          "longest_present_frames": 0,
+          "longest_missing_frames": 100,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 100,
+              "sampled_coverage_seconds": 20.0,
+              "first_to_last_sample_seconds": 19.8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "mit_60pct",
+      "selection": "fixed_position",
+      "start_seconds": 1780,
+      "raw_sha256": "bb7a5ff20a1fd7efe3e5ab9f0ada50fd8319a8d919026efdca71a42a9a43cb1a",
+      "processed_sha256": "ed2cfe448e5b0352f925783be10eabebb2876dfed8eb83c211a4ec2d8eb4e0a3",
+      "raw_detection": {
+        "face": {
+          "present_frames": 81,
+          "total_frames": 100,
+          "present_ratio": 0.81,
+          "longest_present_frames": 78,
+          "longest_missing_frames": 18,
+          "runs": [
+            {
+              "present": true,
+              "start_frame": 0,
+              "frames": 78,
+              "sampled_coverage_seconds": 15.6,
+              "first_to_last_sample_seconds": 15.4
+            },
+            {
+              "present": false,
+              "start_frame": 78,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 79,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": false,
+              "start_frame": 82,
+              "frames": 18,
+              "sampled_coverage_seconds": 3.6,
+              "first_to_last_sample_seconds": 3.4
+            }
+          ]
+        },
+        "any_hand": {
+          "present_frames": 79,
+          "total_frames": 100,
+          "present_ratio": 0.79,
+          "longest_present_frames": 60,
+          "longest_missing_frames": 12,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": true,
+              "start_frame": 3,
+              "frames": 60,
+              "sampled_coverage_seconds": 12.0,
+              "first_to_last_sample_seconds": 11.8
+            },
+            {
+              "present": false,
+              "start_frame": 63,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 64,
+              "frames": 5,
+              "sampled_coverage_seconds": 1.0,
+              "first_to_last_sample_seconds": 0.8
+            },
+            {
+              "present": false,
+              "start_frame": 69,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 70,
+              "frames": 9,
+              "sampled_coverage_seconds": 1.8,
+              "first_to_last_sample_seconds": 1.6
+            },
+            {
+              "present": false,
+              "start_frame": 79,
+              "frames": 4,
+              "sampled_coverage_seconds": 0.8,
+              "first_to_last_sample_seconds": 0.6
+            },
+            {
+              "present": true,
+              "start_frame": 83,
+              "frames": 5,
+              "sampled_coverage_seconds": 1.0,
+              "first_to_last_sample_seconds": 0.8
+            },
+            {
+              "present": false,
+              "start_frame": 88,
+              "frames": 12,
+              "sampled_coverage_seconds": 2.4,
+              "first_to_last_sample_seconds": 2.2
+            }
+          ]
+        },
+        "two_hands": {
+          "present_frames": 11,
+          "total_frames": 100,
+          "present_ratio": 0.11,
+          "longest_present_frames": 9,
+          "longest_missing_frames": 40,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 8,
+              "sampled_coverage_seconds": 1.6,
+              "first_to_last_sample_seconds": 1.4
+            },
+            {
+              "present": true,
+              "start_frame": 8,
+              "frames": 9,
+              "sampled_coverage_seconds": 1.8,
+              "first_to_last_sample_seconds": 1.6
+            },
+            {
+              "present": false,
+              "start_frame": 17,
+              "frames": 10,
+              "sampled_coverage_seconds": 2.0,
+              "first_to_last_sample_seconds": 1.8
+            },
+            {
+              "present": true,
+              "start_frame": 27,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 28,
+              "frames": 40,
+              "sampled_coverage_seconds": 8.0,
+              "first_to_last_sample_seconds": 7.8
+            },
+            {
+              "present": true,
+              "start_frame": 68,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 69,
+              "frames": 31,
+              "sampled_coverage_seconds": 6.2,
+              "first_to_last_sample_seconds": 6.0
+            }
+          ]
+        },
+        "face_and_any_hand": {
+          "present_frames": 73,
+          "total_frames": 100,
+          "present_ratio": 0.73,
+          "longest_present_frames": 60,
+          "longest_missing_frames": 22,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": true,
+              "start_frame": 3,
+              "frames": 60,
+              "sampled_coverage_seconds": 12.0,
+              "first_to_last_sample_seconds": 11.8
+            },
+            {
+              "present": false,
+              "start_frame": 63,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 64,
+              "frames": 5,
+              "sampled_coverage_seconds": 1.0,
+              "first_to_last_sample_seconds": 0.8
+            },
+            {
+              "present": false,
+              "start_frame": 69,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 70,
+              "frames": 8,
+              "sampled_coverage_seconds": 1.6,
+              "first_to_last_sample_seconds": 1.4
+            },
+            {
+              "present": false,
+              "start_frame": 78,
+              "frames": 22,
+              "sampled_coverage_seconds": 4.4,
+              "first_to_last_sample_seconds": 4.2
+            }
+          ]
+        }
+      },
+      "valid_features": {
+        "face": {
+          "present_frames": 81,
+          "total_frames": 100,
+          "present_ratio": 0.81,
+          "longest_present_frames": 78,
+          "longest_missing_frames": 18,
+          "runs": [
+            {
+              "present": true,
+              "start_frame": 0,
+              "frames": 78,
+              "sampled_coverage_seconds": 15.6,
+              "first_to_last_sample_seconds": 15.4
+            },
+            {
+              "present": false,
+              "start_frame": 78,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 79,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": false,
+              "start_frame": 82,
+              "frames": 18,
+              "sampled_coverage_seconds": 3.6,
+              "first_to_last_sample_seconds": 3.4
+            }
+          ]
+        },
+        "Left": {
+          "present_frames": 16,
+          "total_frames": 100,
+          "present_ratio": 0.16,
+          "longest_present_frames": 15,
+          "longest_missing_frames": 50,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": true,
+              "start_frame": 3,
+              "frames": 15,
+              "sampled_coverage_seconds": 3.0,
+              "first_to_last_sample_seconds": 2.8
+            },
+            {
+              "present": false,
+              "start_frame": 18,
+              "frames": 50,
+              "sampled_coverage_seconds": 10.0,
+              "first_to_last_sample_seconds": 9.8
+            },
+            {
+              "present": true,
+              "start_frame": 68,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 69,
+              "frames": 31,
+              "sampled_coverage_seconds": 6.2,
+              "first_to_last_sample_seconds": 6.0
+            }
+          ]
+        },
+        "Right": {
+          "present_frames": 66,
+          "total_frames": 100,
+          "present_ratio": 0.66,
+          "longest_present_frames": 35,
+          "longest_missing_frames": 22,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 8,
+              "sampled_coverage_seconds": 1.6,
+              "first_to_last_sample_seconds": 1.4
+            },
+            {
+              "present": true,
+              "start_frame": 8,
+              "frames": 9,
+              "sampled_coverage_seconds": 1.8,
+              "first_to_last_sample_seconds": 1.6
+            },
+            {
+              "present": false,
+              "start_frame": 17,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 18,
+              "frames": 9,
+              "sampled_coverage_seconds": 1.8,
+              "first_to_last_sample_seconds": 1.6
+            },
+            {
+              "present": false,
+              "start_frame": 27,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 28,
+              "frames": 35,
+              "sampled_coverage_seconds": 7.0,
+              "first_to_last_sample_seconds": 6.8
+            },
+            {
+              "present": false,
+              "start_frame": 63,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 64,
+              "frames": 5,
+              "sampled_coverage_seconds": 1.0,
+              "first_to_last_sample_seconds": 0.8
+            },
+            {
+              "present": false,
+              "start_frame": 69,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 70,
+              "frames": 8,
+              "sampled_coverage_seconds": 1.6,
+              "first_to_last_sample_seconds": 1.4
+            },
+            {
+              "present": false,
+              "start_frame": 78,
+              "frames": 22,
+              "sampled_coverage_seconds": 4.4,
+              "first_to_last_sample_seconds": 4.2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "mit_80pct",
+      "selection": "fixed_position",
+      "start_seconds": 2377,
+      "raw_sha256": "7cf0af3d189720828e21eb8bfc45e123734e2a7b20677b7692548e469e2a3bfc",
+      "processed_sha256": "cba3bc1631ad5faa0806f80fb49ce02a3244f50d513853ecdfa776edec2620b1",
+      "raw_detection": {
+        "face": {
+          "present_frames": 92,
+          "total_frames": 100,
+          "present_ratio": 0.92,
+          "longest_present_frames": 48,
+          "longest_missing_frames": 4,
+          "runs": [
+            {
+              "present": true,
+              "start_frame": 0,
+              "frames": 18,
+              "sampled_coverage_seconds": 3.6,
+              "first_to_last_sample_seconds": 3.4
+            },
+            {
+              "present": false,
+              "start_frame": 18,
+              "frames": 4,
+              "sampled_coverage_seconds": 0.8,
+              "first_to_last_sample_seconds": 0.6
+            },
+            {
+              "present": true,
+              "start_frame": 22,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 23,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 24,
+              "frames": 15,
+              "sampled_coverage_seconds": 3.0,
+              "first_to_last_sample_seconds": 2.8
+            },
+            {
+              "present": false,
+              "start_frame": 39,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 40,
+              "frames": 10,
+              "sampled_coverage_seconds": 2.0,
+              "first_to_last_sample_seconds": 1.8
+            },
+            {
+              "present": false,
+              "start_frame": 50,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": true,
+              "start_frame": 52,
+              "frames": 48,
+              "sampled_coverage_seconds": 9.6,
+              "first_to_last_sample_seconds": 9.4
+            }
+          ]
+        },
+        "any_hand": {
+          "present_frames": 0,
+          "total_frames": 100,
+          "present_ratio": 0.0,
+          "longest_present_frames": 0,
+          "longest_missing_frames": 100,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 100,
+              "sampled_coverage_seconds": 20.0,
+              "first_to_last_sample_seconds": 19.8
+            }
+          ]
+        },
+        "two_hands": {
+          "present_frames": 0,
+          "total_frames": 100,
+          "present_ratio": 0.0,
+          "longest_present_frames": 0,
+          "longest_missing_frames": 100,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 100,
+              "sampled_coverage_seconds": 20.0,
+              "first_to_last_sample_seconds": 19.8
+            }
+          ]
+        },
+        "face_and_any_hand": {
+          "present_frames": 0,
+          "total_frames": 100,
+          "present_ratio": 0.0,
+          "longest_present_frames": 0,
+          "longest_missing_frames": 100,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 100,
+              "sampled_coverage_seconds": 20.0,
+              "first_to_last_sample_seconds": 19.8
+            }
+          ]
+        }
+      },
+      "valid_features": {
+        "face": {
+          "present_frames": 92,
+          "total_frames": 100,
+          "present_ratio": 0.92,
+          "longest_present_frames": 48,
+          "longest_missing_frames": 4,
+          "runs": [
+            {
+              "present": true,
+              "start_frame": 0,
+              "frames": 18,
+              "sampled_coverage_seconds": 3.6,
+              "first_to_last_sample_seconds": 3.4
+            },
+            {
+              "present": false,
+              "start_frame": 18,
+              "frames": 4,
+              "sampled_coverage_seconds": 0.8,
+              "first_to_last_sample_seconds": 0.6
+            },
+            {
+              "present": true,
+              "start_frame": 22,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 23,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 24,
+              "frames": 15,
+              "sampled_coverage_seconds": 3.0,
+              "first_to_last_sample_seconds": 2.8
+            },
+            {
+              "present": false,
+              "start_frame": 39,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 40,
+              "frames": 10,
+              "sampled_coverage_seconds": 2.0,
+              "first_to_last_sample_seconds": 1.8
+            },
+            {
+              "present": false,
+              "start_frame": 50,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": true,
+              "start_frame": 52,
+              "frames": 48,
+              "sampled_coverage_seconds": 9.6,
+              "first_to_last_sample_seconds": 9.4
+            }
+          ]
+        },
+        "Left": {
+          "present_frames": 0,
+          "total_frames": 100,
+          "present_ratio": 0.0,
+          "longest_present_frames": 0,
+          "longest_missing_frames": 100,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 100,
+              "sampled_coverage_seconds": 20.0,
+              "first_to_last_sample_seconds": 19.8
+            }
+          ]
+        },
+        "Right": {
+          "present_frames": 0,
+          "total_frames": 100,
+          "present_ratio": 0.0,
+          "longest_present_frames": 0,
+          "longest_missing_frames": 100,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 100,
+              "sampled_coverage_seconds": 20.0,
+              "first_to_last_sample_seconds": 19.8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "mit_95pct",
+      "selection": "fixed_position",
+      "start_seconds": 2825,
+      "raw_sha256": "83e25beda4d35b3e395a8e20189c31d88c5c6034041a22598880e9185194c8bb",
+      "processed_sha256": "8dbd86522912c1858dae8159fca9edee1e18832f64a154cb41a7be78ebbe1ddf",
+      "raw_detection": {
+        "face": {
+          "present_frames": 26,
+          "total_frames": 100,
+          "present_ratio": 0.26,
+          "longest_present_frames": 26,
+          "longest_missing_frames": 74,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 74,
+              "sampled_coverage_seconds": 14.8,
+              "first_to_last_sample_seconds": 14.6
+            },
+            {
+              "present": true,
+              "start_frame": 74,
+              "frames": 26,
+              "sampled_coverage_seconds": 5.2,
+              "first_to_last_sample_seconds": 5.0
+            }
+          ]
+        },
+        "any_hand": {
+          "present_frames": 26,
+          "total_frames": 100,
+          "present_ratio": 0.26,
+          "longest_present_frames": 26,
+          "longest_missing_frames": 74,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 74,
+              "sampled_coverage_seconds": 14.8,
+              "first_to_last_sample_seconds": 14.6
+            },
+            {
+              "present": true,
+              "start_frame": 74,
+              "frames": 26,
+              "sampled_coverage_seconds": 5.2,
+              "first_to_last_sample_seconds": 5.0
+            }
+          ]
+        },
+        "two_hands": {
+          "present_frames": 24,
+          "total_frames": 100,
+          "present_ratio": 0.24,
+          "longest_present_frames": 14,
+          "longest_missing_frames": 74,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 74,
+              "sampled_coverage_seconds": 14.8,
+              "first_to_last_sample_seconds": 14.6
+            },
+            {
+              "present": true,
+              "start_frame": 74,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": false,
+              "start_frame": 76,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 77,
+              "frames": 8,
+              "sampled_coverage_seconds": 1.6,
+              "first_to_last_sample_seconds": 1.4
+            },
+            {
+              "present": false,
+              "start_frame": 85,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 86,
+              "frames": 14,
+              "sampled_coverage_seconds": 2.8,
+              "first_to_last_sample_seconds": 2.6
+            }
+          ]
+        },
+        "face_and_any_hand": {
+          "present_frames": 26,
+          "total_frames": 100,
+          "present_ratio": 0.26,
+          "longest_present_frames": 26,
+          "longest_missing_frames": 74,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 74,
+              "sampled_coverage_seconds": 14.8,
+              "first_to_last_sample_seconds": 14.6
+            },
+            {
+              "present": true,
+              "start_frame": 74,
+              "frames": 26,
+              "sampled_coverage_seconds": 5.2,
+              "first_to_last_sample_seconds": 5.0
+            }
+          ]
+        }
+      },
+      "valid_features": {
+        "face": {
+          "present_frames": 26,
+          "total_frames": 100,
+          "present_ratio": 0.26,
+          "longest_present_frames": 26,
+          "longest_missing_frames": 74,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 74,
+              "sampled_coverage_seconds": 14.8,
+              "first_to_last_sample_seconds": 14.6
+            },
+            {
+              "present": true,
+              "start_frame": 74,
+              "frames": 26,
+              "sampled_coverage_seconds": 5.2,
+              "first_to_last_sample_seconds": 5.0
+            }
+          ]
+        },
+        "Left": {
+          "present_frames": 25,
+          "total_frames": 100,
+          "present_ratio": 0.25,
+          "longest_present_frames": 23,
+          "longest_missing_frames": 74,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 74,
+              "sampled_coverage_seconds": 14.8,
+              "first_to_last_sample_seconds": 14.6
+            },
+            {
+              "present": true,
+              "start_frame": 74,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": false,
+              "start_frame": 76,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 77,
+              "frames": 23,
+              "sampled_coverage_seconds": 4.6,
+              "first_to_last_sample_seconds": 4.4
+            }
+          ]
+        },
+        "Right": {
+          "present_frames": 25,
+          "total_frames": 100,
+          "present_ratio": 0.25,
+          "longest_present_frames": 14,
+          "longest_missing_frames": 74,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 74,
+              "sampled_coverage_seconds": 14.8,
+              "first_to_last_sample_seconds": 14.6
+            },
+            {
+              "present": true,
+              "start_frame": 74,
+              "frames": 11,
+              "sampled_coverage_seconds": 2.2,
+              "first_to_last_sample_seconds": 2.0
+            },
+            {
+              "present": false,
+              "start_frame": 85,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 86,
+              "frames": 14,
+              "sampled_coverage_seconds": 2.8,
+              "first_to_last_sample_seconds": 2.6
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "mit_known_gesture",
+      "selection": "known_positive_context_not_representative",
+      "start_seconds": 865,
+      "raw_sha256": "642a486e7ada57d0e6bcebec89a7ffd66f75a5ebec1cc9e64df1c443711e5e65",
+      "processed_sha256": "d00189bae2737616fe0143444fe52366602d6fda16375077aad47891378961d3",
+      "raw_detection": {
+        "face": {
+          "present_frames": 81,
+          "total_frames": 100,
+          "present_ratio": 0.81,
+          "longest_present_frames": 27,
+          "longest_missing_frames": 10,
+          "runs": [
+            {
+              "present": true,
+              "start_frame": 0,
+              "frames": 11,
+              "sampled_coverage_seconds": 2.2,
+              "first_to_last_sample_seconds": 2.0
+            },
+            {
+              "present": false,
+              "start_frame": 11,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 12,
+              "frames": 9,
+              "sampled_coverage_seconds": 1.8,
+              "first_to_last_sample_seconds": 1.6
+            },
+            {
+              "present": false,
+              "start_frame": 21,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 22,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 23,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 24,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 25,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 26,
+              "frames": 4,
+              "sampled_coverage_seconds": 0.8,
+              "first_to_last_sample_seconds": 0.6
+            },
+            {
+              "present": false,
+              "start_frame": 30,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 31,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 32,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 33,
+              "frames": 6,
+              "sampled_coverage_seconds": 1.2,
+              "first_to_last_sample_seconds": 1.0
+            },
+            {
+              "present": false,
+              "start_frame": 39,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 40,
+              "frames": 12,
+              "sampled_coverage_seconds": 2.4,
+              "first_to_last_sample_seconds": 2.2
+            },
+            {
+              "present": false,
+              "start_frame": 52,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 53,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": false,
+              "start_frame": 56,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 57,
+              "frames": 6,
+              "sampled_coverage_seconds": 1.2,
+              "first_to_last_sample_seconds": 1.0
+            },
+            {
+              "present": false,
+              "start_frame": 63,
+              "frames": 10,
+              "sampled_coverage_seconds": 2.0,
+              "first_to_last_sample_seconds": 1.8
+            },
+            {
+              "present": true,
+              "start_frame": 73,
+              "frames": 27,
+              "sampled_coverage_seconds": 5.4,
+              "first_to_last_sample_seconds": 5.2
+            }
+          ]
+        },
+        "any_hand": {
+          "present_frames": 90,
+          "total_frames": 100,
+          "present_ratio": 0.9,
+          "longest_present_frames": 44,
+          "longest_missing_frames": 3,
+          "runs": [
+            {
+              "present": true,
+              "start_frame": 0,
+              "frames": 11,
+              "sampled_coverage_seconds": 2.2,
+              "first_to_last_sample_seconds": 2.0
+            },
+            {
+              "present": false,
+              "start_frame": 11,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 12,
+              "frames": 4,
+              "sampled_coverage_seconds": 0.8,
+              "first_to_last_sample_seconds": 0.6
+            },
+            {
+              "present": false,
+              "start_frame": 16,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": true,
+              "start_frame": 19,
+              "frames": 5,
+              "sampled_coverage_seconds": 1.0,
+              "first_to_last_sample_seconds": 0.8
+            },
+            {
+              "present": false,
+              "start_frame": 24,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 25,
+              "frames": 6,
+              "sampled_coverage_seconds": 1.2,
+              "first_to_last_sample_seconds": 1.0
+            },
+            {
+              "present": false,
+              "start_frame": 31,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 32,
+              "frames": 44,
+              "sampled_coverage_seconds": 8.8,
+              "first_to_last_sample_seconds": 8.6
+            },
+            {
+              "present": false,
+              "start_frame": 76,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 77,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 78,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 79,
+              "frames": 5,
+              "sampled_coverage_seconds": 1.0,
+              "first_to_last_sample_seconds": 0.8
+            },
+            {
+              "present": false,
+              "start_frame": 84,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 85,
+              "frames": 10,
+              "sampled_coverage_seconds": 2.0,
+              "first_to_last_sample_seconds": 1.8
+            },
+            {
+              "present": false,
+              "start_frame": 95,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 96,
+              "frames": 4,
+              "sampled_coverage_seconds": 0.8,
+              "first_to_last_sample_seconds": 0.6
+            }
+          ]
+        },
+        "two_hands": {
+          "present_frames": 31,
+          "total_frames": 100,
+          "present_ratio": 0.31,
+          "longest_present_frames": 9,
+          "longest_missing_frames": 24,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": true,
+              "start_frame": 2,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": false,
+              "start_frame": 4,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": true,
+              "start_frame": 7,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": false,
+              "start_frame": 10,
+              "frames": 13,
+              "sampled_coverage_seconds": 2.6,
+              "first_to_last_sample_seconds": 2.4
+            },
+            {
+              "present": true,
+              "start_frame": 23,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 24,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 25,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": false,
+              "start_frame": 27,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 28,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": false,
+              "start_frame": 30,
+              "frames": 9,
+              "sampled_coverage_seconds": 1.8,
+              "first_to_last_sample_seconds": 1.6
+            },
+            {
+              "present": true,
+              "start_frame": 39,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": false,
+              "start_frame": 41,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 42,
+              "frames": 9,
+              "sampled_coverage_seconds": 1.8,
+              "first_to_last_sample_seconds": 1.6
+            },
+            {
+              "present": false,
+              "start_frame": 51,
+              "frames": 5,
+              "sampled_coverage_seconds": 1.0,
+              "first_to_last_sample_seconds": 0.8
+            },
+            {
+              "present": true,
+              "start_frame": 56,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": false,
+              "start_frame": 58,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 59,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 60,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": true,
+              "start_frame": 62,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 63,
+              "frames": 6,
+              "sampled_coverage_seconds": 1.2,
+              "first_to_last_sample_seconds": 1.0
+            },
+            {
+              "present": true,
+              "start_frame": 69,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 70,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 71,
+              "frames": 5,
+              "sampled_coverage_seconds": 1.0,
+              "first_to_last_sample_seconds": 0.8
+            },
+            {
+              "present": false,
+              "start_frame": 76,
+              "frames": 24,
+              "sampled_coverage_seconds": 4.8,
+              "first_to_last_sample_seconds": 4.6
+            }
+          ]
+        },
+        "face_and_any_hand": {
+          "present_frames": 72,
+          "total_frames": 100,
+          "present_ratio": 0.72,
+          "longest_present_frames": 12,
+          "longest_missing_frames": 10,
+          "runs": [
+            {
+              "present": true,
+              "start_frame": 0,
+              "frames": 11,
+              "sampled_coverage_seconds": 2.2,
+              "first_to_last_sample_seconds": 2.0
+            },
+            {
+              "present": false,
+              "start_frame": 11,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 12,
+              "frames": 4,
+              "sampled_coverage_seconds": 0.8,
+              "first_to_last_sample_seconds": 0.6
+            },
+            {
+              "present": false,
+              "start_frame": 16,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": true,
+              "start_frame": 19,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": false,
+              "start_frame": 21,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 22,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 23,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": true,
+              "start_frame": 26,
+              "frames": 4,
+              "sampled_coverage_seconds": 0.8,
+              "first_to_last_sample_seconds": 0.6
+            },
+            {
+              "present": false,
+              "start_frame": 30,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": true,
+              "start_frame": 33,
+              "frames": 6,
+              "sampled_coverage_seconds": 1.2,
+              "first_to_last_sample_seconds": 1.0
+            },
+            {
+              "present": false,
+              "start_frame": 39,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 40,
+              "frames": 12,
+              "sampled_coverage_seconds": 2.4,
+              "first_to_last_sample_seconds": 2.2
+            },
+            {
+              "present": false,
+              "start_frame": 52,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 53,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": false,
+              "start_frame": 56,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 57,
+              "frames": 6,
+              "sampled_coverage_seconds": 1.2,
+              "first_to_last_sample_seconds": 1.0
+            },
+            {
+              "present": false,
+              "start_frame": 63,
+              "frames": 10,
+              "sampled_coverage_seconds": 2.0,
+              "first_to_last_sample_seconds": 1.8
+            },
+            {
+              "present": true,
+              "start_frame": 73,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": false,
+              "start_frame": 76,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 77,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 78,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 79,
+              "frames": 5,
+              "sampled_coverage_seconds": 1.0,
+              "first_to_last_sample_seconds": 0.8
+            },
+            {
+              "present": false,
+              "start_frame": 84,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 85,
+              "frames": 10,
+              "sampled_coverage_seconds": 2.0,
+              "first_to_last_sample_seconds": 1.8
+            },
+            {
+              "present": false,
+              "start_frame": 95,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 96,
+              "frames": 4,
+              "sampled_coverage_seconds": 0.8,
+              "first_to_last_sample_seconds": 0.6
+            }
+          ]
+        }
+      },
+      "valid_features": {
+        "face": {
+          "present_frames": 81,
+          "total_frames": 100,
+          "present_ratio": 0.81,
+          "longest_present_frames": 27,
+          "longest_missing_frames": 10,
+          "runs": [
+            {
+              "present": true,
+              "start_frame": 0,
+              "frames": 11,
+              "sampled_coverage_seconds": 2.2,
+              "first_to_last_sample_seconds": 2.0
+            },
+            {
+              "present": false,
+              "start_frame": 11,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 12,
+              "frames": 9,
+              "sampled_coverage_seconds": 1.8,
+              "first_to_last_sample_seconds": 1.6
+            },
+            {
+              "present": false,
+              "start_frame": 21,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 22,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 23,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 24,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 25,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 26,
+              "frames": 4,
+              "sampled_coverage_seconds": 0.8,
+              "first_to_last_sample_seconds": 0.6
+            },
+            {
+              "present": false,
+              "start_frame": 30,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 31,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 32,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 33,
+              "frames": 6,
+              "sampled_coverage_seconds": 1.2,
+              "first_to_last_sample_seconds": 1.0
+            },
+            {
+              "present": false,
+              "start_frame": 39,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 40,
+              "frames": 12,
+              "sampled_coverage_seconds": 2.4,
+              "first_to_last_sample_seconds": 2.2
+            },
+            {
+              "present": false,
+              "start_frame": 52,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 53,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": false,
+              "start_frame": 56,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 57,
+              "frames": 6,
+              "sampled_coverage_seconds": 1.2,
+              "first_to_last_sample_seconds": 1.0
+            },
+            {
+              "present": false,
+              "start_frame": 63,
+              "frames": 10,
+              "sampled_coverage_seconds": 2.0,
+              "first_to_last_sample_seconds": 1.8
+            },
+            {
+              "present": true,
+              "start_frame": 73,
+              "frames": 27,
+              "sampled_coverage_seconds": 5.4,
+              "first_to_last_sample_seconds": 5.2
+            }
+          ]
+        },
+        "Left": {
+          "present_frames": 25,
+          "total_frames": 100,
+          "present_ratio": 0.25,
+          "longest_present_frames": 10,
+          "longest_missing_frames": 24,
+          "runs": [
+            {
+              "present": true,
+              "start_frame": 0,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": false,
+              "start_frame": 2,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 3,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": false,
+              "start_frame": 5,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": true,
+              "start_frame": 8,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": false,
+              "start_frame": 10,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": true,
+              "start_frame": 12,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 13,
+              "frames": 6,
+              "sampled_coverage_seconds": 1.2,
+              "first_to_last_sample_seconds": 1.0
+            },
+            {
+              "present": true,
+              "start_frame": 19,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": false,
+              "start_frame": 21,
+              "frames": 5,
+              "sampled_coverage_seconds": 1.0,
+              "first_to_last_sample_seconds": 0.8
+            },
+            {
+              "present": true,
+              "start_frame": 26,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 27,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": true,
+              "start_frame": 29,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 30,
+              "frames": 11,
+              "sampled_coverage_seconds": 2.2,
+              "first_to_last_sample_seconds": 2.0
+            },
+            {
+              "present": true,
+              "start_frame": 41,
+              "frames": 10,
+              "sampled_coverage_seconds": 2.0,
+              "first_to_last_sample_seconds": 1.8
+            },
+            {
+              "present": false,
+              "start_frame": 51,
+              "frames": 6,
+              "sampled_coverage_seconds": 1.2,
+              "first_to_last_sample_seconds": 1.0
+            },
+            {
+              "present": true,
+              "start_frame": 57,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 58,
+              "frames": 15,
+              "sampled_coverage_seconds": 3.0,
+              "first_to_last_sample_seconds": 2.8
+            },
+            {
+              "present": true,
+              "start_frame": 73,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": false,
+              "start_frame": 76,
+              "frames": 24,
+              "sampled_coverage_seconds": 4.8,
+              "first_to_last_sample_seconds": 4.6
+            }
+          ]
+        },
+        "Right": {
+          "present_frames": 55,
+          "total_frames": 100,
+          "present_ratio": 0.55,
+          "longest_present_frames": 10,
+          "longest_missing_frames": 11,
+          "runs": [
+            {
+              "present": false,
+              "start_frame": 0,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": true,
+              "start_frame": 3,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 4,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": true,
+              "start_frame": 6,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 7,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 8,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": false,
+              "start_frame": 10,
+              "frames": 4,
+              "sampled_coverage_seconds": 0.8,
+              "first_to_last_sample_seconds": 0.6
+            },
+            {
+              "present": true,
+              "start_frame": 14,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 15,
+              "frames": 7,
+              "sampled_coverage_seconds": 1.4,
+              "first_to_last_sample_seconds": 1.2
+            },
+            {
+              "present": true,
+              "start_frame": 22,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 23,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": true,
+              "start_frame": 26,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": false,
+              "start_frame": 28,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 29,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 30,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": true,
+              "start_frame": 33,
+              "frames": 6,
+              "sampled_coverage_seconds": 1.2,
+              "first_to_last_sample_seconds": 1.0
+            },
+            {
+              "present": false,
+              "start_frame": 39,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": true,
+              "start_frame": 42,
+              "frames": 10,
+              "sampled_coverage_seconds": 2.0,
+              "first_to_last_sample_seconds": 1.8
+            },
+            {
+              "present": false,
+              "start_frame": 52,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 53,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": false,
+              "start_frame": 56,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 57,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": false,
+              "start_frame": 59,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 60,
+              "frames": 2,
+              "sampled_coverage_seconds": 0.4,
+              "first_to_last_sample_seconds": 0.2
+            },
+            {
+              "present": false,
+              "start_frame": 62,
+              "frames": 11,
+              "sampled_coverage_seconds": 2.2,
+              "first_to_last_sample_seconds": 2.0
+            },
+            {
+              "present": true,
+              "start_frame": 73,
+              "frames": 3,
+              "sampled_coverage_seconds": 0.6,
+              "first_to_last_sample_seconds": 0.4
+            },
+            {
+              "present": false,
+              "start_frame": 76,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 77,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": false,
+              "start_frame": 78,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 79,
+              "frames": 5,
+              "sampled_coverage_seconds": 1.0,
+              "first_to_last_sample_seconds": 0.8
+            },
+            {
+              "present": false,
+              "start_frame": 84,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 85,
+              "frames": 10,
+              "sampled_coverage_seconds": 2.0,
+              "first_to_last_sample_seconds": 1.8
+            },
+            {
+              "present": false,
+              "start_frame": 95,
+              "frames": 1,
+              "sampled_coverage_seconds": 0.2,
+              "first_to_last_sample_seconds": 0.0
+            },
+            {
+              "present": true,
+              "start_frame": 96,
+              "frames": 4,
+              "sampled_coverage_seconds": 0.8,
+              "first_to_last_sample_seconds": 0.6
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "artifact_path": ".local-data/presentation-attitude/mit-continuity.json",
+  "validation": {
+    "tests_passed": 17,
+    "raw_preserved_frames": 700,
+    "maximum_normalization_roundtrip_error": 1.1102230246251565e-16,
+    "comparison_videos_verified": 7,
+    "comparison_video_frame_count_each": 100,
+    "visual_review": "7 extraction contact sheets and 5 preprocessing sheets (15 comparison frames); not full video viewing",
+    "attitude_labels": 0,
+    "classifier_trained": false
+  }
+}

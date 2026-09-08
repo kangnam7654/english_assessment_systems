@@ -1,0 +1,16 @@
+{
+  "purpose": "extraction_audit_not_attitude_labels",
+  "sample_fps": 5,
+  "intervals": [
+    {"id": "lecturer2_sweep", "file_name": "1944_Lecturer2_sweep.mp4", "start_seconds": 0, "duration_seconds": 1.1},
+    {"id": "politician1_fling", "file_name": "16_Politician1_fling.mp4", "start_seconds": 0, "duration_seconds": 0.41},
+    {"id": "lecturer1_pray", "file_name": "1618_Lecturer1_pray_forward.mp4", "start_seconds": 0, "duration_seconds": 1.766667},
+    {"id": "lecturer3_throw", "file_name": "2282_Lecturer3_throw.mp4", "start_seconds": 0, "duration_seconds": 1.17},
+    {"id": "lecture_05pct", "file_name": "3Educator_id2_politics_vid1.mp4", "start_seconds": 164, "duration_seconds": 10},
+    {"id": "lecture_20pct", "file_name": "3Educator_id2_politics_vid1.mp4", "start_seconds": 670, "duration_seconds": 10},
+    {"id": "lecture_40pct", "file_name": "3Educator_id2_politics_vid1.mp4", "start_seconds": 1345, "duration_seconds": 10},
+    {"id": "lecture_60pct", "file_name": "3Educator_id2_politics_vid1.mp4", "start_seconds": 2020, "duration_seconds": 10},
+    {"id": "lecture_80pct", "file_name": "3Educator_id2_politics_vid1.mp4", "start_seconds": 2695, "duration_seconds": 10},
+    {"id": "lecture_95pct", "file_name": "3Educator_id2_politics_vid1.mp4", "start_seconds": 3201, "duration_seconds": 10}
+  ]
+}

@@ -1,0 +1,363 @@
+{
+  "record_type": "downloaded_sample_inventory_not_training_dataset",
+  "verified_at": "2026-09-07",
+  "source_dataset_url": "https://osf.io/9zkfm/",
+  "downloaded_video_count": 7,
+  "final_labeled_video_count": 0,
+  "training_ready_count": 0,
+  "samples": [
+    {
+      "dataset": "GESRes",
+      "file_name": "1944_Lecturer2_sweep.mp4",
+      "source_url": "https://osf.io/download/6873f420ea2813775e2f9657/",
+      "local_path": ".local-data/presentation-attitude/gesres/1944_Lecturer2_sweep.mp4",
+      "bytes": 207982,
+      "sha256": "c7b557dd99f4395967c48029d9f0bb9c8fae8c2f59e38dc30a3056732ab46a87",
+      "duration_seconds": 1.1,
+      "video": {
+        "codec_type": "video",
+        "width": 640,
+        "height": 360,
+        "r_frame_rate": "30/1"
+      },
+      "review_method": "sampled_frames_only",
+      "mediapipe_checked": true,
+      "annotation_status": "unlabeled",
+      "final_label": null,
+      "training_eligible": false,
+      "split": null,
+      "mediapipe_audit": {
+        "sample_fps": 5,
+        "scope": "sampled_full_clip",
+        "intervals": [
+          {
+            "id": "lecturer2_sweep",
+            "start_seconds": 0,
+            "duration_seconds": 1.1,
+            "sampled_frames": 6
+          }
+        ],
+        "results": "presentation_attitude_assessment/docs/history/audit_results.json"
+      },
+      "source_video_id": "3Educator_id2_Politics_vid1",
+      "speaker_id": "Lecturer2",
+      "source_interval_seconds": [
+        1607,
+        1608.09
+      ],
+      "rights_review_status": "hold_source_id_mismatch",
+      "rights_review": "presentation_attitude_assessment/docs/data/data_access_review.md"
+    },
+    {
+      "dataset": "GESRes",
+      "file_name": "16_Politician1_fling.mp4",
+      "source_url": "https://osf.io/download/6873f07934ff5e454f70a549/",
+      "local_path": ".local-data/presentation-attitude/gesres/16_Politician1_fling.mp4",
+      "bytes": 62030,
+      "sha256": "90c43aa2e482dc57aaac23d1f660deb91ab65252cdc441ea1704df6049ea4bc0",
+      "duration_seconds": 0.41,
+      "video": {
+        "codec_type": "video",
+        "width": 640,
+        "height": 360,
+        "r_frame_rate": "30/1"
+      },
+      "review_method": "sampled_frames_only",
+      "mediapipe_checked": true,
+      "annotation_status": "unlabeled",
+      "final_label": null,
+      "training_eligible": false,
+      "split": null,
+      "mediapipe_audit": {
+        "sample_fps": 5,
+        "scope": "sampled_full_clip",
+        "intervals": [
+          {
+            "id": "politician1_fling",
+            "start_seconds": 0,
+            "duration_seconds": 0.41,
+            "sampled_frames": 2
+          }
+        ],
+        "results": "presentation_attitude_assessment/docs/history/audit_results.json"
+      },
+      "source_video_id": "1Politician_id1_AOC_vid1_speechCongress2019",
+      "speaker_id": "Politician1",
+      "source_interval_seconds": [
+        41.37,
+        41.78
+      ],
+      "rights_review_status": "distributor_declares_public_domain",
+      "rights_review": "presentation_attitude_assessment/docs/data/data_access_review.md"
+    },
+    {
+      "dataset": "GESRes",
+      "file_name": "1618_Lecturer1_pray_forward.mp4",
+      "source_url": "https://osf.io/download/6873f1ee266cb2ab383281dd/",
+      "local_path": ".local-data/presentation-attitude/gesres/1618_Lecturer1_pray_forward.mp4",
+      "bytes": 253240,
+      "sha256": "bfff4fe69bec47b432b7b02d779a1e8bd2c73db9db6d846e847a66ba05114de4",
+      "duration_seconds": 1.766667,
+      "video": {
+        "codec_type": "video",
+        "width": 640,
+        "height": 360,
+        "r_frame_rate": "30/1"
+      },
+      "review_method": "sampled_frames_only",
+      "mediapipe_checked": true,
+      "annotation_status": "unlabeled",
+      "final_label": null,
+      "training_eligible": false,
+      "split": null,
+      "mediapipe_audit": {
+        "sample_fps": 5,
+        "scope": "sampled_full_clip",
+        "intervals": [
+          {
+            "id": "lecturer1_pray",
+            "start_seconds": 0,
+            "duration_seconds": 1.766667,
+            "sampled_frames": 9
+          }
+        ],
+        "results": "presentation_attitude_assessment/docs/history/audit_results.json"
+      },
+      "source_video_id": "3Educator_id1_Psych_vid1",
+      "speaker_id": "Lecturer1",
+      "source_interval_seconds": [
+        874.86,
+        876.62
+      ],
+      "rights_review_status": "CC-BY-NC-SA-4.0",
+      "rights_review": "presentation_attitude_assessment/docs/data/data_access_review.md"
+    },
+    {
+      "dataset": "GESRes",
+      "file_name": "2282_Lecturer3_throw.mp4",
+      "source_url": "https://osf.io/download/6873f660ea2813775e2f96b8/",
+      "local_path": ".local-data/presentation-attitude/gesres/2282_Lecturer3_throw.mp4",
+      "bytes": 368923,
+      "sha256": "27cc8f026003cd8c4cc5f4380a1ad5a2f09b07b4c5fd56612ffc77052b3c75cd",
+      "duration_seconds": 1.17,
+      "video": {
+        "codec_type": "video",
+        "width": 640,
+        "height": 360,
+        "r_frame_rate": "30/1"
+      },
+      "review_method": "sampled_frames_only",
+      "mediapipe_checked": true,
+      "annotation_status": "unlabeled",
+      "final_label": null,
+      "training_eligible": false,
+      "split": null,
+      "mediapipe_audit": {
+        "sample_fps": 5,
+        "scope": "sampled_full_clip",
+        "intervals": [
+          {
+            "id": "lecturer3_throw",
+            "start_seconds": 0,
+            "duration_seconds": 1.17,
+            "sampled_frames": 6
+          }
+        ],
+        "results": "presentation_attitude_assessment/docs/history/audit_results.json"
+      },
+      "source_video_id": "3Educator_id3_law",
+      "speaker_id": "Lecturer3",
+      "source_interval_seconds": [
+        1099.96,
+        1101.13
+      ],
+      "rights_review_status": "hold_source_id_mismatch",
+      "rights_review": "presentation_attitude_assessment/docs/data/data_access_review.md"
+    },
+    {
+      "dataset": "GESRes",
+      "file_name": "3Educator_id2_politics_vid1.mp4",
+      "source_url": "https://osf.io/download/kvd54/",
+      "local_path": ".local-data/presentation-attitude/gesres/3Educator_id2_politics_vid1.mp4",
+      "bytes": 100428822,
+      "sha256": "3a460a64127801ba34f14a80c0128a0a98434ff4ecc089ce8d2bb07164742e9b",
+      "duration_seconds": 3374.904867,
+      "video": {
+        "codec_type": "video",
+        "width": 640,
+        "height": 360,
+        "r_frame_rate": "30000/1001"
+      },
+      "review_method": "sampled_frames_only",
+      "mediapipe_checked": true,
+      "annotation_status": "unlabeled",
+      "final_label": null,
+      "training_eligible": false,
+      "split": null,
+      "mediapipe_audit": {
+        "sample_fps": 5,
+        "scope": "six_10_second_intervals_only",
+        "intervals": [
+          {
+            "id": "lecture_05pct",
+            "start_seconds": 164,
+            "duration_seconds": 10,
+            "sampled_frames": 50
+          },
+          {
+            "id": "lecture_20pct",
+            "start_seconds": 670,
+            "duration_seconds": 10,
+            "sampled_frames": 50
+          },
+          {
+            "id": "lecture_40pct",
+            "start_seconds": 1345,
+            "duration_seconds": 10,
+            "sampled_frames": 50
+          },
+          {
+            "id": "lecture_60pct",
+            "start_seconds": 2020,
+            "duration_seconds": 10,
+            "sampled_frames": 50
+          },
+          {
+            "id": "lecture_80pct",
+            "start_seconds": 2695,
+            "duration_seconds": 10,
+            "sampled_frames": 50
+          },
+          {
+            "id": "lecture_95pct",
+            "start_seconds": 3201,
+            "duration_seconds": 10,
+            "sampled_frames": 50
+          }
+        ],
+        "results": "presentation_attitude_assessment/docs/history/audit_results.json"
+      },
+      "source_video_id": "3Educator_id2_Politics_vid1",
+      "speaker_id": "Lecturer2",
+      "source_interval_seconds": null,
+      "rights_review_status": "hold_source_id_mismatch",
+      "rights_review": "presentation_attitude_assessment/docs/data/data_access_review.md"
+    },
+    {
+      "dataset": "GESRes",
+      "file_name": "3Educator_id1_psych_vid1.mp4",
+      "source_url": "https://osf.io/download/pae7w/",
+      "local_path": ".local-data/presentation-attitude/gesres/3Educator_id1_psych_vid1.mp4",
+      "bytes": 112385636,
+      "sha256": "128f2c5f85f3e0a23273e124f787530f4aba48a7e787e52969bfba4fefa823b9",
+      "duration_seconds": 2983.949932,
+      "video": {
+        "codec_type": "video",
+        "width": 640,
+        "height": 360,
+        "r_frame_rate": "30000/1001"
+      },
+      "review_method": "seven_continuous_sampled_intervals_and_selected_visual_frames",
+      "mediapipe_checked": true,
+      "annotation_status": "unlabeled",
+      "final_label": null,
+      "training_eligible": false,
+      "split": null,
+      "download_verification": {
+        "http_status": 200,
+        "osf_md5": "2dabe2017a770aaaae07d52e72a5376c",
+        "md5_matches": true,
+        "ffprobe_succeeded": true
+      },
+      "source_video_id": "3Educator_id1_Psych_vid1",
+      "speaker_id": "Lecturer1",
+      "source_interval_seconds": null,
+      "rights_review_status": "CC-BY-NC-SA-4.0",
+      "rights_review": "presentation_attitude_assessment/docs/data/data_access_review.md",
+      "mediapipe_audit": {
+        "sample_fps": 5,
+        "scope": "six_fixed_20_second_intervals_plus_one_known_gesture_20_second_interval",
+        "intervals": [
+          {
+            "id": "mit_05pct",
+            "start_seconds": 139,
+            "duration_seconds": 20,
+            "sampled_frames": 100
+          },
+          {
+            "id": "mit_20pct",
+            "start_seconds": 587,
+            "duration_seconds": 20,
+            "sampled_frames": 100
+          },
+          {
+            "id": "mit_40pct",
+            "start_seconds": 1184,
+            "duration_seconds": 20,
+            "sampled_frames": 100
+          },
+          {
+            "id": "mit_60pct",
+            "start_seconds": 1780,
+            "duration_seconds": 20,
+            "sampled_frames": 100
+          },
+          {
+            "id": "mit_80pct",
+            "start_seconds": 2377,
+            "duration_seconds": 20,
+            "sampled_frames": 100
+          },
+          {
+            "id": "mit_95pct",
+            "start_seconds": 2825,
+            "duration_seconds": 20,
+            "sampled_frames": 100
+          },
+          {
+            "id": "mit_known_gesture",
+            "start_seconds": 865,
+            "duration_seconds": 20,
+            "sampled_frames": 100
+          }
+        ],
+        "results": "presentation_attitude_assessment/docs/history/mit_audit_results.json"
+      },
+      "quality_review_status": "extraction_diagnostics_only; slide edits, false positives, missed faces and hands; whole-video attitude training on hold"
+    },
+    {
+      "dataset": "GESRes",
+      "file_name": "1Politician_id1_AOC_vid1_speechCongress2019.mp4",
+      "source_url": "https://osf.io/download/ybz85/",
+      "local_path": ".local-data/presentation-attitude/gesres/1Politician_id1_AOC_vid1_speechCongress2019.mp4",
+      "bytes": 8393532,
+      "sha256": "cac2ac82626be0381ec4148d862b79802b74cb51be7dd32c180812dadf1057e3",
+      "duration_seconds": 263.299667,
+      "video": {
+        "codec_type": "video",
+        "width": 640,
+        "height": 360,
+        "r_frame_rate": "24000/1001"
+      },
+      "review_method": "single_source_match_frame_only",
+      "mediapipe_checked": false,
+      "annotation_status": "unlabeled",
+      "final_label": null,
+      "training_eligible": false,
+      "split": null,
+      "download_verification": {
+        "http_status": 200,
+        "osf_md5": "d8ebc94490e50dd149b1323f05bf38e8",
+        "md5_matches": true,
+        "ffprobe_succeeded": true
+      },
+      "source_video_id": "1Politician_id1_AOC_vid1_speechCongress2019",
+      "speaker_id": "Politician1",
+      "source_interval_seconds": null,
+      "rights_review_status": "distributor_declares_public_domain",
+      "rights_review": "presentation_attitude_assessment/docs/data/data_access_review.md"
+    }
+  ],
+  "independent_source_recording_count": 4,
+  "speaker_count": 4
+}

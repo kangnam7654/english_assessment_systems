@@ -1,0 +1,11 @@
+{
+  "purpose": "python_reusability_refactor_regression",
+  "training_history_identical": true,
+  "checkpoint_tensors_identical": true,
+  "real_full_clip_sequence_identical_frames": 9,
+  "mit_preprocessing_identical_frames": 700,
+  "manifest_and_schema_import_without_ml_runtimes": true,
+  "optimization_performed": false,
+  "source_changes": "shared schema and IO; independent manifest validation; extracted epoch runner; consistent formatting",
+  "verification_directory": ".local-data/python-refactor-check"
+}

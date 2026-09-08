@@ -1,0 +1,17 @@
+[project]
+name = "writing-data-synthesis"
+version = "0.1.0"
+description = "LangGraph-based English essay synthesis and rubric assessment"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "fastapi>=0.121.2",
+    "langchain-core>=1.0.3",
+    "langchain-ollama>=1.0.0",
+    "langgraph>=1.0.2",
+    "pyyaml>=6.0.3",
+    "uvicorn>=0.38.0",
+]
+
+[tool.uv]
+package = false

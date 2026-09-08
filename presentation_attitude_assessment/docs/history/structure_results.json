@@ -1,0 +1,39 @@
+{
+  "purpose": "package_restructure_regression_check",
+  "python": "3.13.15",
+  "tests": {
+    "presentation_unit": 18,
+    "presentation_integration": 7,
+    "writing_integration_stub_llm": 4
+  },
+  "reference": ".local-data/python313-upgrade",
+  "current": ".local-data/presentation-structure-check",
+  "intervals": [
+    {
+      "interval": "lecturer1_pray",
+      "frames": 9,
+      "raw_byte_identical": true,
+      "preprocessed_byte_identical": true,
+      "raw_sha256": "5299180885a25f1bddd17984be49bec1242163fc9bc26ead86f76fc3f92efaaa",
+      "preprocessed_sha256": "f927c7323c5c1d81bfa14ed8ce018a025060c390da367b95de6b5cc75e1e14b8",
+      "comparison_video": {
+        "width": 1280,
+        "height": 420,
+        "nb_frames": "9"
+      }
+    },
+    {
+      "interval": "mit_60pct",
+      "frames": 100,
+      "raw_byte_identical": true,
+      "preprocessed_byte_identical": true,
+      "raw_sha256": "bb7a5ff20a1fd7efe3e5ab9f0ada50fd8319a8d919026efdca71a42a9a43cb1a",
+      "preprocessed_sha256": "ed2cfe448e5b0352f925783be10eabebb2876dfed8eb83c211a4ec2d8eb4e0a3",
+      "comparison_video": {
+        "width": 1280,
+        "height": 420,
+        "nb_frames": "100"
+      }
+    }
+  ]
+}

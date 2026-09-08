@@ -1,0 +1,56 @@
+{
+  "purpose": "whole_video_pipeline_verification_not_classification_evaluation",
+  "python": "3.13.15",
+  "tests": {
+    "vision": 32,
+    "writing_stub_llm": 4
+  },
+  "regression": {
+    "existing_mit_preprocessed_frames_byte_identical": 700,
+    "new_full_clip_frames_byte_identical": 9
+  },
+  "runs": [
+    {
+      "run": ".local-data/whole-video-check/short-full",
+      "source_file": "1618_Lecturer1_pray_forward.mp4",
+      "status": "complete",
+      "frames": 9,
+      "valid_frame_counts": {
+        "face": 7,
+        "Left": 2,
+        "Right": 6
+      },
+      "sequence_sha256": "f927c7323c5c1d81bfa14ed8ce018a025060c390da367b95de6b5cc75e1e14b8",
+      "summary_sha256": "36fdcbeb3ca81a28dd27c3f10c490a283751491232c3e16e69ed491212f43c12",
+      "last_sample_timestamp_ms": 1600
+    },
+    {
+      "run": ".local-data/whole-video-check/aoc-full",
+      "source_file": "1Politician_id1_AOC_vid1_speechCongress2019.mp4",
+      "status": "complete",
+      "frames": 1317,
+      "valid_frame_counts": {
+        "face": 1265,
+        "Left": 394,
+        "Right": 689
+      },
+      "sequence_sha256": "548b9800f0e7acf1f3eb6a3b5685d656a6be8da9a11742ed4bffac4584b7ecc1",
+      "summary_sha256": "746081b43341852dcfcfad0c63e1ba730bbe169c556b2f1da09250e5b296f790",
+      "last_sample_timestamp_ms": 263200
+    }
+  ],
+  "verified": [
+    "real_ffmpeg_and_mediapipe_full_video",
+    "finite_feature_shapes_and_masks",
+    "no_intermediate_frame_files",
+    "sequence_hash_and_frame_counts",
+    "partial_output_rejected_on_failure",
+    "required_lookahead_only"
+  ],
+  "not_verified": [
+    "classification_accuracy",
+    "RTX_5090_execution",
+    "multi_hour_memory_benchmark",
+    "human_attitude_labels"
+  ]
+}

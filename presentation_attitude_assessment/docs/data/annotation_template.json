@@ -1,0 +1,39 @@
+{
+  "record_type": "template_not_training_data",
+  "rubric_version": "draft-2026-09-07",
+  "video_id": null,
+  "source_url": null,
+  "source_video_id": null,
+  "speaker_id": null,
+  "source_kind": null,
+  "presentation_context": null,
+  "interval_seconds": {"start": null, "end": null},
+  "whole_interval_reviewed": false,
+  "eligibility": {"status": "not_reviewed", "reason": null},
+  "rights_review": {"status": "not_reviewed", "evidence_url": null},
+  "observations": {
+    "gaze": null,
+    "gestures": null,
+    "distracting_actions": null,
+    "repeated_face_exits": null,
+    "face_visibility": {
+      "ratio": null,
+      "measurement_method": null,
+      "visible_frames": null,
+      "total_frames_in_interval": null,
+      "sample_fps": null
+    },
+    "face_detector_success_ratio": null,
+    "editing_or_camera_effects": null
+  },
+  "evidence_intervals": [],
+  "annotation_status": "unlabeled",
+  "proposed_label": null,
+  "final_label": null,
+  "rationale": null,
+  "uncertainty_reason": null,
+  "annotator_id": null,
+  "reviewer_id": null,
+  "reviewed_at": null,
+  "split": null
+}
