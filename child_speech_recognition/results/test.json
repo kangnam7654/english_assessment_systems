@@ -1,0 +1,19 @@
+{
+  "before": {
+    "step": 0,
+    "epoch": 0.0,
+    "wer": 0.14448198574917204,
+    "cer": 0.08139264663422603,
+    "count": 4567
+  },
+  "after": {
+    "step": 28314,
+    "epoch": 2.75,
+    "wer": 0.08496972535376175,
+    "cer": 0.04540749139102695,
+    "count": 4567
+  },
+  "wer_reduction_pp": 5.951226039541028,
+  "relative_wer_reduction_percent": 41.190090298680246,
+  "paired_records_verified": 4567
+}

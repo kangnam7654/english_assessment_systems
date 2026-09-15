@@ -1,0 +1,15 @@
+{
+  "steps": 30,
+  "warmup_excluded": 5,
+  "nemo_mean_step_seconds": 0.2254958234122023,
+  "transformers_mean_same_steps_seconds": 0.7396453246055171,
+  "speedup": 3.280084364371835,
+  "peak_allocated_gib": 10.05656909942627,
+  "bn_unchanged": 72,
+  "loss_backend": "RNNTLoss(\n  (_loss): TDTLossNumba()\n)",
+  "microbatch": 1,
+  "accumulation": 4,
+  "precision": "fp32",
+  "native_dropout_differences": true,
+  "weights_discarded": true
+}

@@ -99,3 +99,11 @@ PyTorch 2.14.0을 발표 태도 멤버에 추가하고 공통 lockfile과 `.venv
 기존 라이브러리 버전은 유지했다. CPU에서 테스트용 GRU 학습·재로딩과 비전 테스트 39개,
 데이터 합성 테스트 4개를 확인했다. CUDA/MPS 학습은 이번 검증에 포함하지 않았다.
 [GRU 학습 안내](../presentation_attitude_assessment/docs/guides/gru_training.md)를 참고한다.
+
+## ASR GPU training
+
+`child_speech_recognition` uses a separate Linux/CUDA NeMo environment, while the
+presentation and writing applications retain the shared Python 3.13 workspace.
+It is not a member of root `uv sync`: NeMo's GPU dependencies and NumPy constraints
+are isolated from the application dependency lock. See
+[the ASR experiment guide](../child_speech_recognition/EXPERIMENTS.md#run-the-code).

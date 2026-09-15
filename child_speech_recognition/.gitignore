@@ -1,0 +1,9 @@
+# Dataset audio, labels, per-record predictions and checkpoints stay private.
+*.wav
+*.flac
+*.mp3
+*.zip
+*.jsonl
+*.pt
+*.nemo
+*.safetensors

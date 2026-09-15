@@ -1,0 +1,37 @@
+{
+  "selection": "First three improved and first regressed examples in filename order; 5–12 reference words, <=8 seconds; one or two errors versus zero. Illustrative selection, not random sampling.",
+  "examples": [
+    {
+      "example": 1,
+      "outcome": "improved",
+      "before": "It was my favourite sandwich.",
+      "after": "It was my favorite sandwich.",
+      "before_word_errors": 1,
+      "after_word_errors": 0
+    },
+    {
+      "example": 2,
+      "outcome": "improved",
+      "before": "Also there are yummy pizza trees in it.",
+      "after": "Also, there are yummy pizza cheese in it.",
+      "before_word_errors": 1,
+      "after_word_errors": 0
+    },
+    {
+      "example": 3,
+      "outcome": "improved",
+      "before": "Grandpa's house is in Soul.",
+      "after": "Grandpa's house is in Seoul",
+      "before_word_errors": 1,
+      "after_word_errors": 0
+    },
+    {
+      "example": 4,
+      "outcome": "regressed",
+      "before": "And Grandpa read me a book.",
+      "after": "And grandpa reads me a book",
+      "before_word_errors": 0,
+      "after_word_errors": 1
+    }
+  ]
+}

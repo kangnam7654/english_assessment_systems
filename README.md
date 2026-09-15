@@ -2,10 +2,10 @@
 
 [한국어](README.ko.md)
 
-**Assessment workflows, from presentation video to English writing.**
+**Assessment workflows, from presentation video to writing and speech.**
 
 A portfolio monorepo rebuilding work from Creverse. Each project can be explored
-independently and shares one Python environment. Company code, private datasets
+independently with shared application dependencies and a separate CUDA training environment. Company code, private datasets
 and trained weights are not included.
 
 ## Projects
@@ -28,6 +28,17 @@ a rubric through a LangGraph workflow. Includes an API and a Next.js demo.
 
 Outputs are candidate synthetic examples; human review and batch dataset export remain future work.
 
+### [Child Speech Recognition →](child_speech_recognition/README.md)
+
+Fine-tune Parakeet for Korean children's English speech. Fixed Test WER improved
+from **14.45% to 8.50%** with native NeMo training. Includes experiment results,
+before/after transcripts and a private listening-example builder.
+
+**NVIDIA NeMo · Parakeet TDT · PyTorch · AI Hub**
+
+Results describe this reconstruction, not the historical company system.
+Audio, reference labels and checkpoints are not redistributed.
+
 ## Get started
 
 From the repository root:
@@ -36,7 +47,7 @@ From the repository root:
 uv sync --locked
 ```
 
-Both projects use **Python 3.13** and the root `uv.lock`.
+The presentation and writing projects use **Python 3.13** and the root `uv.lock`.
 Open a project above for its run commands.
 
 [Python setup and dependencies](docs/python_environment.md) ·

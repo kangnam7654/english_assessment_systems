@@ -1,0 +1,36 @@
+{
+  "model": "nvidia/parakeet-tdt-0.6b-v2",
+  "revision": "ae9ad07059c7c739ffaf932226a8fe64ae2620b0",
+  "framework": "nemo_toolkit 3.0.0 native model and TDTLossNumba; custom PyTorch loop",
+  "epochs": 3,
+  "steps": 30888,
+  "train_records": 41183,
+  "microbatch": 1,
+  "accumulation": 4,
+  "lr": 1e-05,
+  "optimizer": "AdamW",
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "eps": 1e-08,
+  "weight_decay": 0,
+  "clip": 1,
+  "precision": "fp32",
+  "bn_running_stats": "frozen",
+  "specaugment": false,
+  "dither": 0,
+  "sigma": 0,
+  "omega": 0,
+  "loss_reduction": "mean",
+  "dropout": "native NeMo configuration; differs from Transformers port",
+  "selection": "minimum Validation WER, quarter epoch; includes pretrained",
+  "test_used": false,
+  "goal_wer": 0.1,
+  "manifest_hashes": {
+    "train": "1c2f8b378c8bc42bc9061fcde18f530cf64e2f7104cb7bd67c1514166adbba10",
+    "validation": "c8810edc1fd45742d1eab0ffb5ed26eb2b958ef9151882c78eb063dd557fa620",
+    "test": "c7adf957b0a98c9a982b31ac4bd0a846e940bb9c966babe6150e483da733870b"
+  },
+  "note": "test_used refers to model selection; a separate final Test evaluation followed."
+}
