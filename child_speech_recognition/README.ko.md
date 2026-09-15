@@ -64,7 +64,8 @@ python3 child_speech_recognition/scripts/build_examples.py \
 [speechocean762 아동 음성 5개](samples/speechocean762/README.md)를 공개했습니다.
 중국어가 모국어인 6~10세 아동의 WAV, 로컬 재생 페이지, 제공 문장과 CC BY 4.0
 출처 표기를 함께 넣었습니다. 위 AI Hub Test 결과와 별개의 외부 데모이며,
-이 샘플에 대한 학습 전후 추론 결과는 아직 포함하지 않았습니다.
+5개에서 단어 오류는 8 → 9개로 늘었습니다(WER 28.57% → 32.14%).
+개선·악화 사례를 포함한 모든 학습 전후 전사를 확인할 수 있습니다.
 
 ## 처리 흐름
 

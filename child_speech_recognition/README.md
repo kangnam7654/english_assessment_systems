@@ -64,7 +64,8 @@ it embeds the original audio. Access to the dataset and local prediction files i
 Listen to [five speechocean762 child recordings](samples/speechocean762/README.md)
 (ages 6–10, Mandarin first language). WAV files, a local browser player, references,
 and CC BY 4.0 attribution are included. These external demo samples are separate
-from the AI Hub Test results above; before/after inference is not yet included.
+from the AI Hub Test results above. On these five recordings, word errors increased
+from 8 to 9 (WER 28.57% → 32.14%); all paired outputs are included.
 
 ## Pipeline
 
