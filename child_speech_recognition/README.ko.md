@@ -43,7 +43,7 @@ Test 녹음에 대한 실제 모델 출력입니다.
 
 **음성은 로컬에서 직접 들어볼 수 있습니다.**
 AI Hub [공식 FAQ](https://www.aihub.or.kr/aihubnews/faq/list.do)는 연구 결과물의 공유와
-원본 데이터 재배포를 구분합니다. 따라서 공개 저장소에는 원본 음성·정답 라벨 파일을 넣지 않고,
+원본 데이터 재배포를 구분합니다. 따라서 공개 저장소에는 AI Hub 원본 음성·정답 라벨 파일을 넣지 않고,
 승인받아 보유한 데이터를 이용해 오디오·정답·전사 결과가 담긴 HTML 페이지를 만듭니다.
 
 ```sh
@@ -58,6 +58,13 @@ python3 child_speech_recognition/scripts/build_examples.py \
 생성된 `.local-data/asr-listening/index.html`을 브라우저에서 열면 됩니다.
 페이지 안에 원본 음성이 포함되므로 HTML도 공개 업로드하지 않습니다.
 데이터 접근 권한과 로컬 평가 출력 파일이 필요합니다.
+
+## 공개 음성 샘플
+
+[speechocean762 아동 음성 5개](samples/speechocean762/README.md)를 공개했습니다.
+중국어가 모국어인 6~10세 아동의 WAV, 로컬 재생 페이지, 제공 문장과 CC BY 4.0
+출처 표기를 함께 넣었습니다. 위 AI Hub Test 결과와 별개의 외부 데모이며,
+이 샘플에 대한 학습 전후 추론 결과는 아직 포함하지 않았습니다.
 
 ## 처리 흐름
 

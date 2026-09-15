@@ -44,7 +44,7 @@ labels, not newly adjudicated transcripts. [Selection rule and outputs](results/
 **Listen locally:** the [example builder](scripts/build_examples.py) creates an HTML
 page containing those recordings, references and predictions. AI Hub's
 [FAQ](https://www.aihub.or.kr/aihubnews/faq/list.do) permits sharing research outputs
-but restricts redistribution of source data. Audio and reference-label files are
+but restricts redistribution of source data. AI Hub audio and reference-label files are
 therefore excluded from this repository.
 
 ```sh
@@ -58,6 +58,13 @@ python3 child_speech_recognition/scripts/build_examples.py \
 
 Open `.local-data/asr-listening/index.html` locally. Do not upload the generated page:
 it embeds the original audio. Access to the dataset and local prediction files is required.
+
+## Public audio samples
+
+Listen to [five speechocean762 child recordings](samples/speechocean762/README.md)
+(ages 6–10, Mandarin first language). WAV files, a local browser player, references,
+and CC BY 4.0 attribution are included. These external demo samples are separate
+from the AI Hub Test results above; before/after inference is not yet included.
 
 ## Pipeline
 
