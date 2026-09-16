@@ -1,6 +1,6 @@
 # Experiment record
 
-[English overview](README.md) · [한국어 개요](README.ko.md)
+[English overview](README.md) · [한국어 개요](README.md)
 
 ## Data and selection
 
