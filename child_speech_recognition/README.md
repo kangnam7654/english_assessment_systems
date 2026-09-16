@@ -41,11 +41,18 @@ these examples are not a random sample. The first is a spelling-convention chang
 not proof of better acoustic recognition. Reference labels are supplied dataset
 labels, not newly adjudicated transcripts. [Selection rule and outputs](results/examples.json)
 
+## Listen with authorized data
+
 **Listen locally:** the [example builder](scripts/build_examples.py) creates an HTML
 page containing those recordings, references and predictions. AI Hub's
 [FAQ](https://www.aihub.or.kr/aihubnews/faq/list.do) permits sharing research outputs
 but restricts redistribution of source data. AI Hub audio and reference-label files are
 therefore excluded from this repository.
+
+<details>
+<summary>Build the local listening examples</summary>
+
+Run from the repository root with authorized AI Hub audio and the paired prediction files.
 
 ```sh
 python3 child_speech_recognition/scripts/build_examples.py \
@@ -58,14 +65,10 @@ python3 child_speech_recognition/scripts/build_examples.py \
 
 Open `.local-data/asr-listening/index.html` locally. Do not upload the generated page:
 it embeds the original audio. Access to the dataset and local prediction files is required.
+The prediction files and trained checkpoint are not bundled, so the public repository
+alone cannot regenerate these exact listening examples.
 
-## Public audio samples
-
-Listen to [five speechocean762 child recordings](samples/speechocean762/README.md)
-(ages 6–10, Mandarin first language). WAV files, a local browser player, references,
-and CC BY 4.0 attribution are included. These external demo samples are separate
-from the AI Hub Test results above. On these five recordings, word errors increased
-from 8 to 9 (WER 28.57% → 32.14%); all paired outputs are included.
+</details>
 
 ## Pipeline
 
@@ -106,3 +109,14 @@ establish performance for every child, accent or classroom.
 
 Source: [AI Hub dataset](https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=541) ·
 [Parakeet model and license](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2)
+
+## Supplementary experiments
+
+The final model remains the Korean-adapted checkpoint reported above. Additional
+speechocean762 experiments tested transfer to Mandarin-speaking children; mixed
+adaptation did not meet our Korean Validation protection criterion. Further
+adaptation is paused.
+
+- [External evaluation and mixed adaptation](EXTERNAL_EVALUATION.md)
+- [Public audio demos](samples/speechocean762/README.md): a separate dataset, not the Korean Test recordings
+- [Label audit](LABEL_AUDIT.md) and [Whisper-label experiment](WHISPER_LABELS.md): machine-generated references, separate from the main results

@@ -1,0 +1,14 @@
+{
+  "paired_records": 1280,
+  "same_new_references_and_audio": true,
+  "old_hypotheses_rescored_on_whisper_labels": {
+    "pretrained": {
+      "wer": 0.25030961882482455,
+      "note": "Same old predictions; only references changed."
+    },
+    "korean-adapted": {
+      "wer": 0.25622677858813814,
+      "note": "Same old predictions; only references changed."
+    }
+  }
+}

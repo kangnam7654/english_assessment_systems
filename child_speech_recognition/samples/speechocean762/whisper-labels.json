@@ -1,0 +1,37 @@
+{
+  "label_version": "whisper-v1",
+  "human_adjudicated": false,
+  "existing_metrics_reference": "Original references are unchanged for all prior scores. No WER recomputed here.",
+  "samples": [
+    {
+      "id": "000030012",
+      "original_text": "MARK IS GOING TO SEE ELEPHANT",
+      "whisper_text": "Mark is going to see elephant.",
+      "audio_sha256": "02cf77504d9523c05edf7f777b742c5580f59d8c028e16b7b07b1d7184007579"
+    },
+    {
+      "id": "000490017",
+      "original_text": "DORA CAN SEE THE SHEEP",
+      "whisper_text": "Bro can see the sheep",
+      "audio_sha256": "af632892f520c0d83cc098a292e8348c5e4b12c1fd58e192169d33097fb72063"
+    },
+    {
+      "id": "010500012",
+      "original_text": "JAYME CAN PAINT THE PIG",
+      "whisper_text": "Jeremy can paint the pig.",
+      "audio_sha256": "2ff2f9b314e4f8a6f7c1a497a94fd302d64d9bee532c73c873148ed03eca7a01"
+    },
+    {
+      "id": "020140004",
+      "original_text": "JAYME CAN DRAW THE WAR",
+      "whisper_text": "Jamie can draw the world",
+      "audio_sha256": "e206eed3640ae4816d2ca02e234e059b86a3cc8852b7a7e83a4603f1ef4e717e"
+    },
+    {
+      "id": "030070015",
+      "original_text": "IS THERE A GOOD PLACE AT TABLE",
+      "whisper_text": "Is there a good place at table?",
+      "audio_sha256": "55242bd0bcd66e168c292d61a8924fae33b020c51442fd39ecfc767184356cef"
+    }
+  ]
+}

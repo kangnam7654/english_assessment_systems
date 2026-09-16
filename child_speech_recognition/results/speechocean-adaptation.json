@@ -1,0 +1,100 @@
+{
+  "selected_epoch": 0,
+  "validation": [
+    {
+      "epoch": 0,
+      "korean": {
+        "count": 5178,
+        "wer": 0.10777128275125367,
+        "cer": 0.06002070954858115
+      },
+      "ocean": {
+        "count": 260,
+        "wer": 0.19700214132762311,
+        "cer": 0.11423250038801801,
+        "word_errors": 276,
+        "reference_words": 1401
+      },
+      "mean_wer": 0.15238671203943838,
+      "eligible": true
+    },
+    {
+      "epoch": 1,
+      "korean": {
+        "count": 5178,
+        "wer": 0.11242989822260467,
+        "cer": 0.0623135524272084
+      },
+      "ocean": {
+        "count": 260,
+        "wer": 0.198429693076374,
+        "cer": 0.0870712401055409,
+        "word_errors": 278,
+        "reference_words": 1401
+      },
+      "mean_wer": 0.15542979564948933,
+      "eligible": true
+    },
+    {
+      "epoch": 2,
+      "korean": {
+        "count": 5178,
+        "wer": 0.11329040681285422,
+        "cer": 0.06258474889672345
+      },
+      "ocean": {
+        "count": 260,
+        "wer": 0.1827266238401142,
+        "cer": 0.08163898804904547,
+        "word_errors": 256,
+        "reference_words": 1401
+      },
+      "mean_wer": 0.1480085153264842,
+      "eligible": false
+    },
+    {
+      "epoch": 3,
+      "korean": {
+        "count": 5178,
+        "wer": 0.11421026082312098,
+        "cer": 0.0630161978254974
+      },
+      "ocean": {
+        "count": 260,
+        "wer": 0.16630977872947894,
+        "cer": 0.07512028558125097,
+        "word_errors": 233,
+        "reference_words": 1401
+      },
+      "mean_wer": 0.14026001977629995,
+      "eligible": false
+    }
+  ],
+  "korean_test": {
+    "count": 4567,
+    "wer": 0.08493627270598468,
+    "cer": 0.045463828228981075
+  },
+  "ocean_test": {
+    "count": 1280,
+    "wer": 0.24015964767409853,
+    "cer": 0.147220357600537,
+    "word_errors": 1745,
+    "reference_words": 7266
+  },
+  "checkpoint_sha256": "38157a48bdf662f8ae812eba4d1e9837a7043df8a73bb5a826a2d85216063a07",
+  "initial_korean_test": {
+    "step": 28314,
+    "epoch": 2.75,
+    "wer": 0.08496972535376175,
+    "cer": 0.04540749139102695,
+    "count": 4567
+  },
+  "initial_ocean_test": {
+    "count": 1280,
+    "wer": 0.24015964767409853,
+    "cer": 0.14703728565326174,
+    "word_errors": 1745,
+    "reference_words": 7266
+  }
+}

@@ -78,3 +78,19 @@ redistributing, and describe any further changes. No endorsement is implied.
 Audio bytes and reference text are unchanged; the filename extension is lowercased
 and the metadata is a selected subset. Source revision and individual file URLs
 are recorded in the manifest.
+
+## Whisper label version / 새 자동 전사 라벨
+
+A subsequent experiment uses a separate Whisper-label version. Original
+references and all metrics above remain the original experiment snapshot.
+These replacements are machine-generated, not human-adjudicated.
+
+| ID | Original | Whisper-v1 |
+|---|---|---|
+| 000030012 | MARK IS GOING TO SEE ELEPHANT | Mark is going to see elephant. |
+| 000490017 | DORA CAN SEE THE SHEEP | Bro can see the sheep |
+| 010500012 | JAYME CAN PAINT THE PIG | Jeremy can paint the pig. |
+| 020140004 | JAYME CAN DRAW THE WAR | Jamie can draw the world |
+| 030070015 | IS THERE A GOOD PLACE AT TABLE | Is there a good place at table? |
+
+[Label provenance](whisper-labels.json) · [Full replacement record](../../WHISPER_LABELS.md)

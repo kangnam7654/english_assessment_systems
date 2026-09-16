@@ -1,0 +1,25 @@
+{
+  "label_version": "whisper-v1",
+  "total": 2440,
+  "human_adjudicated": false,
+  "splits": {
+    "train": {
+      "count": 900,
+      "changed_text": 900,
+      "changed_after_normalization": 444,
+      "sha256": "01f89b00ffc3b9fd4ae7b947bbb710ebd05fba7d9c4c793a476e5629c0dd2da9"
+    },
+    "validation": {
+      "count": 260,
+      "changed_text": 260,
+      "changed_after_normalization": 120,
+      "sha256": "21daf2f2ab24948cde0831f516b993b690659c33cdc3ab92d0c4bec117348b38"
+    },
+    "test": {
+      "count": 1280,
+      "changed_text": 1280,
+      "changed_after_normalization": 735,
+      "sha256": "25ca468dbd2638e831108748f22b02edf3d5edc2ad25c424923f59d40ed9b999"
+    }
+  }
+}

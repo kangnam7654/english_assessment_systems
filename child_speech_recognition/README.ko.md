@@ -41,10 +41,17 @@ Test 녹음에 대한 실제 모델 출력입니다.
 정답은 제공된 데이터셋 라벨이며, 새로 사람이 검수한 전사는 아닙니다.
 [예시 선택 기준과 출력](results/examples.json)
 
+## 승인받은 데이터로 음성 재생
+
 **음성은 로컬에서 직접 들어볼 수 있습니다.**
 AI Hub [공식 FAQ](https://www.aihub.or.kr/aihubnews/faq/list.do)는 연구 결과물의 공유와
 원본 데이터 재배포를 구분합니다. 따라서 공개 저장소에는 AI Hub 원본 음성·정답 라벨 파일을 넣지 않고,
 승인받아 보유한 데이터를 이용해 오디오·정답·전사 결과가 담긴 HTML 페이지를 만듭니다.
+
+<details>
+<summary>로컬 청취 예시 생성 방법</summary>
+
+승인받은 AI Hub 음성과 학습 전후 예측 파일을 준비한 뒤 저장소 루트에서 실행합니다.
 
 ```sh
 python3 child_speech_recognition/scripts/build_examples.py \
@@ -58,14 +65,10 @@ python3 child_speech_recognition/scripts/build_examples.py \
 생성된 `.local-data/asr-listening/index.html`을 브라우저에서 열면 됩니다.
 페이지 안에 원본 음성이 포함되므로 HTML도 공개 업로드하지 않습니다.
 데이터 접근 권한과 로컬 평가 출력 파일이 필요합니다.
+예측 파일과 학습된 체크포인트는 저장소에 포함되지 않으므로, 저장소만 내려받아
+동일한 청취 예시를 바로 생성할 수 있는 것은 아닙니다.
 
-## 공개 음성 샘플
-
-[speechocean762 아동 음성 5개](samples/speechocean762/README.md)를 공개했습니다.
-중국어가 모국어인 6~10세 아동의 WAV, 로컬 재생 페이지, 제공 문장과 CC BY 4.0
-출처 표기를 함께 넣었습니다. 위 AI Hub Test 결과와 별개의 외부 데모이며,
-5개에서 단어 오류는 8 → 9개로 늘었습니다(WER 28.57% → 32.14%).
-개선·악화 사례를 포함한 모든 학습 전후 전사를 확인할 수 있습니다.
+</details>
 
 ## 처리 흐름
 
@@ -105,3 +108,13 @@ Test는 이전 실험에서도 관찰했던 세트이므로 완전히 새로운 
 
 출처: [AI Hub 데이터셋](https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=541) ·
 [Parakeet 모델·라이선스](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2)
+
+## 보조 실험 기록
+
+최종 모델은 위 성과를 기록한 한국 아동 파인튜닝 모델로 유지합니다.
+speechocean762로 중국어 모국어 아동에 대한 전이도 확인했지만, 혼합 학습이
+한국 아동 Validation 성능 보호 기준을 충족하지 못해 추가 학습은 중단했습니다.
+
+- [외부 평가·혼합 학습](EXTERNAL_EVALUATION.md)
+- [공개 음성 데모](samples/speechocean762/README.md): 한국 아동 Test와 다른 데이터입니다.
+- [라벨 검수](LABEL_AUDIT.md)와 [Whisper 라벨 실험](WHISPER_LABELS.md): 자동 생성 라벨에 대한 별도 기록입니다.

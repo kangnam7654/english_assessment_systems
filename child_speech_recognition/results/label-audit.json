@@ -1,0 +1,29 @@
+{
+  "count": 2440,
+  "split_counts": {
+    "train": 900,
+    "validation": 260,
+    "test": 1280
+  },
+  "flag_counts": {
+    "repeated_word_review_only": 73,
+    "source_low_word_accuracy_review_only": 222
+  },
+  "review_sample_count": 105,
+  "review_selection": "100 Train/Validation records, round-robin age and split strata after seeded shuffle (20260916), plus 5 existing Test demos; not proportional random sampling.",
+  "corrected_labels": 0,
+  "human_audio_adjudication": false,
+  "source_hashes": {
+    "scores.json": "31c847b8ee29d61d8fe338bcbb1d4c4721425f05481d2144ad57cd19ea1159f8",
+    "scores-detail.json": "8a90ff40558fe8032d9bfa919429dcae267c0ec3fbdedf1dca30c0515ea989e1"
+  },
+  "whisper": {
+    "model": "openai/whisper-large-v3-turbo",
+    "revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+    "reference_prompt": false,
+    "count": 105,
+    "normalized_match": 51,
+    "numeric_format_equivalence": 2,
+    "needs_audio_adjudication": 52
+  }
+}

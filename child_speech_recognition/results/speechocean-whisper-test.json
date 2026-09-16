@@ -1,0 +1,67 @@
+{
+  "scope": "All official speechocean762 Test speakers aged <18; label provenance in dataset protocol, no human transcript adjudication.",
+  "dataset": {
+    "revision": "613968e3b0b789fc33936fb5eba1973176ba7d11",
+    "child_age": "<18",
+    "seed": 20260916,
+    "validation": "Official Train speakers: ~20% held out within each age, at least one where age has >1 speakers; singleton ages remain Train.",
+    "test": "All official Test children, no selection using outcomes.",
+    "splits": {
+      "train": {
+        "count": 900,
+        "speakers": 45,
+        "hours": 0.8716313888888889,
+        "sha256": "01f89b00ffc3b9fd4ae7b947bbb710ebd05fba7d9c4c793a476e5629c0dd2da9"
+      },
+      "validation": {
+        "count": 260,
+        "speakers": 13,
+        "hours": 0.25557583333333334,
+        "sha256": "21daf2f2ab24948cde0831f516b993b690659c33cdc3ab92d0c4bec117348b38"
+      },
+      "test": {
+        "count": 1280,
+        "speakers": 64,
+        "hours": 1.2849105555555556,
+        "sha256": "25ca468dbd2638e831108748f22b02edf3d5edc2ad25c424923f59d40ed9b999"
+      }
+    },
+    "label_protocol": {
+      "label_version": "whisper-v1",
+      "model": "openai/whisper-large-v3-turbo",
+      "revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+      "source_manifest_hashes": {
+        "train": "d0085979c8ed793e96b81eaae70d1ac5a9a9dffe2340af5f8298075993ef96be",
+        "validation": "f9f88e7b4b65596a7e659b8c7164ed92f4eda3ebf8950ed0613965c1ee8a6743",
+        "test": "25b5248aab09c41c21e50b4c74d5d0dbc5817faf28d09b66bf7733819f359599"
+      },
+      "language": "en",
+      "task": "transcribe",
+      "do_sample": false,
+      "max_new_tokens": 128,
+      "batch_size": 8,
+      "precision": "FP32",
+      "reference_prompt": false,
+      "human_adjudicated": false,
+      "scope": "All 2440 children; same split membership and audio.",
+      "evaluation_note": "Whisper-derived Test references measure agreement with machine labels, not independently verified ASR accuracy."
+    }
+  },
+  "checkpoint_sha256": "c97cc4b64c37bd218a8f9f3195ee0008580658864912e97c633fe47366b3dd84",
+  "checkpoint_step": 28314,
+  "before": {
+    "count": 1280,
+    "wer": 0.25030961882482455,
+    "cer": 0.1666563716103527,
+    "word_errors": 1819,
+    "reference_words": 7267
+  },
+  "after": {
+    "count": 1280,
+    "wer": 0.25622677858813814,
+    "cer": 0.1683241707332139,
+    "word_errors": 1862,
+    "reference_words": 7267
+  },
+  "wer_change_pp": 0.5917159763313584
+}
