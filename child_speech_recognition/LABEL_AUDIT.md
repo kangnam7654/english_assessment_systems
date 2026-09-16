@@ -49,11 +49,11 @@ would not be justified by sound alone.
 2. Place the three generated split JSON files in `.local-data/speechocean-audit/`.
    Download `resource/scores.json` and `resource/scores-detail.json` from the source
    revision below into the same folder. Their SHA256 hashes are in the audit result.
-3. Run `python child_speech_recognition/scripts/audit_speechocean_labels.py`.
+3. Run `python -m child_speech_recognition.scripts.data.audit_speechocean_labels`.
 4. In the CUDA Transformers environment with cached Whisper weights, run
-   `python child_speech_recognition/scripts/transcribe_label_audit.py`.
+   `python -m child_speech_recognition.scripts.data.transcribe_label_audit`.
 5. Copy the selected `source_path` audio files under `.local-data/speechocean-audit/`,
-   preserving paths, then run `python child_speech_recognition/scripts/build_label_review.py`.
+   preserving paths, then run `python -m child_speech_recognition.scripts.reporting.build_label_review`.
 
 Open `.local-data/speechocean-audit/index.html` to compare audio, source text,
 Whisper output, and source pronunciation scores. The queue preserves split IDs,

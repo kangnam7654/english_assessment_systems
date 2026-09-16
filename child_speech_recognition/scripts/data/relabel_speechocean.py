@@ -14,7 +14,7 @@ import soundfile as sf
 import torch
 from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor
 
-REPO = Path(__file__).resolve().parents[2]
+REPO = Path(__file__).resolve().parents[3]
 SOURCE = REPO / ".local-data/speechocean762"
 OUT = REPO / ".local-data/speechocean-whisper-v1"
 REV = "41f01f3fe87f28c78e2fbf8b568835947dd65ed9"

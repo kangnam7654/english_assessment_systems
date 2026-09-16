@@ -54,7 +54,7 @@ AI Hub [공식 FAQ](https://www.aihub.or.kr/aihubnews/faq/list.do)는 연구 결
 승인받은 AI Hub 음성과 학습 전후 예측 파일을 준비한 뒤 저장소 루트에서 실행합니다.
 
 ```sh
-python3 child_speech_recognition/scripts/build_examples.py \
+python3 -m child_speech_recognition.scripts.reporting.build_examples \
   --before .local-data/asr-nemo/test-0.jsonl \
   --after .local-data/asr-nemo/test-28314.jsonl \
   --audio-zip .local-data/aihub541/VS_eng_free_01.zip \
@@ -85,12 +85,23 @@ BatchNorm의 통계는 고정하고 모델 가중치는 학습합니다.
 
 ## 코드 구성
 
+```text
+scripts/
+├── data/        # 데이터 준비·라벨 검수·재전사
+├── training/    # 기본 학습·혼합 데이터 추가 학습
+├── evaluation/  # Test·공개 샘플·외부 데이터 평가
+├── reporting/   # 청취 예시·라벨 비교 페이지 생성
+└── common/      # 모델·음성 로딩 등 공통 코드
+```
+
+실행 명령은 저장소 루트에서 `python -m child_speech_recognition.scripts.<분류>.<모듈>` 형식을 사용합니다.
+
 | 위치 | 역할 |
 |---|---|
-| `scripts/runtime.py` | 모델·토크나이저·음성 로딩·TDT loss |
-| `scripts/train.py` | 3 epoch 학습·체크포인트·Validation 모델 선택 |
-| `scripts/evaluate_test.py` | 선택한 모델과 사전학습 모델의 Test 비교 |
-| `scripts/build_examples.py` | 전후 출력 검증·로컬 오디오 예시 생성 |
+| `scripts/common/runtime.py` | 모델·토크나이저·음성 로딩·TDT loss |
+| `scripts/training/train.py` | 3 epoch 학습·체크포인트·Validation 모델 선택 |
+| `scripts/evaluation/evaluate_test.py` | 선택한 모델과 사전학습 모델의 Test 비교 |
+| `scripts/reporting/build_examples.py` | 전후 출력 검증·로컬 오디오 예시 생성 |
 | `results/` | 공개 가능한 집계 지표와 모델 출력 예시 |
 
 [실행 방법](EXPERIMENTS.md#run-the-code)을 참고하세요.

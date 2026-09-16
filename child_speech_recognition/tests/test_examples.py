@@ -6,7 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location(
-    "examples", ROOT / "scripts/build_examples.py"
+    "examples", ROOT / "scripts/reporting/build_examples.py"
 )
 examples = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(examples)

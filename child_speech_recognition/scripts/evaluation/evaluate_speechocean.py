@@ -5,7 +5,7 @@ import json
 import os
 from pathlib import Path
 
-import runtime as e
+from ..common import runtime as e
 from omegaconf import OmegaConf
 
 DATA = Path(

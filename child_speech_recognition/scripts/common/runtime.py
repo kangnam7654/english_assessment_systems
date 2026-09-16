@@ -11,7 +11,7 @@ from omegaconf import OmegaConf
 from nemo.collections.asr.models import ASRModel
 from nemo.collections.asr.losses.rnnt import RNNTLoss
 
-REPO = Path(__file__).resolve().parents[2]
+REPO = Path(__file__).resolve().parents[3]
 ROOT = Path(os.environ.get("ASR_RUN_DIR", REPO / ".local-data/asr-nemo"))
 DATA = Path(os.environ.get("ASR_DATA_DIR", REPO / ".local-data/aihub541"))
 ROOT.mkdir(parents=True, exist_ok=True)

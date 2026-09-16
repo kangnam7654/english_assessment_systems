@@ -110,9 +110,9 @@ Choose a new run directory to keep historical experiments intact:
 ```sh
 export ASR_DATA_DIR="$PWD/.local-data/aihub541"
 export ASR_RUN_DIR="$PWD/.local-data/asr-nemo-reproduction"
-.local-data/asr-nemo-venv/bin/python child_speech_recognition/scripts/train.py
+.local-data/asr-nemo-venv/bin/python -m child_speech_recognition.scripts.training.train
 # Run only after Validation selection is final:
-.local-data/asr-nemo-venv/bin/python child_speech_recognition/scripts/evaluate_test.py
+.local-data/asr-nemo-venv/bin/python -m child_speech_recognition.scripts.evaluation.evaluate_test
 ```
 
 `best.pt` holds the selected model; `resume.pt` stores model, optimizer, RNG and history.

@@ -2,7 +2,7 @@
 
 import json, os, time, traceback
 from pathlib import Path
-import runtime as e
+from ..common import runtime as e
 from omegaconf import OmegaConf
 
 T = e.torch

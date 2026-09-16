@@ -43,7 +43,7 @@ labels, not newly adjudicated transcripts. [Selection rule and outputs](results/
 
 ## Listen with authorized data
 
-**Listen locally:** the [example builder](scripts/build_examples.py) creates an HTML
+**Listen locally:** the [example builder](scripts/reporting/build_examples.py) creates an HTML
 page containing those recordings, references and predictions. AI Hub's
 [FAQ](https://www.aihub.or.kr/aihubnews/faq/list.do) permits sharing research outputs
 but restricts redistribution of source data. AI Hub audio and reference-label files are
@@ -55,7 +55,7 @@ therefore excluded from this repository.
 Run from the repository root with authorized AI Hub audio and the paired prediction files.
 
 ```sh
-python3 child_speech_recognition/scripts/build_examples.py \
+python3 -m child_speech_recognition.scripts.reporting.build_examples \
   --before .local-data/asr-nemo/test-0.jsonl \
   --after .local-data/asr-nemo/test-28314.jsonl \
   --audio-zip .local-data/aihub541/VS_eng_free_01.zip \
@@ -85,12 +85,23 @@ statistics are frozen; model weights remain trainable.
 
 ## Code and reproduction
 
+```text
+scripts/
+├── data/        # Dataset preparation, label auditing and transcription
+├── training/    # Baseline and mixed-domain training
+├── evaluation/  # Test, public-sample and external evaluation
+├── reporting/   # Listening examples and label review pages
+└── common/      # Shared model and audio runtime
+```
+
+Run entry points from the repository root with `python -m child_speech_recognition.scripts.<group>.<module>`.
+
 | Location | Purpose |
 |---|---|
-| `scripts/runtime.py` | Model, tokenizer, audio loading and TDT loss |
-| `scripts/train.py` | Three-epoch training, checkpointing and Validation selection |
-| `scripts/evaluate_test.py` | Evaluate the selected checkpoint against its pretrained baseline |
-| `scripts/build_examples.py` | Paired-output checks and private audio examples |
+| `scripts/common/runtime.py` | Model, tokenizer, audio loading and TDT loss |
+| `scripts/training/train.py` | Three-epoch training, checkpointing and Validation selection |
+| `scripts/evaluation/evaluate_test.py` | Evaluate the selected checkpoint against its pretrained baseline |
+| `scripts/reporting/build_examples.py` | Paired-output checks and private audio examples |
 | `results/` | Small public metrics and model-output excerpts |
 
 See [environment and run instructions](EXPERIMENTS.md#run-the-code). The CUDA/NeMo

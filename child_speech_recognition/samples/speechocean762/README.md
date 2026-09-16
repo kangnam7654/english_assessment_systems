@@ -59,7 +59,7 @@ Run in the [CUDA/NeMo environment](../../EXPERIMENTS.md#run-the-code), with the
 original cached model and selected checkpoint available:
 
 ```sh
-python child_speech_recognition/scripts/evaluate_samples.py
+python -m child_speech_recognition.scripts.evaluation.evaluate_samples
 ```
 
 ## Attribution / 출처

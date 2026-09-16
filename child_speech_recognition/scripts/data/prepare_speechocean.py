@@ -10,7 +10,7 @@ import urllib.request
 import wave
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2] / ".local-data/speechocean762"
+ROOT = Path(__file__).resolve().parents[3] / ".local-data/speechocean762"
 REV = "613968e3b0b789fc33936fb5eba1973176ba7d11"
 BASE = f"https://raw.githubusercontent.com/jimbozhang/speechocean762/{REV}/"
 

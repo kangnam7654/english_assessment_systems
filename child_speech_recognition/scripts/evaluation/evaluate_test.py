@@ -1,5 +1,5 @@
 import json, hashlib
-import runtime as e
+from ..common import runtime as e
 from omegaconf import OmegaConf
 
 T = e.torch

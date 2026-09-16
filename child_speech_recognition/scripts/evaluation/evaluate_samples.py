@@ -4,10 +4,10 @@ import hashlib
 import json
 from pathlib import Path
 
-import runtime as e
+from ..common import runtime as e
 from omegaconf import OmegaConf
 
-SAMPLES = Path(__file__).resolve().parents[1] / "samples/speechocean762"
+SAMPLES = Path(__file__).resolve().parents[2] / "samples/speechocean762"
 
 
 def evaluate(model, samples):

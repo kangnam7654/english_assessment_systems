@@ -22,7 +22,7 @@ In the existing CUDA Transformers environment, with the original audio and cache
 model available:
 
 ```sh
-python child_speech_recognition/scripts/relabel_speechocean.py
+python -m child_speech_recognition.scripts.data.relabel_speechocean
 ```
 
 Output: `.local-data/speechocean-whisper-v1/` on `ciot-workstation`.
@@ -40,8 +40,8 @@ generation itself does not start either step.
 export SPEECHOCEAN_DATA_DIR="$PWD/.local-data/speechocean-whisper-v1"
 export SPEECHOCEAN_EVAL_DIR="$PWD/.local-data/asr-speechocean-whisper-v1"
 export SPEECHOCEAN_ADAPT_DIR="$PWD/.local-data/asr-speechocean-whisper-v1-adaptation"
-python child_speech_recognition/scripts/evaluate_speechocean.py
-python child_speech_recognition/scripts/adapt_speechocean.py
+python -m child_speech_recognition.scripts.evaluation.evaluate_speechocean
+python -m child_speech_recognition.scripts.training.adapt_speechocean
 ```
 
 The new output directories prevent the old evaluation and adaptation records from

@@ -26,8 +26,8 @@ not independently adjudicated verbatim transcripts.
 Use the existing CUDA/NeMo environment in [EXPERIMENTS.md](EXPERIMENTS.md).
 
 ```sh
-python child_speech_recognition/scripts/prepare_speechocean.py
-python child_speech_recognition/scripts/evaluate_speechocean.py
+python -m child_speech_recognition.scripts.data.prepare_speechocean
+python -m child_speech_recognition.scripts.evaluation.evaluate_speechocean
 ```
 
 Manifests, protocol and audio remain in `.local-data/speechocean762`. Predictions
@@ -63,7 +63,7 @@ This descriptive difference has not been tested for statistical significance.
   selection, example replacement, or automatic hyperparameter search.
 
 ```sh
-python child_speech_recognition/scripts/adapt_speechocean.py
+python -m child_speech_recognition.scripts.training.adapt_speechocean
 ```
 
 The script refuses to overwrite an existing experiment. Outputs go to

@@ -7,8 +7,8 @@ import random
 import traceback
 from pathlib import Path
 
-import evaluate_speechocean as ocean
-import runtime as e
+from ..evaluation import evaluate_speechocean as ocean
+from ..common import runtime as e
 
 OUT = Path(
     os.environ.get(

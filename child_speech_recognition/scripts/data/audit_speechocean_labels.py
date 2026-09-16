@@ -7,7 +7,7 @@ import random
 import re
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2] / ".local-data/speechocean-audit"
+ROOT = Path(__file__).resolve().parents[3] / ".local-data/speechocean-audit"
 
 
 def main():
