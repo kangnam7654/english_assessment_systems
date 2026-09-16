@@ -1,0 +1,29 @@
+{
+  "id": "ccss-3-writing-v1",
+  "grade_band": "3",
+  "source_version": "2010-06-02",
+  "source_url": "https://www.thecorestandards.org/assets/CCSSI_ELA%20Standards.pdf",
+  "source_sha256": "fa333bc3e442725ad4fca685fd787f0da65c6922d1477a7663264e843d6de187",
+  "attribution": "© Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.",
+  "notice": "Project paraphrases of selected text-observable Writing and Language standards, not the full curriculum. No inference about revision, collaboration, handwriting, speaking or research process.",
+  "by_genre": {
+    "opinion": {
+      "CCSS.ELA-Literacy.W.3.1": "Introduce the topic and opinion, organize a list of reasons, connect them using linking words/phrases, and conclude.",
+      "CCSS.ELA-Literacy.L.3.1": "Use grammatical word classes, regular/irregular verbs and agreement; form simple, compound and complex sentences.",
+      "CCSS.ELA-Literacy.L.3.2": "Apply capitalization, possessives, commas/quotation marks in dialogue and grade-appropriate spelling.",
+      "CCSS.ELA-Literacy.L.3.3": "Choose words/phrases for effect; distinguish spoken from written usage where observable."
+    },
+    "informative": {
+      "CCSS.ELA-Literacy.W.3.2": "Introduce a topic, group related information, develop facts/definitions/details, link ideas within categories and conclude.",
+      "CCSS.ELA-Literacy.L.3.1": "Use grammatical word classes, regular/irregular verbs and agreement; form simple, compound and complex sentences.",
+      "CCSS.ELA-Literacy.L.3.2": "Apply capitalization, possessives, commas/quotation marks in dialogue and grade-appropriate spelling.",
+      "CCSS.ELA-Literacy.L.3.3": "Choose words/phrases for effect; distinguish spoken from written usage where observable."
+    },
+    "narrative": {
+      "CCSS.ELA-Literacy.W.3.3": "Establish a situation and narrator/characters; sequence events naturally with dialogue and descriptions of actions/thoughts/feelings, time words and closure.",
+      "CCSS.ELA-Literacy.L.3.1": "Use grammatical word classes, regular/irregular verbs and agreement; form simple, compound and complex sentences.",
+      "CCSS.ELA-Literacy.L.3.2": "Apply capitalization, possessives, commas/quotation marks in dialogue and grade-appropriate spelling.",
+      "CCSS.ELA-Literacy.L.3.3": "Choose words/phrases for effect; distinguish spoken from written usage where observable."
+    }
+  }
+}

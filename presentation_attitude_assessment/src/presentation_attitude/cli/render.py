@@ -7,6 +7,7 @@ from presentation_attitude.evaluation.visualization import render_comparison
 
 
 def main():
+    """Render before/after landmark overlays for a completed audit."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--audit", type=Path, required=True)
     parser.add_argument("--processed", type=Path, required=True)

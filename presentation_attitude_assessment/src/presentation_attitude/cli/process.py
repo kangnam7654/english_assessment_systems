@@ -7,6 +7,7 @@ from presentation_attitude.pipelines.extraction import process_video
 
 
 def main():
+    """Stream a whole video through FFmpeg, MediaPipe, and feature preprocessing."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("video", type=Path)
     parser.add_argument(

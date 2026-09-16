@@ -1,0 +1,26 @@
+{
+  "id": "ccss-K-writing-v1",
+  "grade_band": "K",
+  "source_version": "2010-06-02",
+  "source_url": "https://www.thecorestandards.org/assets/CCSSI_ELA%20Standards.pdf",
+  "source_sha256": "fa333bc3e442725ad4fca685fd787f0da65c6922d1477a7663264e843d6de187",
+  "attribution": "© Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.",
+  "notice": "Project paraphrases of selected text-observable Writing and Language standards, not the full curriculum. No inference about revision, collaboration, handwriting, speaking or research process.",
+  "by_genre": {
+    "opinion": {
+      "CCSS.ELA-Literacy.W.K.1": "Name the topic/book and express an opinion or preference. The standard also permits drawing or dictation, outside this text-only implementation.",
+      "CCSS.ELA-Literacy.L.K.1": "Use basic English grammar, common nouns/verbs, regular plurals and complete simple sentences in text.",
+      "CCSS.ELA-Literacy.L.K.2": "Capitalize sentence beginnings and I; use end marks and letter-sound knowledge for simple spelling."
+    },
+    "informative": {
+      "CCSS.ELA-Literacy.W.K.2": "Name the topic and give some information about it; drawings and dictation are also permitted by the original standard.",
+      "CCSS.ELA-Literacy.L.K.1": "Use basic English grammar, common nouns/verbs, regular plurals and complete simple sentences in text.",
+      "CCSS.ELA-Literacy.L.K.2": "Capitalize sentence beginnings and I; use end marks and letter-sound knowledge for simple spelling."
+    },
+    "narrative": {
+      "CCSS.ELA-Literacy.W.K.3": "Recount one event or loosely related events in order and give a reaction; the original also permits drawings and dictation.",
+      "CCSS.ELA-Literacy.L.K.1": "Use basic English grammar, common nouns/verbs, regular plurals and complete simple sentences in text.",
+      "CCSS.ELA-Literacy.L.K.2": "Capitalize sentence beginnings and I; use end marks and letter-sound knowledge for simple spelling."
+    }
+  }
+}

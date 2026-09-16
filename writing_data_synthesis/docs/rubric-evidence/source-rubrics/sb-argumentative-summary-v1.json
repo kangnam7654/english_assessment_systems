@@ -1,0 +1,36 @@
+{
+  "id": "sb-argumentative-summary-v1",
+  "source_version": "2022-08",
+  "adaptation_version": "1.0",
+  "source_url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-argumentative.pdf",
+  "source_sha256": "a7634f32c2122680b8d142d53793ee39b2d86deb378d340826bc2d6a27084aa7",
+  "notice": "Project-authored condensed adaptation, not the complete official rubric or validated scoring instrument.",
+  "grade_rule": "Do not require counterarguments in grade 6; that expectation begins in grade 7.",
+  "dimensions": {
+    "organization_purpose": {
+      "4": "Sustained clear claim; purposeful structure, varied transitions, effective opening/ending and logical connections.",
+      "3": "Clear claim and coherent structure; adequate transitions, opening/ending and progression, despite minor flaws.",
+      "2": "Uneven focus or connections; inconsistent transitions and weak opening/ending.",
+      "1": "Unclear claim, little structure, few transitions; missing opening/ending or disordered ideas."
+    },
+    "evidence_elaboration": {
+      "4": "Specific source evidence, clear attribution and convincing analysis; varied elaboration, precise vocabulary and effective style.",
+      "3": "Relevant source evidence and attribution with adequate reasoning; suitable elaboration, vocabulary and style.",
+      "2": "Weak, vague or repetitive source support; uneven attribution and elaboration, simplistic language or summary-heavy writing.",
+      "1": "Minimal, irrelevant, misused or predominantly copied support; little attribution or analysis and ineffective language."
+    },
+    "conventions": {
+      "2": "Adequate control of sentences, punctuation, capitalization, grammar and spelling.",
+      "1": "Partial control of these conventions.",
+      "0": "Little control of these conventions."
+    }
+  },
+  "conventions_rule": "Judge error variety, severity and density; weigh basic errors more heavily.",
+  "not_scorable": [
+    "insufficient_including_copied",
+    "non_english",
+    "off_topic",
+    "off_purpose"
+  ],
+  "not_scorable_note": "Off-purpose appears for the first two dimensions. This application withholds a whole-task total for any NS case; conventions may still be assessable in the source rubric."
+}

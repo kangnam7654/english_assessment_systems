@@ -1,0 +1,53 @@
+{
+  "id": "uen-2nd-informative-summary-v1",
+  "provider": "Utah Education Network",
+  "source_version": null,
+  "adaptation_version": "1.0",
+  "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/2nd-Informative-Rubric.docx",
+  "source_sha256": "d3a72d4cb2934e3cb56d5812d1f4811a8b78a98779e3bed157b9e26ac8ad2c5d",
+  "notice": "Project-authored condensed descriptors for every source dimension and score point. Not a verbatim official rubric or validated scoring instrument.",
+  "grades": [
+    2
+  ],
+  "genres": [
+    "informative"
+  ],
+  "requires_sources": false,
+  "dimensions": {
+    "focus_organization": {
+      "4": "Strong introduction; seamlessly integrates at least three facts; conclusion revisits key points.",
+      "3": "Introduces topic; develops points with at least two facts and definitions; concludes.",
+      "2": "Unfocused topic, confusing or irrelevant facts, weak or missing conclusion.",
+      "1": "No stated topic, facts or closure."
+    },
+    "conventions": {
+      "2": "Use simple/compound sentences, suitable capitalization and spelling, commas and apostrophes for contractions/possession; errors are not systematic.",
+      "1": "Errors can obscure meaning; inconsistent punctuation, capitalization or spelling.",
+      "0": "Conventions are not under control."
+    }
+  },
+  "score_ranges": {
+    "focus_organization": [
+      1,
+      4
+    ],
+    "conventions": [
+      0,
+      2
+    ]
+  },
+  "scope_notes": [
+    "Publication version is not established by the source catalog.",
+    "These are classroom descriptors, not a national proficiency standard."
+  ],
+  "total_policy": "Display-only unweighted sum; no cross-provider score conversion or proficiency decision.",
+  "not_scorable": [
+    "insufficient",
+    "illegible",
+    "non_english",
+    "incoherent",
+    "off_topic",
+    "off_purpose"
+  ],
+  "not_scorable_policy": "Source NS row; all scores null. Illegibility cannot be inferred from typed text."
+}

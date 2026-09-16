@@ -24,6 +24,10 @@ def load_features(directory, *, max_frames=10000):
         ValueError: Corrupt sequence, invalid coordinates/sampling grid, no
             usable features, or length outside [1, max_frames]. Videos are
             never silently truncated. File and metadata errors propagate.
+
+    Args:
+        directory: Directory used for the component's local files.
+        max_frames: Maximum frames per video; oversized sequences are rejected.
     """
     directory = Path(directory)
     summary = read_json(directory / "summary.json")
@@ -82,12 +86,34 @@ class SequenceDataset(Dataset):
     """
 
     def __init__(self, samples, *, max_frames=10000):
+        """Store manifest samples and the per-video frame limit without loading tensors.
+
+        Args:
+            samples: Validated per-video samples to load or combine.
+            max_frames: Maximum frames per video; oversized sequences are rejected.
+        """
         self.samples, self.max_frames = samples, max_frames
 
     def __len__(self):
+        """Return the number of manifest samples.
+
+        Returns:
+            Number of samples available in this dataset.
+        """
         return len(self.samples)
 
     def __getitem__(self, index):
+        """Revalidate one sequence and return its tensors, label, and identity.
+
+        Args:
+            index: Zero-based item or frame index.
+
+        Returns:
+            Dictionary containing features, timestamps_ms, label, and id for one video.
+
+        Raises:
+            ValueError: Sequence metadata changed after manifest validation.
+        """
         sample = self.samples[index]
         if sha256(sample["directory"] / "summary.json") != sample["summary_sha256"]:
             raise ValueError("Sequence metadata changed after manifest validation")
@@ -109,6 +135,12 @@ def collate_sequences(samples):
     (B,), ids, timestamps_ms (B, T_max; padding=-1), and padding_mask
     (B, T_max; True means padding). The padding mask is distinct from the
     three per-frame feature validity flags. GRU packing uses lengths.
+
+    Args:
+        samples: Validated per-video samples to load or combine.
+
+    Returns:
+        Right-padded features, lengths, labels, IDs, timestamps, and padding mask.
     """
     lengths = torch.tensor(
         [len(sample["features"]) for sample in samples], dtype=torch.int64

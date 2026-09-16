@@ -1,3 +1,5 @@
+"""Regression checks for artifacts."""
+
 import json
 import tempfile
 import unittest
@@ -13,7 +15,9 @@ from presentation_attitude.artifacts import (
 
 
 class ArtifactTests(unittest.TestCase):
+    """Exercise artifact tests behavior with controlled fixtures."""
     def test_failed_status_serialization_preserves_previous_file(self):
+        """Verify failed status serialization preserves previous file."""
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "summary.json"
             write_json_atomic(path, {"status": "running"})
@@ -25,6 +29,7 @@ class ArtifactTests(unittest.TestCase):
             self.assertEqual(read_json(path), {"status": "complete"})
 
     def test_exclusive_json_does_not_overwrite(self):
+        """Verify exclusive json does not overwrite."""
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "summary.json"
             write_json(path, {"keep": True}, exclusive=True)
@@ -33,6 +38,7 @@ class ArtifactTests(unittest.TestCase):
             self.assertEqual(read_json(path), {"keep": True})
 
     def test_jsonl_preserves_existing_serialization_and_streams_records(self):
+        """Verify jsonl preserves existing serialization and streams records."""
         records = [{"label": "얼굴", "xy": None}, {"xy": [0.1, 0.2]}]
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "sequence.jsonl"

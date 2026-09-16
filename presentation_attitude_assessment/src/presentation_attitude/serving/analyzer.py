@@ -26,6 +26,20 @@ class VideoAnalyzer:
         models_dir=None,
         model_specs=None,
     ):
+        """Load an optional attitude checkpoint and establish compatible extraction settings.
+
+        Args:
+            settings: Validated configuration for this component.
+            checkpoint: Path to a trusted local PyTorch checkpoint.
+            device: PyTorch execution device, such as cpu, mps, or cuda.
+            models_dir: Directory containing cached MediaPipe model assets.
+            model_specs: Path to the MediaPipe asset specification JSON.
+
+        Raises:
+            ValueError: Serving assessment requires an attitude_training checkpoint;
+                pipeline_smoke is not an attitude classifier; Unsupported attitude label
+                mapping.
+        """
         self.settings = settings
         self.models_dir, self.model_specs = models_dir, model_specs
         self.runtime = None
@@ -52,6 +66,19 @@ class VideoAnalyzer:
         errors propagate to the worker. Missing usable features yield an unavailable
         assessment; valid features use the fixed 0.5 decision threshold. A missing
         checkpoint in assessment mode is rejected before extraction starts.
+
+        Args:
+            source: Source video path or caller-owned input stream, as required by this
+                operation.
+            output: Destination directory or file for generated artifacts.
+            mode: Requested execution mode.
+
+        Returns:
+            JSON-ready extraction result and, when requested, an assessment or its
+            unavailability reason.
+
+        Raises:
+            ValueError: No attitude-training checkpoint configured; use features mode.
         """
         if mode == "assessment" and self.runtime is None:
             raise ValueError(

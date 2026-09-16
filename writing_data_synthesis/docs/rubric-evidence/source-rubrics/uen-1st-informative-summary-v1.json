@@ -1,0 +1,53 @@
+{
+  "id": "uen-1st-informative-summary-v1",
+  "provider": "Utah Education Network",
+  "source_version": null,
+  "adaptation_version": "1.0",
+  "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/1st-Informative-Rubric.docx",
+  "source_sha256": "8e6f307924c4c8f25b49042c382405cb90b7e1500b57681c41abfcb7c25ab47b",
+  "notice": "Project-authored condensed descriptors for every source dimension and score point. Not a verbatim official rubric or validated scoring instrument.",
+  "grades": [
+    1
+  ],
+  "genres": [
+    "informative"
+  ],
+  "requires_sources": false,
+  "dimensions": {
+    "focus_organization": {
+      "4": "States topic, supplies at least three facts and closes the text.",
+      "3": "States topic, supplies one or two facts and some closure.",
+      "2": "Unclear topic, confusing or irrelevant facts, little closure.",
+      "1": "No stated topic, facts or closure."
+    },
+    "conventions": {
+      "2": "Capitalize beginnings, dates, names and I; use end marks and commas in dates/lists; use familiar spelling patterns and phonetic spelling for untaught words.",
+      "1": "Errors can obscure meaning; inconsistent punctuation, capitalization or spelling.",
+      "0": "Conventions are not under control."
+    }
+  },
+  "score_ranges": {
+    "focus_organization": [
+      1,
+      4
+    ],
+    "conventions": [
+      0,
+      2
+    ]
+  },
+  "scope_notes": [
+    "Publication version is not established by the source catalog.",
+    "These are classroom descriptors, not a national proficiency standard."
+  ],
+  "total_policy": "Display-only unweighted sum; no cross-provider score conversion or proficiency decision.",
+  "not_scorable": [
+    "insufficient",
+    "illegible",
+    "non_english",
+    "incoherent",
+    "off_topic",
+    "off_purpose"
+  ],
+  "not_scorable_policy": "Source NS row; all scores null. Illegibility cannot be inferred from typed text."
+}

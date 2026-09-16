@@ -11,11 +11,23 @@ import numpy as np
 
 
 class VideoDecodeError(RuntimeError):
+    """Report FFmpeg startup, truncated-frame, or decoding failures."""
     pass
 
 
 def read_frame_bytes(stream, size):
-    """Pipe reads may be short. Only an empty frame at EOF is a clean boundary."""
+    """Pipe reads may be short. Only an empty frame at EOF is a clean boundary.
+
+    Args:
+        stream: Open stream owned by the caller.
+        size: Expected raw frame size in bytes.
+
+    Returns:
+        Exactly size bytes, or empty bytes for clean EOF before a new frame.
+
+    Raises:
+        VideoDecodeError: EOF arrives after only part of the expected frame.
+    """
     chunks, remaining = [], size
     while remaining:
         chunk = stream.read(remaining)
@@ -48,6 +60,21 @@ class FFmpegVideoReader:
         allowed_formats=None,
         max_pixels=None,
     ):
+        """Validate sampling options and initialize a single-use FFmpeg reader.
+
+        Args:
+            path: Filesystem path to the input or output artifact.
+            fps: Frames per second on the FFmpeg resampling grid.
+            start_seconds: Start offset in seconds on the input video.
+            duration_seconds: Optional interval duration in seconds.
+            allowed_formats: Optional comma-separated FFmpeg input format whitelist.
+            max_pixels: Optional upper bound on decoded frame area.
+
+        Raises:
+            FileNotFoundError: Required path is missing or already exists: self.path.
+            ValueError: fps must be finite and in (0, 1000]; start_seconds must be finite
+                and nonnegative; duration_seconds must be positive and finite.
+        """
         self.path = Path(path).resolve()
         if not self.path.is_file():
             raise FileNotFoundError(self.path)
@@ -79,6 +106,16 @@ class FFmpegVideoReader:
         self._stderr_thread = None
 
     def __enter__(self):
+        """Probe the video and start an FFmpeg process streaming raw RGB frames.
+
+        Returns:
+            This initialized context-managed resource.
+
+        Raises:
+            RuntimeError: Reader is single-use.
+            VideoDecodeError: Input has no video stream; Only quarter-turn rotation metadata
+                is supported; Invalid video dimensions; Video exceeds decoded pixel limit.
+        """
         if self.process is not None or self._closed:
             raise RuntimeError("Reader is single-use")
         probe = subprocess.run(
@@ -169,15 +206,33 @@ class FFmpegVideoReader:
         return self
 
     def _drain_stderr(self):
+        """Drain FFmpeg diagnostics in a background thread to prevent pipe blockage."""
         while chunk := self.process.stderr.read(4096):
             self._stderr.append(chunk)
 
     def __iter__(self):
+        """Return this reader after verifying it was opened in a context manager.
+
+        Returns:
+            This opened reader instance.
+
+        Raises:
+            RuntimeError: Use FFmpegVideoReader in a with block.
+        """
         if self.process is None:
             raise RuntimeError("Use FFmpegVideoReader in a with block")
         return self
 
     def __next__(self):
+        """Read the next owned RGB frame and verify decoder completion at EOF.
+
+        Returns:
+            Next decoded RGB uint8 frame of shape (H, W, 3).
+
+        Raises:
+            RuntimeError: Use FFmpegVideoReader in a with block.
+            VideoDecodeError: FFmpeg produced no sampled frames.
+        """
         if self._closed:
             raise StopIteration
         if self.process is None:
@@ -229,4 +284,11 @@ class FFmpegVideoReader:
             self.process.stderr.close()
 
     def __exit__(self, exc_type, exc_value, traceback):
+        """Close pipes and reap FFmpeg when leaving the reader context.
+
+        Args:
+            exc_type: Exception type supplied by the context manager protocol, if any.
+            exc_value: Exception instance supplied by the context manager protocol, if any.
+            traceback: Traceback supplied by the context manager protocol, if any.
+        """
         self.close()

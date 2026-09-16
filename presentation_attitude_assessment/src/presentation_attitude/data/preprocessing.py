@@ -30,6 +30,18 @@ DEFAULTS = {
 
 
 def _checked_points(value, count):
+    """Accept only a finite landmark array with the expected coordinate shape.
+
+    Args:
+        value: Value to serialize or validate.
+        count: Expected number of landmarks.
+
+    Returns:
+        Finite NumPy XYZ array of shape (count, 3).
+
+    Raises:
+        ValueError: Coordinates are not finite XYZ triples with shape (count, 3).
+    """
     points = np.asarray(value, dtype=float)
     if points.shape != (count, 3) or not np.isfinite(points).all():
         raise ValueError(f"Expected {count} finite XYZ landmarks")
@@ -42,6 +54,14 @@ def _face_anchor(points, size, minimum_scale):
     size is (width, height). The scale is sqrt(bbox_width * bbox_height),
     so face and hand XY share one distance correction despite image aspect
     ratio. Degenerate faces below minimum_scale return None.
+
+    Args:
+        points: Landmark coordinates in the order defined by MediaPipe.
+        size: Frame dimensions as (width, height).
+        minimum_scale: Smallest acceptable face scale in pixels.
+
+    Returns:
+        Face center, scale, and bounding-box metadata, or None for a degenerate face.
     """
     pixels = points[:, :2] * size
     lower, upper = pixels.min(axis=0), pixels.max(axis=0)
@@ -59,16 +79,43 @@ def _face_anchor(points, size, minimum_scale):
 
 
 def _normalize_xy(points, size, anchor):
-    """Center image-normalized XY on the face and divide by its pixel scale."""
+    """Center image-normalized XY on the face and divide by its pixel scale.
+
+    Args:
+        points: Landmark coordinates in the order defined by MediaPipe.
+        size: Frame dimensions as (width, height).
+        anchor: Face center and scale used for distance normalization.
+
+    Returns:
+        Face-centered XY coordinates divided by the pixel-space face scale.
+    """
     return (points[:, :2] * size - anchor["center_px"]) / anchor["scale_px"]
 
 
 def restore_xy(points, size, anchor):
-    """Restore image-normalized XY using the current frame's original anchor."""
+    """Restore image-normalized XY using the current frame's original anchor.
+
+    Args:
+        points: Landmark coordinates in the order defined by MediaPipe.
+        size: Frame dimensions as (width, height).
+        anchor: Face center and scale used for distance normalization.
+
+    Returns:
+        XY coordinates restored to the image-normalized coordinate system.
+    """
     return (np.asarray(points) * anchor["scale_px"] + anchor["center_px"]) / size
 
 
 def _select_hands(hands, threshold):
+    """Select confident left/right hand detections and report ambiguous assignments.
+
+    Args:
+        hands: Detected hand records with handedness confidence.
+        threshold: Decision or confidence threshold.
+
+    Returns:
+        Selected hand slots and per-side rejection reasons.
+    """
     slots, reasons = {}, {}
     for side in ("Left", "Right"):
         candidates = [(i, h) for i, h in enumerate(hands) if h["handedness"] == side]
@@ -86,7 +133,17 @@ def _select_hands(hands, threshold):
 
 
 def _suspected_switches(current, previous, size, margin):
-    """Conservative wrist proximity warning, not an anatomical hand tracker."""
+    """Conservative wrist proximity warning, not an anatomical hand tracker.
+
+    Args:
+        current: Current frame's per-hand landmark selection.
+        previous: Previous frame's per-hand landmark selection.
+        size: Frame dimensions as (width, height).
+        margin: Distance margin for flagging a suspected left/right assignment switch.
+
+    Returns:
+        Set of handedness labels with a suspected assignment switch.
+    """
     flagged = set()
     for side, (_, points) in current.items():
         other = "Right" if side == "Left" else "Left"
@@ -106,6 +163,22 @@ def _suspected_switches(current, previous, size, margin):
 
 
 def _normalize_rows(rows, width, height, fps, *, config=None):
+    """Validate the sampling grid and attach face-relative coordinates and continuity metadata.
+
+    Args:
+        rows: Ordered per-frame landmark records.
+        width: Decoded frame width in pixels.
+        height: Decoded frame height in pixels.
+        fps: Frames per second on the FFmpeg resampling grid.
+        config: Optional preprocessing overrides of the default settings.
+
+    Yields:
+        Validated records with normalized coordinates and continuity segments.
+
+    Raises:
+        ValueError: Sampling settings, timestamps, frame indices, or landmark coordinates
+            violate the preprocessing contract.
+    """
     settings = {**DEFAULTS, **(config or {})}
     window = settings["window"]
     if type(window) is not int or window < 1 or window % 2 != 1:
@@ -248,6 +321,9 @@ def iter_preprocess(rows, width, height, fps, *, config=None):
     buffers at most one window and waits for window//2 future samples; EOF
     and each part's segment boundaries retain unsmoothed coordinates.
     Validation is lazy and runs while the returned iterator is consumed.
+
+    Yields:
+        One raw/normalized/smoothed feature record per sampled frame.
     """
     window = {**DEFAULTS, **(config or {})}["window"]
     # _normalize_rows validates settings before yielding the first record.
@@ -255,6 +331,15 @@ def iter_preprocess(rows, width, height, fps, *, config=None):
     first_index, next_index = 0, 0
 
     def finish(index):
+        """Finalize one buffered frame using only valid points from its continuity segment.
+
+        Args:
+            index: Zero-based item or frame index.
+
+        Returns:
+            Buffered feature record with centered smoothing applied where continuity
+            permits.
+        """
         offset = index - first_index
         record = buffer[offset]
         radius = window // 2
@@ -296,11 +381,30 @@ def preprocess(rows, width, height, fps, *, config=None):
 
     Uses the identical normalization and smoothing rules. Whole-video callers
     should consume iter_preprocess() to avoid holding every record in memory.
+
+    Args:
+        rows: Ordered per-frame landmark records.
+        width: Decoded frame width in pixels.
+        height: Decoded frame height in pixels.
+        fps: Frames per second on the FFmpeg resampling grid.
+        config: Optional preprocessing overrides of the default settings.
+
+    Returns:
+        List of preprocessed feature records for the supplied interval.
     """
     return list(iter_preprocess(rows, width, height, fps, config=config))
 
 
 def summarize(records):
+    """Aggregate detection validity, movement, missing reasons, and smoothing diagnostics.
+
+    Args:
+        records: Preprocessed frame records to summarize.
+
+    Returns:
+        Per-part validity, missing-reason counts, segment counts, and movement
+        diagnostics.
+    """
     report = {
         "frames": len(records),
         "parts": {},
@@ -337,6 +441,14 @@ def summarize(records):
                     )
 
         def rms(values):
+            """Compute root-mean-square movement when observations are available.
+
+            Args:
+                values: Numeric observations used in the calculation.
+
+            Returns:
+                Root-mean-square value, or None when there are no observations.
+            """
             return float(np.sqrt(np.mean(values))) if values else None
 
         report["parts"][part] = {
@@ -368,6 +480,16 @@ def preprocess_audit(audit_dir, output, window=3):
     Legacy audits lacking dimensions use a saved PNG to recover frame size.
     Returns the summary also saved in summary.json. Existing output, invalid
     settings or incomplete source audits raise instead of being overwritten.
+
+    Args:
+        audit_dir: Directory containing the completed landmark audit.
+        output: Destination directory or file for generated artifacts.
+        window: Positive odd number of frames in the centered moving average.
+
+    Raises:
+        ValueError: Input audit is not complete; Invalid or duplicate interval id; No
+            intervals.
+        FileExistsError: Output must be a new directory.
     """
     audit = read_json(audit_dir / "summary.json")
     if audit.get("status") != "complete":

@@ -1,0 +1,63 @@
+{
+  "id": "sb-opinion-summary-v1",
+  "provider": "Smarter Balanced",
+  "source_version": "2022-08",
+  "adaptation_version": "1.0",
+  "source_url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-opinion.pdf",
+  "source_sha256": "407ffc8b36f3e87c29b73a8c2adefbfe0852d02fbc8eb32e7948cc6af5162074",
+  "notice": "Project-authored condensed descriptors for every source dimension and score point. Not a verbatim official rubric or validated scoring instrument.",
+  "grades": [
+    3,
+    4,
+    5
+  ],
+  "genres": [
+    "opinion"
+  ],
+  "requires_sources": true,
+  "dimensions": {
+    "organization_purpose": {
+      "4": "Clear sustained opinion; purposeful structure, varied links, effective opening and ending, logical progression.",
+      "3": "Evident opinion; coherent structure, adequate links, opening and ending, with minor lapses.",
+      "2": "Uneven opinion; inconsistent structure and links, weak opening or ending, uneven progression.",
+      "1": "Unclear opinion; little structure, missing links or boundaries, confusing order or distracting ideas."
+    },
+    "evidence_elaboration": {
+      "4": "Specific relevant source support, clear attribution and convincing development; varied elaboration, precise vocabulary and effective style.",
+      "3": "Relevant integrated source support and attribution; adequate elaboration, suitable vocabulary and style.",
+      "2": "Weak or repetitive source support and attribution; uneven elaboration, summary-heavy development and imprecise language.",
+      "1": "Minimal, misused or mostly copied source material; little attribution, analysis or effective language."
+    },
+    "conventions": {
+      "2": "Adequate control of sentence construction, punctuation, capitalization, grammar and spelling.",
+      "1": "Partial control; correct conventions are limited.",
+      "0": "Little control; correct conventions are infrequent."
+    }
+  },
+  "score_ranges": {
+    "organization_purpose": [
+      1,
+      4
+    ],
+    "evidence_elaboration": [
+      1,
+      4
+    ],
+    "conventions": [
+      0,
+      2
+    ]
+  },
+  "scope_notes": [
+    "Judge convention errors by variety, severity and density; weigh basic errors more heavily.",
+    "Personal experience may elaborate the central idea when relevant; source evidence remains part of this performance-task rubric."
+  ],
+  "total_policy": "Display-only unweighted sum; no cross-provider score conversion or proficiency decision.",
+  "not_scorable": [
+    "insufficient_including_copied",
+    "non_english",
+    "off_topic",
+    "off_purpose"
+  ],
+  "not_scorable_policy": "Source NS reasons; project policy withholds all dimensions and total for any NS. Off-purpose is NS in the first two source dimensions, not the conventions column."
+}

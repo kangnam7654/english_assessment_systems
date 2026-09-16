@@ -27,6 +27,14 @@ from presentation_attitude.vision.video import FFmpegVideoReader
 
 
 def xyz(landmarks):
+    """Convert MediaPipe landmark objects to serializable XYZ triples.
+
+    Args:
+        landmarks: MediaPipe landmark objects.
+
+    Returns:
+        List of [x, y, z] coordinates in detector order.
+    """
     return [[point.x, point.y, point.z] for point in landmarks]
 
 
@@ -39,11 +47,29 @@ class LandmarkExtractor:
     """
 
     def __init__(self, model_dir):
+        """Record model paths without opening detector tasks.
+
+        Args:
+            model_dir: Directory containing cached MediaPipe model assets.
+        """
         self.model_dir = model_dir
         self.stack = ExitStack()
 
     def __enter__(self):
+        """Load one face task and one hand task for this VIDEO tracking session.
+
+        Returns:
+            This initialized context-managed resource.
+        """
         def base(kind):
+            """Build MediaPipe base options for a cached detector asset.
+
+            Args:
+                kind: Model asset basename for the MediaPipe task.
+
+            Returns:
+                MediaPipe BaseOptions pointing to the requested cached task asset.
+            """
             return BaseOptions(
                 model_asset_path=str(self.model_dir / f"{kind}_landmarker.task"),
                 delegate=BaseOptions.Delegate.CPU,
@@ -84,6 +110,15 @@ class LandmarkExtractor:
         this session; index is the output frame index. source_seconds labels the
         sampling grid, not an exact source PTS. Missing detections use empty lists.
         Handedness is a detector label, not a persistent tracked-person identity.
+
+        Args:
+            rgb: RGB uint8 frame of shape (H, W, 3).
+            index: Zero-based item or frame index.
+            timestamp_ms: Strictly increasing MediaPipe timestamp in milliseconds.
+            source_seconds: Time on the sampling grid, not an exact source PTS.
+
+        Returns:
+            Raw face/hand XYZ, handedness, presence flags, and sampling metadata.
         """
         image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb)
         face = self.face_task.detect_for_video(image, timestamp_ms)
@@ -109,10 +144,32 @@ class LandmarkExtractor:
         return row
 
     def __exit__(self, *exc):
+        """Close all detector tasks, including when frame processing fails.
+
+        Args:
+            *exc: Exception details supplied by the context manager protocol.
+
+        Returns:
+            Exception-suppression result returned by the owned ExitStack.
+        """
         return self.stack.__exit__(*exc)
 
 
 def audit_interval(interval, source, fps, model_dir, output, *, save_frames=False):
+    """Extract one planned interval and optionally save sampled images.
+
+    Args:
+        interval: One planned video interval.
+        source: Source video path or caller-owned input stream, as required by this
+            operation.
+        fps: Frames per second on the FFmpeg resampling grid.
+        model_dir: Directory containing cached MediaPipe model assets.
+        output: Destination directory or file for generated artifacts.
+        save_frames: Whether to save sampled frame images for inspection.
+
+    Returns:
+        Interval summary with detection rates, timestamps, and source metadata.
+    """
     destination = output / interval["id"]
     destination.mkdir(parents=True)
     frames_dir = destination / "frames"
@@ -170,6 +227,16 @@ def audit_interval(interval, source, fps, model_dir, output, *, save_frames=Fals
 
 
 def validate_plan(plan, inventory):
+    """Reject invalid intervals or references absent from the source inventory.
+
+    Args:
+        plan: Audit plan describing the intervals to inspect.
+        inventory: Source inventory used to validate the plan.
+
+    Raises:
+        ValueError: sample_fps must be finite and in (0, 1000]; At least one interval is
+            required.
+    """
     fps = plan["sample_fps"]
     if (
         not isinstance(fps, (int, float))
@@ -198,6 +265,20 @@ def validate_plan(plan, inventory):
 
 
 def run_audit(root, plan_path, inventory_path, output, models_dir, save_frames=False):
+    """Validate a plan and write per-interval landmarks and diagnostic summaries.
+
+    Args:
+        root: Repository root used to resolve relative resource paths.
+        plan_path: Path to the audit plan JSON.
+        inventory_path: Path to the source inventory JSON.
+        output: Destination directory or file for generated artifacts.
+        models_dir: Directory containing cached MediaPipe model assets.
+        save_frames: Whether to save sampled frame images for inspection.
+
+    Raises:
+        ValueError: Video hash mismatch: <value>.
+        FileExistsError: Choose a new output directory: <value>.
+    """
     plan = read_json(plan_path)
     inventory = {s["file_name"]: s for s in read_json(inventory_path)["samples"]}
     validate_plan(plan, inventory)

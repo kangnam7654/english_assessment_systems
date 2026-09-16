@@ -1,0 +1,29 @@
+{
+  "id": "ccss-9-10-writing-v1",
+  "grade_band": "9-10",
+  "source_version": "2010-06-02",
+  "source_url": "https://www.thecorestandards.org/assets/CCSSI_ELA%20Standards.pdf",
+  "source_sha256": "fa333bc3e442725ad4fca685fd787f0da65c6922d1477a7663264e843d6de187",
+  "attribution": "© Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.",
+  "notice": "Project paraphrases of selected text-observable Writing and Language standards, not the full curriculum. No inference about revision, collaboration, handwriting, speaking or research process.",
+  "by_genre": {
+    "argumentative": {
+      "CCSS.ELA-Literacy.W.9-10.1": "Present precise claims distinguished from opposing claims; develop both fairly with evidence and strengths/limitations, anticipating audience knowledge/concerns; connect sections, maintain formal objective style and conclude.",
+      "CCSS.ELA-Literacy.L.9-10.1": "Use parallel structures and varied phrases/clauses for meaning and interest.",
+      "CCSS.ELA-Literacy.L.9-10.2": "Use semicolons and colons appropriately with correct spelling/capitalization.",
+      "CCSS.ELA-Literacy.L.9-10.3": "Use a consistent appropriate style manual where the task requires it."
+    },
+    "informative": {
+      "CCSS.ELA-Literacy.W.9-10.2": "Organize complex ideas to show connections/distinctions; develop sufficient relevant facts, extended definitions, quotations and examples for the audience; use varied transitions, precise domain language, formal objective tone and a conclusion explaining significance.",
+      "CCSS.ELA-Literacy.L.9-10.1": "Use parallel structures and varied phrases/clauses for meaning and interest.",
+      "CCSS.ELA-Literacy.L.9-10.2": "Use semicolons and colons appropriately with correct spelling/capitalization.",
+      "CCSS.ELA-Literacy.L.9-10.3": "Use a consistent appropriate style manual where the task requires it."
+    },
+    "narrative": {
+      "CCSS.ELA-Literacy.W.9-10.3": "Establish a problem/situation/observation, perspective(s) and narrator/characters; sequence coherent events using dialogue, pacing, description, reflection or multiple plots; use vivid sensory detail and a reflective conclusion.",
+      "CCSS.ELA-Literacy.L.9-10.1": "Use parallel structures and varied phrases/clauses for meaning and interest.",
+      "CCSS.ELA-Literacy.L.9-10.2": "Use semicolons and colons appropriately with correct spelling/capitalization.",
+      "CCSS.ELA-Literacy.L.9-10.3": "Use a consistent appropriate style manual where the task requires it."
+    }
+  }
+}

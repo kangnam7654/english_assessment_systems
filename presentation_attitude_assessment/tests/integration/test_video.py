@@ -1,3 +1,5 @@
+"""Regression checks for video."""
+
 import subprocess
 import sys
 import tempfile
@@ -12,8 +14,10 @@ from presentation_attitude.vision.video import FFmpegVideoReader, VideoDecodeErr
 
 
 class ReaderTests(unittest.TestCase):
+    """Exercise reader tests behavior with controlled fixtures."""
     @classmethod
     def setUpClass(cls):
+        """Create isolated fixtures and register cleanup for this test scope."""
         cls.temp = tempfile.TemporaryDirectory()
         cls.root = Path(cls.temp.name)
         cls.source = cls.root / "video with spaces.mkv"
@@ -48,9 +52,11 @@ class ReaderTests(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
+        """Release resources created for this test scope."""
         cls.temp.cleanup()
 
     def test_decoded_rgb_ownership_and_clean_eof(self):
+        """Verify decoded rgb ownership and clean eof."""
         with FFmpegVideoReader(self.source, fps=10) as reader:
             frames = list(reader)
         np.testing.assert_array_equal(frames, self.original)
@@ -65,6 +71,7 @@ class ReaderTests(unittest.TestCase):
             next(reader)
 
     def test_seek_and_sampling_match_previous_png_pipeline(self):
+        """Verify seek and sampling match previous png pipeline."""
         destination = self.root / "png-reference"
         destination.mkdir()
         subprocess.run(
@@ -101,6 +108,7 @@ class ReaderTests(unittest.TestCase):
         np.testing.assert_array_equal(actual, reference)
 
     def test_context_reaps_process_on_break_and_consumer_exception(self):
+        """Verify context reaps process on break and consumer exception."""
         for fail in (False, True):
             with self.subTest(fail=fail):
                 try:
@@ -118,12 +126,14 @@ class ReaderTests(unittest.TestCase):
                 reader.close()
 
     def test_empty_interval_is_error(self):
+        """Verify empty interval is error."""
         with self.assertRaisesRegex(VideoDecodeError, "no sampled frames"):
             with FFmpegVideoReader(self.source, start_seconds=100) as reader:
                 list(reader)
         self.assertIsNotNone(reader.process.poll())
 
     def test_rotation_metadata_keeps_upright_shape_and_pixels(self):
+        """Verify rotation metadata keeps upright shape and pixels."""
         unrotated, rotated = self.root / "base.mp4", self.root / "rotated.mp4"
         subprocess.run(
             [
@@ -161,9 +171,19 @@ class ReaderTests(unittest.TestCase):
         np.testing.assert_array_equal(frames, np.rot90(self.original, axes=(1, 2)))
 
     def test_decoder_error_drains_large_stderr_without_deadlock(self):
+        """Verify decoder error drains large stderr without deadlock."""
         real_popen = subprocess.Popen
 
         def failing_decoder(command, **kwargs):
+            """Start a fake decoder process that exercises the error path.
+
+            Args:
+                command: Subprocess command being replaced by the test decoder.
+                **kwargs: Keyword arguments forwarded to the operation under test.
+
+            Returns:
+                Fake decoder subprocess used to exercise stderr and failure handling.
+            """
             return real_popen(
                 [
                     sys.executable,
@@ -188,6 +208,7 @@ class ReaderTests(unittest.TestCase):
         self.assertLessEqual(sum(map(len, reader._stderr)), 65536)
 
     def test_invalid_input_and_context_usage(self):
+        """Verify invalid input and context usage."""
         with self.assertRaises(FileNotFoundError):
             FFmpegVideoReader(self.root / "missing.mp4")
         bad = self.root / "broken.mp4"

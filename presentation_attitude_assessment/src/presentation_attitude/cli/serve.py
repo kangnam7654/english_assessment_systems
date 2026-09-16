@@ -9,6 +9,7 @@ from presentation_attitude.serving.api import create_app
 
 
 def main():
+    """Start the local FastAPI upload and job-status service."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--port", type=int, default=43187, help="API port (default: 43187)"

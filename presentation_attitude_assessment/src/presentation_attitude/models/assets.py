@@ -6,6 +6,19 @@ from presentation_attitude.artifacts import read_json, sha256, write_json
 
 
 def get_models(directory, specs_path):
+    """Download missing MediaPipe assets and verify their expected SHA-256 digests.
+
+    Args:
+        directory: Directory used for the component's local files.
+        specs_path: JSON file with model download URLs and expected hashes.
+
+    Returns:
+        Manifest mapping model names to download URLs, SHA-256 digests, and sizes.
+
+    Raises:
+        ValueError: A downloaded or cached asset differs from its pinned hash.
+        OSError: An asset or its cache manifest cannot be read or written.
+    """
     specs = read_json(specs_path)
     directory.mkdir(parents=True, exist_ok=True)
     manifest_path = directory / "manifest.json"

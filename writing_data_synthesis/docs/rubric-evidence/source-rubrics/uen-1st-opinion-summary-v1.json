@@ -1,0 +1,53 @@
+{
+  "id": "uen-1st-opinion-summary-v1",
+  "provider": "Utah Education Network",
+  "source_version": null,
+  "adaptation_version": "1.0",
+  "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/1st-Opinion-Rubric.docx",
+  "source_sha256": "d60983775373f11ac1c77cd54544901fae9d2ac1fff1ad3c7f1ac81a6cf4279b",
+  "notice": "Project-authored condensed descriptors for every source dimension and score point. Not a verbatim official rubric or validated scoring instrument.",
+  "grades": [
+    1
+  ],
+  "genres": [
+    "opinion"
+  ],
+  "requires_sources": false,
+  "dimensions": {
+    "focus_organization": {
+      "4": "Introduces topic/book, states opinion, provides reasons and a closing statement.",
+      "3": "Introduces topic/book, states opinion, gives one reason and some closure.",
+      "2": "Unclear topic/opinion, weak or irrelevant reason, unclear closure.",
+      "1": "Unclear topic/opinion, no reason or closure."
+    },
+    "conventions": {
+      "2": "Capitalize beginnings, dates, names and I; use end marks and commas in dates/lists; use familiar spelling patterns and phonetic spelling for untaught words.",
+      "1": "Errors can obscure meaning; inconsistent punctuation, capitalization or spelling.",
+      "0": "Conventions are not under control."
+    }
+  },
+  "score_ranges": {
+    "focus_organization": [
+      1,
+      4
+    ],
+    "conventions": [
+      0,
+      2
+    ]
+  },
+  "scope_notes": [
+    "Publication version is not established by the source catalog.",
+    "These are classroom descriptors, not a national proficiency standard."
+  ],
+  "total_policy": "Display-only unweighted sum; no cross-provider score conversion or proficiency decision.",
+  "not_scorable": [
+    "insufficient",
+    "illegible",
+    "non_english",
+    "incoherent",
+    "off_topic",
+    "off_purpose"
+  ],
+  "not_scorable_policy": "Source NS row; all scores null. Illegibility cannot be inferred from typed text."
+}

@@ -1,0 +1,66 @@
+{
+  "id": "sb-narrative-summary-v1",
+  "provider": "Smarter Balanced",
+  "source_version": "2022-08",
+  "adaptation_version": "1.0",
+  "source_url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-narrative.pdf",
+  "source_sha256": "a5c21e9fbb5494e4548d100353a8f76d464b0fe6e0d4021466760935c2b93a91",
+  "notice": "Project-authored condensed descriptors for every source dimension and score point. Not a verbatim official rubric or validated scoring instrument.",
+  "grades": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "genres": [
+    "narrative"
+  ],
+  "requires_sources": false,
+  "dimensions": {
+    "organization_purpose": {
+      "4": "Unified plot; clear setting and narrator/characters, purposeful transitions, logical events and effective opening/closure.",
+      "3": "Evident plot and context; mostly coherent events, adequate transitions and opening/closure.",
+      "2": "Inconsistent plot or context; uneven transitions and event sequence, weak boundaries.",
+      "1": "Little plot or context; disconnected events, few useful transitions and missing boundaries."
+    },
+    "development_elaboration": {
+      "4": "Thorough characters/events; effective dialogue, description and other techniques; sensory or figurative language and style advance the story.",
+      "3": "Adequately developed characters/events; suitable techniques, details, language and style.",
+      "2": "Uneven development and techniques; weak details or language, awkward source connections if used.",
+      "1": "Vague events/characters; minimal techniques and details, ineffective language or distracting source connections."
+    },
+    "conventions": {
+      "2": "Adequate control of sentence construction, punctuation, capitalization, grammar and spelling.",
+      "1": "Partial control; correct conventions are limited.",
+      "0": "Little control; correct conventions are infrequent."
+    }
+  },
+  "score_ranges": {
+    "organization_purpose": [
+      1,
+      4
+    ],
+    "development_elaboration": [
+      1,
+      4
+    ],
+    "conventions": [
+      0,
+      2
+    ]
+  },
+  "scope_notes": [
+    "Judge convention errors by variety, severity and density; weigh basic errors more heavily.",
+    "Explicit point-of-view expectations begin at grade 7. Source connections may enhance a narrative but are not mandatory."
+  ],
+  "total_policy": "Display-only unweighted sum; no cross-provider score conversion or proficiency decision.",
+  "not_scorable": [
+    "insufficient_including_copied",
+    "non_english",
+    "off_topic",
+    "off_purpose"
+  ],
+  "not_scorable_policy": "Source NS reasons; project policy withholds all dimensions and total for any NS. Off-purpose is NS in the first two source dimensions, not the conventions column."
+}

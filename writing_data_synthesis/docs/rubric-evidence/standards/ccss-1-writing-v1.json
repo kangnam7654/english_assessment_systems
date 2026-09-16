@@ -1,0 +1,26 @@
+{
+  "id": "ccss-1-writing-v1",
+  "grade_band": "1",
+  "source_version": "2010-06-02",
+  "source_url": "https://www.thecorestandards.org/assets/CCSSI_ELA%20Standards.pdf",
+  "source_sha256": "fa333bc3e442725ad4fca685fd787f0da65c6922d1477a7663264e843d6de187",
+  "attribution": "© Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.",
+  "notice": "Project paraphrases of selected text-observable Writing and Language standards, not the full curriculum. No inference about revision, collaboration, handwriting, speaking or research process.",
+  "by_genre": {
+    "opinion": {
+      "CCSS.ELA-Literacy.W.1.1": "Introduce topic/book, give an opinion and a supporting reason, and provide closure.",
+      "CCSS.ELA-Literacy.L.1.1": "Use nouns, pronouns, verbs and agreement appropriately; write complete simple and compound sentences.",
+      "CCSS.ELA-Literacy.L.1.2": "Capitalize dates/names, use end marks and commas for dates/series, spell familiar patterns conventionally and unfamiliar words phonetically."
+    },
+    "informative": {
+      "CCSS.ELA-Literacy.W.1.2": "Name the topic, give facts and provide closure.",
+      "CCSS.ELA-Literacy.L.1.1": "Use nouns, pronouns, verbs and agreement appropriately; write complete simple and compound sentences.",
+      "CCSS.ELA-Literacy.L.1.2": "Capitalize dates/names, use end marks and commas for dates/series, spell familiar patterns conventionally and unfamiliar words phonetically."
+    },
+    "narrative": {
+      "CCSS.ELA-Literacy.W.1.3": "Recount at least two sequenced events with details, time words and closure.",
+      "CCSS.ELA-Literacy.L.1.1": "Use nouns, pronouns, verbs and agreement appropriately; write complete simple and compound sentences.",
+      "CCSS.ELA-Literacy.L.1.2": "Capitalize dates/names, use end marks and commas for dates/series, spell familiar patterns conventionally and unfamiliar words phonetically."
+    }
+  }
+}

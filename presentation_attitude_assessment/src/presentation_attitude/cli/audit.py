@@ -8,6 +8,7 @@ from presentation_attitude.vision.landmarks import run_audit
 
 
 def main():
+    """Extract planned video intervals and write landmark diagnostics."""
     root = workspace_root()
     module_root = root / "presentation_attitude_assessment"
     parser = argparse.ArgumentParser(description=__doc__)

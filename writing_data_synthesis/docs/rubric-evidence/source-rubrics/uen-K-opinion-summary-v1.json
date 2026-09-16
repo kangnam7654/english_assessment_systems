@@ -1,0 +1,54 @@
+{
+  "id": "uen-K-opinion-summary-v1",
+  "provider": "Utah Education Network",
+  "source_version": null,
+  "adaptation_version": "1.0",
+  "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/K-Opinion-Rubric.docx",
+  "source_sha256": "4983809cb4ffb7f89e8251511758463b31a7b1c8badfb75730d2d5e8c5349bba",
+  "notice": "Project-authored condensed descriptors for every source dimension and score point. Not a verbatim official rubric or validated scoring instrument.",
+  "grades": [
+    "K"
+  ],
+  "genres": [
+    "opinion"
+  ],
+  "requires_sources": false,
+  "dimensions": {
+    "focus_organization": {
+      "4": "Names topic/book and gives a preference with an explanation of why.",
+      "3": "Names topic/book and states a preference.",
+      "2": "Topic or preference is unclear or confusing.",
+      "1": "No named topic/book or stated preference."
+    },
+    "conventions": {
+      "2": "Capitalize sentence beginnings and I; allow phonetic spelling of simple words. Errors do not form a systematic pattern.",
+      "1": "Errors can obscure meaning; inconsistent capitalization and spelling.",
+      "0": "Conventions are not under control."
+    }
+  },
+  "score_ranges": {
+    "focus_organization": [
+      1,
+      4
+    ],
+    "conventions": [
+      0,
+      2
+    ]
+  },
+  "scope_notes": [
+    "Publication version is not established by the source catalog.",
+    "These are classroom descriptors, not a national proficiency standard.",
+    "The original permits drawing, dictation and writing. This API supports student-authored text only; it cannot evaluate drawings, handwriting or conventions in adult transcriptions."
+  ],
+  "total_policy": "Display-only unweighted sum; no cross-provider score conversion or proficiency decision.",
+  "not_scorable": [
+    "insufficient",
+    "illegible",
+    "non_english",
+    "incoherent",
+    "off_topic",
+    "off_purpose"
+  ],
+  "not_scorable_policy": "Source NS row; all scores null. Illegibility cannot be inferred from typed text."
+}

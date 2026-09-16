@@ -12,8 +12,9 @@ Python 선택·버전 해석·lockfile·로컬 가상환경은 공유한다.
 | 확정된 라이브러리 버전 | 루트 `uv.lock` 하나 |
 | 설치·실행 환경 | 루트 `.venv` 하나 |
 
-발표 태도 모듈은 `src/presentation_attitude/`의 Python 패키지이며 공통 `.venv`에
-editable 설치한다. 데이터 합성 모듈과 루트는 `package = false`를 유지한다.
+발표 태도와 쓰기 모듈은 각각 `src/presentation_attitude/`, `src/writing_synthesis/`의
+Python 패키지이며 공통 `.venv`에 editable 설치한다. 루트만 `package = false`를 유지한다.
+[공통 디렉터리 기준](repository_structure.md)을 따른다.
 테스트는 각 기능의 `tests/`에 두며, 기능 간 통합 테스트가 필요할 때 루트 `tests/`를 추가한다.
 
 ## 설치와 실행
@@ -24,7 +25,7 @@ editable 설치한다. 데이터 합성 모듈과 루트는 `package = false`를
 uv sync --locked
 uv run --locked python -m unittest discover -s presentation_attitude_assessment/tests -v
 uv run --locked python -m unittest discover -s writing_data_synthesis/tests -t writing_data_synthesis -v
-uv run --locked uvicorn app:app --app-dir writing_data_synthesis --reload --port 8000
+uv run --locked uvicorn writing_synthesis.app:app --reload --port 8000
 ```
 
 루트 프로젝트가 두 멤버에 의존하므로 기본 `uv sync`도 양쪽 라이브러리를 설치한다.
@@ -100,10 +101,25 @@ PyTorch 2.14.0을 발표 태도 멤버에 추가하고 공통 lockfile과 `.venv
 데이터 합성 테스트 4개를 확인했다. CUDA/MPS 학습은 이번 검증에 포함하지 않았다.
 [GRU 학습 안내](../presentation_attitude_assessment/docs/guides/gru_training.md)를 참고한다.
 
+## Python 실행기로 전환 (2026-09-09)
+
+쓰기 모듈의 LangGraph 의존성을 제거하고 `uv.lock`을 갱신했다. LangGraph 관련
+패키지 6개를 제거했으며 기존의 나머지 확정 버전은 유지했다. 실행 상태와 단계 전환은
+`writing_data_synthesis/src/writing_synthesis/workflows/`의 Python 코드에서 관리한다. 위 버전 표와 JSON은
+통합 당시의 기록이다. 현재 환경은 `uv.lock`을 기준으로 한다.
+
+## OpenAI 호환 호출 (2026-09-09)
+
+쓰기 모듈의 LangChain·Ollama Python 패키지를 OpenAI SDK 3.10.0으로 교체했다.
+SDK가 사용하는 `httpx2`와 FastAPI TestClient용 `httpx`는 별도 패키지다. `httpx`는
+루트 개발 의존성으로 명시했다. 공통 lockfile을 갱신했으며 현재 버전은 `uv.lock`을 따른다.
+모델 서버 연결은 `WDS_LLM_*` 환경변수로 설정한다. SDK를 설치해도 모델 서버가 설치되거나
+외부 API가 호출되지는 않는다.
+
 ## ASR GPU training
 
 `child_speech_recognition` uses a separate Linux/CUDA NeMo environment, while the
 presentation and writing applications retain the shared Python 3.13 workspace.
 It is not a member of root `uv sync`: NeMo's GPU dependencies and NumPy constraints
 are isolated from the application dependency lock. See
-[the ASR experiment guide](../child_speech_recognition/EXPERIMENTS.md#run-the-code).
+[the ASR experiment guide](../child_speech_recognition/docs/EXPERIMENTS.md#run-the-code).

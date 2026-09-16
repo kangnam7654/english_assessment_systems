@@ -8,7 +8,14 @@ FEATURE_SCHEMA = "smoothed_xy_face_left_right_1040_plus_valid_3_v1"
 
 
 def feature_settings(summary):
-    """Keep extraction settings identical across splits and checkpoint inference."""
+    """Keep extraction settings identical across splits and checkpoint inference.
+
+    Args:
+        summary: Completed extraction summary containing settings and provenance.
+
+    Returns:
+        Canonical settings required to match extraction and checkpoint inputs.
+    """
     return {
         key: summary[key]
         for key in (
@@ -23,7 +30,17 @@ def feature_settings(summary):
 
 
 def label_mapping(purpose: str) -> dict[str, str]:
-    """Keep synthetic test labels distinct from presentation-attitude labels."""
+    """Keep synthetic test labels distinct from presentation-attitude labels.
+
+    Args:
+        purpose: Dataset or checkpoint purpose used to select the label contract.
+
+    Returns:
+        Class-ID to label mapping appropriate to the checkpoint purpose.
+
+    Raises:
+        ValueError: The purpose is not a supported training or synthetic-smoke purpose.
+    """
     if purpose == "pipeline_smoke":
         return {"0": "test_pattern_a", "1": "test_pattern_b"}
     if purpose == "attitude_training":

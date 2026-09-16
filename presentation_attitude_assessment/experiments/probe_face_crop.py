@@ -16,6 +16,13 @@ ROOT = workspace_root()
 
 
 def main():
+    """Run manually selected face-crop diagnostics without changing the production extractor.
+
+    Raises:
+        FileExistsError: The operation cannot satisfy its validation or resource
+            contract.
+        ValueError: The operation cannot satisfy its validation or resource contract.
+    """
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--audit", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)

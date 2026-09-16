@@ -1,0 +1,750 @@
+{
+  "collected_on": "2026-09-08",
+  "purpose": "K–12 reference collection with all 16 rubric sources represented by runtime summaries; 39 default grade/genre routes and 45 provider choices, Mock-verified only.",
+  "cache_root": ".local-data/writing-data-synthesis/reference-materials/2026-09-08",
+  "redistribution": "Source originals stay in ignored local storage. The repository tracks provenance and project-authored summaries; its MIT license does not replace third-party source terms.",
+  "sources": [
+    {
+      "id": "ccss-ela-2010",
+      "url": "https://www.thecorestandards.org/assets/CCSSI_ELA%20Standards.pdf",
+      "provider": "NGA Center / CCSSO",
+      "grades": [
+        "K",
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "genres": [
+        "opinion_argument",
+        "informative_explanatory",
+        "narrative"
+      ],
+      "version": "2010-06-02",
+      "scope": "ELA standards; writing and language are the selected strands",
+      "runtime_integrated": true,
+      "resolved_url": "https://www.thecorestandards.org/assets/CCSSI_ELA%20Standards.pdf",
+      "status": "downloaded",
+      "local_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/ccss-ela-2010.pdf",
+      "bytes": 1663111,
+      "sha256": "fa333bc3e442725ad4fca685fd787f0da65c6922d1477a7663264e843d6de187",
+      "text_extract_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/ccss-ela-2010.txt",
+      "verification": "Original hash verified; source text and score layout reviewed for runtime summary mapping. No educational scoring calibration or live LLM validation.",
+      "selected_printed_pages": {
+        "writing_k_5": [
+          19,
+          21
+        ],
+        "writing_6_12": [
+          42,
+          47
+        ],
+        "language_k_5": [
+          26,
+          29
+        ],
+        "language_6_12": [
+          52,
+          55
+        ]
+      },
+      "license_url": "https://www.thecorestandards.org/public-license/",
+      "attribution": "© Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.",
+      "runtime_scope": {
+        "routes": [
+          "us_K:opinion@uen-K-opinion-summary-v1",
+          "us_K:informative@uen-K-informative-summary-v1",
+          "us_K:narrative@uen-K-narrative-summary-v1",
+          "us_1:opinion@uen-1st-opinion-summary-v1",
+          "us_1:informative@uen-1st-informative-summary-v1",
+          "us_1:narrative@uen-1st-narrative-summary-v1",
+          "us_2:opinion@uen-2nd-opinion-summary-v1",
+          "us_2:informative@uen-2nd-informative-summary-v1",
+          "us_2:narrative@uen-2nd-narrative-summary-v1",
+          "us_3:opinion@sb-opinion-summary-v1",
+          "us_3:informative@sb-informational-summary-v1",
+          "us_3:narrative@sb-narrative-summary-v1",
+          "us_4:opinion@sb-opinion-summary-v1",
+          "us_4:informative@sb-informational-summary-v1",
+          "us_4:narrative@sb-narrative-summary-v1",
+          "us_5:opinion@sb-opinion-summary-v1",
+          "us_5:informative@sb-informational-summary-v1",
+          "us_5:narrative@sb-narrative-summary-v1",
+          "us_6:argumentative@sb-argumentative-summary-v2",
+          "us_6:informative@sb-explanatory-summary-v1",
+          "us_6:narrative@sb-narrative-summary-v1",
+          "us_7:argumentative@sb-argumentative-summary-v2",
+          "us_7:informative@sb-explanatory-summary-v1",
+          "us_7:narrative@sb-narrative-summary-v1",
+          "us_8:argumentative@sb-argumentative-summary-v2",
+          "us_8:informative@sb-explanatory-summary-v1",
+          "us_8:narrative@sb-narrative-summary-v1",
+          "us_9:argumentative@sb-argumentative-summary-v2",
+          "us_9:argumentative@oregon-hs-informative-argumentative-summary-v1",
+          "us_9:informative@sb-explanatory-summary-v1",
+          "us_9:informative@oregon-hs-informative-argumentative-summary-v1",
+          "us_9:narrative@oregon-hs-narrative-summary-v1",
+          "us_10:argumentative@sb-argumentative-summary-v2",
+          "us_10:argumentative@oregon-hs-informative-argumentative-summary-v1",
+          "us_10:informative@sb-explanatory-summary-v1",
+          "us_10:informative@oregon-hs-informative-argumentative-summary-v1",
+          "us_10:narrative@oregon-hs-narrative-summary-v1",
+          "us_11:argumentative@sb-argumentative-summary-v2",
+          "us_11:argumentative@oregon-hs-informative-argumentative-summary-v1",
+          "us_11:informative@sb-explanatory-summary-v1",
+          "us_11:informative@oregon-hs-informative-argumentative-summary-v1",
+          "us_11:narrative@oregon-hs-narrative-summary-v1",
+          "us_12:argumentative@oregon-hs-informative-argumentative-summary-v1",
+          "us_12:informative@oregon-hs-informative-argumentative-summary-v1",
+          "us_12:narrative@oregon-hs-narrative-summary-v1"
+        ],
+        "representation": "project-authored condensed adaptation",
+        "validated_with": "mock only",
+        "full_source_integrated": false
+      }
+    },
+    {
+      "id": "sb-narrative",
+      "url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-narrative.pdf",
+      "provider": "Smarter Balanced",
+      "grades": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "genres": [
+        "narrative"
+      ],
+      "version": "2022-08",
+      "scope": "Performance-task rubric for a grade band; retain task and source materials",
+      "runtime_integrated": true,
+      "resolved_url": "https://portal.smarterbalanced.org/hubfs/44715956/performance-task-writing-rubric-narrative.pdf",
+      "status": "downloaded",
+      "local_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/sb-narrative.pdf",
+      "bytes": 149387,
+      "sha256": "a5c21e9fbb5494e4548d100353a8f76d464b0fe6e0d4021466760935c2b93a91",
+      "text_extract_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/sb-narrative.txt",
+      "verification": "Original hash verified; source text and score layout reviewed for runtime summary mapping. No educational scoring calibration or live LLM validation.",
+      "score_structure_note": "Two 4-point dimensions and conventions 0-2; NS handled separately. Preserve original descriptors and grade-specific footnotes.",
+      "runtime_scope": {
+        "routes": [
+          "us_3:narrative@sb-narrative-summary-v1",
+          "us_4:narrative@sb-narrative-summary-v1",
+          "us_5:narrative@sb-narrative-summary-v1",
+          "us_6:narrative@sb-narrative-summary-v1",
+          "us_7:narrative@sb-narrative-summary-v1",
+          "us_8:narrative@sb-narrative-summary-v1"
+        ],
+        "representation": "project-authored condensed adaptation",
+        "validated_with": "mock only",
+        "full_source_integrated": false
+      }
+    },
+    {
+      "id": "sb-informational",
+      "url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-informational.pdf",
+      "provider": "Smarter Balanced",
+      "grades": [
+        3,
+        4,
+        5
+      ],
+      "genres": [
+        "informational"
+      ],
+      "version": "2022-08",
+      "scope": "Performance-task rubric for a grade band; retain task and source materials",
+      "runtime_integrated": true,
+      "resolved_url": "https://portal.smarterbalanced.org/hubfs/44715956/performance-task-writing-rubric-informational.pdf",
+      "status": "downloaded",
+      "local_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/sb-informational.pdf",
+      "bytes": 148752,
+      "sha256": "5b4f18452b2d035c2df5ee8046a12732cb4b8e9045bec80c2e1e48fdc4b2dbb7",
+      "text_extract_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/sb-informational.txt",
+      "verification": "Original hash verified; source text and score layout reviewed for runtime summary mapping. No educational scoring calibration or live LLM validation.",
+      "score_structure_note": "Two 4-point dimensions and conventions 0-2; NS handled separately. Preserve original descriptors and grade-specific footnotes.",
+      "runtime_scope": {
+        "routes": [
+          "us_3:informative@sb-informational-summary-v1",
+          "us_4:informative@sb-informational-summary-v1",
+          "us_5:informative@sb-informational-summary-v1"
+        ],
+        "representation": "project-authored condensed adaptation",
+        "validated_with": "mock only",
+        "full_source_integrated": false
+      }
+    },
+    {
+      "id": "sb-explanatory",
+      "url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-explanatory.pdf",
+      "provider": "Smarter Balanced",
+      "grades": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "genres": [
+        "explanatory"
+      ],
+      "version": "2022-08",
+      "scope": "Performance-task rubric for a grade band; retain task and source materials",
+      "runtime_integrated": true,
+      "resolved_url": "https://portal.smarterbalanced.org/hubfs/44715956/performance-task-writing-rubric-explanatory.pdf",
+      "status": "downloaded",
+      "local_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/sb-explanatory.pdf",
+      "bytes": 150041,
+      "sha256": "7c40baab6690c73a39c28e50d4c3059250d319a9a2504b6f3ab9cc9dfb9f26e7",
+      "text_extract_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/sb-explanatory.txt",
+      "verification": "Original hash verified; source text and score layout reviewed for runtime summary mapping. No educational scoring calibration or live LLM validation.",
+      "score_structure_note": "Two 4-point dimensions and conventions 0-2; NS handled separately. Preserve original descriptors and grade-specific footnotes.",
+      "runtime_scope": {
+        "routes": [
+          "us_6:informative@sb-explanatory-summary-v1",
+          "us_7:informative@sb-explanatory-summary-v1",
+          "us_8:informative@sb-explanatory-summary-v1",
+          "us_9:informative@sb-explanatory-summary-v1",
+          "us_10:informative@sb-explanatory-summary-v1",
+          "us_11:informative@sb-explanatory-summary-v1"
+        ],
+        "representation": "project-authored condensed adaptation",
+        "validated_with": "mock only",
+        "full_source_integrated": false
+      }
+    },
+    {
+      "id": "sb-opinion",
+      "url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-opinion.pdf",
+      "provider": "Smarter Balanced",
+      "grades": [
+        3,
+        4,
+        5
+      ],
+      "genres": [
+        "opinion"
+      ],
+      "version": "2022-08",
+      "scope": "Performance-task rubric for a grade band; retain task and source materials",
+      "runtime_integrated": true,
+      "resolved_url": "https://portal.smarterbalanced.org/hubfs/44715956/performance-task-writing-rubric-opinion.pdf",
+      "status": "downloaded",
+      "local_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/sb-opinion.pdf",
+      "bytes": 147336,
+      "sha256": "407ffc8b36f3e87c29b73a8c2adefbfe0852d02fbc8eb32e7948cc6af5162074",
+      "text_extract_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/sb-opinion.txt",
+      "verification": "Original hash verified; source text and score layout reviewed for runtime summary mapping. No educational scoring calibration or live LLM validation.",
+      "score_structure_note": "Two 4-point dimensions and conventions 0-2; NS handled separately. Preserve original descriptors and grade-specific footnotes.",
+      "runtime_scope": {
+        "routes": [
+          "us_3:opinion@sb-opinion-summary-v1",
+          "us_4:opinion@sb-opinion-summary-v1",
+          "us_5:opinion@sb-opinion-summary-v1"
+        ],
+        "representation": "project-authored condensed adaptation",
+        "validated_with": "mock only",
+        "full_source_integrated": false
+      }
+    },
+    {
+      "id": "sb-argumentative",
+      "url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-argumentative.pdf",
+      "provider": "Smarter Balanced",
+      "grades": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "genres": [
+        "argumentative"
+      ],
+      "version": "2022-08",
+      "scope": "Performance-task rubric for a grade band; retain task and source materials",
+      "runtime_integrated": true,
+      "resolved_url": "https://portal.smarterbalanced.org/hubfs/44715956/performance-task-writing-rubric-argumentative.pdf",
+      "status": "downloaded",
+      "local_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/sb-argumentative.pdf",
+      "bytes": 151982,
+      "sha256": "a7634f32c2122680b8d142d53793ee39b2d86deb378d340826bc2d6a27084aa7",
+      "text_extract_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/sb-argumentative.txt",
+      "verification": "Original hash verified; source text and score layout reviewed for runtime summary mapping. No educational scoring calibration or live LLM validation.",
+      "score_structure_note": "Two 4-point dimensions and conventions 0-2; NS handled separately. Preserve original descriptors and grade-specific footnotes.",
+      "runtime_scope": {
+        "routes": [
+          "us_6:argumentative@sb-argumentative-summary-v2",
+          "us_7:argumentative@sb-argumentative-summary-v2",
+          "us_8:argumentative@sb-argumentative-summary-v2",
+          "us_9:argumentative@sb-argumentative-summary-v2",
+          "us_10:argumentative@sb-argumentative-summary-v2",
+          "us_11:argumentative@sb-argumentative-summary-v2"
+        ],
+        "representation": "project-authored condensed adaptation",
+        "validated_with": "mock only",
+        "full_source_integrated": false
+      }
+    },
+    {
+      "id": "uen-K-informative",
+      "url": "https://www.uen.org/core/languagearts/writing-collection/downloads/K-Informative-Rubric.docx",
+      "provider": "Utah Education Network",
+      "grades": [
+        "K"
+      ],
+      "genres": [
+        "informative"
+      ],
+      "version": null,
+      "scope": "Grade-specific classroom rubric; publication version unknown",
+      "runtime_integrated": true,
+      "resolved_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/K-Informative-Rubric.docx",
+      "status": "downloaded",
+      "local_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/uen-K-informative.docx",
+      "bytes": 17518,
+      "sha256": "c1457e29e591382caf70bb86342b3e88e2e454b7856cc88e6a83a0d3948421ff",
+      "text_extract_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/uen-K-informative.txt",
+      "verification": "Original hash verified; source text and score layout reviewed for runtime summary mapping. No educational scoring calibration or live LLM validation.",
+      "runtime_scope": {
+        "routes": [
+          "us_K:informative@uen-K-informative-summary-v1"
+        ],
+        "representation": "project-authored condensed adaptation",
+        "validated_with": "mock only",
+        "full_source_integrated": false
+      }
+    },
+    {
+      "id": "uen-K-opinion",
+      "url": "https://www.uen.org/core/languagearts/writing-collection/downloads/K-Opinion-Rubric.docx",
+      "provider": "Utah Education Network",
+      "grades": [
+        "K"
+      ],
+      "genres": [
+        "opinion"
+      ],
+      "version": null,
+      "scope": "Grade-specific classroom rubric; publication version unknown",
+      "runtime_integrated": true,
+      "resolved_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/K-Opinion-Rubric.docx",
+      "status": "downloaded",
+      "local_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/uen-K-opinion.docx",
+      "bytes": 17092,
+      "sha256": "4983809cb4ffb7f89e8251511758463b31a7b1c8badfb75730d2d5e8c5349bba",
+      "text_extract_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/uen-K-opinion.txt",
+      "verification": "Original hash verified; source text and score layout reviewed for runtime summary mapping. No educational scoring calibration or live LLM validation.",
+      "runtime_scope": {
+        "routes": [
+          "us_K:opinion@uen-K-opinion-summary-v1"
+        ],
+        "representation": "project-authored condensed adaptation",
+        "validated_with": "mock only",
+        "full_source_integrated": false
+      }
+    },
+    {
+      "id": "uen-K-narrative",
+      "url": "https://www.uen.org/core/languagearts/writing-collection/downloads/K-Narrative-Rubric.docx",
+      "provider": "Utah Education Network",
+      "grades": [
+        "K"
+      ],
+      "genres": [
+        "narrative"
+      ],
+      "version": null,
+      "scope": "Grade-specific classroom rubric; publication version unknown",
+      "runtime_integrated": true,
+      "resolved_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/K-Narrative-Rubric.docx",
+      "status": "downloaded",
+      "local_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/uen-K-narrative.docx",
+      "bytes": 16643,
+      "sha256": "f0cace58a481ae1842d2b4ad25991f95f0a44c242c0a4ddea788ad010ced42fd",
+      "text_extract_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/uen-K-narrative.txt",
+      "verification": "Original hash verified; source text and score layout reviewed for runtime summary mapping. No educational scoring calibration or live LLM validation.",
+      "runtime_scope": {
+        "routes": [
+          "us_K:narrative@uen-K-narrative-summary-v1"
+        ],
+        "representation": "project-authored condensed adaptation",
+        "validated_with": "mock only",
+        "full_source_integrated": false
+      }
+    },
+    {
+      "id": "uen-1st-informative",
+      "url": "https://www.uen.org/core/languagearts/writing-collection/downloads/1st-Informative-Rubric.docx",
+      "provider": "Utah Education Network",
+      "grades": [
+        1
+      ],
+      "genres": [
+        "informative"
+      ],
+      "version": null,
+      "scope": "Grade-specific classroom rubric; publication version unknown",
+      "runtime_integrated": true,
+      "resolved_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/1st-Informative-Rubric.docx",
+      "status": "downloaded",
+      "local_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/uen-1st-informative.docx",
+      "bytes": 17295,
+      "sha256": "8e6f307924c4c8f25b49042c382405cb90b7e1500b57681c41abfcb7c25ab47b",
+      "text_extract_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/uen-1st-informative.txt",
+      "verification": "Original hash verified; source text and score layout reviewed for runtime summary mapping. No educational scoring calibration or live LLM validation.",
+      "runtime_scope": {
+        "routes": [
+          "us_1:informative@uen-1st-informative-summary-v1"
+        ],
+        "representation": "project-authored condensed adaptation",
+        "validated_with": "mock only",
+        "full_source_integrated": false
+      }
+    },
+    {
+      "id": "uen-1st-opinion",
+      "url": "https://www.uen.org/core/languagearts/writing-collection/downloads/1st-Opinion-Rubric.docx",
+      "provider": "Utah Education Network",
+      "grades": [
+        1
+      ],
+      "genres": [
+        "opinion"
+      ],
+      "version": null,
+      "scope": "Grade-specific classroom rubric; publication version unknown",
+      "runtime_integrated": true,
+      "resolved_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/1st-Opinion-Rubric.docx",
+      "status": "downloaded",
+      "local_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/uen-1st-opinion.docx",
+      "bytes": 17693,
+      "sha256": "d60983775373f11ac1c77cd54544901fae9d2ac1fff1ad3c7f1ac81a6cf4279b",
+      "text_extract_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/uen-1st-opinion.txt",
+      "verification": "Original hash verified; source text and score layout reviewed for runtime summary mapping. No educational scoring calibration or live LLM validation.",
+      "runtime_scope": {
+        "routes": [
+          "us_1:opinion@uen-1st-opinion-summary-v1"
+        ],
+        "representation": "project-authored condensed adaptation",
+        "validated_with": "mock only",
+        "full_source_integrated": false
+      }
+    },
+    {
+      "id": "uen-1st-narrative",
+      "url": "https://www.uen.org/core/languagearts/writing-collection/downloads/1st-NarrativeRubric.docx",
+      "provider": "Utah Education Network",
+      "grades": [
+        1
+      ],
+      "genres": [
+        "narrative"
+      ],
+      "version": null,
+      "scope": "Grade-specific classroom rubric; publication version unknown",
+      "runtime_integrated": true,
+      "resolved_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/1st-NarrativeRubric.docx",
+      "status": "downloaded",
+      "local_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/uen-1st-narrative.docx",
+      "bytes": 15300,
+      "sha256": "959fd9432ac92ed6abe83eef91f29fcdd105dc1542f29e86b50ce72c47543d0a",
+      "text_extract_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/uen-1st-narrative.txt",
+      "verification": "Original hash verified; source text and score layout reviewed for runtime summary mapping. No educational scoring calibration or live LLM validation.",
+      "runtime_scope": {
+        "routes": [
+          "us_1:narrative@uen-1st-narrative-summary-v1"
+        ],
+        "representation": "project-authored condensed adaptation",
+        "validated_with": "mock only",
+        "full_source_integrated": false
+      }
+    },
+    {
+      "id": "uen-2nd-informative",
+      "url": "https://www.uen.org/core/languagearts/writing-collection/downloads/2nd-Informative-Rubric.docx",
+      "provider": "Utah Education Network",
+      "grades": [
+        2
+      ],
+      "genres": [
+        "informative"
+      ],
+      "version": null,
+      "scope": "Grade-specific classroom rubric; publication version unknown",
+      "runtime_integrated": true,
+      "resolved_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/2nd-Informative-Rubric.docx",
+      "status": "downloaded",
+      "local_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/uen-2nd-informative.docx",
+      "bytes": 17695,
+      "sha256": "d3a72d4cb2934e3cb56d5812d1f4811a8b78a98779e3bed157b9e26ac8ad2c5d",
+      "text_extract_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/uen-2nd-informative.txt",
+      "verification": "Original hash verified; source text and score layout reviewed for runtime summary mapping. No educational scoring calibration or live LLM validation.",
+      "runtime_scope": {
+        "routes": [
+          "us_2:informative@uen-2nd-informative-summary-v1"
+        ],
+        "representation": "project-authored condensed adaptation",
+        "validated_with": "mock only",
+        "full_source_integrated": false
+      }
+    },
+    {
+      "id": "uen-2nd-opinion",
+      "url": "https://www.uen.org/core/languagearts/writing-collection/downloads/2nd-Opinion-Rubric.docx",
+      "provider": "Utah Education Network",
+      "grades": [
+        2
+      ],
+      "genres": [
+        "opinion"
+      ],
+      "version": null,
+      "scope": "Grade-specific classroom rubric; publication version unknown",
+      "runtime_integrated": true,
+      "resolved_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/2nd-Opinion-Rubric.docx",
+      "status": "downloaded",
+      "local_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/uen-2nd-opinion.docx",
+      "bytes": 19939,
+      "sha256": "2976ed3f9ba11930822510f86f609de3852e0bf8e840255a9d148c4747bd6a20",
+      "text_extract_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/uen-2nd-opinion.txt",
+      "verification": "Original hash verified; source text and score layout reviewed for runtime summary mapping. No educational scoring calibration or live LLM validation.",
+      "runtime_scope": {
+        "routes": [
+          "us_2:opinion@uen-2nd-opinion-summary-v1"
+        ],
+        "representation": "project-authored condensed adaptation",
+        "validated_with": "mock only",
+        "full_source_integrated": false
+      }
+    },
+    {
+      "id": "uen-2nd-narrative",
+      "url": "https://www.uen.org/core/languagearts/writing-collection/downloads/2nd-Narrative-Rubric.docx",
+      "provider": "Utah Education Network",
+      "grades": [
+        2
+      ],
+      "genres": [
+        "narrative"
+      ],
+      "version": null,
+      "scope": "Grade-specific classroom rubric; publication version unknown",
+      "runtime_integrated": true,
+      "resolved_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/2nd-Narrative-Rubric.docx",
+      "status": "downloaded",
+      "local_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/uen-2nd-narrative.docx",
+      "bytes": 16941,
+      "sha256": "3d2a85668b20bb3f7c2927790fcff58c674504997091941b93d211ccada96a51",
+      "text_extract_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/uen-2nd-narrative.txt",
+      "verification": "Original hash verified; source text and score layout reviewed for runtime summary mapping. No educational scoring calibration or live LLM validation.",
+      "runtime_scope": {
+        "routes": [
+          "us_2:narrative@uen-2nd-narrative-summary-v1"
+        ],
+        "representation": "project-authored condensed adaptation",
+        "validated_with": "mock only",
+        "full_source_integrated": false
+      }
+    },
+    {
+      "id": "oregon-hs-narrative",
+      "url": "https://www.oregon.gov/ode/educator-resources/essentialskills/Documents/Official%20Narrative%20SG%20Adopted%202019.pdf",
+      "provider": "Oregon Department of Education",
+      "grades": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "genres": [
+        "narrative"
+      ],
+      "version": "2019",
+      "scope": "High-school college/career-readiness expectations, not a separate grade-12 rubric",
+      "runtime_integrated": true,
+      "resolved_url": "https://www.oregon.gov/ode/educator-resources/essentialskills/Documents/Official%20Narrative%20SG%20Adopted%202019.pdf",
+      "status": "downloaded",
+      "local_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/oregon-hs-narrative.pdf",
+      "bytes": 87731,
+      "sha256": "c0a440792b96459aa62c974179ce1c6d932e0534b3e7925c3892e6bf8f7ffbd7",
+      "text_extract_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/oregon-hs-narrative.txt",
+      "verification": "Original hash verified; source text and score layout reviewed for runtime summary mapping. No educational scoring calibration or live LLM validation.",
+      "runtime_scope": {
+        "routes": [
+          "us_9:narrative@oregon-hs-narrative-summary-v1",
+          "us_10:narrative@oregon-hs-narrative-summary-v1",
+          "us_11:narrative@oregon-hs-narrative-summary-v1",
+          "us_12:narrative@oregon-hs-narrative-summary-v1"
+        ],
+        "representation": "project-authored condensed adaptation",
+        "validated_with": "mock only",
+        "full_source_integrated": false
+      }
+    },
+    {
+      "id": "oregon-hs-informative-argumentative",
+      "url": "https://www.oregon.gov/ode/educator-resources/essentialskills/Documents/Offical%20Info_Argu%20SG%20Adopted%202019.pdf",
+      "provider": "Oregon Department of Education",
+      "grades": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "genres": [
+        "informative",
+        "explanatory",
+        "argumentative"
+      ],
+      "version": "2019",
+      "scope": "High-school college/career-readiness expectations, not a separate grade-12 rubric",
+      "runtime_integrated": true,
+      "resolved_url": "https://www.oregon.gov/ode/educator-resources/essentialskills/Documents/Offical%20Info_Argu%20SG%20Adopted%202019.pdf",
+      "status": "downloaded",
+      "local_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/oregon-hs-informative-argumentative.pdf",
+      "bytes": 104826,
+      "sha256": "f39276d863fbfce2d1b0f63a95a9fcd4571520b93ac12c4cd490e176035f07ac",
+      "text_extract_path": ".local-data/writing-data-synthesis/reference-materials/2026-09-08/oregon-hs-informative-argumentative.txt",
+      "verification": "Original hash verified; source text and score layout reviewed for runtime summary mapping. No educational scoring calibration or live LLM validation.",
+      "runtime_scope": {
+        "routes": [
+          "us_9:argumentative@oregon-hs-informative-argumentative-summary-v1",
+          "us_9:informative@oregon-hs-informative-argumentative-summary-v1",
+          "us_10:argumentative@oregon-hs-informative-argumentative-summary-v1",
+          "us_10:informative@oregon-hs-informative-argumentative-summary-v1",
+          "us_11:argumentative@oregon-hs-informative-argumentative-summary-v1",
+          "us_11:informative@oregon-hs-informative-argumentative-summary-v1",
+          "us_12:argumentative@oregon-hs-informative-argumentative-summary-v1",
+          "us_12:informative@oregon-hs-informative-argumentative-summary-v1"
+        ],
+        "representation": "project-authored condensed adaptation",
+        "validated_with": "mock only",
+        "full_source_integrated": false
+      }
+    }
+  ],
+  "grade_navigation": [
+    {
+      "grade_band": "K",
+      "grades": [
+        "K"
+      ],
+      "writing_url": "https://www.thecorestandards.org/ELA-Literacy/W/K/",
+      "language_url": "https://www.thecorestandards.org/ELA-Literacy/L/K/",
+      "verification": "Grade-band navigation listed on official strand indexes; full standards collected in ccss-ela-2010 PDF"
+    },
+    {
+      "grade_band": "1",
+      "grades": [
+        1
+      ],
+      "writing_url": "https://www.thecorestandards.org/ELA-Literacy/W/1/",
+      "language_url": "https://www.thecorestandards.org/ELA-Literacy/L/1/",
+      "verification": "Grade-band navigation listed on official strand indexes; full standards collected in ccss-ela-2010 PDF"
+    },
+    {
+      "grade_band": "2",
+      "grades": [
+        2
+      ],
+      "writing_url": "https://www.thecorestandards.org/ELA-Literacy/W/2/",
+      "language_url": "https://www.thecorestandards.org/ELA-Literacy/L/2/",
+      "verification": "Grade-band navigation listed on official strand indexes; full standards collected in ccss-ela-2010 PDF"
+    },
+    {
+      "grade_band": "3",
+      "grades": [
+        3
+      ],
+      "writing_url": "https://www.thecorestandards.org/ELA-Literacy/W/3/",
+      "language_url": "https://www.thecorestandards.org/ELA-Literacy/L/3/",
+      "verification": "Grade-band navigation listed on official strand indexes; full standards collected in ccss-ela-2010 PDF"
+    },
+    {
+      "grade_band": "4",
+      "grades": [
+        4
+      ],
+      "writing_url": "https://www.thecorestandards.org/ELA-Literacy/W/4/",
+      "language_url": "https://www.thecorestandards.org/ELA-Literacy/L/4/",
+      "verification": "Grade-band navigation listed on official strand indexes; full standards collected in ccss-ela-2010 PDF"
+    },
+    {
+      "grade_band": "5",
+      "grades": [
+        5
+      ],
+      "writing_url": "https://www.thecorestandards.org/ELA-Literacy/W/5/",
+      "language_url": "https://www.thecorestandards.org/ELA-Literacy/L/5/",
+      "verification": "Grade-band navigation listed on official strand indexes; full standards collected in ccss-ela-2010 PDF"
+    },
+    {
+      "grade_band": "6",
+      "grades": [
+        6
+      ],
+      "writing_url": "https://www.thecorestandards.org/ELA-Literacy/W/6/",
+      "language_url": "https://www.thecorestandards.org/ELA-Literacy/L/6/",
+      "verification": "Grade-band navigation listed on official strand indexes; full standards collected in ccss-ela-2010 PDF"
+    },
+    {
+      "grade_band": "7",
+      "grades": [
+        7
+      ],
+      "writing_url": "https://www.thecorestandards.org/ELA-Literacy/W/7/",
+      "language_url": "https://www.thecorestandards.org/ELA-Literacy/L/7/",
+      "verification": "Grade-band navigation listed on official strand indexes; full standards collected in ccss-ela-2010 PDF"
+    },
+    {
+      "grade_band": "8",
+      "grades": [
+        8
+      ],
+      "writing_url": "https://www.thecorestandards.org/ELA-Literacy/W/8/",
+      "language_url": "https://www.thecorestandards.org/ELA-Literacy/L/8/",
+      "verification": "Grade-band navigation listed on official strand indexes; full standards collected in ccss-ela-2010 PDF"
+    },
+    {
+      "grade_band": "9-10",
+      "grades": [
+        9,
+        10
+      ],
+      "writing_url": "https://www.thecorestandards.org/ELA-Literacy/W/9-10/",
+      "language_url": "https://www.thecorestandards.org/ELA-Literacy/L/9-10/",
+      "verification": "Grade-band navigation listed on official strand indexes; full standards collected in ccss-ela-2010 PDF"
+    },
+    {
+      "grade_band": "11-12",
+      "grades": [
+        11,
+        12
+      ],
+      "writing_url": "https://www.thecorestandards.org/ELA-Literacy/W/11-12/",
+      "language_url": "https://www.thecorestandards.org/ELA-Literacy/L/11-12/",
+      "verification": "Grade-band navigation listed on official strand indexes; full standards collected in ccss-ela-2010 PDF"
+    }
+  ],
+  "provider_indexes": {
+    "CCSS Writing": "https://www.thecorestandards.org/ELA-Literacy/W/",
+    "CCSS Language": "https://www.thecorestandards.org/ELA-Literacy/L/",
+    "Smarter Balanced": "https://smart.smarterbalanced.org/",
+    "UEN": "https://www.uen.org/core/languagearts/writing-collection/",
+    "Oregon": "https://www.oregon.gov/ode/educator-resources/assessment/Pages/Speaking_and_Writing_Local_Performance_Assessments.aspx"
+  }
+}

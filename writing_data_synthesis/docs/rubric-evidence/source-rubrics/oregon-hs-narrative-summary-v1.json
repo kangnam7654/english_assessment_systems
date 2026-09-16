@@ -1,0 +1,106 @@
+{
+  "id": "oregon-hs-narrative-summary-v1",
+  "provider": "Oregon Department of Education",
+  "source_version": "2019",
+  "adaptation_version": "1.0",
+  "source_url": "https://www.oregon.gov/ode/educator-resources/essentialskills/Documents/Official%20Narrative%20SG%20Adopted%202019.pdf",
+  "source_sha256": "c0a440792b96459aa62c974179ce1c6d932e0534b3e7925c3892e6bf8f7ffbd7",
+  "notice": "Project-authored condensed descriptors for every source dimension and score point. Not a verbatim official rubric or validated scoring instrument.",
+  "grades": [
+    9,
+    10,
+    11,
+    12
+  ],
+  "genres": [
+    "narrative"
+  ],
+  "requires_sources": false,
+  "dimensions": {
+    "ideas_content": {
+      "6": "Focused rich narrative; significant details develop setting, characters, conflict and insight using effective narrative techniques.",
+      "5": "Clear developed narrative with relevant details, perspective and connections beyond events.",
+      "4": "Clear purpose and relevant narrative support; some connections or insight.",
+      "3": "Inferable purpose but predictable, general or uneven narrative detail.",
+      "2": "Unclear purpose; vague, insufficient or repetitive development.",
+      "1": "No central purpose and almost no development."
+    },
+    "organization": {
+      "6": "Compelling structure and smooth sequencing; varied transitions, engaging opening and satisfying conclusion.",
+      "5": "Strong structure and effective sequence, transitions and boundaries.",
+      "4": "Clear coherent order and paragraphs, possibly formulaic; adequate links and boundaries.",
+      "3": "Inconsistent or rigid organization; weak boundaries and repetitive links.",
+      "2": "Hard-to-follow sequence; misplaced details and missing or weak boundaries.",
+      "1": "Disjointed order without useful links or identifiable structure."
+    },
+    "voice": {
+      "6": "Distinctive engaging voice; deliberate tone, audience connection and consistent perspective.",
+      "5": "Expressive appropriate voice with clear audience awareness and consistent perspective.",
+      "4": "Generally appropriate tone and perspective; some engagement and audience awareness.",
+      "3": "Uneven commitment, tone or perspective; uncertain audience connection.",
+      "2": "Flat or mechanical voice, little audience awareness and inconsistent perspective.",
+      "1": "Lifeless voice and unclear perspective; no meaningful audience connection."
+    },
+    "word_choice": {
+      "6": "Exceptionally precise, varied and purposeful vocabulary; vivid or discipline-specific language strengthens meaning.",
+      "5": "Precise varied vocabulary and effective imagery or terminology.",
+      "4": "Clear functional vocabulary with enough variety to avoid repetition.",
+      "3": "Generic or repetitive language, occasional misuse and strained expression.",
+      "2": "Monotonous, vague or misused words weaken meaning.",
+      "1": "Extremely limited or misused vocabulary obscures meaning."
+    },
+    "sentence_fluency": {
+      "6": "Skillful rhythm and varied syntax emphasize meaning; strong control including purposeful fragments when appropriate.",
+      "5": "Smooth rhythm and carefully varied, well-controlled sentences.",
+      "4": "Generally fluid reading with some variety; strong simple-sentence control.",
+      "3": "Mechanical or repetitive sentences with awkward passages and limited complex-sentence control.",
+      "2": "Choppy or rambling sentences impede reading; little syntactic variety.",
+      "1": "Incomplete or disjointed sentences and confusing syntax obscure meaning."
+    },
+    "conventions": {
+      "6": "Exceptional control across a wide range; very rare minor errors, little editing needed.",
+      "5": "Strong control and effective punctuation; few minor errors.",
+      "4": "Generally correct conventions; minor errors preserve readability and meaning.",
+      "3": "Limited control; errors begin to distract or hinder reading.",
+      "2": "Frequent substantial errors impair readability and require major editing.",
+      "1": "Pervasive severe errors obstruct meaning and require extensive editing."
+    }
+  },
+  "score_ranges": {
+    "ideas_content": [
+      1,
+      6
+    ],
+    "organization": [
+      1,
+      6
+    ],
+    "voice": [
+      1,
+      6
+    ],
+    "word_choice": [
+      1,
+      6
+    ],
+    "sentence_fluency": [
+      1,
+      6
+    ],
+    "conventions": [
+      1,
+      6
+    ]
+  },
+  "scope_notes": [
+    "High-school guide shared across grades 9–12, not a separate grade-12 rubric.",
+    "Gender-neutral language is permitted.",
+    "Assess only textual evidence; do not infer student motivation, actual research process or unprovided source reliability.",
+    "For narrative, judge voice, imagery, sequencing and closure through the story and its perspective."
+  ],
+  "total_policy": "Display-only unweighted sum; no cross-provider score conversion or proficiency decision.",
+  "not_scorable": [
+    "insufficient_evidence"
+  ],
+  "not_scorable_policy": "Project abstention only when evidence cannot support scoring; the Oregon guide provides 1–6 anchors, not this NS category. Weak writing normally earns a source-scale score rather than abstention."
+}

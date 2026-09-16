@@ -1,5 +1,6 @@
 # English Assessment Systems
 
+[모노레포 구조 기준](docs/repository_structure.md)
 [English](README.en.md)
 
 **발표 영상 분석부터 영어 쓰기·음성 인식까지, 평가 업무의 재구현.**
@@ -21,12 +22,12 @@
 
 ### [영어 쓰기 데이터 합성 →](writing_data_synthesis/README.md)
 
-학년·수준에 맞는 에세이를 생성하고, LangGraph 워크플로를 통해 루브릭에 따라
+학년·수준에 맞는 에세이를 생성하고, Python 실행기를 통해 루브릭에 따라
 평가합니다. API와 Next.js 데모를 포함합니다.
 
-**LangGraph · Ollama · FastAPI · Next.js**
+**Python · OpenAI 호환 SDK · FastAPI · SQLite**
 
-출력은 합성 데이터 후보입니다. 사람의 검수와 배치 데이터셋 내보내기는 후속 작업입니다.
+고정된 Mock 응답으로 생성·검증·저장 흐름을 확인했습니다. 실제 모델 품질은 미검증이며, 결과 채택·재생성 규칙과 배치 데이터셋 내보내기는 아직 구현하지 않았습니다.
 
 ### [아동 영어 음성 인식 →](child_speech_recognition/README.md)
 
@@ -44,7 +45,7 @@ NeMo 학습으로 고정 Test WER를 **14.45% → 8.50%**로 낮췄습니다.
 저장소 루트에서:
 
 ```sh
-uv sync --locked
+uv sync --all-packages --locked
 ```
 
 발표 태도 평가와 쓰기 데이터 합성 프로젝트는 **Python 3.13**과 루트 `uv.lock`을 공유합니다.

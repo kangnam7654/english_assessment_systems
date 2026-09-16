@@ -1,3 +1,5 @@
+"""Regression checks for preprocessing."""
+
 import copy
 import unittest
 
@@ -7,12 +9,30 @@ from presentation_attitude.data.preprocessing import preprocess, restore_xy
 
 
 def frame(index=0, *, face=True, hands=True):
+    """Construct one synthetic landmark frame with optional face and hands.
+
+    Args:
+        index: Zero-based item or frame index.
+        face: Whether to include a synthetic face detection.
+        hands: Detected hand records with handedness confidence.
+
+    Returns:
+        Synthetic frame record with presence and landmark metadata.
+    """
     angle = np.linspace(0, 2 * np.pi, 478, endpoint=False)
     points = np.column_stack(
         (0.5 + 0.1 * np.cos(angle), 0.3 + 0.15 * np.sin(angle), angle * 0)
     )
 
     def hand(x):
+        """Build a synthetic hand detection at the requested horizontal position.
+
+        Args:
+            x: Horizontal position of the synthetic hand landmarks.
+
+        Returns:
+            Synthetic hand record at the requested horizontal position.
+        """
         return [[x + i * 0.001, 0.7 + i * 0.001, i * -0.001] for i in range(21)]
 
     detections = (
@@ -35,7 +55,9 @@ def frame(index=0, *, face=True, hands=True):
 
 
 class PreprocessTests(unittest.TestCase):
+    """Exercise preprocess tests behavior with controlled fixtures."""
     def test_translation_and_uniform_scale_invariance_and_inverse(self):
+        """Verify translation and uniform scale invariance and inverse."""
         source = frame()
         transformed = copy.deepcopy(source)
         size = np.array([640, 360])
@@ -59,6 +81,7 @@ class PreprocessTests(unittest.TestCase):
         self.assertNotEqual(a["anchor"]["center_px"], b["anchor"]["center_px"])
 
     def test_pixel_aspect_ratio_and_resolution(self):
+        """Verify pixel aspect ratio and resolution."""
         source = frame()
         original = preprocess([source], 640, 360, 5)[0]
         larger = preprocess([source], 1280, 720, 5)[0]
@@ -78,6 +101,7 @@ class PreprocessTests(unittest.TestCase):
         )
 
     def test_raw_preserved_and_missing_anchor_does_not_erase_hands(self):
+        """Verify raw preserved and missing anchor does not erase hands."""
         rows = [frame(0), frame(1, face=False), frame(2)]
         before = copy.deepcopy(rows)
         result = preprocess(rows, 640, 360, 5)
@@ -93,6 +117,7 @@ class PreprocessTests(unittest.TestCase):
         )
 
     def test_centered_mean_and_linear_motion(self):
+        """Verify centered mean and linear motion."""
         rows = [frame(i) for i in range(5)]
         for i, row in enumerate(rows):
             for point in row["hands"][0]["landmarks"]:
@@ -107,6 +132,7 @@ class PreprocessTests(unittest.TestCase):
         self.assertEqual(result[-1]["smoothing_support"]["Left"], 1)
 
     def test_short_segment_keeps_motion(self):
+        """Verify short segment keeps motion."""
         rows = [frame(0), frame(1)]
         rows[1]["hands"][0]["landmarks"][8][0] += 0.06
         result = preprocess(rows, 640, 360, 5)
@@ -120,6 +146,7 @@ class PreprocessTests(unittest.TestCase):
         )
 
     def test_impulse_is_reduced_without_filling_missing_hand(self):
+        """Verify impulse is reduced without filling missing hand."""
         rows = [frame(i) for i in range(5)]
         rows[2]["hands"][0]["landmarks"][8][0] += 0.06
         result = preprocess(rows, 640, 360, 5)
@@ -136,6 +163,7 @@ class PreprocessTests(unittest.TestCase):
         )
 
     def test_reordered_detections_are_not_swapped_slots(self):
+        """Verify reordered detections are not swapped slots."""
         rows = [frame(0), frame(1)]
         rows[1]["hands"].reverse()
         result = preprocess(rows, 640, 360, 5)
@@ -146,6 +174,7 @@ class PreprocessTests(unittest.TestCase):
         )
 
     def test_swapped_labels_low_confidence_and_duplicate_labels(self):
+        """Verify swapped labels low confidence and duplicate labels."""
         rows = [frame(0), frame(1)]
         for hand in rows[1]["hands"]:
             hand["handedness"] = "Right" if hand["handedness"] == "Left" else "Left"
@@ -164,6 +193,7 @@ class PreprocessTests(unittest.TestCase):
         )
 
     def test_time_gap_explicit_cut_and_anchor_jump_reset_smoothing(self):
+        """Verify time gap explicit cut and anchor jump reset smoothing."""
         for mode in ("gap", "cut", "jump"):
             with self.subTest(mode=mode):
                 rows = [frame(0), frame(1)]
@@ -179,6 +209,7 @@ class PreprocessTests(unittest.TestCase):
                 self.assertEqual(result[1]["smoothing_support"]["face"], 1)
 
     def test_degenerate_face_and_invalid_inputs(self):
+        """Verify degenerate face and invalid inputs."""
         degenerate = frame()
         degenerate["face_landmarks"] = [[0.5, 0.5, 0]] * 478
         result = preprocess([degenerate], 640, 360, 5)[0]

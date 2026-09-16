@@ -1,3 +1,5 @@
+"""Regression checks for analyzer."""
+
 import tempfile
 import unittest
 from pathlib import Path
@@ -7,7 +9,9 @@ from presentation_attitude.serving.settings import Settings
 
 
 class AnalyzerTests(unittest.TestCase):
+    """Exercise analyzer tests behavior with controlled fixtures."""
     def test_smoke_checkpoint_is_rejected_and_runtime_loads_once(self):
+        """Verify smoke checkpoint is rejected and runtime loads once."""
         from presentation_attitude.serving.analyzer import VideoAnalyzer
 
         with tempfile.TemporaryDirectory() as directory:
@@ -65,6 +69,7 @@ class AnalyzerTests(unittest.TestCase):
                 self.assertEqual(runtime.return_value.predict_sequence.call_count, 2)
 
     def test_missing_checkpoint_fails_before_feature_extraction(self):
+        """Verify missing checkpoint fails before feature extraction."""
         from presentation_attitude.serving.analyzer import VideoAnalyzer
 
         with tempfile.TemporaryDirectory() as directory:

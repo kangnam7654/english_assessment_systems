@@ -7,10 +7,3 @@
 *.pt
 *.nemo
 *.safetensors
-
-# Only the five attributed CC BY 4.0 public demo recordings are redistributable.
-!/samples/speechocean762/000030012.wav
-!/samples/speechocean762/000490017.wav
-!/samples/speechocean762/010500012.wav
-!/samples/speechocean762/020140004.wav
-!/samples/speechocean762/030070015.wav

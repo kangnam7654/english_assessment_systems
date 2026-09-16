@@ -1,0 +1,29 @@
+{
+  "id": "ccss-5-writing-v1",
+  "grade_band": "5",
+  "source_version": "2010-06-02",
+  "source_url": "https://www.thecorestandards.org/assets/CCSSI_ELA%20Standards.pdf",
+  "source_sha256": "fa333bc3e442725ad4fca685fd787f0da65c6922d1477a7663264e843d6de187",
+  "attribution": "© Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.",
+  "notice": "Project paraphrases of selected text-observable Writing and Language standards, not the full curriculum. No inference about revision, collaboration, handwriting, speaking or research process.",
+  "by_genre": {
+    "opinion": {
+      "CCSS.ELA-Literacy.W.5.1": "Introduce topic/opinion and logically group ideas; order reasons supported by facts/details, connect with words/phrases/clauses, and give a relevant conclusion.",
+      "CCSS.ELA-Literacy.L.5.1": "Use conjunctions, prepositions, interjections and perfect tenses; maintain consistent verb tense and use correlative conjunctions.",
+      "CCSS.ELA-Literacy.L.5.2": "Use capitalization and spelling, commas for introductory material/items/direct address, and suitable marking of titles.",
+      "CCSS.ELA-Literacy.L.5.3": "Expand, combine or reduce sentences for meaning, interest and style."
+    },
+    "informative": {
+      "CCSS.ELA-Literacy.W.5.2": "Introduce a focused topic, organize information logically, develop facts/details/quotations, connect within/across categories, use domain vocabulary and conclude.",
+      "CCSS.ELA-Literacy.L.5.1": "Use conjunctions, prepositions, interjections and perfect tenses; maintain consistent verb tense and use correlative conjunctions.",
+      "CCSS.ELA-Literacy.L.5.2": "Use capitalization and spelling, commas for introductory material/items/direct address, and suitable marking of titles.",
+      "CCSS.ELA-Literacy.L.5.3": "Expand, combine or reduce sentences for meaning, interest and style."
+    },
+    "narrative": {
+      "CCSS.ELA-Literacy.W.5.3": "Establish situation and characters; use dialogue, description and pacing, varied transitions, concrete/sensory details and a fitting conclusion.",
+      "CCSS.ELA-Literacy.L.5.1": "Use conjunctions, prepositions, interjections and perfect tenses; maintain consistent verb tense and use correlative conjunctions.",
+      "CCSS.ELA-Literacy.L.5.2": "Use capitalization and spelling, commas for introductory material/items/direct address, and suitable marking of titles.",
+      "CCSS.ELA-Literacy.L.5.3": "Expand, combine or reduce sentences for meaning, interest and style."
+    }
+  }
+}

@@ -1,0 +1,19 @@
+[project]
+name = "child-speech-recognition"
+version = "0.1.0"
+description = "Child English ASR adaptation and evaluation"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = []
+
+[build-system]
+requires = ["uv_build>=0.12,<0.13"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "child_speech"
+
+[project.scripts]
+asr-train = "child_speech.cli.train:main"
+asr-evaluate = "child_speech.cli.evaluate_test:main"
+asr-build-examples = "child_speech.cli.build_examples:main"

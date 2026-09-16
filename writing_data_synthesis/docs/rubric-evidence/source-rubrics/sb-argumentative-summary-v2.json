@@ -1,0 +1,66 @@
+{
+  "id": "sb-argumentative-summary-v2",
+  "provider": "Smarter Balanced",
+  "source_version": "2022-08",
+  "adaptation_version": "2.0",
+  "source_url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-argumentative.pdf",
+  "source_sha256": "a7634f32c2122680b8d142d53793ee39b2d86deb378d340826bc2d6a27084aa7",
+  "notice": "Project-authored condensed descriptors for every source dimension and score point. Not a verbatim official rubric or validated scoring instrument.",
+  "grades": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "genres": [
+    "argumentative"
+  ],
+  "requires_sources": true,
+  "dimensions": {
+    "organization_purpose": {
+      "4": "Clear sustained claim; purposeful structure, varied links, effective opening and ending, logical progression. For grades 7+, opposing arguments are clearly acknowledged or addressed.",
+      "3": "Evident claim; coherent structure, adequate links, opening and ending, with minor lapses. For grades 7+, opposing arguments are adequately acknowledged or addressed.",
+      "2": "Uneven claim; inconsistent structure and links, weak opening or ending, uneven progression. For grades 7+, opposing arguments may be confusing or unacknowledged.",
+      "1": "Unclear claim; little structure, missing links or boundaries, confusing order or distracting ideas. For grades 7+, opposing arguments may be unacknowledged."
+    },
+    "evidence_elaboration": {
+      "4": "Specific relevant source support, clear attribution and convincing development; varied elaboration, precise vocabulary and effective style.",
+      "3": "Relevant integrated source support and attribution; adequate elaboration, suitable vocabulary and style.",
+      "2": "Weak or repetitive source support and attribution; uneven elaboration, summary-heavy development and imprecise language.",
+      "1": "Minimal, misused or mostly copied source material; little attribution, analysis or effective language."
+    },
+    "conventions": {
+      "2": "Adequate control of sentence construction, punctuation, capitalization, grammar and spelling.",
+      "1": "Partial control; correct conventions are limited.",
+      "0": "Little control; correct conventions are infrequent."
+    }
+  },
+  "score_ranges": {
+    "organization_purpose": [
+      1,
+      4
+    ],
+    "evidence_elaboration": [
+      1,
+      4
+    ],
+    "conventions": [
+      0,
+      2
+    ]
+  },
+  "scope_notes": [
+    "Judge convention errors by variety, severity and density; weigh basic errors more heavily.",
+    "Opposing views begin at grade 7. Apply the selected grade standards to their expected treatment; grade 6 does not require counterarguments."
+  ],
+  "total_policy": "Display-only unweighted sum; no cross-provider score conversion or proficiency decision.",
+  "not_scorable": [
+    "insufficient_including_copied",
+    "non_english",
+    "off_topic",
+    "off_purpose"
+  ],
+  "not_scorable_policy": "Source NS reasons; project policy withholds all dimensions and total for any NS. Off-purpose is NS in the first two source dimensions, not the conventions column."
+}

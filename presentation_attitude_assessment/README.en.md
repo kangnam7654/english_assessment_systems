@@ -2,6 +2,7 @@
 
 [한국어](README.md) · [Run locally](#try-it) · [Documentation](docs/README.md)
 
+[Repository layout](../docs/repository_structure.md)
 **From a presentation video to a whole-video attitude assessment.**
 
 A portfolio reconstruction of work at Creverse, using face and hand movement to

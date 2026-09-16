@@ -11,6 +11,7 @@ from presentation_attitude.serving.worker import run_worker
 
 
 def main():
+    """Run the persistent analysis worker with exclusive local queue ownership."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--checkpoint", type=Path)
     parser.add_argument("--device", default="cpu")
@@ -27,12 +28,23 @@ def main():
 
     def interrupt(signum, frame):
         # Exception unwinds the FFmpeg/MediaPipe contexts and marks the attempt failed.
+        """Convert a termination signal into a request to stop the owned process loop.
+
+        Args:
+            signum: Signal number supplied by the operating system.
+            frame: Interrupted Python stack frame.
+        """
         stop.set()
         raise KeyboardInterrupt
 
     signal.signal(signal.SIGTERM, interrupt)
 
     def analyzer_factory():
+        """Construct the worker's reusable video analyzer after lock acquisition.
+
+        Returns:
+            Reusable VideoAnalyzer initialized from the worker options.
+        """
         from presentation_attitude.serving.analyzer import VideoAnalyzer
 
         return VideoAnalyzer(

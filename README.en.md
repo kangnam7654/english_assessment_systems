@@ -1,5 +1,6 @@
 # English Assessment Systems
 
+[Repository layout](docs/repository_structure.md)
 [한국어](README.md)
 
 **Assessment workflows, from presentation video to writing and speech.**
@@ -22,11 +23,12 @@ The pipeline is implemented. A validated attitude classifier still requires real
 ### [English Writing Data Synthesis →](writing_data_synthesis/README.en.md)
 
 Generate essays for a target grade and proficiency level, then assess them against
-a rubric through a LangGraph workflow. Includes an API and a Next.js demo.
+a rubric through an explicit Python workflow. Includes an API and a Next.js demo.
 
-**LangGraph · Ollama · FastAPI · Next.js**
+**Python · OpenAI-compatible SDK · FastAPI · SQLite**
 
-Outputs are candidate synthetic examples; human review and batch dataset export remain future work.
+The generation, validation and storage flow is verified with fixed Mock outputs. Real model quality,
+acceptance/retry rules and batch dataset export remain unverified or unimplemented.
 
 ### [Child Speech Recognition →](child_speech_recognition/README.en.md)
 
@@ -44,7 +46,7 @@ Audio, reference labels and checkpoints are not redistributed.
 From the repository root:
 
 ```sh
-uv sync --locked
+uv sync --all-packages --locked
 ```
 
 The presentation and writing projects use **Python 3.13** and the root `uv.lock`.

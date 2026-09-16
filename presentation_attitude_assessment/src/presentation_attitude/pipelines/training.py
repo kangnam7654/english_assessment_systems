@@ -22,7 +22,22 @@ from presentation_attitude.schema import FEATURE_SCHEMA, label_mapping
 
 
 def _run_epoch(model, loader, loss_function, device, *, optimizer=None):
-    """Run one train or validation pass, returning sample-weighted loss and steps."""
+    """Run one train or validation pass, returning sample-weighted loss and steps.
+
+    Args:
+        model: Model used for the forward pass or parameter update.
+        loader: Iterable of padded minibatches.
+        loss_function: Loss callable applied to model outputs and targets.
+        device: PyTorch execution device, such as cpu, mps, or cuda.
+        optimizer: Optimizer to update parameters, or None for evaluation only.
+
+    Returns:
+        Sample-weighted epoch loss and number of optimizer steps.
+
+    Raises:
+        ValueError: Non-finite training or validation loss; An epoch requires at least
+            one sample.
+    """
     training = optimizer is not None
     model.train(training)
     total, count, steps = 0.0, 0, 0
@@ -79,6 +94,15 @@ def train(
     occurs here. The routine sets Torch's seed and writes progress summaries;
     failures after output creation record status=failed and propagate.
     Synthetic smoke runs verify plumbing, not attitude classification quality.
+
+    Returns:
+        Persisted training summary for the Validation-selected checkpoint.
+
+    Raises:
+        ValueError: Epochs, batch size, hidden size and max frames must be positive
+            integers; Learning rate must be finite and positive; No model parameters
+            changed during training; Checkpoint reload changed validation logits.
+        FileExistsError: Choose a new training output directory.
     """
     if any(
         type(v) is not int or v < 1

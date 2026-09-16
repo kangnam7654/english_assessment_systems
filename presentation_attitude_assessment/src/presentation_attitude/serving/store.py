@@ -17,6 +17,11 @@ class JobStore:
     """
 
     def __init__(self, directory):
+        """Create the local SQLite queue schema if needed.
+
+        Args:
+            directory: Directory used for the component's local files.
+        """
         self.directory = directory
         directory.mkdir(parents=True, exist_ok=True)
         self.database = directory / "jobs.sqlite3"
@@ -49,7 +54,11 @@ class JobStore:
 
     @contextmanager
     def _connect(self):
-        """Scope a private connection and commit or roll back its transaction."""
+        """Scope a private connection and commit or roll back its transaction.
+
+        Yields:
+            New SQLite connection owned by the caller.
+        """
         db = sqlite3.connect(self.database, timeout=10)
         db.row_factory = sqlite3.Row
         db.execute("PRAGMA foreign_keys=ON")
@@ -60,6 +69,18 @@ class JobStore:
             db.close()
 
     def create(self, job_id, filename, source_sha256, size_bytes, mode):
+        """Publish a queued job with the already-staged upload metadata.
+
+        Args:
+            job_id: Server-generated job identifier.
+            filename: Sanitized display name of the uploaded video.
+            source_sha256: SHA-256 digest of the uploaded source bytes.
+            size_bytes: Number of uploaded source bytes.
+            mode: Requested execution mode.
+
+        Returns:
+            New queued job snapshot.
+        """
         now = time.time()
         with self._connect() as db:
             db.execute(
@@ -69,6 +90,17 @@ class JobStore:
         return self.get(job_id)
 
     def get(self, job_id):
+        """Read a job and its ordered attempt history.
+
+        Args:
+            job_id: Server-generated job identifier.
+
+        Returns:
+            Job dictionary with its ordered attempt history.
+
+        Raises:
+            KeyError: The requested identifier is absent.
+        """
         with self._connect() as db:
             db.execute("BEGIN")
             row = db.execute("SELECT * FROM jobs WHERE id=?", (job_id,)).fetchone()
@@ -88,6 +120,11 @@ class JobStore:
             return job
 
     def claim(self):
+        """Atomically claim one queued job and create its running attempt.
+
+        Returns:
+            Claimed job and its new attempt, or None when the queue is empty.
+        """
         with self._connect() as db:
             db.execute("BEGIN IMMEDIATE")
             row = db.execute(
@@ -107,6 +144,19 @@ class JobStore:
         return self.get(row["id"])
 
     def finish(self, job_id, number, *, result=None, error=None):
+        """Finalize only the active attempt with exactly one result or error.
+
+        Args:
+            job_id: Server-generated job identifier.
+            number: Attempt number expected to be active.
+            result: Successful JSON-serializable analysis result, mutually exclusive with
+                error.
+            error: Failure details, mutually exclusive with result.
+
+        Raises:
+            ValueError: Provide either a result or an error.
+            Conflict: Attempt is no longer running.
+        """
         if (result is None) == (error is None):
             raise ValueError("Provide either a result or an error")
         status = "succeeded" if error is None else "failed"
@@ -130,6 +180,18 @@ class JobStore:
             )
 
     def retry(self, job_id):
+        """Requeue a failed job without erasing earlier attempts.
+
+        Args:
+            job_id: Server-generated job identifier.
+
+        Returns:
+            Requeued job snapshot with previous attempts preserved.
+
+        Raises:
+            KeyError: The requested identifier is absent.
+            Conflict: Only failed jobs can be retried.
+        """
         with self._connect() as db:
             changed = db.execute(
                 "UPDATE jobs SET status='queued', updated_at=? WHERE id=? AND status='failed'",
@@ -145,7 +207,11 @@ class JobStore:
         return self.get(job_id)
 
     def recover_interrupted(self):
-        """Call ONLY while holding the exclusive worker lock."""
+        """Call ONLY while holding the exclusive worker lock.
+
+        Returns:
+            Number of running jobs marked failed during startup recovery.
+        """
         error = json.dumps(
             {
                 "code": "worker_interrupted",
@@ -164,6 +230,11 @@ class JobStore:
             ).rowcount
 
     def health(self):
+        """Check SQLite connectivity and identify the repository backend.
+
+        Returns:
+            Backend name after successful connectivity validation.
+        """
         with self._connect() as db:
             db.execute("SELECT 1").fetchone()
         return "sqlite"

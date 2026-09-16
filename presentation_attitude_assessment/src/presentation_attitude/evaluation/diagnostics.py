@@ -13,6 +13,17 @@ from presentation_attitude.schema import PARTS
 
 
 def summarize(rows):
+    """Count detected faces and hands across sampled frames.
+
+    Args:
+        rows: Ordered per-frame landmark records.
+
+    Returns:
+        Sample count and per-detector presence counts and ratios.
+
+    Raises:
+        ValueError: No sampled frames; cannot calculate detection rates.
+    """
     if not rows:
         raise ValueError("No sampled frames; cannot calculate detection rates")
     counts = {
@@ -31,7 +42,20 @@ def summarize(rows):
 
 
 def runs(mask, fps, segment_ids=None):
-    """Count runs; sampled coverage is N/fps, not original-video visibility time."""
+    """Count runs; sampled coverage is N/fps, not original-video visibility time.
+
+    Args:
+        mask: Boolean detection-validity observations.
+        fps: Frames per second on the FFmpeg resampling grid.
+        segment_ids: Optional continuity segment IDs that prevent runs spanning a gap.
+
+    Returns:
+        Run counts and durations measured on the resampled frame grid.
+
+    Raises:
+        ValueError: A nonempty mask and positive FPS are required; Segment length
+            mismatch.
+    """
     if not mask or fps <= 0:
         raise ValueError("A nonempty mask and positive FPS are required")
     if segment_ids is not None and len(segment_ids) != len(mask):
@@ -49,6 +73,14 @@ def runs(mask, fps, segment_ids=None):
         group["first_to_last_sample_seconds"] = (group["frames"] - 1) / fps
 
     def longest(state):
+        """Find the longest run with the requested detection state.
+
+        Args:
+            state: Boolean detection state whose longest run is requested.
+
+        Returns:
+            Maximum contiguous frame count for the requested boolean state, or zero.
+        """
         return max((g["frames"] for g in groups if g["present"] == state), default=0)
 
     return {
@@ -62,6 +94,16 @@ def runs(mask, fps, segment_ids=None):
 
 
 def report_continuity(audit_dir, processed_dir, output):
+    """Compare raw and processed detection runs and persist continuity diagnostics.
+
+    Args:
+        audit_dir: Directory containing the completed landmark audit.
+        processed_dir: Directory containing normalized and smoothed audit records.
+        output: Destination directory or file for generated artifacts.
+
+    Raises:
+        ValueError: Both runs must be complete; Preprocessing belongs to another audit.
+    """
     audit = read_json(audit_dir / "summary.json")
     processed = read_json(processed_dir / "summary.json")
     if audit["status"] != "complete" or processed["status"] != "complete":

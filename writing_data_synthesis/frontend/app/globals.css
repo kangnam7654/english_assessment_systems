@@ -76,3 +76,12 @@ body {
 .stagger-children > *:nth-child(3) { animation-delay: 160ms; }
 .stagger-children > *:nth-child(4) { animation-delay: 240ms; }
 .stagger-children > *:nth-child(5) { animation-delay: 320ms; }
+
+@layer components {
+  .panel { @apply bg-card rounded-xl border border-border p-5; }
+  .field { @apply flex flex-col gap-1.5 text-sm font-medium; }
+  .field input, .field select, .field textarea { @apply w-full min-w-0 rounded-lg border border-border bg-card px-3 py-2 text-sm font-normal focus:outline-none focus:ring-2 focus:ring-ring; }
+  .hint { @apply text-xs font-normal text-muted-foreground leading-relaxed; }
+  .primary-button { @apply rounded-lg bg-primary text-primary-foreground px-4 py-2.5 text-sm font-semibold disabled:opacity-50 disabled:cursor-not-allowed; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }

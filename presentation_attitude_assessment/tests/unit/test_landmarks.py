@@ -1,3 +1,5 @@
+"""Regression checks for landmarks."""
+
 import copy
 import unittest
 
@@ -6,7 +8,9 @@ from presentation_attitude.vision.landmarks import validate_plan
 
 
 class AuditTests(unittest.TestCase):
+    """Exercise audit tests behavior with controlled fixtures."""
     def test_missing_frames_remain_in_denominator(self):
+        """Verify missing frames remain in denominator."""
         result = summarize(
             [
                 {"face_present": True, "hand_count": 2},
@@ -27,10 +31,12 @@ class AuditTests(unittest.TestCase):
         )
 
     def test_empty_decode_is_an_error_not_zero_percent(self):
+        """Verify empty decode is an error not zero percent."""
         with self.assertRaises(ValueError):
             summarize([])
 
     def test_plan_rejects_bad_times_and_unsafe_output_ids(self):
+        """Verify plan rejects bad times and unsafe output ids."""
         inventory = {"sample.mp4": {"duration_seconds": 10}}
         plan = {
             "sample_fps": 5,
@@ -57,6 +63,7 @@ class AuditTests(unittest.TestCase):
                 validate_plan(invalid, inventory)
 
     def test_plan_rejects_duplicate_ids_and_invalid_fps(self):
+        """Verify plan rejects duplicate ids and invalid fps."""
         inventory = {"sample.mp4": {"duration_seconds": 10}}
         interval = {
             "id": "sample",

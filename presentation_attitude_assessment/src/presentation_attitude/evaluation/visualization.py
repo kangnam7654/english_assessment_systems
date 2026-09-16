@@ -13,6 +13,13 @@ from presentation_attitude.schema import PARTS
 
 def contact_sheet(frames, rows, output):
     # RGB previews were retained during inference; no frame files are read.
+    """Write a labeled grid of sampled frames and detection counts.
+
+    Args:
+        frames: Frame image paths used to build the visual diagnostic.
+        rows: Ordered per-frame landmark records.
+        output: Destination directory or file for generated artifacts.
+    """
     tiles = []
     for i in sorted(frames):
         frame = cv2.cvtColor(frames[i], cv2.COLOR_RGB2BGR)
@@ -49,6 +56,13 @@ def contact_sheet(frames, rows, output):
 
 
 def draw_points(image, xy, color):
+    """Draw visible normalized landmarks into an image buffer.
+
+    Args:
+        image: Image buffer to draw into.
+        xy: Two-dimensional landmark coordinates.
+        color: Drawing color in the target image's channel order.
+    """
     height, width = image.shape[:2]
     for x, y in xy:
         # Ignore out-of-frame points for drawing, but retain them in the data.
@@ -57,6 +71,16 @@ def draw_points(image, xy, color):
 
 
 def render_comparison(audit_dir, processed_dir, output):
+    """Render raw, normalized, and smoothed landmark diagnostics for audit intervals.
+
+    Args:
+        audit_dir: Directory containing the completed landmark audit.
+        processed_dir: Directory containing normalized and smoothed audit records.
+        output: Destination directory or file for generated artifacts.
+
+    Raises:
+        ValueError: Preprocessing must be complete.
+    """
     summary = read_json(processed_dir / "summary.json")
     if summary["status"] != "complete":
         raise ValueError("Preprocessing must be complete")

@@ -1,3 +1,5 @@
+"""Regression checks for streaming."""
+
 import unittest
 
 import numpy as np
@@ -6,6 +8,14 @@ from presentation_attitude.data.preprocessing import iter_preprocess
 
 
 def rows(count):
+    """Generate synthetic landmark rows for streaming checks.
+
+    Args:
+        count: Expected number of landmarks.
+
+    Yields:
+        Manifest records in file order.
+    """
     for index in range(count):
         points = np.zeros((478, 3))
         points[0, :2], points[1, :2] = (0.2, 0.2), (0.8, 0.8)
@@ -22,7 +32,9 @@ def rows(count):
 
 
 class StreamingTests(unittest.TestCase):
+    """Exercise streaming tests behavior with controlled fixtures."""
     def test_centered_window_and_missing_segment_boundaries(self):
+        """Verify centered window and missing segment boundaries."""
         raw = list(rows(13))
         raw[6].update(face_present=False, face_landmarks=[])
         actual = list(iter_preprocess(iter(raw), 640, 360, 5, config={"window": 5}))
@@ -40,9 +52,15 @@ class StreamingTests(unittest.TestCase):
             self.assertEqual(record["smoothing_support"]["face"], len(indices))
 
     def test_consumes_only_required_future_frames(self):
+        """Verify consumes only required future frames."""
         consumed = 0
 
         def source():
+            """Yield synthetic input records while recording iterator consumption.
+
+            Yields:
+                Next synthetic frame used to observe streaming consumption.
+            """
             nonlocal consumed
             for row in rows(1000):
                 consumed += 1
@@ -56,6 +74,7 @@ class StreamingTests(unittest.TestCase):
             next(iterator)
 
     def test_short_video_flushes_every_frame_without_partial_average(self):
+        """Verify short video flushes every frame without partial average."""
         actual = list(iter_preprocess(rows(2), 640, 360, 5, config={"window": 7}))
         self.assertEqual(len(actual), 2)
         for record in actual:
@@ -65,6 +84,7 @@ class StreamingTests(unittest.TestCase):
             self.assertEqual(record["smoothing_support"]["face"], 1)
 
     def test_invalid_window_and_empty_iterator(self):
+        """Verify invalid window and empty iterator."""
         for window in (0, 2, -1, True):
             with self.subTest(window=window), self.assertRaises(ValueError):
                 list(iter_preprocess(rows(1), 640, 360, 5, config={"window": window}))

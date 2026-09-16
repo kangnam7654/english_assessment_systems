@@ -1,3 +1,5 @@
+"""Regression checks for serving."""
+
 import asyncio
 import hashlib
 import json
@@ -21,7 +23,9 @@ from presentation_attitude.serving.worker import JobWorker, run_worker, worker_l
 
 
 class ServingTests(unittest.TestCase):
+    """Exercise serving tests behavior with controlled fixtures."""
     def setUp(self):
+        """Create isolated fixtures and register cleanup for this test scope."""
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)
         self.directory = Path(temp.name)
@@ -31,6 +35,15 @@ class ServingTests(unittest.TestCase):
         self.files = LocalJobFiles(self.settings.data_dir)
 
     def upload(self, payload=b"video", **params):
+        """Submit the supplied video bytes through the test client.
+
+        Args:
+            payload: Video bytes sent to the test upload endpoint.
+            **params: Additional upload query parameters.
+
+        Returns:
+            TestClient response from the upload endpoint.
+        """
         return self.client.post(
             "/jobs",
             files={"file": ("../../talk.mp4", payload, "video/mp4")},
@@ -38,6 +51,7 @@ class ServingTests(unittest.TestCase):
         )
 
     def test_upload_claim_result_and_api_restart(self):
+        """Verify upload claim result and api restart."""
         response = self.upload()
         self.assertEqual(response.status_code, 202)
         job = response.json()
@@ -50,6 +64,17 @@ class ServingTests(unittest.TestCase):
         entered, release = threading.Event(), threading.Event()
 
         def analyze(source, output, mode):
+            """Provide the controlled analyzer behavior for this worker scenario.
+
+            Args:
+                source: Source video path or caller-owned input stream, as required by this
+                    operation.
+                output: Destination directory or file for generated artifacts.
+                mode: Requested execution mode.
+
+            Returns:
+                Controlled result used by this worker scenario.
+            """
             self.assertEqual(source.read_bytes(), b"video")
             self.assertEqual(mode, "features")
             entered.set()
@@ -77,10 +102,22 @@ class ServingTests(unittest.TestCase):
         self.assertFalse(worker.run_once())
 
     def test_failure_retry_preserves_history_and_distinct_output(self):
+        """Verify failure retry preserves history and distinct output."""
         job = self.upload().json()
         outputs = []
 
         def analyze(source, output, mode):
+            """Provide the controlled analyzer behavior for this worker scenario.
+
+            Args:
+                source: Source video path or caller-owned input stream, as required by this
+                    operation.
+                output: Destination directory or file for generated artifacts.
+                mode: Requested execution mode.
+
+            Returns:
+                Controlled result used by this worker scenario.
+            """
             outputs.append(output)
             output.mkdir()
             if len(outputs) == 1:
@@ -108,6 +145,7 @@ class ServingTests(unittest.TestCase):
         self.assertNotEqual(*outputs)
 
     def test_atomic_claim_and_stale_completion_rejected(self):
+        """Verify atomic claim and stale completion rejected."""
         job = self.upload().json()
         other = JobStore(self.settings.data_dir)
         results = []
@@ -129,6 +167,7 @@ class ServingTests(unittest.TestCase):
         self.assertEqual(second["attempt"], 2)
 
     def test_reject_bad_uploads_and_unknown_jobs(self):
+        """Verify reject bad uploads and unknown jobs."""
         self.assertEqual(self.upload(b"").status_code, 400)
         self.assertEqual(
             self.client.post("/jobs", files={"file": ("a.txt", b"x")}).status_code, 415
@@ -150,7 +189,13 @@ class ServingTests(unittest.TestCase):
         self.assertEqual(list((self.directory / "limited/jobs").iterdir()), [])
 
     def test_streamed_upload_limit_without_content_length(self):
+        """Verify streamed upload limit without content length."""
         async def request():
+            """Build or submit the request used by this test scenario.
+
+            Returns:
+                Request payload or test response used by this scenario.
+            """
             app = create_app(Settings(self.directory / "streamed", max_upload_bytes=3))
             async with app.router.lifespan_context(app):
                 chunks = iter(
@@ -163,6 +208,11 @@ class ServingTests(unittest.TestCase):
                 sent = []
 
                 async def receive():
+                    """Supply the next ASGI message in the simulated upload.
+
+                    Returns:
+                        Next simulated ASGI request message.
+                    """
                     return {
                         "type": "http.request",
                         "body": next(chunks),
@@ -170,6 +220,11 @@ class ServingTests(unittest.TestCase):
                     }
 
                 async def send(message):
+                    """Capture an outgoing ASGI message for response assertions.
+
+                    Args:
+                        message: ASGI message to forward.
+                    """
                     sent.append(message)
 
                 await app(
@@ -198,6 +253,7 @@ class ServingTests(unittest.TestCase):
         self.assertEqual(asyncio.run(request()), 413)
 
     def test_repository_failure_removes_staged_upload(self):
+        """Verify repository failure removes staged upload."""
         self.client.app.state.store.create = Mock(
             side_effect=RuntimeError("Repository unavailable")
         )
@@ -207,14 +263,28 @@ class ServingTests(unittest.TestCase):
         self.assertIsNone(self.store.claim())
 
     def test_worker_factory_is_loaded_once_for_multiple_jobs(self):
+        """Verify worker factory is loaded once for multiple jobs."""
         self.upload()
         self.upload()
         stop, calls, loads = threading.Event(), [], []
 
         def factory():
+            """Construct the test dependency and record the expected lifecycle behavior.
+
+            Returns:
+                Injected test dependency for the worker or repository.
+            """
             loads.append(True)
 
             def analyze(*args):
+                """Provide the controlled analyzer behavior for this worker scenario.
+
+                Args:
+                    *args: Unused positional inputs accepted by the test analyzer.
+
+                Returns:
+                    Controlled result used by this worker scenario.
+                """
                 calls.append(True)
                 if len(calls) == 2:
                     stop.set()
@@ -227,6 +297,7 @@ class ServingTests(unittest.TestCase):
         self.assertEqual(len(calls), 2)
 
     def test_killed_worker_releases_lock_and_restart_recovers(self):
+        """Verify killed worker releases lock and restart recovers."""
         job = self.upload().json()
         code = """
 import sys, time
@@ -264,6 +335,7 @@ with worker_lock(directory):
         )
 
     def test_tampered_upload_never_reaches_analyzer(self):
+        """Verify tampered upload never reaches analyzer."""
         job = self.upload().json()
         (self.files.job_dir(job["id"]) / "source.video").write_bytes(b"different")
         analyzer = Mock()
@@ -273,6 +345,7 @@ with worker_lock(directory):
         self.assertEqual(self.store.get(job["id"])["status"], "failed")
 
     def test_api_import_does_not_load_ml_runtimes(self):
+        """Verify api import does not load ml runtimes."""
         result = subprocess.run(
             [
                 sys.executable,
@@ -285,6 +358,7 @@ with worker_lock(directory):
         self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_optional_ui_mount_preserves_api_and_does_not_expose_job_files(self):
+        """Verify optional ui mount preserves api and does not expose job files."""
         ui = self.directory / "ui-dist"
         ui.mkdir()
         (ui / "index.html").write_text("<h1>Presentation Attitude</h1>")
@@ -302,11 +376,20 @@ with worker_lock(directory):
             create_app(self.settings, ui_dir=self.directory / "missing")
 
     def test_injected_repository_and_separate_files_support_retry_and_restart(self):
+        """Verify injected repository and separate files support retry and restart."""
         settings = Settings(self.directory / "injected-runtime")
         files = LocalJobFiles(self.directory / "separate-artifacts")
         database_dir = self.directory / "separate-database"
 
         def factory(_):
+            """Construct the test dependency and record the expected lifecycle behavior.
+
+            Args:
+                _: Unused factory input.
+
+            Returns:
+                Injected test dependency for the worker or repository.
+            """
             repository = JobStore(database_dir)
             # Expose only the contract: no SQL connection or filesystem methods.
             return SimpleNamespace(
@@ -325,6 +408,17 @@ with worker_lock(directory):
             )
 
         def analyze(source, output, mode):
+            """Provide the controlled analyzer behavior for this worker scenario.
+
+            Args:
+                source: Source video path or caller-owned input stream, as required by this
+                    operation.
+                output: Destination directory or file for generated artifacts.
+                mode: Requested execution mode.
+
+            Returns:
+                Controlled result used by this worker scenario.
+            """
             self.assertEqual(source.parent.parent, files.directory)
             self.assertEqual(source.read_bytes(), b"video")
             output.mkdir()

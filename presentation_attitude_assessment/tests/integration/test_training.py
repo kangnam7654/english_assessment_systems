@@ -1,3 +1,5 @@
+"""Regression checks for training."""
+
 import json
 import tempfile
 import unittest
@@ -19,13 +21,16 @@ from presentation_attitude.schema import INPUT_SIZE
 
 
 class TrainingTests(unittest.TestCase):
+    """Exercise training tests behavior with controlled fixtures."""
     def setUp(self):
+        """Create isolated fixtures and register cleanup for this test scope."""
         temporary = tempfile.TemporaryDirectory()
         self.addCleanup(temporary.cleanup)
         self.root = Path(temporary.name)
         self.manifest = create_smoke_manifest(self.root / "data")
 
     def test_training_checkpoint_and_reused_runtime(self):
+        """Verify training checkpoint and reused runtime."""
         report = train(self.manifest, self.root / "run", epochs=2, hidden_size=8)
         self.assertEqual(report["status"], "complete")
         self.assertEqual(report["purpose"], "pipeline_smoke")
@@ -64,6 +69,7 @@ class TrainingTests(unittest.TestCase):
         )
 
     def test_coordinates_masks_lengths_and_frame_limit(self):
+        """Verify coordinates masks lengths and frame limit."""
         features, timestamps, _ = load_features(self.root / "data/fixture_00")
         self.assertEqual(features.shape, (8, INPUT_SIZE))
         self.assertEqual(timestamps.tolist(), list(range(0, 1600, 200)))
@@ -73,6 +79,7 @@ class TrainingTests(unittest.TestCase):
             load_features(self.root / "data/fixture_00", max_frames=2)
 
     def test_split_leakage_is_rejected_for_speaker_source_and_content(self):
+        """Verify split leakage is rejected for speaker source and content."""
         original = json.loads(self.manifest.read_text())
         for field in ("speaker_id", "source_video_id"):
             manifest = json.loads(json.dumps(original))
@@ -93,6 +100,7 @@ class TrainingTests(unittest.TestCase):
             read_manifest(self.manifest)
 
     def test_corrupt_sequence_and_unreviewed_labels_are_rejected(self):
+        """Verify corrupt sequence and unreviewed labels are rejected."""
         sequence = self.root / "data/fixture_00/sequence.jsonl"
         with sequence.open("a") as stream:
             stream.write("{}\n")
@@ -105,6 +113,7 @@ class TrainingTests(unittest.TestCase):
             read_manifest(self.manifest)
 
     def test_no_valid_features_is_rejected(self):
+        """Verify no valid features is rejected."""
         directory = self.root / "data/fixture_00"
         sequence = directory / "sequence.jsonl"
         records = [json.loads(line) for line in sequence.read_text().splitlines()]

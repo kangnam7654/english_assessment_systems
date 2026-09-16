@@ -22,7 +22,17 @@ logger = logging.getLogger(__name__)
 
 @contextmanager
 def worker_lock(directory):
-    """POSIX local filesystem only. The OS releases this lock even after SIGKILL."""
+    """POSIX local filesystem only. The OS releases this lock even after SIGKILL.
+
+    Args:
+        directory: Directory used for the component's local files.
+
+    Yields:
+        Control while holding the exclusive local worker lock.
+
+    Raises:
+        RuntimeError: Another worker already owns this data directory.
+    """
     directory.mkdir(parents=True, exist_ok=True)
     with (directory / "worker.lock").open("a") as handle:
         try:
@@ -48,6 +58,13 @@ class JobWorker:
     def __init__(
         self, store: JobRepository, analyzer: Analyzer, *, files: LocalJobFiles
     ):
+        """Wire persistence, local files, and an injected analyzer without acquiring a lock.
+
+        Args:
+            store: Repository used to persist job or workflow state.
+            analyzer: Synchronous callable that analyzes one video attempt.
+            files: Local input and attempt-artifact storage.
+        """
         self.store, self.analyzer, self.files = store, analyzer, files
 
     def run_once(self) -> bool:
@@ -57,6 +74,13 @@ class JobWorker:
         even if analysis failed. Analysis exceptions become a failed attempt;
         interruptions are recorded then re-raised. Repository failures propagate
         when the attempt cannot be finalized. Retries are always explicit.
+
+        Returns:
+            False for an empty queue; True after a handled attempt, including analysis
+            failure.
+
+        Raises:
+            ValueError: Uploaded video integrity check failed.
         """
         job = self.store.claim()
         if job is None:
@@ -111,6 +135,18 @@ def run_worker(
     running analysis. once handles at most one claim, including an empty queue.
     Lock release is guaranteed on exit; this policy assumes one local worker
     and is not a multi-host lease mechanism.
+
+    Args:
+        settings: Validated configuration for this component.
+        analyzer_factory: Factory called once to construct the worker's reusable
+            analyzer.
+        stop: Event requesting shutdown between jobs; it does not cancel active
+            analysis.
+        poll_seconds: Delay between empty queue polls.
+        once: Whether to process at most one claim and exit.
+        store_factory: Factory that creates the repository for the configured data
+            directory.
+        files: Local input and attempt-artifact storage.
     """
     with worker_lock(settings.data_dir):
         store = store_factory(settings.data_dir)

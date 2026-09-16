@@ -1,0 +1,29 @@
+{
+  "id": "ccss-8-writing-v1",
+  "grade_band": "8",
+  "source_version": "2010-06-02",
+  "source_url": "https://www.thecorestandards.org/assets/CCSSI_ELA%20Standards.pdf",
+  "source_sha256": "fa333bc3e442725ad4fca685fd787f0da65c6922d1477a7663264e843d6de187",
+  "attribution": "© Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.",
+  "notice": "Project paraphrases of selected text-observable Writing and Language standards, not the full curriculum. No inference about revision, collaboration, handwriting, speaking or research process.",
+  "by_genre": {
+    "argumentative": {
+      "CCSS.ELA-Literacy.W.8.1": "Introduce claims and distinguish opposing claims; organize logical reasons and relevant evidence from accurate credible sources, connect claims/reasons/evidence/counterclaims, maintain formal style and conclude.",
+      "CCSS.ELA-Literacy.L.8.1": "Use verbals and active/passive or conditional/subjunctive forms appropriately; avoid inappropriate voice/mood shifts.",
+      "CCSS.ELA-Literacy.L.8.2": "Use commas/ellipses/dashes for pauses, ellipses for omissions and correct spelling.",
+      "CCSS.ELA-Literacy.L.8.3": "Use verb voice/mood deliberately for particular effects."
+    },
+    "informative": {
+      "CCSS.ELA-Literacy.W.8.2": "Organize a topic into broader categories; develop relevant facts/details/examples, connect categories cohesively, use precise domain vocabulary, formal style and a fitting conclusion.",
+      "CCSS.ELA-Literacy.L.8.1": "Use verbals and active/passive or conditional/subjunctive forms appropriately; avoid inappropriate voice/mood shifts.",
+      "CCSS.ELA-Literacy.L.8.2": "Use commas/ellipses/dashes for pauses, ellipses for omissions and correct spelling.",
+      "CCSS.ELA-Literacy.L.8.3": "Use verb voice/mood deliberately for particular effects."
+    },
+    "narrative": {
+      "CCSS.ELA-Literacy.W.8.3": "Establish context and point of view; develop logical events with dialogue, pacing, description and reflection; connect experiences across time/settings, use sensory detail and a reflective conclusion.",
+      "CCSS.ELA-Literacy.L.8.1": "Use verbals and active/passive or conditional/subjunctive forms appropriately; avoid inappropriate voice/mood shifts.",
+      "CCSS.ELA-Literacy.L.8.2": "Use commas/ellipses/dashes for pauses, ellipses for omissions and correct spelling.",
+      "CCSS.ELA-Literacy.L.8.3": "Use verb voice/mood deliberately for particular effects."
+    }
+  }
+}

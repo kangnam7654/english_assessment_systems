@@ -1,17 +1,27 @@
 [project]
 name = "writing-data-synthesis"
 version = "0.1.0"
-description = "LangGraph-based English essay synthesis and rubric assessment"
+description = "Python-based English essay synthesis and rubric assessment"
 readme = "README.md"
 requires-python = ">=3.13,<3.14"
 dependencies = [
     "fastapi>=0.121.2",
-    "langchain-core>=1.0.3",
-    "langchain-ollama>=1.0.0",
-    "langgraph>=1.0.2",
+    "httpx2>=2.12,<3",
+    "openai>=3.10.0",
+    "pydantic>=2.11,<3",
     "pyyaml>=6.0.3",
     "uvicorn>=0.38.0",
 ]
 
-[tool.uv]
-package = false
+[build-system]
+requires = ["uv_build>=0.12,<0.13"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "writing_synthesis"
+
+[project.scripts]
+writing-ui = "writing_synthesis.cli.ui:main"
+writing-mock-smoke = "writing_synthesis.cli.mock_smoke:main"
+writing-catalog-smoke = "writing_synthesis.cli.catalog_smoke:main"
+writing-materialize-rubrics = "writing_synthesis.cli.materialize_project_rubrics:main"

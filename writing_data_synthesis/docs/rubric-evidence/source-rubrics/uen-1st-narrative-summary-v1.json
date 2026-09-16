@@ -1,0 +1,53 @@
+{
+  "id": "uen-1st-narrative-summary-v1",
+  "provider": "Utah Education Network",
+  "source_version": null,
+  "adaptation_version": "1.0",
+  "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/1st-NarrativeRubric.docx",
+  "source_sha256": "959fd9432ac92ed6abe83eef91f29fcdd105dc1542f29e86b50ce72c47543d0a",
+  "notice": "Project-authored condensed descriptors for every source dimension and score point. Not a verbatim official rubric or validated scoring instrument.",
+  "grades": [
+    1
+  ],
+  "genres": [
+    "narrative"
+  ],
+  "requires_sources": false,
+  "dimensions": {
+    "focus_organization": {
+      "4": "Well-developed event/sequence with descriptive actions, thoughts or feelings, time words and closure.",
+      "3": "At least two sequenced events with some details, time words and closure.",
+      "2": "Poor sequence, weak details, inconsistent time words or unclear closure.",
+      "1": "Unclear sequence without details, time words or closure."
+    },
+    "conventions": {
+      "2": "Capitalize beginnings, dates, names and I; use end marks and commas in dates/lists; use familiar spelling patterns and phonetic spelling for untaught words.",
+      "1": "Errors can obscure meaning; inconsistent punctuation, capitalization or spelling.",
+      "0": "Conventions are not under control."
+    }
+  },
+  "score_ranges": {
+    "focus_organization": [
+      1,
+      4
+    ],
+    "conventions": [
+      0,
+      2
+    ]
+  },
+  "scope_notes": [
+    "Publication version is not established by the source catalog.",
+    "These are classroom descriptors, not a national proficiency standard."
+  ],
+  "total_policy": "Display-only unweighted sum; no cross-provider score conversion or proficiency decision.",
+  "not_scorable": [
+    "insufficient",
+    "illegible",
+    "non_english",
+    "incoherent",
+    "off_topic",
+    "off_purpose"
+  ],
+  "not_scorable_policy": "Source NS row; all scores null. Illegibility cannot be inferred from typed text."
+}

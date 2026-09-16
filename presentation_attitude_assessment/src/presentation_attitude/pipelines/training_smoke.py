@@ -12,6 +12,16 @@ from presentation_attitude.schema import PART_COUNTS
 
 
 def create_smoke_manifest(output, *, seed=42, test_only=False):
+    """Write deterministic synthetic feature sequences and a matching split manifest.
+
+    Args:
+        output: Destination directory or file for generated artifacts.
+        seed: Random seed for reproducible initialization or ordering.
+        test_only: Whether to generate only a test split.
+
+    Returns:
+        Path to the newly written synthetic sample manifest.
+    """
     output = Path(output)
     output.mkdir(parents=True, exist_ok=False)
     rng = np.random.default_rng(seed)
@@ -79,6 +89,16 @@ def create_smoke_manifest(output, *, seed=42, test_only=False):
 
 
 def run_smoke(output, *, epochs=3, seed=42):
+    """Train on synthetic sequences to check the pipeline without claiming attitude accuracy.
+
+    Args:
+        output: Destination directory or file for generated artifacts.
+        epochs: Number of complete training passes.
+        seed: Random seed for reproducible initialization or ordering.
+
+    Returns:
+        Training summary for the synthetic pipeline check.
+    """
     output = Path(output)
     output.mkdir(parents=True, exist_ok=False)
     manifest = create_smoke_manifest(output / "data", seed=seed)

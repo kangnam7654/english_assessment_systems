@@ -18,6 +18,19 @@ def read_manifest(path, *, splits=("train", "validation"), require_both_classes=
     By default both binary classes are required in train and validation.
     For evaluation, pass splits=("test",) and require_both_classes=False.
     Invalid labels, eligibility or split provenance raise ValueError.
+
+    Args:
+        path: Filesystem path to the input or output artifact.
+        splits: Split names to validate and include.
+        require_both_classes: Whether each requested split must contain both binary
+            classes.
+
+    Returns:
+        The manifest, validated samples, and shared extraction settings.
+
+    Raises:
+        ValueError: Sample identity, split membership, class coverage, completed-sequence
+            provenance, or shared extraction settings are inconsistent.
     """
     path = Path(path).resolve()
     manifest = read_json(path)
@@ -100,7 +113,14 @@ def read_manifest(path, *, splits=("train", "validation"), require_both_classes=
 
 
 def sample_provenance(samples):
-    """Snapshot identities/content hashes without binding to filesystem locations."""
+    """Snapshot identities/content hashes without binding to filesystem locations.
+
+    Args:
+        samples: Validated per-video samples to load or combine.
+
+    Returns:
+        Location-independent sample identities and content hashes.
+    """
     fields = (
         "id",
         "split",

@@ -2,6 +2,7 @@
 
 [English](README.en.md) · [실행하기](#실행하기) · [문서](docs/README.md)
 
+[공통 디렉터리 기준](../docs/repository_structure.md)
 **발표 영상을 입력받아, 영상 전체의 발표 태도를 평가합니다.**
 
 크레버스에서 수행했던 업무를 바탕으로 만든 포트폴리오 재구현입니다.

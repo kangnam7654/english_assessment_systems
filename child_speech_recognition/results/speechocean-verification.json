@@ -1,7 +1,0 @@
-{
-  "selected_weights_identical_to_original": true,
-  "state_tensors": 725,
-  "korean_paired_records_verified": 4567,
-  "korean_raw_hypotheses_changed_on_repeat": 9,
-  "note": "Same weights and paired inputs; repeat decode has small output variation. Cause not isolated; original reported Test result retained."
-}

@@ -7,6 +7,7 @@ from presentation_attitude.evaluation.diagnostics import report_continuity
 
 
 def main():
+    """Report detection gaps and continuity on audited video intervals."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--audit", type=Path, required=True)
     parser.add_argument("--processed", type=Path, required=True)

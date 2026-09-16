@@ -2,6 +2,7 @@
 
 [한국어](README.md)
 
+[Repository layout](../docs/repository_structure.md)
 **Adapting English ASR to Korean children's speech.**
 
 Parakeet fine-tuning reduced word error rate from **14.45% to 8.50%** on a fixed
@@ -23,7 +24,7 @@ The same Test audio, reference text and normalization were used before and after
 The Test result is below 10%; the Validation target of below 10% was not reached.
 
 [Exact metrics](results/test.json) · [Validation curve](results/validation.json) ·
-[Experiment details](EXPERIMENTS.md)
+[Experiment details](docs/EXPERIMENTS.md)
 
 ## What changed in the transcripts?
 
@@ -43,7 +44,7 @@ labels, not newly adjudicated transcripts. [Selection rule and outputs](results/
 
 ## Listen with authorized data
 
-**Listen locally:** the [example builder](scripts/reporting/build_examples.py) creates an HTML
+**Listen locally:** the [example builder](src/child_speech/reporting/build_examples.py) creates an HTML
 page containing those recordings, references and predictions. AI Hub's
 [FAQ](https://www.aihub.or.kr/aihubnews/faq/list.do) permits sharing research outputs
 but restricts redistribution of source data. AI Hub audio and reference-label files are
@@ -55,7 +56,8 @@ therefore excluded from this repository.
 Run from the repository root with authorized AI Hub audio and the paired prediction files.
 
 ```sh
-python3 -m child_speech_recognition.scripts.reporting.build_examples \
+uv pip install --python .venv/bin/python --no-deps -e child_speech_recognition
+.venv/bin/python -m child_speech.cli.build_examples \
   --before .local-data/asr-nemo/test-0.jsonl \
   --after .local-data/asr-nemo/test-28314.jsonl \
   --audio-zip .local-data/aihub541/VS_eng_free_01.zip \
@@ -86,25 +88,25 @@ statistics are frozen; model weights remain trainable.
 ## Code and reproduction
 
 ```text
-scripts/
-├── data/        # Dataset preparation, label auditing and transcription
-├── training/    # Baseline and mixed-domain training
-├── evaluation/  # Test, public-sample and external evaluation
-├── reporting/   # Listening examples and label review pages
-└── common/      # Shared model and audio runtime
+src/child_speech/
+├── cli/         # Command-line entry points
+├── training/    # AI Hub fine-tuning
+├── evaluation/  # Fixed Test evaluation
+├── reporting/   # Before/after comparison and private listening
+└── common/      # Model and audio loading
 ```
 
-Run entry points from the repository root with `python -m child_speech_recognition.scripts.<group>.<module>`.
+Run entry points from the repository root with `python -m child_speech.cli.<module>`.
 
 | Location | Purpose |
 |---|---|
-| `scripts/common/runtime.py` | Model, tokenizer, audio loading and TDT loss |
-| `scripts/training/train.py` | Three-epoch training, checkpointing and Validation selection |
-| `scripts/evaluation/evaluate_test.py` | Evaluate the selected checkpoint against its pretrained baseline |
-| `scripts/reporting/build_examples.py` | Paired-output checks and private audio examples |
+| `src/child_speech/common/runtime.py` | Model, tokenizer, audio loading and TDT loss |
+| `src/child_speech/training/train.py` | Three-epoch training, checkpointing and Validation selection |
+| `src/child_speech/evaluation/evaluate_test.py` | Evaluate the selected checkpoint against its pretrained baseline |
+| `src/child_speech/reporting/build_examples.py` | Paired-output checks and private audio examples |
 | `results/` | Small public metrics and model-output excerpts |
 
-See [environment and run instructions](EXPERIMENTS.md#run-the-code). The CUDA/NeMo
+See [environment and run instructions](docs/EXPERIMENTS.md#run-the-code). The CUDA/NeMo
 runtime is separate from the monorepo's application environment. The scripts were
 extracted from the completed experiment and checked after relocation; a fresh
 three-epoch run of this reorganized copy has not been performed.
@@ -120,14 +122,3 @@ establish performance for every child, accent or classroom.
 
 Source: [AI Hub dataset](https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=541) ·
 [Parakeet model and license](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2)
-
-## Supplementary experiments
-
-The final model remains the Korean-adapted checkpoint reported above. Additional
-speechocean762 experiments tested transfer to Mandarin-speaking children; mixed
-adaptation did not meet our Korean Validation protection criterion. Further
-adaptation is paused.
-
-- [External evaluation and mixed adaptation](EXTERNAL_EVALUATION.md)
-- [Public audio demos](samples/speechocean762/README.md): a separate dataset, not the Korean Test recordings
-- [Label audit](LABEL_AUDIT.md) and [Whisper-label experiment](WHISPER_LABELS.md): machine-generated references, separate from the main results

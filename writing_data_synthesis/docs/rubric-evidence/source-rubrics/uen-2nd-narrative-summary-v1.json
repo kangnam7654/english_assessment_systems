@@ -1,0 +1,53 @@
+{
+  "id": "uen-2nd-narrative-summary-v1",
+  "provider": "Utah Education Network",
+  "source_version": null,
+  "adaptation_version": "1.0",
+  "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/2nd-Narrative-Rubric.docx",
+  "source_sha256": "3d2a85668b20bb3f7c2927790fcff58c674504997091941b93d211ccada96a51",
+  "notice": "Project-authored condensed descriptors for every source dimension and score point. Not a verbatim official rubric or validated scoring instrument.",
+  "grades": [
+    2
+  ],
+  "genres": [
+    "narrative"
+  ],
+  "requires_sources": false,
+  "dimensions": {
+    "focus_organization": {
+      "4": "Rich real or imagined event/sequence with actions, thoughts, feelings and dialogue, time words and closure.",
+      "3": "Well-developed event/sequence with actions, thoughts and feelings, time words and closure.",
+      "2": "Poor sequence, unclear or insufficient detail, inconsistent time words or closure.",
+      "1": "Unclear sequence without details, time words or closure."
+    },
+    "conventions": {
+      "2": "Use simple/compound sentences, suitable capitalization and spelling, commas and apostrophes for contractions/possession; errors are not systematic.",
+      "1": "Errors can obscure meaning; inconsistent punctuation, capitalization or spelling.",
+      "0": "Conventions are not under control."
+    }
+  },
+  "score_ranges": {
+    "focus_organization": [
+      1,
+      4
+    ],
+    "conventions": [
+      0,
+      2
+    ]
+  },
+  "scope_notes": [
+    "Publication version is not established by the source catalog.",
+    "These are classroom descriptors, not a national proficiency standard."
+  ],
+  "total_policy": "Display-only unweighted sum; no cross-provider score conversion or proficiency decision.",
+  "not_scorable": [
+    "insufficient",
+    "illegible",
+    "non_english",
+    "incoherent",
+    "off_topic",
+    "off_purpose"
+  ],
+  "not_scorable_policy": "Source NS row; all scores null. Illegibility cannot be inferred from typed text."
+}

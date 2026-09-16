@@ -7,6 +7,7 @@ from presentation_attitude.data.preprocessing import preprocess_audit
 
 
 def main():
+    """Normalize and smooth landmarks from a completed interval audit."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--audit", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)

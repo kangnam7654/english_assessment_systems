@@ -1,0 +1,248 @@
+{
+  "us_K:opinion": {
+    "standards": "../docs/rubric-evidence/standards/ccss-K-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/uen-K-opinion-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_K:informative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-K-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/uen-K-informative-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_K:narrative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-K-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/uen-K-narrative-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_1:opinion": {
+    "standards": "../docs/rubric-evidence/standards/ccss-1-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/uen-1st-opinion-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_1:informative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-1-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/uen-1st-informative-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_1:narrative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-1-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/uen-1st-narrative-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_2:opinion": {
+    "standards": "../docs/rubric-evidence/standards/ccss-2-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/uen-2nd-opinion-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_2:informative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-2-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/uen-2nd-informative-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_2:narrative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-2-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/uen-2nd-narrative-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_3:opinion": {
+    "standards": "../docs/rubric-evidence/standards/ccss-3-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-opinion-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_3:informative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-3-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-informational-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_3:narrative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-3-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-narrative-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_4:opinion": {
+    "standards": "../docs/rubric-evidence/standards/ccss-4-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-opinion-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_4:informative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-4-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-informational-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_4:narrative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-4-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-narrative-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_5:opinion": {
+    "standards": "../docs/rubric-evidence/standards/ccss-5-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-opinion-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_5:informative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-5-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-informational-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_5:narrative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-5-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-narrative-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_6:argumentative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-6-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-argumentative-summary-v2.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_6:informative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-6-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-explanatory-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_6:narrative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-6-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-narrative-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_7:argumentative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-7-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-argumentative-summary-v2.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_7:informative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-7-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-explanatory-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_7:narrative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-7-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-narrative-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_8:argumentative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-8-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-argumentative-summary-v2.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_8:informative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-8-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-explanatory-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_8:narrative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-8-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-narrative-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_9:argumentative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-9-10-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-argumentative-summary-v2.json",
+    "alternatives": [
+      "../docs/rubric-evidence/source-rubrics/oregon-hs-informative-argumentative-summary-v1.json"
+    ],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_9:informative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-9-10-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-explanatory-summary-v1.json",
+    "alternatives": [
+      "../docs/rubric-evidence/source-rubrics/oregon-hs-informative-argumentative-summary-v1.json"
+    ],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_9:narrative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-9-10-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/oregon-hs-narrative-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_10:argumentative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-9-10-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-argumentative-summary-v2.json",
+    "alternatives": [
+      "../docs/rubric-evidence/source-rubrics/oregon-hs-informative-argumentative-summary-v1.json"
+    ],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_10:informative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-9-10-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-explanatory-summary-v1.json",
+    "alternatives": [
+      "../docs/rubric-evidence/source-rubrics/oregon-hs-informative-argumentative-summary-v1.json"
+    ],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_10:narrative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-9-10-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/oregon-hs-narrative-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_11:argumentative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-11-12-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-argumentative-summary-v2.json",
+    "alternatives": [
+      "../docs/rubric-evidence/source-rubrics/oregon-hs-informative-argumentative-summary-v1.json"
+    ],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_11:informative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-11-12-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/sb-explanatory-summary-v1.json",
+    "alternatives": [
+      "../docs/rubric-evidence/source-rubrics/oregon-hs-informative-argumentative-summary-v1.json"
+    ],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_11:narrative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-11-12-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/oregon-hs-narrative-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_12:argumentative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-11-12-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/oregon-hs-informative-argumentative-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_12:informative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-11-12-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/oregon-hs-informative-argumentative-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  },
+  "us_12:narrative": {
+    "standards": "../docs/rubric-evidence/standards/ccss-11-12-writing-v1.json",
+    "rubric": "../docs/rubric-evidence/source-rubrics/oregon-hs-narrative-summary-v1.json",
+    "alternatives": [],
+    "project_rubric": "../docs/rubric-evidence/project-writing-v1.json"
+  }
+}

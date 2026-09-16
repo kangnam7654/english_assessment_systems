@@ -1,0 +1,29 @@
+{
+  "id": "ccss-7-writing-v1",
+  "grade_band": "7",
+  "source_version": "2010-06-02",
+  "source_url": "https://www.thecorestandards.org/assets/CCSSI_ELA%20Standards.pdf",
+  "source_sha256": "fa333bc3e442725ad4fca685fd787f0da65c6922d1477a7663264e843d6de187",
+  "attribution": "© Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.",
+  "notice": "Project paraphrases of selected text-observable Writing and Language standards, not the full curriculum. No inference about revision, collaboration, handwriting, speaking or research process.",
+  "by_genre": {
+    "argumentative": {
+      "CCSS.ELA-Literacy.W.7.1": "Introduce claims, acknowledge opposing claims, organize logical reasons/evidence, use accurate credible sources, connect claims/reasons/evidence, maintain formal style and conclude.",
+      "CCSS.ELA-Literacy.L.7.1": "Use phrases and clauses, purposeful sentence types and correctly placed modifiers.",
+      "CCSS.ELA-Literacy.L.7.2": "Use commas between coordinate adjectives and correct spelling/capitalization.",
+      "CCSS.ELA-Literacy.L.7.3": "Choose precise concise language and remove redundancy."
+    },
+    "informative": {
+      "CCSS.ELA-Literacy.W.7.2": "Introduce and organize ideas using suitable structures; develop facts/definitions/details/examples, connect categories with transitions, use precise domain vocabulary, formal style and a fitting conclusion.",
+      "CCSS.ELA-Literacy.L.7.1": "Use phrases and clauses, purposeful sentence types and correctly placed modifiers.",
+      "CCSS.ELA-Literacy.L.7.2": "Use commas between coordinate adjectives and correct spelling/capitalization.",
+      "CCSS.ELA-Literacy.L.7.3": "Choose precise concise language and remove redundancy."
+    },
+    "narrative": {
+      "CCSS.ELA-Literacy.W.7.3": "Establish context and point of view, narrator/characters and logical events; use dialogue, pacing, description, time/setting transitions, sensory language and a reflective conclusion.",
+      "CCSS.ELA-Literacy.L.7.1": "Use phrases and clauses, purposeful sentence types and correctly placed modifiers.",
+      "CCSS.ELA-Literacy.L.7.2": "Use commas between coordinate adjectives and correct spelling/capitalization.",
+      "CCSS.ELA-Literacy.L.7.3": "Choose precise concise language and remove redundancy."
+    }
+  }
+}

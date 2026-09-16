@@ -1,0 +1,54 @@
+{
+  "id": "uen-K-narrative-summary-v1",
+  "provider": "Utah Education Network",
+  "source_version": null,
+  "adaptation_version": "1.0",
+  "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/K-Narrative-Rubric.docx",
+  "source_sha256": "f0cace58a481ae1842d2b4ad25991f95f0a44c242c0a4ddea788ad010ced42fd",
+  "notice": "Project-authored condensed descriptors for every source dimension and score point. Not a verbatim official rubric or validated scoring instrument.",
+  "grades": [
+    "K"
+  ],
+  "genres": [
+    "narrative"
+  ],
+  "requires_sources": false,
+  "dimensions": {
+    "focus_organization": {
+      "4": "At least two connected events with details, chronological order, time words and a reaction.",
+      "3": "A single event or loosely connected events in order, with a reaction.",
+      "2": "Unfocused event, confusing or poorly ordered information.",
+      "1": "No event is described."
+    },
+    "conventions": {
+      "2": "Capitalize sentence beginnings and I; allow phonetic spelling of simple words. Errors do not form a systematic pattern.",
+      "1": "Errors can obscure meaning; inconsistent capitalization and spelling.",
+      "0": "Conventions are not under control."
+    }
+  },
+  "score_ranges": {
+    "focus_organization": [
+      1,
+      4
+    ],
+    "conventions": [
+      0,
+      2
+    ]
+  },
+  "scope_notes": [
+    "Publication version is not established by the source catalog.",
+    "These are classroom descriptors, not a national proficiency standard.",
+    "The original permits drawing, dictation and writing. This API supports student-authored text only; it cannot evaluate drawings, handwriting or conventions in adult transcriptions."
+  ],
+  "total_policy": "Display-only unweighted sum; no cross-provider score conversion or proficiency decision.",
+  "not_scorable": [
+    "insufficient",
+    "illegible",
+    "non_english",
+    "incoherent",
+    "off_topic",
+    "off_purpose"
+  ],
+  "not_scorable_policy": "Source NS row; all scores null. Illegibility cannot be inferred from typed text."
+}

@@ -19,6 +19,18 @@ from presentation_attitude.schema import label_mapping
 
 
 def resolve_device(device):
+    """Resolve auto to MPS when available, otherwise CPU.
+
+    Args:
+        device: PyTorch execution device, such as cpu, mps, or cuda.
+
+    Returns:
+        Explicit device string selected for model execution.
+
+    Raises:
+        ValueError: Evaluation device must be auto, cpu or mps; MPS is unavailable;
+            choose --device cpu explicitly.
+    """
     if device == "auto":
         return "mps" if torch.backends.mps.is_available() else "cpu"
     if device not in ("cpu", "mps"):
@@ -29,6 +41,16 @@ def resolve_device(device):
 
 
 def check_disjoint(training_samples, test_samples):
+    """Reject shared identities or content between training and test samples.
+
+    Args:
+        training_samples: Validated Train/Validation provenance records.
+        test_samples: Validated Test provenance records to check for overlap.
+
+    Raises:
+        ValueError: A speaker, source, sequence directory, or content hash occurs in both
+            training/validation and test provenance.
+    """
     for key in (
         "id",
         "directory",
@@ -64,6 +86,24 @@ def evaluate(
     Returns the summary written to a new output directory alongside per-video
     predictions and misclassifications. Failed runs do not publish metrics.
     Synthetic results remain explicitly marked as pipeline checks.
+
+    Args:
+        checkpoint: Path to a trusted local PyTorch checkpoint.
+        manifest_path: Path to the sample manifest used for this run.
+        training_manifest_path: Manifest establishing the checkpoint's training
+            provenance.
+        output: Destination directory or file for generated artifacts.
+        threshold: Decision or confidence threshold.
+        device: PyTorch execution device, such as cpu, mps, or cuda.
+        max_frames: Maximum frames per video; oversized sequences are rejected.
+
+    Returns:
+        Persisted evaluation summary with metrics and fixed-checkpoint provenance.
+
+    Raises:
+        ValueError: Checkpoint purpose, feature settings, data provenance, threshold, or
+            frame limits do not satisfy the fixed-test evaluation contract.
+        FileExistsError: The output directory already exists.
     """
     if not math.isfinite(threshold) or not 0 <= threshold <= 1:
         raise ValueError("Threshold must be finite and in [0, 1]")

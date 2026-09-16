@@ -1,0 +1,688 @@
+{
+  "id": "project-writing-v1",
+  "grade": "us_11",
+  "description": "Self-contained grade rubric. Runtime selects one of the three genres in this file.",
+  "rubrics": {
+    "argumentative": {
+      "rubric": {
+        "id": "project-writing-v1",
+        "provider": "Project reconstruction",
+        "assessment_kind": "project",
+        "source_kind": "project_synthesis",
+        "adaptation_version": "1.0",
+        "source_version": null,
+        "source_url": null,
+        "notice": "Project-authored common rubric reconstructed from public sources. Not an official US rubric, an equating function, or a validated educational assessment.",
+        "grades": [
+          11
+        ],
+        "genres": [
+          "argumentative"
+        ],
+        "requires_sources": false,
+        "source_requirements_by_genre": {
+          "opinion": false,
+          "argumentative": true,
+          "informative": false,
+          "narrative": false
+        },
+        "dimensions": {
+          "task_content": {
+            "1": "Meaningful text exists, but response to the assignment or relevant development is very limited.",
+            "2": "Addresses part of the assignment; ideas/support are uneven, general or partly irrelevant for the selected grade.",
+            "3": "Addresses the assignment with clear relevant ideas and sufficient grade-appropriate development/support.",
+            "4": "Develops the assignment purposefully with well-selected details/support and insight within the selected grade expectations."
+          },
+          "organization": {
+            "1": "Relationships or sequence are hard to follow; needed boundaries/connections are largely absent.",
+            "2": "Some organization is visible, but gaps, repetition or weak connections interrupt the progression.",
+            "3": "Ideas/events follow a coherent grade-appropriate sequence with suitable connections and opening/closure where expected.",
+            "4": "Purposeful ordering and effective varied connections strengthen the text as a whole; boundaries fit purpose and grade."
+          },
+          "language_expression": {
+            "1": "Imprecise or repetitive language makes the intended meaning difficult to follow; little suitable control of expression.",
+            "2": "Language conveys some meaning, but vocabulary, sentence patterns or tone are uneven or poorly matched to the task.",
+            "3": "Vocabulary, sentence choices and tone communicate clearly and suit the grade, genre and audience.",
+            "4": "Deliberate precise language, effective sentence choices and consistent tone enhance meaning without unnecessary complexity."
+          },
+          "conventions": {
+            "1": "Frequent grade-relevant grammar, spelling or punctuation difficulties repeatedly obstruct meaning.",
+            "2": "Partial control of grade-relevant conventions; recurring errors distract or occasionally obstruct meaning.",
+            "3": "Adequate control of grade-relevant conventions; minor errors generally preserve meaning and readability.",
+            "4": "Consistent control of grade-relevant conventions in a sufficient text sample; rare minor errors do not distract."
+          }
+        },
+        "score_ranges": {
+          "task_content": [
+            1,
+            4
+          ],
+          "organization": [
+            1,
+            4
+          ],
+          "language_expression": [
+            1,
+            4
+          ],
+          "conventions": [
+            1,
+            4
+          ]
+        },
+        "score_levels": {
+          "1": "limited",
+          "2": "developing",
+          "3": "meets_selected_expectations",
+          "4": "effective_and_sustained"
+        },
+        "scoring_rules": [
+          "Judge each domain independently using the selected CCSS grade/band and genre overlay. Give concrete textual evidence in feedback.",
+          "The levels are ordinal project anchors; they are not empirically calibrated cut scores. Level 3 denotes the stated target, not an official proficiency classification.",
+          "Score 4 means effective use within the requested grade, never mandatory older-grade skills. Score 1 is limited performance, not absence of all ability.",
+          "Assess development/support in task_content, structure in organization, stylistic choices in language_expression, and correctness in conventions. Avoid counting the same defect repeatedly.",
+          "Source-use scoring concerns fidelity and attribution; quality of reasoning/support remains in task_content.",
+          "No universal minimum word count, paragraph count or advanced-vocabulary quota. Short age-appropriate K writing can be scorable.",
+          "Off-topic or off-purpose writing can receive a low task_content score while other domains are assessed from the actual text; do not automatically mark it entirely unscorable.",
+          "Do not infer motivation, personality, oral fluency, handwriting, collaborative effort, actual research process or external source credibility."
+        ],
+        "optional_dimensions": {
+          "source_use": {
+            "range": [
+              1,
+              4
+            ],
+            "anchors": {
+              "1": "Source-based information is largely unacknowledged or distorted; substantial copying is not distinguished from the writer’s own wording.",
+              "2": "Some sources are identified, but attribution, paraphrase/quotation fidelity or task-required documentation is inconsistent.",
+              "3": "Sources are identified at an age-appropriate level; paraphrases/quotations preserve meaning and required documentation is adequate.",
+              "4": "Source attribution is clear and unobtrusive; accurate paraphrase/quotation and complete task-appropriate documentation distinguish borrowed material effectively."
+            },
+            "applicability": "Only when supplied source passages exist and the genre is not narrative; otherwise not_applicable and null, not zero.",
+            "grade_guidance": "Use accurate in-text attribution and task-required source documentation; assess reliability only to the extent supported by supplied metadata."
+          }
+        },
+        "not_scorable": [
+          "insufficient_text",
+          "non_english"
+        ],
+        "not_scorable_policy": "Project policy: abstain only when the text cannot support evaluation of the core domains, or is not sufficiently English for this English-writing task. No fixed length threshold.",
+        "normalization": {
+          "method": "minmax_display_v1",
+          "values": {
+            "1": 0.0,
+            "2": 33.33,
+            "3": 66.67,
+            "4": 100.0
+          },
+          "meaning": "Position on an ordinal project rating scale, not percent correct, mastery percentage or cross-grade ability.",
+          "calculated_by": "application, never LLM"
+        },
+        "total_policy": "No aggregate score or cross-grade ranking; source_use not_applicable is excluded rather than treated as zero.",
+        "scope_notes": [
+          "Student-authored text only; no drawings or adult-transcribed speech.",
+          "Grade-relative descriptors do not make equal numbers equivalent abilities across grades.",
+          "Mock validates contracts and routing, not writing quality or human-rater agreement."
+        ],
+        "crosswalk_file": "../docs/rubric-evidence/crosswalk-v1.json",
+        "crosswalk_sha256": "63fd058ee986d99c36924f29fee1cb0479f2565a10f20b3ab858ec9652904169",
+        "sources": [
+          {
+            "rubric_id": "oregon-hs-informative-argumentative-summary-v1",
+            "source_url": "https://www.oregon.gov/ode/educator-resources/essentialskills/Documents/Offical%20Info_Argu%20SG%20Adopted%202019.pdf",
+            "source_sha256": "f39276d863fbfce2d1b0f63a95a9fcd4571520b93ac12c4cd490e176035f07ac"
+          },
+          {
+            "rubric_id": "oregon-hs-narrative-summary-v1",
+            "source_url": "https://www.oregon.gov/ode/educator-resources/essentialskills/Documents/Official%20Narrative%20SG%20Adopted%202019.pdf",
+            "source_sha256": "c0a440792b96459aa62c974179ce1c6d932e0534b3e7925c3892e6bf8f7ffbd7"
+          },
+          {
+            "rubric_id": "sb-argumentative-summary-v2",
+            "source_url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-argumentative.pdf",
+            "source_sha256": "a7634f32c2122680b8d142d53793ee39b2d86deb378d340826bc2d6a27084aa7"
+          },
+          {
+            "rubric_id": "sb-explanatory-summary-v1",
+            "source_url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-explanatory.pdf",
+            "source_sha256": "7c40baab6690c73a39c28e50d4c3059250d319a9a2504b6f3ab9cc9dfb9f26e7"
+          },
+          {
+            "rubric_id": "sb-informational-summary-v1",
+            "source_url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-informational.pdf",
+            "source_sha256": "5b4f18452b2d035c2df5ee8046a12732cb4b8e9045bec80c2e1e48fdc4b2dbb7"
+          },
+          {
+            "rubric_id": "sb-narrative-summary-v1",
+            "source_url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-narrative.pdf",
+            "source_sha256": "a5c21e9fbb5494e4548d100353a8f76d464b0fe6e0d4021466760935c2b93a91"
+          },
+          {
+            "rubric_id": "sb-opinion-summary-v1",
+            "source_url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-opinion.pdf",
+            "source_sha256": "407ffc8b36f3e87c29b73a8c2adefbfe0852d02fbc8eb32e7948cc6af5162074"
+          },
+          {
+            "rubric_id": "uen-1st-informative-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/1st-Informative-Rubric.docx",
+            "source_sha256": "8e6f307924c4c8f25b49042c382405cb90b7e1500b57681c41abfcb7c25ab47b"
+          },
+          {
+            "rubric_id": "uen-1st-narrative-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/1st-NarrativeRubric.docx",
+            "source_sha256": "959fd9432ac92ed6abe83eef91f29fcdd105dc1542f29e86b50ce72c47543d0a"
+          },
+          {
+            "rubric_id": "uen-1st-opinion-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/1st-Opinion-Rubric.docx",
+            "source_sha256": "d60983775373f11ac1c77cd54544901fae9d2ac1fff1ad3c7f1ac81a6cf4279b"
+          },
+          {
+            "rubric_id": "uen-2nd-informative-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/2nd-Informative-Rubric.docx",
+            "source_sha256": "d3a72d4cb2934e3cb56d5812d1f4811a8b78a98779e3bed157b9e26ac8ad2c5d"
+          },
+          {
+            "rubric_id": "uen-2nd-narrative-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/2nd-Narrative-Rubric.docx",
+            "source_sha256": "3d2a85668b20bb3f7c2927790fcff58c674504997091941b93d211ccada96a51"
+          },
+          {
+            "rubric_id": "uen-2nd-opinion-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/2nd-Opinion-Rubric.docx",
+            "source_sha256": "2976ed3f9ba11930822510f86f609de3852e0bf8e840255a9d148c4747bd6a20"
+          },
+          {
+            "rubric_id": "uen-K-informative-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/K-Informative-Rubric.docx",
+            "source_sha256": "c1457e29e591382caf70bb86342b3e88e2e454b7856cc88e6a83a0d3948421ff"
+          },
+          {
+            "rubric_id": "uen-K-narrative-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/K-Narrative-Rubric.docx",
+            "source_sha256": "f0cace58a481ae1842d2b4ad25991f95f0a44c242c0a4ddea788ad010ced42fd"
+          },
+          {
+            "rubric_id": "uen-K-opinion-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/K-Opinion-Rubric.docx",
+            "source_sha256": "4983809cb4ffb7f89e8251511758463b31a7b1c8badfb75730d2d5e8c5349bba"
+          }
+        ],
+        "genre_overlay": {
+          "task_content": "Develop a claim using relevant evidence and reasoning. Develop claims and counterclaims fairly, attending to strengths, limitations and audience as required by the selected band.",
+          "organization": "Judge connections between claims, reasons and evidence; include counterclaims only as required by the selected grade.",
+          "language_expression": "Use precise topic language and formal style. Maintain an objective tone."
+        }
+      },
+      "standards": {
+        "id": "ccss-11-12-writing-v1",
+        "grade_band": "11-12",
+        "source_version": "2010-06-02",
+        "source_url": "https://www.thecorestandards.org/assets/CCSSI_ELA%20Standards.pdf",
+        "source_sha256": "fa333bc3e442725ad4fca685fd787f0da65c6922d1477a7663264e843d6de187",
+        "attribution": "© Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.",
+        "notice": "Project paraphrases of selected text-observable Writing and Language standards, not the full curriculum. No inference about revision, collaboration, handwriting, speaking or research process.",
+        "standards": {
+          "CCSS.ELA-Literacy.W.11-12.1": "Present precise knowledgeable claims and their significance; sequence claims/counterclaims/reasons/evidence; develop both thoroughly and fairly with strongest relevant evidence and limitations, anticipating audience values/biases; use varied syntax, formal objective tone and a fitting conclusion.",
+          "CCSS.ELA-Literacy.L.11-12.1": "Apply standard grammar while recognizing disputed/changing usage and consulting references when needed.",
+          "CCSS.ELA-Literacy.L.11-12.2": "Use appropriate hyphenation and correct spelling/capitalization.",
+          "CCSS.ELA-Literacy.L.11-12.3": "Vary syntax for effect with understanding of complex syntax."
+        }
+      }
+    },
+    "informative": {
+      "rubric": {
+        "id": "project-writing-v1",
+        "provider": "Project reconstruction",
+        "assessment_kind": "project",
+        "source_kind": "project_synthesis",
+        "adaptation_version": "1.0",
+        "source_version": null,
+        "source_url": null,
+        "notice": "Project-authored common rubric reconstructed from public sources. Not an official US rubric, an equating function, or a validated educational assessment.",
+        "grades": [
+          11
+        ],
+        "genres": [
+          "informative"
+        ],
+        "requires_sources": false,
+        "source_requirements_by_genre": {
+          "opinion": false,
+          "argumentative": true,
+          "informative": false,
+          "narrative": false
+        },
+        "dimensions": {
+          "task_content": {
+            "1": "Meaningful text exists, but response to the assignment or relevant development is very limited.",
+            "2": "Addresses part of the assignment; ideas/support are uneven, general or partly irrelevant for the selected grade.",
+            "3": "Addresses the assignment with clear relevant ideas and sufficient grade-appropriate development/support.",
+            "4": "Develops the assignment purposefully with well-selected details/support and insight within the selected grade expectations."
+          },
+          "organization": {
+            "1": "Relationships or sequence are hard to follow; needed boundaries/connections are largely absent.",
+            "2": "Some organization is visible, but gaps, repetition or weak connections interrupt the progression.",
+            "3": "Ideas/events follow a coherent grade-appropriate sequence with suitable connections and opening/closure where expected.",
+            "4": "Purposeful ordering and effective varied connections strengthen the text as a whole; boundaries fit purpose and grade."
+          },
+          "language_expression": {
+            "1": "Imprecise or repetitive language makes the intended meaning difficult to follow; little suitable control of expression.",
+            "2": "Language conveys some meaning, but vocabulary, sentence patterns or tone are uneven or poorly matched to the task.",
+            "3": "Vocabulary, sentence choices and tone communicate clearly and suit the grade, genre and audience.",
+            "4": "Deliberate precise language, effective sentence choices and consistent tone enhance meaning without unnecessary complexity."
+          },
+          "conventions": {
+            "1": "Frequent grade-relevant grammar, spelling or punctuation difficulties repeatedly obstruct meaning.",
+            "2": "Partial control of grade-relevant conventions; recurring errors distract or occasionally obstruct meaning.",
+            "3": "Adequate control of grade-relevant conventions; minor errors generally preserve meaning and readability.",
+            "4": "Consistent control of grade-relevant conventions in a sufficient text sample; rare minor errors do not distract."
+          }
+        },
+        "score_ranges": {
+          "task_content": [
+            1,
+            4
+          ],
+          "organization": [
+            1,
+            4
+          ],
+          "language_expression": [
+            1,
+            4
+          ],
+          "conventions": [
+            1,
+            4
+          ]
+        },
+        "score_levels": {
+          "1": "limited",
+          "2": "developing",
+          "3": "meets_selected_expectations",
+          "4": "effective_and_sustained"
+        },
+        "scoring_rules": [
+          "Judge each domain independently using the selected CCSS grade/band and genre overlay. Give concrete textual evidence in feedback.",
+          "The levels are ordinal project anchors; they are not empirically calibrated cut scores. Level 3 denotes the stated target, not an official proficiency classification.",
+          "Score 4 means effective use within the requested grade, never mandatory older-grade skills. Score 1 is limited performance, not absence of all ability.",
+          "Assess development/support in task_content, structure in organization, stylistic choices in language_expression, and correctness in conventions. Avoid counting the same defect repeatedly.",
+          "Source-use scoring concerns fidelity and attribution; quality of reasoning/support remains in task_content.",
+          "No universal minimum word count, paragraph count or advanced-vocabulary quota. Short age-appropriate K writing can be scorable.",
+          "Off-topic or off-purpose writing can receive a low task_content score while other domains are assessed from the actual text; do not automatically mark it entirely unscorable.",
+          "Do not infer motivation, personality, oral fluency, handwriting, collaborative effort, actual research process or external source credibility."
+        ],
+        "optional_dimensions": {
+          "source_use": {
+            "range": [
+              1,
+              4
+            ],
+            "anchors": {
+              "1": "Source-based information is largely unacknowledged or distorted; substantial copying is not distinguished from the writer’s own wording.",
+              "2": "Some sources are identified, but attribution, paraphrase/quotation fidelity or task-required documentation is inconsistent.",
+              "3": "Sources are identified at an age-appropriate level; paraphrases/quotations preserve meaning and required documentation is adequate.",
+              "4": "Source attribution is clear and unobtrusive; accurate paraphrase/quotation and complete task-appropriate documentation distinguish borrowed material effectively."
+            },
+            "applicability": "Only when supplied source passages exist and the genre is not narrative; otherwise not_applicable and null, not zero.",
+            "grade_guidance": "Use accurate in-text attribution and task-required source documentation; assess reliability only to the extent supported by supplied metadata."
+          }
+        },
+        "not_scorable": [
+          "insufficient_text",
+          "non_english"
+        ],
+        "not_scorable_policy": "Project policy: abstain only when the text cannot support evaluation of the core domains, or is not sufficiently English for this English-writing task. No fixed length threshold.",
+        "normalization": {
+          "method": "minmax_display_v1",
+          "values": {
+            "1": 0.0,
+            "2": 33.33,
+            "3": 66.67,
+            "4": 100.0
+          },
+          "meaning": "Position on an ordinal project rating scale, not percent correct, mastery percentage or cross-grade ability.",
+          "calculated_by": "application, never LLM"
+        },
+        "total_policy": "No aggregate score or cross-grade ranking; source_use not_applicable is excluded rather than treated as zero.",
+        "scope_notes": [
+          "Student-authored text only; no drawings or adult-transcribed speech.",
+          "Grade-relative descriptors do not make equal numbers equivalent abilities across grades.",
+          "Mock validates contracts and routing, not writing quality or human-rater agreement."
+        ],
+        "crosswalk_file": "../docs/rubric-evidence/crosswalk-v1.json",
+        "crosswalk_sha256": "63fd058ee986d99c36924f29fee1cb0479f2565a10f20b3ab858ec9652904169",
+        "sources": [
+          {
+            "rubric_id": "oregon-hs-informative-argumentative-summary-v1",
+            "source_url": "https://www.oregon.gov/ode/educator-resources/essentialskills/Documents/Offical%20Info_Argu%20SG%20Adopted%202019.pdf",
+            "source_sha256": "f39276d863fbfce2d1b0f63a95a9fcd4571520b93ac12c4cd490e176035f07ac"
+          },
+          {
+            "rubric_id": "oregon-hs-narrative-summary-v1",
+            "source_url": "https://www.oregon.gov/ode/educator-resources/essentialskills/Documents/Official%20Narrative%20SG%20Adopted%202019.pdf",
+            "source_sha256": "c0a440792b96459aa62c974179ce1c6d932e0534b3e7925c3892e6bf8f7ffbd7"
+          },
+          {
+            "rubric_id": "sb-argumentative-summary-v2",
+            "source_url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-argumentative.pdf",
+            "source_sha256": "a7634f32c2122680b8d142d53793ee39b2d86deb378d340826bc2d6a27084aa7"
+          },
+          {
+            "rubric_id": "sb-explanatory-summary-v1",
+            "source_url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-explanatory.pdf",
+            "source_sha256": "7c40baab6690c73a39c28e50d4c3059250d319a9a2504b6f3ab9cc9dfb9f26e7"
+          },
+          {
+            "rubric_id": "sb-informational-summary-v1",
+            "source_url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-informational.pdf",
+            "source_sha256": "5b4f18452b2d035c2df5ee8046a12732cb4b8e9045bec80c2e1e48fdc4b2dbb7"
+          },
+          {
+            "rubric_id": "sb-narrative-summary-v1",
+            "source_url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-narrative.pdf",
+            "source_sha256": "a5c21e9fbb5494e4548d100353a8f76d464b0fe6e0d4021466760935c2b93a91"
+          },
+          {
+            "rubric_id": "sb-opinion-summary-v1",
+            "source_url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-opinion.pdf",
+            "source_sha256": "407ffc8b36f3e87c29b73a8c2adefbfe0852d02fbc8eb32e7948cc6af5162074"
+          },
+          {
+            "rubric_id": "uen-1st-informative-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/1st-Informative-Rubric.docx",
+            "source_sha256": "8e6f307924c4c8f25b49042c382405cb90b7e1500b57681c41abfcb7c25ab47b"
+          },
+          {
+            "rubric_id": "uen-1st-narrative-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/1st-NarrativeRubric.docx",
+            "source_sha256": "959fd9432ac92ed6abe83eef91f29fcdd105dc1542f29e86b50ce72c47543d0a"
+          },
+          {
+            "rubric_id": "uen-1st-opinion-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/1st-Opinion-Rubric.docx",
+            "source_sha256": "d60983775373f11ac1c77cd54544901fae9d2ac1fff1ad3c7f1ac81a6cf4279b"
+          },
+          {
+            "rubric_id": "uen-2nd-informative-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/2nd-Informative-Rubric.docx",
+            "source_sha256": "d3a72d4cb2934e3cb56d5812d1f4811a8b78a98779e3bed157b9e26ac8ad2c5d"
+          },
+          {
+            "rubric_id": "uen-2nd-narrative-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/2nd-Narrative-Rubric.docx",
+            "source_sha256": "3d2a85668b20bb3f7c2927790fcff58c674504997091941b93d211ccada96a51"
+          },
+          {
+            "rubric_id": "uen-2nd-opinion-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/2nd-Opinion-Rubric.docx",
+            "source_sha256": "2976ed3f9ba11930822510f86f609de3852e0bf8e840255a9d148c4747bd6a20"
+          },
+          {
+            "rubric_id": "uen-K-informative-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/K-Informative-Rubric.docx",
+            "source_sha256": "c1457e29e591382caf70bb86342b3e88e2e454b7856cc88e6a83a0d3948421ff"
+          },
+          {
+            "rubric_id": "uen-K-narrative-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/K-Narrative-Rubric.docx",
+            "source_sha256": "f0cace58a481ae1842d2b4ad25991f95f0a44c242c0a4ddea788ad010ced42fd"
+          },
+          {
+            "rubric_id": "uen-K-opinion-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/K-Opinion-Rubric.docx",
+            "source_sha256": "4983809cb4ffb7f89e8251511758463b31a7b1c8badfb75730d2d5e8c5349bba"
+          }
+        ],
+        "genre_overlay": {
+          "task_content": "Explain a topic using facts, definitions, details or examples appropriate to the selected grade. Do not require a position or counterclaims.",
+          "organization": "Group related information with grade-appropriate links and closure; advanced grades clarify relationships among complex ideas.",
+          "language_expression": "Use precise explanatory/domain vocabulary and task-appropriate tone; a narrative voice is not the target."
+        }
+      },
+      "standards": {
+        "id": "ccss-11-12-writing-v1",
+        "grade_band": "11-12",
+        "source_version": "2010-06-02",
+        "source_url": "https://www.thecorestandards.org/assets/CCSSI_ELA%20Standards.pdf",
+        "source_sha256": "fa333bc3e442725ad4fca685fd787f0da65c6922d1477a7663264e843d6de187",
+        "attribution": "© Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.",
+        "notice": "Project paraphrases of selected text-observable Writing and Language standards, not the full curriculum. No inference about revision, collaboration, handwriting, speaking or research process.",
+        "standards": {
+          "CCSS.ELA-Literacy.W.11-12.2": "Build complex ideas into a unified whole with significant relevant evidence for the audience; use varied transitions/syntax and precise domain language or explanatory comparisons, formal objective tone and a conclusion addressing implications.",
+          "CCSS.ELA-Literacy.L.11-12.1": "Apply standard grammar while recognizing disputed/changing usage and consulting references when needed.",
+          "CCSS.ELA-Literacy.L.11-12.2": "Use appropriate hyphenation and correct spelling/capitalization.",
+          "CCSS.ELA-Literacy.L.11-12.3": "Vary syntax for effect with understanding of complex syntax."
+        }
+      }
+    },
+    "narrative": {
+      "rubric": {
+        "id": "project-writing-v1",
+        "provider": "Project reconstruction",
+        "assessment_kind": "project",
+        "source_kind": "project_synthesis",
+        "adaptation_version": "1.0",
+        "source_version": null,
+        "source_url": null,
+        "notice": "Project-authored common rubric reconstructed from public sources. Not an official US rubric, an equating function, or a validated educational assessment.",
+        "grades": [
+          11
+        ],
+        "genres": [
+          "narrative"
+        ],
+        "requires_sources": false,
+        "source_requirements_by_genre": {
+          "opinion": false,
+          "argumentative": true,
+          "informative": false,
+          "narrative": false
+        },
+        "dimensions": {
+          "task_content": {
+            "1": "Meaningful text exists, but response to the assignment or relevant development is very limited.",
+            "2": "Addresses part of the assignment; ideas/support are uneven, general or partly irrelevant for the selected grade.",
+            "3": "Addresses the assignment with clear relevant ideas and sufficient grade-appropriate development/support.",
+            "4": "Develops the assignment purposefully with well-selected details/support and insight within the selected grade expectations."
+          },
+          "organization": {
+            "1": "Relationships or sequence are hard to follow; needed boundaries/connections are largely absent.",
+            "2": "Some organization is visible, but gaps, repetition or weak connections interrupt the progression.",
+            "3": "Ideas/events follow a coherent grade-appropriate sequence with suitable connections and opening/closure where expected.",
+            "4": "Purposeful ordering and effective varied connections strengthen the text as a whole; boundaries fit purpose and grade."
+          },
+          "language_expression": {
+            "1": "Imprecise or repetitive language makes the intended meaning difficult to follow; little suitable control of expression.",
+            "2": "Language conveys some meaning, but vocabulary, sentence patterns or tone are uneven or poorly matched to the task.",
+            "3": "Vocabulary, sentence choices and tone communicate clearly and suit the grade, genre and audience.",
+            "4": "Deliberate precise language, effective sentence choices and consistent tone enhance meaning without unnecessary complexity."
+          },
+          "conventions": {
+            "1": "Frequent grade-relevant grammar, spelling or punctuation difficulties repeatedly obstruct meaning.",
+            "2": "Partial control of grade-relevant conventions; recurring errors distract or occasionally obstruct meaning.",
+            "3": "Adequate control of grade-relevant conventions; minor errors generally preserve meaning and readability.",
+            "4": "Consistent control of grade-relevant conventions in a sufficient text sample; rare minor errors do not distract."
+          }
+        },
+        "score_ranges": {
+          "task_content": [
+            1,
+            4
+          ],
+          "organization": [
+            1,
+            4
+          ],
+          "language_expression": [
+            1,
+            4
+          ],
+          "conventions": [
+            1,
+            4
+          ]
+        },
+        "score_levels": {
+          "1": "limited",
+          "2": "developing",
+          "3": "meets_selected_expectations",
+          "4": "effective_and_sustained"
+        },
+        "scoring_rules": [
+          "Judge each domain independently using the selected CCSS grade/band and genre overlay. Give concrete textual evidence in feedback.",
+          "The levels are ordinal project anchors; they are not empirically calibrated cut scores. Level 3 denotes the stated target, not an official proficiency classification.",
+          "Score 4 means effective use within the requested grade, never mandatory older-grade skills. Score 1 is limited performance, not absence of all ability.",
+          "Assess development/support in task_content, structure in organization, stylistic choices in language_expression, and correctness in conventions. Avoid counting the same defect repeatedly.",
+          "Source-use scoring concerns fidelity and attribution; quality of reasoning/support remains in task_content.",
+          "No universal minimum word count, paragraph count or advanced-vocabulary quota. Short age-appropriate K writing can be scorable.",
+          "Off-topic or off-purpose writing can receive a low task_content score while other domains are assessed from the actual text; do not automatically mark it entirely unscorable.",
+          "Do not infer motivation, personality, oral fluency, handwriting, collaborative effort, actual research process or external source credibility."
+        ],
+        "optional_dimensions": {
+          "source_use": {
+            "range": [
+              1,
+              4
+            ],
+            "anchors": {
+              "1": "Source-based information is largely unacknowledged or distorted; substantial copying is not distinguished from the writer’s own wording.",
+              "2": "Some sources are identified, but attribution, paraphrase/quotation fidelity or task-required documentation is inconsistent.",
+              "3": "Sources are identified at an age-appropriate level; paraphrases/quotations preserve meaning and required documentation is adequate.",
+              "4": "Source attribution is clear and unobtrusive; accurate paraphrase/quotation and complete task-appropriate documentation distinguish borrowed material effectively."
+            },
+            "applicability": "Only when supplied source passages exist and the genre is not narrative; otherwise not_applicable and null, not zero.",
+            "grade_guidance": "Use accurate in-text attribution and task-required source documentation; assess reliability only to the extent supported by supplied metadata."
+          }
+        },
+        "not_scorable": [
+          "insufficient_text",
+          "non_english"
+        ],
+        "not_scorable_policy": "Project policy: abstain only when the text cannot support evaluation of the core domains, or is not sufficiently English for this English-writing task. No fixed length threshold.",
+        "normalization": {
+          "method": "minmax_display_v1",
+          "values": {
+            "1": 0.0,
+            "2": 33.33,
+            "3": 66.67,
+            "4": 100.0
+          },
+          "meaning": "Position on an ordinal project rating scale, not percent correct, mastery percentage or cross-grade ability.",
+          "calculated_by": "application, never LLM"
+        },
+        "total_policy": "No aggregate score or cross-grade ranking; source_use not_applicable is excluded rather than treated as zero.",
+        "scope_notes": [
+          "Student-authored text only; no drawings or adult-transcribed speech.",
+          "Grade-relative descriptors do not make equal numbers equivalent abilities across grades.",
+          "Mock validates contracts and routing, not writing quality or human-rater agreement."
+        ],
+        "crosswalk_file": "../docs/rubric-evidence/crosswalk-v1.json",
+        "crosswalk_sha256": "63fd058ee986d99c36924f29fee1cb0479f2565a10f20b3ab858ec9652904169",
+        "sources": [
+          {
+            "rubric_id": "oregon-hs-informative-argumentative-summary-v1",
+            "source_url": "https://www.oregon.gov/ode/educator-resources/essentialskills/Documents/Offical%20Info_Argu%20SG%20Adopted%202019.pdf",
+            "source_sha256": "f39276d863fbfce2d1b0f63a95a9fcd4571520b93ac12c4cd490e176035f07ac"
+          },
+          {
+            "rubric_id": "oregon-hs-narrative-summary-v1",
+            "source_url": "https://www.oregon.gov/ode/educator-resources/essentialskills/Documents/Official%20Narrative%20SG%20Adopted%202019.pdf",
+            "source_sha256": "c0a440792b96459aa62c974179ce1c6d932e0534b3e7925c3892e6bf8f7ffbd7"
+          },
+          {
+            "rubric_id": "sb-argumentative-summary-v2",
+            "source_url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-argumentative.pdf",
+            "source_sha256": "a7634f32c2122680b8d142d53793ee39b2d86deb378d340826bc2d6a27084aa7"
+          },
+          {
+            "rubric_id": "sb-explanatory-summary-v1",
+            "source_url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-explanatory.pdf",
+            "source_sha256": "7c40baab6690c73a39c28e50d4c3059250d319a9a2504b6f3ab9cc9dfb9f26e7"
+          },
+          {
+            "rubric_id": "sb-informational-summary-v1",
+            "source_url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-informational.pdf",
+            "source_sha256": "5b4f18452b2d035c2df5ee8046a12732cb4b8e9045bec80c2e1e48fdc4b2dbb7"
+          },
+          {
+            "rubric_id": "sb-narrative-summary-v1",
+            "source_url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-narrative.pdf",
+            "source_sha256": "a5c21e9fbb5494e4548d100353a8f76d464b0fe6e0d4021466760935c2b93a91"
+          },
+          {
+            "rubric_id": "sb-opinion-summary-v1",
+            "source_url": "https://portal.smarterbalanced.org/library/en/performance-task-writing-rubric-opinion.pdf",
+            "source_sha256": "407ffc8b36f3e87c29b73a8c2adefbfe0852d02fbc8eb32e7948cc6af5162074"
+          },
+          {
+            "rubric_id": "uen-1st-informative-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/1st-Informative-Rubric.docx",
+            "source_sha256": "8e6f307924c4c8f25b49042c382405cb90b7e1500b57681c41abfcb7c25ab47b"
+          },
+          {
+            "rubric_id": "uen-1st-narrative-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/1st-NarrativeRubric.docx",
+            "source_sha256": "959fd9432ac92ed6abe83eef91f29fcdd105dc1542f29e86b50ce72c47543d0a"
+          },
+          {
+            "rubric_id": "uen-1st-opinion-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/1st-Opinion-Rubric.docx",
+            "source_sha256": "d60983775373f11ac1c77cd54544901fae9d2ac1fff1ad3c7f1ac81a6cf4279b"
+          },
+          {
+            "rubric_id": "uen-2nd-informative-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/2nd-Informative-Rubric.docx",
+            "source_sha256": "d3a72d4cb2934e3cb56d5812d1f4811a8b78a98779e3bed157b9e26ac8ad2c5d"
+          },
+          {
+            "rubric_id": "uen-2nd-narrative-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/2nd-Narrative-Rubric.docx",
+            "source_sha256": "3d2a85668b20bb3f7c2927790fcff58c674504997091941b93d211ccada96a51"
+          },
+          {
+            "rubric_id": "uen-2nd-opinion-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/2nd-Opinion-Rubric.docx",
+            "source_sha256": "2976ed3f9ba11930822510f86f609de3852e0bf8e840255a9d148c4747bd6a20"
+          },
+          {
+            "rubric_id": "uen-K-informative-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/K-Informative-Rubric.docx",
+            "source_sha256": "c1457e29e591382caf70bb86342b3e88e2e454b7856cc88e6a83a0d3948421ff"
+          },
+          {
+            "rubric_id": "uen-K-narrative-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/K-Narrative-Rubric.docx",
+            "source_sha256": "f0cace58a481ae1842d2b4ad25991f95f0a44c242c0a4ddea788ad010ced42fd"
+          },
+          {
+            "rubric_id": "uen-K-opinion-summary-v1",
+            "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/K-Opinion-Rubric.docx",
+            "source_sha256": "4983809cb4ffb7f89e8251511758463b31a7b1c8badfb75730d2d5e8c5349bba"
+          }
+        ],
+        "genre_overlay": {
+          "task_content": "Develop events, characters or experiences with grade-appropriate details and techniques. Reward relevant narrative development instead of argumentative evidence.",
+          "organization": "Judge event progression, time/setting transitions and closure against the selected standards. Establish point of view as required by the selected standards.",
+          "language_expression": "Assess descriptive/sensory language, dialogue or sentence choices where useful. Do not require every narrative technique or formal academic tone."
+        }
+      },
+      "standards": {
+        "id": "ccss-11-12-writing-v1",
+        "grade_band": "11-12",
+        "source_version": "2010-06-02",
+        "source_url": "https://www.thecorestandards.org/assets/CCSSI_ELA%20Standards.pdf",
+        "source_sha256": "fa333bc3e442725ad4fca685fd787f0da65c6922d1477a7663264e843d6de187",
+        "attribution": "© Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.",
+        "notice": "Project paraphrases of selected text-observable Writing and Language standards, not the full curriculum. No inference about revision, collaboration, handwriting, speaking or research process.",
+        "standards": {
+          "CCSS.ELA-Literacy.W.11-12.3": "Establish a significant problem/situation/observation and perspective(s); use narrative techniques and sequencing to build coherence, tone and outcome; use vivid details and conclude reflectively.",
+          "CCSS.ELA-Literacy.L.11-12.1": "Apply standard grammar while recognizing disputed/changing usage and consulting references when needed.",
+          "CCSS.ELA-Literacy.L.11-12.2": "Use appropriate hyphenation and correct spelling/capitalization.",
+          "CCSS.ELA-Literacy.L.11-12.3": "Vary syntax for effect with understanding of complex syntax."
+        }
+      }
+    }
+  }
+}

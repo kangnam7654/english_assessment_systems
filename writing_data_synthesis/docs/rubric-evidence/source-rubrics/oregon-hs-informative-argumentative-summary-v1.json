@@ -1,0 +1,120 @@
+{
+  "id": "oregon-hs-informative-argumentative-summary-v1",
+  "provider": "Oregon Department of Education",
+  "source_version": "2019",
+  "adaptation_version": "1.0",
+  "source_url": "https://www.oregon.gov/ode/educator-resources/essentialskills/Documents/Offical%20Info_Argu%20SG%20Adopted%202019.pdf",
+  "source_sha256": "f39276d863fbfce2d1b0f63a95a9fcd4571520b93ac12c4cd490e176035f07ac",
+  "notice": "Project-authored condensed descriptors for every source dimension and score point. Not a verbatim official rubric or validated scoring instrument.",
+  "grades": [
+    9,
+    10,
+    11,
+    12
+  ],
+  "genres": [
+    "informative",
+    "argumentative"
+  ],
+  "requires_sources": true,
+  "dimensions": {
+    "ideas_content": {
+      "6": "Precise central ideas; insightful balanced development with significant credible support; thoroughly develop claims/counterclaims when argumentative.",
+      "5": "Clear central ideas with carefully selected support and balanced explanation; develop claims/counterclaims when argumentative.",
+      "4": "Clear purpose with relevant specific support; acknowledge/address counterclaims when argumentative.",
+      "3": "Ambiguous or obvious ideas, general support; argumentative counterclaims ignored or mishandled.",
+      "2": "Unclear purpose and vague, insufficient, irrelevant or repetitive detail.",
+      "1": "No central idea or meaningful development."
+    },
+    "organization": {
+      "6": "Compelling structure and smooth sequencing; varied transitions, engaging opening and satisfying conclusion.",
+      "5": "Strong structure and effective sequence, transitions and boundaries.",
+      "4": "Clear coherent order and paragraphs, possibly formulaic; adequate links and boundaries.",
+      "3": "Inconsistent or rigid organization; weak boundaries and repetitive links.",
+      "2": "Hard-to-follow sequence; misplaced details and missing or weak boundaries.",
+      "1": "Disjointed order without useful links or identifiable structure."
+    },
+    "voice": {
+      "6": "Purposeful formal, objective voice fits disciplinary norms and strongly engages the intended audience.",
+      "5": "Consistent formal, objective voice fits topic and discipline with clear audience awareness.",
+      "4": "Generally appropriate formal style and objective tone; some inconsistent distance from the audience.",
+      "3": "Uneven formality, tone and audience awareness; the voice is inconsistent.",
+      "2": "Little audience awareness; flat or overly personal tone does not fit disciplinary expectations.",
+      "1": "No effective audience connection or appropriate voice; style and tone undermine communication."
+    },
+    "word_choice": {
+      "6": "Exceptionally precise, varied and purposeful vocabulary; vivid or discipline-specific language strengthens meaning.",
+      "5": "Precise varied vocabulary and effective imagery or terminology.",
+      "4": "Clear functional vocabulary with enough variety to avoid repetition.",
+      "3": "Generic or repetitive language, occasional misuse and strained expression.",
+      "2": "Monotonous, vague or misused words weaken meaning.",
+      "1": "Extremely limited or misused vocabulary obscures meaning."
+    },
+    "sentence_fluency": {
+      "6": "Skillful rhythm and varied syntax emphasize meaning; strong control including purposeful fragments when appropriate.",
+      "5": "Smooth rhythm and carefully varied, well-controlled sentences.",
+      "4": "Generally fluid reading with some variety; strong simple-sentence control.",
+      "3": "Mechanical or repetitive sentences with awkward passages and limited complex-sentence control.",
+      "2": "Choppy or rambling sentences impede reading; little syntactic variety.",
+      "1": "Incomplete or disjointed sentences and confusing syntax obscure meaning."
+    },
+    "conventions": {
+      "6": "Exceptional control across a wide range; very rare minor errors, little editing needed.",
+      "5": "Strong control and effective punctuation; few minor errors.",
+      "4": "Generally correct conventions; minor errors preserve readability and meaning.",
+      "3": "Limited control; errors begin to distract or hinder reading.",
+      "2": "Frequent substantial errors impair readability and require major editing.",
+      "1": "Pervasive severe errors obstruct meaning and require extensive editing."
+    },
+    "use_of_sources": {
+      "6": "Synthesize/analyze multiple authoritative sources; integrate original paraphrases, accurate quotations, complete citations and bibliography.",
+      "5": "Use multiple authoritative sources with smooth attribution, accurate quotations and complete documentation.",
+      "4": "Use several authoritative sources, acknowledge limitations, paraphrase independently and generally document correctly.",
+      "3": "Limited or unreliable sources, patchy attribution, overly close paraphrasing or incomplete bibliography.",
+      "2": "Misrepresented ideas, near-copying, missing/wrong citations or substantially defective bibliography.",
+      "1": "Little source use or undocumented copying; absent citations and bibliography."
+    }
+  },
+  "score_ranges": {
+    "ideas_content": [
+      1,
+      6
+    ],
+    "organization": [
+      1,
+      6
+    ],
+    "voice": [
+      1,
+      6
+    ],
+    "word_choice": [
+      1,
+      6
+    ],
+    "sentence_fluency": [
+      1,
+      6
+    ],
+    "conventions": [
+      1,
+      6
+    ],
+    "use_of_sources": [
+      1,
+      6
+    ]
+  },
+  "scope_notes": [
+    "High-school guide shared across grades 9–12, not a separate grade-12 rubric.",
+    "Gender-neutral language is permitted.",
+    "Assess only textual evidence; do not infer student motivation, actual research process or unprovided source reliability.",
+    "This application uses the source-based task variant and requires supplied sources to assess Use of Sources.",
+    "Informative writing does not require counterclaims; an objective explanatory/argumentative tone replaces narrative intimacy."
+  ],
+  "total_policy": "Display-only unweighted sum; no cross-provider score conversion or proficiency decision.",
+  "not_scorable": [
+    "insufficient_evidence"
+  ],
+  "not_scorable_policy": "Project abstention only when evidence cannot support scoring; the Oregon guide provides 1–6 anchors, not this NS category. Weak writing normally earns a source-scale score rather than abstention."
+}

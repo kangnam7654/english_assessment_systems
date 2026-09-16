@@ -38,11 +38,32 @@ def create_app(
     files may select a separate local artifact root; ui_dir optionally mounts
     an already-built static UI. Neither the app factory nor HTTP polling loads
     Torch/MediaPipe. Use a lifespan-aware client when invoking it in tests.
+
+    Args:
+        settings: Validated configuration for this component.
+        store_factory: Factory that creates the repository for the configured data
+            directory.
+        files: Local input and attempt-artifact storage.
+        ui_dir: Optional directory containing a built static UI and index.html.
+
+    Returns:
+        Configured FastAPI application; resources start in its lifespan.
+
+    Raises:
+        FileNotFoundError: Build the inference UI before serving its directory.
     """
     settings = settings or Settings.from_env()
 
     @asynccontextmanager
     async def lifespan(app):
+        """Initialize app-scoped job storage before serving requests.
+
+        Args:
+            app: ASGI application or FastAPI instance whose lifecycle is being configured.
+
+        Yields:
+            Control while the application-owned resources are available.
+        """
         app.state.store = store_factory(settings.data_dir)
         app.state.files = (
             files if files is not None else LocalJobFiles(settings.data_dir)
@@ -57,6 +78,18 @@ def create_app(
     app.add_middleware(UploadLimit, limit=settings.max_upload_bytes + 64 * 1024)
 
     def get_job(job_id):
+        """Look up a job or translate a missing identifier into HTTP 404.
+
+        Args:
+            job_id: Server-generated job identifier.
+
+        Returns:
+            Job snapshot returned by the repository.
+
+        Raises:
+            HTTPException: The requested resource, operation, or submitted input cannot be
+                accepted.
+        """
         try:
             return app.state.store.get(str(job_id))
         except KeyError:
@@ -64,6 +97,14 @@ def create_app(
 
     def status_view(job):
         # Full results belong to /result, not repeated status polls.
+        """Build a lightweight polling response without embedding full analysis results.
+
+        Args:
+            job: Job snapshot including attempts and status.
+
+        Returns:
+            Polling response with status/result URLs and no embedded attempt results.
+        """
         job = {
             **job,
             "attempts": [
@@ -77,6 +118,11 @@ def create_app(
 
     @app.get("/health")
     def health():
+        """Report API and queue availability without claiming worker readiness.
+
+        Returns:
+            API/queue status and upload limit; worker health is not probed.
+        """
         backend = app.state.store.health()
         return {
             "api": "ready",
@@ -92,6 +138,19 @@ def create_app(
         ],
         mode: Annotated[AnalysisMode, Query()] = "features",
     ):
+        """Persist a bounded video upload and publish a queued analysis job.
+
+        Args:
+            file: Uploaded video file and its caller-owned input stream.
+            mode: Requested execution mode.
+
+        Returns:
+            HTTP 202 response with job URLs and a Location header.
+
+        Raises:
+            HTTPException: The requested resource, operation, or submitted input cannot be
+                accepted.
+        """
         filename = Path((file.filename or "").replace("\\", "/")).name
         if Path(filename).suffix.lower() not in {
             ".mp4",
@@ -124,10 +183,30 @@ def create_app(
 
     @app.get("/jobs/{job_id}")
     def status(job_id: uuid.UUID):
+        """Return the current job state and attempt history.
+
+        Args:
+            job_id: Server-generated job identifier.
+
+        Returns:
+            Current polling response for the requested job.
+        """
         return status_view(get_job(job_id.hex))
 
     @app.get("/jobs/{job_id}/result")
     def result(job_id: uuid.UUID):
+        """Return the latest successful analysis result, or reject unavailable results.
+
+        Args:
+            job_id: Server-generated job identifier.
+
+        Returns:
+            Latest successful attempt result.
+
+        Raises:
+            HTTPException: The requested resource, operation, or submitted input cannot be
+                accepted.
+        """
         job = get_job(job_id.hex)
         if job["status"] != "succeeded":
             raise HTTPException(
@@ -137,6 +216,18 @@ def create_app(
 
     @app.post("/jobs/{job_id}/retry", status_code=202)
     def retry(job_id: uuid.UUID):
+        """Explicitly requeue a failed job while retaining attempt history.
+
+        Args:
+            job_id: Server-generated job identifier.
+
+        Returns:
+            Polling response for the explicitly requeued job.
+
+        Raises:
+            HTTPException: The requested resource, operation, or submitted input cannot be
+                accepted.
+        """
         try:
             job = app.state.store.retry(job_id.hex)
         except KeyError:
@@ -155,6 +246,11 @@ def create_app(
 
         @app.get("/", include_in_schema=False)
         def home():
+            """Redirect the API root to the mounted inference UI.
+
+            Returns:
+                Redirect response pointing to /ui/.
+            """
             return RedirectResponse("/ui/")
 
     return app

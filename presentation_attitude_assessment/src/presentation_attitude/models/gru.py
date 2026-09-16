@@ -14,6 +14,11 @@ class GRUClassifier(nn.Module):
     """
 
     def __init__(self, hidden_size=32):
+        """Construct the GRU encoder and a one-logit binary classification head.
+
+        Args:
+            hidden_size: Number of hidden units in the GRU.
+        """
         super().__init__()
         self.config = {"hidden_size": hidden_size}
         self.gru = nn.GRU(INPUT_SIZE, hidden_size, batch_first=True)
@@ -25,6 +30,13 @@ class GRUClassifier(nn.Module):
         lengths contains positive unpadded lengths. Packing ignores right padding;
         no recurrent state is retained between calls. Apply sigmoid to obtain the
         positive-class model output, not a calibrated confidence score.
+
+        Args:
+            features: Float32 landmark tensor of shape (B, T, INPUT_SIZE).
+            lengths: Positive unpadded sequence lengths of shape (B,).
+
+        Returns:
+            One binary logit per video as a tensor of shape (B,).
         """
         packed = pack_padded_sequence(
             features, lengths.cpu(), batch_first=True, enforce_sorted=False

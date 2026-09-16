@@ -1,3 +1,5 @@
+"""Regression checks for classification."""
+
 import math
 import unittest
 
@@ -5,7 +7,9 @@ from presentation_attitude.evaluation.classification import binary_metrics
 
 
 class ClassificationTests(unittest.TestCase):
+    """Exercise classification tests behavior with controlled fixtures."""
     def test_roc_auc_ranking_and_ties(self):
+        """Verify roc auc ranking and ties."""
         for labels, probabilities, expected in [
             ([0, 1], [0.1, 0.9], 1.0),
             ([0, 1], [0.9, 0.1], 0.0),
@@ -25,10 +29,12 @@ class ClassificationTests(unittest.TestCase):
                 )
 
     def test_roc_auc_requires_both_classes(self):
+        """Verify roc auc requires both classes."""
         for labels in ([0, 0], [1, 1]):
             self.assertIsNone(binary_metrics(labels, [0.1, 0.9])["roc_auc"])
 
     def test_hand_calculated_confusion_and_class_metrics(self):
+        """Verify hand calculated confusion and class metrics."""
         result = binary_metrics([0, 0, 1, 1, 1], [0.1, 0.8, 0.2, 0.5, 0.9])
         self.assertEqual(result["confusion_matrix"]["values"], [[1, 1], [1, 2]])
         self.assertEqual(result["accuracy"], 3 / 5)
@@ -39,6 +45,7 @@ class ClassificationTests(unittest.TestCase):
         self.assertEqual(result["per_class"]["0"]["support"], 2)
 
     def test_undefined_is_null_and_complete_misses_are_zero(self):
+        """Verify undefined is null and complete misses are zero."""
         result = binary_metrics([0, 0], [0.1, 0.2])
         for key in ("precision", "recall", "f1", "macro_f1"):
             self.assertIsNone(result[key])
@@ -48,6 +55,7 @@ class ClassificationTests(unittest.TestCase):
         self.assertEqual(result["f1"], 0)
 
     def test_threshold_and_invalid_inputs(self):
+        """Verify threshold and invalid inputs."""
         self.assertEqual(binary_metrics([1], [0.5])["accuracy"], 1)
         self.assertEqual(binary_metrics([1], [0.5], threshold=0.6)["accuracy"], 0)
         for labels, probabilities in [

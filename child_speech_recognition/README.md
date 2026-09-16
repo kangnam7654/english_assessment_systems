@@ -2,6 +2,7 @@
 
 [English](README.en.md)
 
+[공통 디렉터리 기준](../docs/repository_structure.md)
 **한국 아동의 영어 음성에 맞춰 ASR 모델을 파인튜닝했습니다.**
 
 고정된 Test 음성 4,567개에서 Parakeet의 단어 오류율을 **14.45% → 8.50%**로
@@ -23,7 +24,7 @@
 Test에서는 10% 미만을 달성했지만, Validation의 10% 미만 목표는 미달입니다.
 
 [정확한 평가 수치](results/test.json) · [학습 중 평가 기록](results/validation.json) ·
-[실험 설정과 실행 방법](EXPERIMENTS.md)
+[실험 설정과 실행 방법](docs/EXPERIMENTS.md)
 
 ## 실제 전사는 어떻게 달라졌나요?
 
@@ -54,7 +55,8 @@ AI Hub [공식 FAQ](https://www.aihub.or.kr/aihubnews/faq/list.do)는 연구 결
 승인받은 AI Hub 음성과 학습 전후 예측 파일을 준비한 뒤 저장소 루트에서 실행합니다.
 
 ```sh
-python3 -m child_speech_recognition.scripts.reporting.build_examples \
+uv pip install --python .venv/bin/python --no-deps -e child_speech_recognition
+.venv/bin/python -m child_speech.cli.build_examples \
   --before .local-data/asr-nemo/test-0.jsonl \
   --after .local-data/asr-nemo/test-28314.jsonl \
   --audio-zip .local-data/aihub541/VS_eng_free_01.zip \
@@ -86,25 +88,25 @@ BatchNorm의 통계는 고정하고 모델 가중치는 학습합니다.
 ## 코드 구성
 
 ```text
-scripts/
-├── data/        # 데이터 준비·라벨 검수·재전사
-├── training/    # 기본 학습·혼합 데이터 추가 학습
-├── evaluation/  # Test·공개 샘플·외부 데이터 평가
-├── reporting/   # 청취 예시·라벨 비교 페이지 생성
-└── common/      # 모델·음성 로딩 등 공통 코드
+src/child_speech/
+├── cli/         # 실행 진입점
+├── training/    # AI Hub 파인튜닝
+├── evaluation/  # 고정 Test 평가
+├── reporting/   # 학습 전후 비교·로컬 청취
+└── common/      # 모델·음성 로딩
 ```
 
-실행 명령은 저장소 루트에서 `python -m child_speech_recognition.scripts.<분류>.<모듈>` 형식을 사용합니다.
+실행 명령은 저장소 루트에서 `python -m child_speech.cli.<모듈>` 형식을 사용합니다.
 
 | 위치 | 역할 |
 |---|---|
-| `scripts/common/runtime.py` | 모델·토크나이저·음성 로딩·TDT loss |
-| `scripts/training/train.py` | 3 epoch 학습·체크포인트·Validation 모델 선택 |
-| `scripts/evaluation/evaluate_test.py` | 선택한 모델과 사전학습 모델의 Test 비교 |
-| `scripts/reporting/build_examples.py` | 전후 출력 검증·로컬 오디오 예시 생성 |
+| `src/child_speech/common/runtime.py` | 모델·토크나이저·음성 로딩·TDT loss |
+| `src/child_speech/training/train.py` | 3 epoch 학습·체크포인트·Validation 모델 선택 |
+| `src/child_speech/evaluation/evaluate_test.py` | 선택한 모델과 사전학습 모델의 Test 비교 |
+| `src/child_speech/reporting/build_examples.py` | 전후 출력 검증·로컬 오디오 예시 생성 |
 | `results/` | 공개 가능한 집계 지표와 모델 출력 예시 |
 
-[실행 방법](EXPERIMENTS.md#run-the-code)을 참고하세요.
+[실행 방법](docs/EXPERIMENTS.md#run-the-code)을 참고하세요.
 NeMo CUDA 환경은 모노레포의 애플리케이션 환경과 분리했습니다.
 완료된 실험에서 코드를 추출해 경로를 정리하고 검증했으며,
 정리된 사본으로 3 epoch 전체를 새로 학습하지는 않았습니다.
@@ -119,13 +121,3 @@ Test는 이전 실험에서도 관찰했던 세트이므로 완전히 새로운 
 
 출처: [AI Hub 데이터셋](https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=541) ·
 [Parakeet 모델·라이선스](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2)
-
-## 보조 실험 기록
-
-최종 모델은 위 성과를 기록한 한국 아동 파인튜닝 모델로 유지합니다.
-speechocean762로 중국어 모국어 아동에 대한 전이도 확인했지만, 혼합 학습이
-한국 아동 Validation 성능 보호 기준을 충족하지 못해 추가 학습은 중단했습니다.
-
-- [외부 평가·혼합 학습](EXTERNAL_EVALUATION.md)
-- [공개 음성 데모](samples/speechocean762/README.md): 한국 아동 Test와 다른 데이터입니다.
-- [라벨 검수](LABEL_AUDIT.md)와 [Whisper 라벨 실험](WHISPER_LABELS.md): 자동 생성 라벨에 대한 별도 기록입니다.

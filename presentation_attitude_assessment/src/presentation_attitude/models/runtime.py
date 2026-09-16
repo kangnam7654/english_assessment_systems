@@ -18,6 +18,15 @@ class ClassifierRuntime:
     """
 
     def __init__(self, checkpoint, *, device="cpu"):
+        """Validate a trusted checkpoint and load its model once on the selected device.
+
+        Args:
+            checkpoint: Path to a trusted local PyTorch checkpoint.
+            device: PyTorch execution device, such as cpu, mps, or cuda.
+
+        Raises:
+            ValueError: Unsupported checkpoint feature schema.
+        """
         self.device = torch.device(device)
         state = torch.load(checkpoint, map_location=self.device, weights_only=True)
         if state["feature_schema"] != FEATURE_SCHEMA:
@@ -58,6 +67,16 @@ class ClassifierRuntime:
         load_features() enforces integrity and max_frames; extraction settings
         must match the checkpoint. Invalid or wholly missing features raise
         ValueError. Serving decides how that failure appears in the job result.
+
+        Args:
+            directory: Directory used for the component's local files.
+            max_frames: Maximum frames per video; oversized sequences are rejected.
+
+        Returns:
+            Checkpoint purpose, label mapping, frame count, and positive-class probability.
+
+        Raises:
+            ValueError: Sequence settings differ from the checkpoint.
         """
         features, _, summary = load_features(directory, max_frames=max_frames)
         if feature_settings(summary) != self.feature_settings:

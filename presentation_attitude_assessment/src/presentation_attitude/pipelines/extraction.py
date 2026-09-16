@@ -54,6 +54,12 @@ def process_video(
     XYZ, normalized/smoothed XY, validity and timestamps without image files.
     Once output creation succeeds, processing failures record a failed summary
     and propagate; partial sequences are never advertised as complete.
+
+    Raises:
+        FileExistsError: The destination already exists.
+        ValueError: The frame limit is invalid, no frames are decoded, or the source changes
+            while processing.
+        RuntimeError: The decoder or detector fails; the failed summary is retained.
     """
     video, output = Path(video).resolve(), Path(output).resolve()
     reader = FFmpegVideoReader(
@@ -132,6 +138,14 @@ def process_video(
             )
 
             def rows():
+                """Decode sampled frames and yield MediaPipe observations in timestamp order.
+
+                Yields:
+                    Manifest records in file order.
+
+                Raises:
+                    ValueError: Video exceeds sampled frame limit; no partial prediction is made.
+                """
                 for index, rgb in enumerate(reader):
                     if max_frames is not None and index >= max_frames:
                         raise ValueError(

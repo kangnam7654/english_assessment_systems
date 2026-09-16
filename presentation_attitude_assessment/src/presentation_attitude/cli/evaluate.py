@@ -7,6 +7,7 @@ from presentation_attitude.pipelines.evaluation import evaluate
 
 
 def main():
+    """Evaluate a selected GRU checkpoint on the fixed test manifest."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--checkpoint", type=Path, required=True)
     parser.add_argument(

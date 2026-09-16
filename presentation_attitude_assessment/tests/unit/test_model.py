@@ -1,3 +1,5 @@
+"""Regression checks for model."""
+
 import unittest
 
 import torch
@@ -8,7 +10,9 @@ from presentation_attitude.schema import INPUT_SIZE
 
 
 class ModelTests(unittest.TestCase):
+    """Exercise model tests behavior with controlled fixtures."""
     def test_padding_does_not_change_logits_or_mix_video_state(self):
+        """Verify padding does not change logits or mix video state."""
         torch.manual_seed(7)
         model = GRUClassifier(8).eval()
         short, long = torch.randn(3, INPUT_SIZE), torch.randn(7, INPUT_SIZE)
@@ -38,6 +42,7 @@ class ModelTests(unittest.TestCase):
         )
 
     def test_real_missing_frame_is_not_padding(self):
+        """Verify real missing frame is not padding."""
         values = torch.zeros(4, INPUT_SIZE)
         values[0, -3:] = 1
         batch = collate_sequences(

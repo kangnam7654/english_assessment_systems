@@ -7,6 +7,7 @@ from presentation_attitude.pipelines.training import train
 
 
 def main():
+    """Train a GRU from offline sequence manifests and select by Validation loss."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)

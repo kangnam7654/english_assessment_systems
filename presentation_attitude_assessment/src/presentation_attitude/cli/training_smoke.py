@@ -7,6 +7,7 @@ from presentation_attitude.pipelines.training_smoke import run_smoke
 
 
 def main():
+    """Run a synthetic sequence training check without attitude-quality claims."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--epochs", type=int, default=3)

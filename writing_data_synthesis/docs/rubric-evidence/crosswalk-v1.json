@@ -1,0 +1,676 @@
+{
+  "id": "project-writing-crosswalk-v1",
+  "notice": "Conceptual reconstruction only. These mappings do not establish numerical score equivalence.",
+  "source_rubric_count": 16,
+  "mappings": [
+    {
+      "source_rubric_id": "oregon-hs-informative-argumentative-summary-v1",
+      "source_sha256": "f39276d863fbfce2d1b0f63a95a9fcd4571520b93ac12c4cd490e176035f07ac",
+      "source_dimension": "ideas_content",
+      "source_range": [
+        1,
+        6
+      ],
+      "project_dimensions": [
+        "task_content"
+      ],
+      "decision": "Retain relevance, development and support; genre determines what counts as development.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "oregon-hs-informative-argumentative-summary-v1",
+      "source_sha256": "f39276d863fbfce2d1b0f63a95a9fcd4571520b93ac12c4cd490e176035f07ac",
+      "source_dimension": "organization",
+      "source_range": [
+        1,
+        6
+      ],
+      "project_dimensions": [
+        "organization"
+      ],
+      "decision": "Retain structural coherence, sequence and transitions without requiring one fixed essay structure.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "oregon-hs-informative-argumentative-summary-v1",
+      "source_sha256": "f39276d863fbfce2d1b0f63a95a9fcd4571520b93ac12c4cd490e176035f07ac",
+      "source_dimension": "voice",
+      "source_range": [
+        1,
+        6
+      ],
+      "project_dimensions": [
+        "language_expression"
+      ],
+      "decision": "Retain observable style, tone and audience fit; exclude inferred sincerity, motivation and personality.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "oregon-hs-informative-argumentative-summary-v1",
+      "source_sha256": "f39276d863fbfce2d1b0f63a95a9fcd4571520b93ac12c4cd490e176035f07ac",
+      "source_dimension": "word_choice",
+      "source_range": [
+        1,
+        6
+      ],
+      "project_dimensions": [
+        "language_expression"
+      ],
+      "decision": "Retain precision and appropriate vocabulary, not vocabulary difficulty for its own sake.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "oregon-hs-informative-argumentative-summary-v1",
+      "source_sha256": "f39276d863fbfce2d1b0f63a95a9fcd4571520b93ac12c4cd490e176035f07ac",
+      "source_dimension": "sentence_fluency",
+      "source_range": [
+        1,
+        6
+      ],
+      "project_dimensions": [
+        "language_expression",
+        "conventions"
+      ],
+      "decision": "Fluency/variety belongs to expression; grammatical well-formedness belongs to conventions. Do not deduct the same error twice.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "oregon-hs-informative-argumentative-summary-v1",
+      "source_sha256": "f39276d863fbfce2d1b0f63a95a9fcd4571520b93ac12c4cd490e176035f07ac",
+      "source_dimension": "conventions",
+      "source_range": [
+        1,
+        6
+      ],
+      "project_dimensions": [
+        "conventions"
+      ],
+      "decision": "Retain grade-appropriate written grammar, spelling and punctuation; no handwriting or adult transcription scoring.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "oregon-hs-informative-argumentative-summary-v1",
+      "source_sha256": "f39276d863fbfce2d1b0f63a95a9fcd4571520b93ac12c4cd490e176035f07ac",
+      "source_dimension": "use_of_sources",
+      "source_range": [
+        1,
+        6
+      ],
+      "project_dimensions": [
+        "source_use"
+      ],
+      "decision": "Retain attribution, faithful paraphrase/quotation and task-appropriate documentation; exclude unverifiable research behavior/authority.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "oregon-hs-narrative-summary-v1",
+      "source_sha256": "c0a440792b96459aa62c974179ce1c6d932e0534b3e7925c3892e6bf8f7ffbd7",
+      "source_dimension": "ideas_content",
+      "source_range": [
+        1,
+        6
+      ],
+      "project_dimensions": [
+        "task_content"
+      ],
+      "decision": "Retain relevance, development and support; genre determines what counts as development.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "oregon-hs-narrative-summary-v1",
+      "source_sha256": "c0a440792b96459aa62c974179ce1c6d932e0534b3e7925c3892e6bf8f7ffbd7",
+      "source_dimension": "organization",
+      "source_range": [
+        1,
+        6
+      ],
+      "project_dimensions": [
+        "organization"
+      ],
+      "decision": "Retain structural coherence, sequence and transitions without requiring one fixed essay structure.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "oregon-hs-narrative-summary-v1",
+      "source_sha256": "c0a440792b96459aa62c974179ce1c6d932e0534b3e7925c3892e6bf8f7ffbd7",
+      "source_dimension": "voice",
+      "source_range": [
+        1,
+        6
+      ],
+      "project_dimensions": [
+        "language_expression"
+      ],
+      "decision": "Retain observable style, tone and audience fit; exclude inferred sincerity, motivation and personality.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "oregon-hs-narrative-summary-v1",
+      "source_sha256": "c0a440792b96459aa62c974179ce1c6d932e0534b3e7925c3892e6bf8f7ffbd7",
+      "source_dimension": "word_choice",
+      "source_range": [
+        1,
+        6
+      ],
+      "project_dimensions": [
+        "language_expression"
+      ],
+      "decision": "Retain precision and appropriate vocabulary, not vocabulary difficulty for its own sake.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "oregon-hs-narrative-summary-v1",
+      "source_sha256": "c0a440792b96459aa62c974179ce1c6d932e0534b3e7925c3892e6bf8f7ffbd7",
+      "source_dimension": "sentence_fluency",
+      "source_range": [
+        1,
+        6
+      ],
+      "project_dimensions": [
+        "language_expression",
+        "conventions"
+      ],
+      "decision": "Fluency/variety belongs to expression; grammatical well-formedness belongs to conventions. Do not deduct the same error twice.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "oregon-hs-narrative-summary-v1",
+      "source_sha256": "c0a440792b96459aa62c974179ce1c6d932e0534b3e7925c3892e6bf8f7ffbd7",
+      "source_dimension": "conventions",
+      "source_range": [
+        1,
+        6
+      ],
+      "project_dimensions": [
+        "conventions"
+      ],
+      "decision": "Retain grade-appropriate written grammar, spelling and punctuation; no handwriting or adult transcription scoring.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "sb-argumentative-summary-v2",
+      "source_sha256": "a7634f32c2122680b8d142d53793ee39b2d86deb378d340826bc2d6a27084aa7",
+      "source_dimension": "organization_purpose",
+      "source_range": [
+        1,
+        4
+      ],
+      "project_dimensions": [
+        "task_content",
+        "organization"
+      ],
+      "decision": "Purpose/claim relevance belongs to task_content; ordering, transitions and boundaries belong to organization.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "sb-argumentative-summary-v2",
+      "source_sha256": "a7634f32c2122680b8d142d53793ee39b2d86deb378d340826bc2d6a27084aa7",
+      "source_dimension": "evidence_elaboration",
+      "source_range": [
+        1,
+        4
+      ],
+      "project_dimensions": [
+        "task_content",
+        "language_expression",
+        "source_use"
+      ],
+      "decision": "Separate depth/support, vocabulary/style and attribution/fidelity. Do not assign one source score to all three.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "sb-argumentative-summary-v2",
+      "source_sha256": "a7634f32c2122680b8d142d53793ee39b2d86deb378d340826bc2d6a27084aa7",
+      "source_dimension": "conventions",
+      "source_range": [
+        0,
+        2
+      ],
+      "project_dimensions": [
+        "conventions"
+      ],
+      "decision": "Retain grade-appropriate written grammar, spelling and punctuation; no handwriting or adult transcription scoring.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "sb-explanatory-summary-v1",
+      "source_sha256": "7c40baab6690c73a39c28e50d4c3059250d319a9a2504b6f3ab9cc9dfb9f26e7",
+      "source_dimension": "organization_purpose",
+      "source_range": [
+        1,
+        4
+      ],
+      "project_dimensions": [
+        "task_content",
+        "organization"
+      ],
+      "decision": "Purpose/claim relevance belongs to task_content; ordering, transitions and boundaries belong to organization.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "sb-explanatory-summary-v1",
+      "source_sha256": "7c40baab6690c73a39c28e50d4c3059250d319a9a2504b6f3ab9cc9dfb9f26e7",
+      "source_dimension": "evidence_elaboration",
+      "source_range": [
+        1,
+        4
+      ],
+      "project_dimensions": [
+        "task_content",
+        "language_expression",
+        "source_use"
+      ],
+      "decision": "Separate depth/support, vocabulary/style and attribution/fidelity. Do not assign one source score to all three.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "sb-explanatory-summary-v1",
+      "source_sha256": "7c40baab6690c73a39c28e50d4c3059250d319a9a2504b6f3ab9cc9dfb9f26e7",
+      "source_dimension": "conventions",
+      "source_range": [
+        0,
+        2
+      ],
+      "project_dimensions": [
+        "conventions"
+      ],
+      "decision": "Retain grade-appropriate written grammar, spelling and punctuation; no handwriting or adult transcription scoring.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "sb-informational-summary-v1",
+      "source_sha256": "5b4f18452b2d035c2df5ee8046a12732cb4b8e9045bec80c2e1e48fdc4b2dbb7",
+      "source_dimension": "organization_purpose",
+      "source_range": [
+        1,
+        4
+      ],
+      "project_dimensions": [
+        "task_content",
+        "organization"
+      ],
+      "decision": "Purpose/claim relevance belongs to task_content; ordering, transitions and boundaries belong to organization.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "sb-informational-summary-v1",
+      "source_sha256": "5b4f18452b2d035c2df5ee8046a12732cb4b8e9045bec80c2e1e48fdc4b2dbb7",
+      "source_dimension": "evidence_elaboration",
+      "source_range": [
+        1,
+        4
+      ],
+      "project_dimensions": [
+        "task_content",
+        "language_expression",
+        "source_use"
+      ],
+      "decision": "Separate depth/support, vocabulary/style and attribution/fidelity. Do not assign one source score to all three.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "sb-informational-summary-v1",
+      "source_sha256": "5b4f18452b2d035c2df5ee8046a12732cb4b8e9045bec80c2e1e48fdc4b2dbb7",
+      "source_dimension": "conventions",
+      "source_range": [
+        0,
+        2
+      ],
+      "project_dimensions": [
+        "conventions"
+      ],
+      "decision": "Retain grade-appropriate written grammar, spelling and punctuation; no handwriting or adult transcription scoring.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "sb-narrative-summary-v1",
+      "source_sha256": "a5c21e9fbb5494e4548d100353a8f76d464b0fe6e0d4021466760935c2b93a91",
+      "source_dimension": "organization_purpose",
+      "source_range": [
+        1,
+        4
+      ],
+      "project_dimensions": [
+        "task_content",
+        "organization"
+      ],
+      "decision": "Purpose/claim relevance belongs to task_content; ordering, transitions and boundaries belong to organization.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "sb-narrative-summary-v1",
+      "source_sha256": "a5c21e9fbb5494e4548d100353a8f76d464b0fe6e0d4021466760935c2b93a91",
+      "source_dimension": "development_elaboration",
+      "source_range": [
+        1,
+        4
+      ],
+      "project_dimensions": [
+        "task_content",
+        "language_expression"
+      ],
+      "decision": "Separate events/character development from how language makes them vivid.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "sb-narrative-summary-v1",
+      "source_sha256": "a5c21e9fbb5494e4548d100353a8f76d464b0fe6e0d4021466760935c2b93a91",
+      "source_dimension": "conventions",
+      "source_range": [
+        0,
+        2
+      ],
+      "project_dimensions": [
+        "conventions"
+      ],
+      "decision": "Retain grade-appropriate written grammar, spelling and punctuation; no handwriting or adult transcription scoring.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "sb-opinion-summary-v1",
+      "source_sha256": "407ffc8b36f3e87c29b73a8c2adefbfe0852d02fbc8eb32e7948cc6af5162074",
+      "source_dimension": "organization_purpose",
+      "source_range": [
+        1,
+        4
+      ],
+      "project_dimensions": [
+        "task_content",
+        "organization"
+      ],
+      "decision": "Purpose/claim relevance belongs to task_content; ordering, transitions and boundaries belong to organization.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "sb-opinion-summary-v1",
+      "source_sha256": "407ffc8b36f3e87c29b73a8c2adefbfe0852d02fbc8eb32e7948cc6af5162074",
+      "source_dimension": "evidence_elaboration",
+      "source_range": [
+        1,
+        4
+      ],
+      "project_dimensions": [
+        "task_content",
+        "language_expression",
+        "source_use"
+      ],
+      "decision": "Separate depth/support, vocabulary/style and attribution/fidelity. Do not assign one source score to all three.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "sb-opinion-summary-v1",
+      "source_sha256": "407ffc8b36f3e87c29b73a8c2adefbfe0852d02fbc8eb32e7948cc6af5162074",
+      "source_dimension": "conventions",
+      "source_range": [
+        0,
+        2
+      ],
+      "project_dimensions": [
+        "conventions"
+      ],
+      "decision": "Retain grade-appropriate written grammar, spelling and punctuation; no handwriting or adult transcription scoring.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "uen-1st-informative-summary-v1",
+      "source_sha256": "8e6f307924c4c8f25b49042c382405cb90b7e1500b57681c41abfcb7c25ab47b",
+      "source_dimension": "focus_organization",
+      "source_range": [
+        1,
+        4
+      ],
+      "project_dimensions": [
+        "task_content",
+        "organization"
+      ],
+      "decision": "Split topic/opinion/details from sequence/linking/closure; a source score cannot be split numerically.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "uen-1st-informative-summary-v1",
+      "source_sha256": "8e6f307924c4c8f25b49042c382405cb90b7e1500b57681c41abfcb7c25ab47b",
+      "source_dimension": "conventions",
+      "source_range": [
+        0,
+        2
+      ],
+      "project_dimensions": [
+        "conventions"
+      ],
+      "decision": "Retain grade-appropriate written grammar, spelling and punctuation; no handwriting or adult transcription scoring.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "uen-1st-narrative-summary-v1",
+      "source_sha256": "959fd9432ac92ed6abe83eef91f29fcdd105dc1542f29e86b50ce72c47543d0a",
+      "source_dimension": "focus_organization",
+      "source_range": [
+        1,
+        4
+      ],
+      "project_dimensions": [
+        "task_content",
+        "organization"
+      ],
+      "decision": "Split topic/opinion/details from sequence/linking/closure; a source score cannot be split numerically.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "uen-1st-narrative-summary-v1",
+      "source_sha256": "959fd9432ac92ed6abe83eef91f29fcdd105dc1542f29e86b50ce72c47543d0a",
+      "source_dimension": "conventions",
+      "source_range": [
+        0,
+        2
+      ],
+      "project_dimensions": [
+        "conventions"
+      ],
+      "decision": "Retain grade-appropriate written grammar, spelling and punctuation; no handwriting or adult transcription scoring.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "uen-1st-opinion-summary-v1",
+      "source_sha256": "d60983775373f11ac1c77cd54544901fae9d2ac1fff1ad3c7f1ac81a6cf4279b",
+      "source_dimension": "focus_organization",
+      "source_range": [
+        1,
+        4
+      ],
+      "project_dimensions": [
+        "task_content",
+        "organization"
+      ],
+      "decision": "Split topic/opinion/details from sequence/linking/closure; a source score cannot be split numerically.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "uen-1st-opinion-summary-v1",
+      "source_sha256": "d60983775373f11ac1c77cd54544901fae9d2ac1fff1ad3c7f1ac81a6cf4279b",
+      "source_dimension": "conventions",
+      "source_range": [
+        0,
+        2
+      ],
+      "project_dimensions": [
+        "conventions"
+      ],
+      "decision": "Retain grade-appropriate written grammar, spelling and punctuation; no handwriting or adult transcription scoring.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "uen-2nd-informative-summary-v1",
+      "source_sha256": "d3a72d4cb2934e3cb56d5812d1f4811a8b78a98779e3bed157b9e26ac8ad2c5d",
+      "source_dimension": "focus_organization",
+      "source_range": [
+        1,
+        4
+      ],
+      "project_dimensions": [
+        "task_content",
+        "organization"
+      ],
+      "decision": "Split topic/opinion/details from sequence/linking/closure; a source score cannot be split numerically.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "uen-2nd-informative-summary-v1",
+      "source_sha256": "d3a72d4cb2934e3cb56d5812d1f4811a8b78a98779e3bed157b9e26ac8ad2c5d",
+      "source_dimension": "conventions",
+      "source_range": [
+        0,
+        2
+      ],
+      "project_dimensions": [
+        "conventions"
+      ],
+      "decision": "Retain grade-appropriate written grammar, spelling and punctuation; no handwriting or adult transcription scoring.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "uen-2nd-narrative-summary-v1",
+      "source_sha256": "3d2a85668b20bb3f7c2927790fcff58c674504997091941b93d211ccada96a51",
+      "source_dimension": "focus_organization",
+      "source_range": [
+        1,
+        4
+      ],
+      "project_dimensions": [
+        "task_content",
+        "organization"
+      ],
+      "decision": "Split topic/opinion/details from sequence/linking/closure; a source score cannot be split numerically.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "uen-2nd-narrative-summary-v1",
+      "source_sha256": "3d2a85668b20bb3f7c2927790fcff58c674504997091941b93d211ccada96a51",
+      "source_dimension": "conventions",
+      "source_range": [
+        0,
+        2
+      ],
+      "project_dimensions": [
+        "conventions"
+      ],
+      "decision": "Retain grade-appropriate written grammar, spelling and punctuation; no handwriting or adult transcription scoring.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "uen-2nd-opinion-summary-v1",
+      "source_sha256": "2976ed3f9ba11930822510f86f609de3852e0bf8e840255a9d148c4747bd6a20",
+      "source_dimension": "focus_organization",
+      "source_range": [
+        1,
+        4
+      ],
+      "project_dimensions": [
+        "task_content",
+        "organization"
+      ],
+      "decision": "Split topic/opinion/details from sequence/linking/closure; a source score cannot be split numerically.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "uen-2nd-opinion-summary-v1",
+      "source_sha256": "2976ed3f9ba11930822510f86f609de3852e0bf8e840255a9d148c4747bd6a20",
+      "source_dimension": "conventions",
+      "source_range": [
+        0,
+        2
+      ],
+      "project_dimensions": [
+        "conventions"
+      ],
+      "decision": "Retain grade-appropriate written grammar, spelling and punctuation; no handwriting or adult transcription scoring.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "uen-K-informative-summary-v1",
+      "source_sha256": "c1457e29e591382caf70bb86342b3e88e2e454b7856cc88e6a83a0d3948421ff",
+      "source_dimension": "focus_organization",
+      "source_range": [
+        1,
+        4
+      ],
+      "project_dimensions": [
+        "task_content",
+        "organization"
+      ],
+      "decision": "Split topic/opinion/details from sequence/linking/closure; a source score cannot be split numerically.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "uen-K-informative-summary-v1",
+      "source_sha256": "c1457e29e591382caf70bb86342b3e88e2e454b7856cc88e6a83a0d3948421ff",
+      "source_dimension": "conventions",
+      "source_range": [
+        0,
+        2
+      ],
+      "project_dimensions": [
+        "conventions"
+      ],
+      "decision": "Retain grade-appropriate written grammar, spelling and punctuation; no handwriting or adult transcription scoring.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "uen-K-narrative-summary-v1",
+      "source_sha256": "f0cace58a481ae1842d2b4ad25991f95f0a44c242c0a4ddea788ad010ced42fd",
+      "source_dimension": "focus_organization",
+      "source_range": [
+        1,
+        4
+      ],
+      "project_dimensions": [
+        "task_content",
+        "organization"
+      ],
+      "decision": "Split topic/opinion/details from sequence/linking/closure; a source score cannot be split numerically.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "uen-K-narrative-summary-v1",
+      "source_sha256": "f0cace58a481ae1842d2b4ad25991f95f0a44c242c0a4ddea788ad010ced42fd",
+      "source_dimension": "conventions",
+      "source_range": [
+        0,
+        2
+      ],
+      "project_dimensions": [
+        "conventions"
+      ],
+      "decision": "Retain grade-appropriate written grammar, spelling and punctuation; no handwriting or adult transcription scoring.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "uen-K-opinion-summary-v1",
+      "source_sha256": "4983809cb4ffb7f89e8251511758463b31a7b1c8badfb75730d2d5e8c5349bba",
+      "source_dimension": "focus_organization",
+      "source_range": [
+        1,
+        4
+      ],
+      "project_dimensions": [
+        "task_content",
+        "organization"
+      ],
+      "decision": "Split topic/opinion/details from sequence/linking/closure; a source score cannot be split numerically.",
+      "numeric_conversion": false
+    },
+    {
+      "source_rubric_id": "uen-K-opinion-summary-v1",
+      "source_sha256": "4983809cb4ffb7f89e8251511758463b31a7b1c8badfb75730d2d5e8c5349bba",
+      "source_dimension": "conventions",
+      "source_range": [
+        0,
+        2
+      ],
+      "project_dimensions": [
+        "conventions"
+      ],
+      "decision": "Retain grade-appropriate written grammar, spelling and punctuation; no handwriting or adult transcription scoring.",
+      "numeric_conversion": false
+    }
+  ]
+}

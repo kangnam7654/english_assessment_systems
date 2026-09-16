@@ -1,0 +1,53 @@
+{
+  "id": "uen-2nd-opinion-summary-v1",
+  "provider": "Utah Education Network",
+  "source_version": null,
+  "adaptation_version": "1.0",
+  "source_url": "https://www.uen.org/core/languagearts/writing-collection/downloads/2nd-Opinion-Rubric.docx",
+  "source_sha256": "2976ed3f9ba11930822510f86f609de3852e0bf8e840255a9d148c4747bd6a20",
+  "notice": "Project-authored condensed descriptors for every source dimension and score point. Not a verbatim official rubric or validated scoring instrument.",
+  "grades": [
+    2
+  ],
+  "genres": [
+    "opinion"
+  ],
+  "requires_sources": false,
+  "dimensions": {
+    "focus_organization": {
+      "4": "Strong topic/book opening and opinion; well-organized reasons with textual evidence, linking phrases and a closing restatement.",
+      "3": "Introduces topic/book, states opinion, gives reasons, links them and concludes.",
+      "2": "Unclear focus, partly irrelevant reasons, weak linking or conclusion.",
+      "1": "Unclear focus, at most one reason, absent linking and conclusion."
+    },
+    "conventions": {
+      "2": "Use simple/compound sentences, suitable capitalization and spelling, commas and apostrophes for contractions/possession; errors are not systematic.",
+      "1": "Errors can obscure meaning; inconsistent punctuation, capitalization or spelling.",
+      "0": "Conventions are not under control."
+    }
+  },
+  "score_ranges": {
+    "focus_organization": [
+      1,
+      4
+    ],
+    "conventions": [
+      0,
+      2
+    ]
+  },
+  "scope_notes": [
+    "Publication version is not established by the source catalog.",
+    "These are classroom descriptors, not a national proficiency standard."
+  ],
+  "total_policy": "Display-only unweighted sum; no cross-provider score conversion or proficiency decision.",
+  "not_scorable": [
+    "insufficient",
+    "illegible",
+    "non_english",
+    "incoherent",
+    "off_topic",
+    "off_purpose"
+  ],
+  "not_scorable_policy": "Source NS row; all scores null. Illegibility cannot be inferred from typed text."
+}

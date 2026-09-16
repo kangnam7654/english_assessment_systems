@@ -17,3 +17,9 @@ writing-data-synthesis = { workspace = true }
 
 [tool.uv.workspace]
 members = ["presentation_attitude_assessment", "writing_data_synthesis"]
+exclude = ["child_speech_recognition"]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28,<1",
+]

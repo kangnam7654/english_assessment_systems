@@ -5,7 +5,15 @@ from itertools import groupby
 
 
 def _roc_auc(labels, probabilities):
-    """Rank positive/negative pairs; equal scores contribute half a win."""
+    """Rank positive/negative pairs; equal scores contribute half a win.
+
+    Args:
+        labels: Ground-truth binary labels in the same order as predictions.
+        probabilities: Positive-class probabilities in [0, 1].
+
+    Returns:
+        Pairwise ROC-AUC, or None when one class is absent.
+    """
     positives = sum(labels)
     negatives = len(labels) - positives
     if not positives or not negatives:
@@ -29,6 +37,19 @@ def binary_metrics(labels, probabilities, *, threshold=0.5):
     labels and columns predictions, both ordered [0, 1]. Zero-denominator
     metrics return None; ROC-AUC is None unless both classes occur and gives
     half credit for ties. Invalid inputs raise ValueError.
+
+    Args:
+        labels: Ground-truth binary labels in the same order as predictions.
+        probabilities: Positive-class probabilities in [0, 1].
+        threshold: Decision or confidence threshold.
+
+    Returns:
+        Confusion matrix and binary metrics; undefined metrics are None.
+
+    Raises:
+        ValueError: Threshold must be finite and in [0, 1]; Nonempty, equally sized
+            labels and probabilities required; Labels must be binary integers;
+            Probabilities must be finite and in [0, 1].
     """
     if not math.isfinite(threshold) or not 0 <= threshold <= 1:
         raise ValueError("Threshold must be finite and in [0, 1]")
@@ -43,6 +64,15 @@ def binary_metrics(labels, probabilities, *, threshold=0.5):
         matrix[label][int(probability >= threshold)] += 1
 
     def ratio(numerator, denominator):
+        """Return a ratio, or None when its denominator is zero.
+
+        Args:
+            numerator: Numerator of the reported ratio.
+            denominator: Denominator; zero indicates an undefined ratio.
+
+        Returns:
+            Quotient, or None when the denominator is zero.
+        """
         return numerator / denominator if denominator else None
 
     per_class = {}

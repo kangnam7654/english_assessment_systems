@@ -1,0 +1,29 @@
+{
+  "id": "ccss-11-12-writing-v1",
+  "grade_band": "11-12",
+  "source_version": "2010-06-02",
+  "source_url": "https://www.thecorestandards.org/assets/CCSSI_ELA%20Standards.pdf",
+  "source_sha256": "fa333bc3e442725ad4fca685fd787f0da65c6922d1477a7663264e843d6de187",
+  "attribution": "© Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.",
+  "notice": "Project paraphrases of selected text-observable Writing and Language standards, not the full curriculum. No inference about revision, collaboration, handwriting, speaking or research process.",
+  "by_genre": {
+    "argumentative": {
+      "CCSS.ELA-Literacy.W.11-12.1": "Present precise knowledgeable claims and their significance; sequence claims/counterclaims/reasons/evidence; develop both thoroughly and fairly with strongest relevant evidence and limitations, anticipating audience values/biases; use varied syntax, formal objective tone and a fitting conclusion.",
+      "CCSS.ELA-Literacy.L.11-12.1": "Apply standard grammar while recognizing disputed/changing usage and consulting references when needed.",
+      "CCSS.ELA-Literacy.L.11-12.2": "Use appropriate hyphenation and correct spelling/capitalization.",
+      "CCSS.ELA-Literacy.L.11-12.3": "Vary syntax for effect with understanding of complex syntax."
+    },
+    "informative": {
+      "CCSS.ELA-Literacy.W.11-12.2": "Build complex ideas into a unified whole with significant relevant evidence for the audience; use varied transitions/syntax and precise domain language or explanatory comparisons, formal objective tone and a conclusion addressing implications.",
+      "CCSS.ELA-Literacy.L.11-12.1": "Apply standard grammar while recognizing disputed/changing usage and consulting references when needed.",
+      "CCSS.ELA-Literacy.L.11-12.2": "Use appropriate hyphenation and correct spelling/capitalization.",
+      "CCSS.ELA-Literacy.L.11-12.3": "Vary syntax for effect with understanding of complex syntax."
+    },
+    "narrative": {
+      "CCSS.ELA-Literacy.W.11-12.3": "Establish a significant problem/situation/observation and perspective(s); use narrative techniques and sequencing to build coherence, tone and outcome; use vivid details and conclude reflectively.",
+      "CCSS.ELA-Literacy.L.11-12.1": "Apply standard grammar while recognizing disputed/changing usage and consulting references when needed.",
+      "CCSS.ELA-Literacy.L.11-12.2": "Use appropriate hyphenation and correct spelling/capitalization.",
+      "CCSS.ELA-Literacy.L.11-12.3": "Vary syntax for effect with understanding of complex syntax."
+    }
+  }
+}

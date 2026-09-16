@@ -1,3 +1,5 @@
+"""Regression checks for evaluation."""
+
 import json
 import subprocess
 import sys
@@ -14,7 +16,9 @@ from presentation_attitude.pipelines.training_smoke import create_smoke_manifest
 
 
 class EvaluationTests(unittest.TestCase):
+    """Exercise evaluation tests behavior with controlled fixtures."""
     def setUp(self):
+        """Create isolated fixtures and register cleanup for this test scope."""
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)
         self.root = Path(temp.name)
@@ -27,6 +31,14 @@ class EvaluationTests(unittest.TestCase):
         self.output = self.root / "evaluation"
 
     def evaluate(self, **kwargs):
+        """Evaluate the fixture checkpoint against the configured test manifest.
+
+        Args:
+            **kwargs: Keyword arguments forwarded to the operation under test.
+
+        Returns:
+            Evaluation summary for the fixture checkpoint.
+        """
         return evaluate(
             self.checkpoint,
             self.test,
@@ -39,6 +51,7 @@ class EvaluationTests(unittest.TestCase):
     def test_cli_produces_predictions_mistakes_and_metrics_without_changing_weights(
         self,
     ):
+        """Verify cli produces predictions mistakes and metrics without changing weights."""
         original = self.checkpoint.read_bytes()
         result = subprocess.run(
             [
@@ -100,12 +113,14 @@ class EvaluationTests(unittest.TestCase):
             self.evaluate()
 
     def test_train_or_validation_manifest_cannot_be_used_as_test(self):
+        """Verify train or validation manifest cannot be used as test."""
         with self.assertRaisesRegex(ValueError, "splits"):
             evaluate(
                 self.checkpoint, self.training, self.training, self.output, device="cpu"
             )
 
     def test_identity_and_content_leakage_rejected(self):
+        """Verify identity and content leakage rejected."""
         original = read_json(self.test)
         train_sample = read_json(self.training)["samples"][0]
         train_summary = read_json(
@@ -138,6 +153,7 @@ class EvaluationTests(unittest.TestCase):
             self.assertFalse(self.output.exists())
 
     def test_changed_training_provenance_is_rejected(self):
+        """Verify changed training provenance is rejected."""
         path = self.training.parent / "fixture_00/summary.json"
         summary = read_json(path)
         summary["source"]["sha256"] = "changed"
@@ -146,6 +162,7 @@ class EvaluationTests(unittest.TestCase):
             self.evaluate()
 
     def test_checkpoint_manifest_and_label_mapping_must_match(self):
+        """Verify checkpoint manifest and label mapping must match."""
         state = torch.load(self.checkpoint, weights_only=True)
         state["manifest_sha256"] = "other"
         torch.save(state, self.checkpoint)
@@ -160,6 +177,7 @@ class EvaluationTests(unittest.TestCase):
             self.evaluate()
 
     def test_corrupt_sequence_marks_failed_without_partial_metrics(self):
+        """Verify corrupt sequence marks failed without partial metrics."""
         sample = read_json(self.test)["samples"][1]
         with (self.test.parent / sample["sequence_dir"] / "sequence.jsonl").open(
             "a"
@@ -175,6 +193,7 @@ class EvaluationTests(unittest.TestCase):
         self.assertFalse((self.output / "predictions.jsonl").exists())
 
     def test_legacy_checkpoint_and_single_class_test_set(self):
+        """Verify legacy checkpoint and single class test set."""
         state = torch.load(self.checkpoint, weights_only=True)
         del state["training_sample_provenance"]
         torch.save(state, self.checkpoint)
@@ -191,6 +210,7 @@ class EvaluationTests(unittest.TestCase):
 
     @unittest.skipUnless(torch.backends.mps.is_available(), "MPS unavailable")
     def test_mps_inference_matches_cpu(self):
+        """Verify mps inference matches cpu."""
         cpu = self.evaluate()
         mps = evaluate(
             self.checkpoint, self.test, self.training, self.root / "mps", device="mps"
