@@ -11,6 +11,33 @@ classify presentation attitude as **appropriate / inappropriate**.
 
 Company data, code and weights are not included.
 
+## Quick Start
+
+Install [uv](https://docs.astral.sh/uv/), then run from the **monorepo root**.
+This example generates synthetic coordinates and trains a small GRU on CPU for three epochs, without a video.
+
+```sh
+uv sync --locked
+uv run --locked presentation-training-smoke \
+  --output .local-data/presentation-attitude/demo
+```
+
+**Input:** 12 generated sequences: eight for training and four for validation.
+Each has shape `[8–20 frames, 1043]`. Four separate test sequences are also generated.
+
+**Example output** — verified with the default settings:
+
+```text
+epoch 1: train=0.729900 validation=0.554458
+epoch 2: train=0.506110 validation=0.388161
+epoch 3: train=0.354907 validation=0.280806
+Synthetic pipeline check complete: 6 optimizer steps; no attitude performance claim.
+```
+
+The model is saved to `demo/training/best.pt`, with training records in `demo/training/summary.json`.
+These two classes are synthetic numerical patterns; the results do not establish actual attitude accuracy.
+Use a new directory for every `--output` argument.
+
 ## Flow
 
 ```mermaid
@@ -116,33 +143,6 @@ The GRU receives each video's actual length and excludes padding.
 ```text
 Coordinate sequence → GRU(hidden=32) → final state → Linear → one decision per video
 ```
-
-## Quick Start
-
-Install [uv](https://docs.astral.sh/uv/), then run from the **monorepo root**.
-This example generates synthetic coordinates and trains a small GRU on CPU for three epochs, without a video.
-
-```sh
-uv sync --locked
-uv run --locked presentation-training-smoke \
-  --output .local-data/presentation-attitude/demo
-```
-
-**Input:** 12 generated sequences: eight for training and four for validation.
-Each has shape `[8–20 frames, 1043]`. Four separate test sequences are also generated.
-
-**Example output** — verified with the default settings:
-
-```text
-epoch 1: train=0.729900 validation=0.554458
-epoch 2: train=0.506110 validation=0.388161
-epoch 3: train=0.354907 validation=0.280806
-Synthetic pipeline check complete: 6 optimizer steps; no attitude performance claim.
-```
-
-The model is saved to `demo/training/best.pt`, with training records in `demo/training/summary.json`.
-These two classes are synthetic numerical patterns; the results do not establish actual attitude accuracy.
-Use a new directory for every `--output` argument.
 
 ## How to Run
 

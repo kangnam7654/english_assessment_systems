@@ -27,6 +27,14 @@ Python 구현은 `src`, 테스트는 `tests`, 상세 설명은 `docs`에 둡니�
 환경이 달라도 패키지 구조는 같습니다. ASR의 GPU 라이브러리는 공통 환경과 충돌할 수 있어
 별도로 설치합니다. 세 프로젝트 모두 Python 3.13.x를 기준으로 합니다.
 
+## 프론트엔드 기준
+
+웹 UI가 있는 발표 태도 평가와 작문 데이터 합성은 **Next.js 16.3.6, React 19.2.3,
+TypeScript 5.9.3, Tailwind CSS 4.3.3**을 사용합니다. 두 앱은 각 프로젝트의 `frontend/`에
+독립적으로 두고 `npm ci --prefix <project>/frontend`로 설치합니다.
+현재는 공통 화면 앱이 아니라 실행 목적별 UI입니다. 발표 태도 UI는 Next.js 정적 내보내기를
+FastAPI의 `/ui/`에서 제공하고, 작문 UI는 Next.js 서버가 API와 함께 실행됩니다.
+
 ## 코드를 어디에 둘까?
 
 - `src/<package>/cli`: 인자 처리와 실행 시작점. 재사용하는 처리는 기능 모듈로 분리합니다.

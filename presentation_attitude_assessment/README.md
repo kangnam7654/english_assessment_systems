@@ -11,6 +11,33 @@
 
 회사 내부 데이터·코드·가중치는 포함하지 않습니다.
 
+## Quick Start
+
+[uv](https://docs.astral.sh/uv/)를 설치한 뒤 **모노레포 루트**에서 실행합니다.
+영상 없이 합성 좌표를 만들고, 작은 GRU를 CPU에서 3 epoch 학습하는 예제입니다.
+
+```sh
+uv sync --locked
+uv run --locked presentation-training-smoke \
+  --output .local-data/presentation-attitude/demo
+```
+
+**입력:** 명령이 직접 생성하는 합성 시퀀스 12개(학습 8개·검증 4개).
+각 시퀀스는 `[8~20프레임, 1043]` 형태이며, 별도 테스트 시퀀스 4개도 생성합니다.
+
+**실행 결과 예시** — 기본 설정으로 확인한 출력입니다.
+
+```text
+epoch 1: train=0.729900 validation=0.554458
+epoch 2: train=0.506110 validation=0.388161
+epoch 3: train=0.354907 validation=0.280806
+Synthetic pipeline check complete: 6 optimizer steps; no attitude performance claim.
+```
+
+`demo/training/best.pt`에 모델, `demo/training/summary.json`에 학습 기록이 저장됩니다.
+여기서 구분하는 두 클래스는 합성 숫자 패턴이며, 이 결과로 실제 발표 태도 성능을 판단할 수 없습니다.
+모든 실행 명령의 `--output`에는 새 폴더를 지정하세요.
+
 ## Flow
 
 ```mermaid
@@ -114,33 +141,6 @@ $$
 ```text
 좌표 시퀀스 → GRU(hidden=32) → 마지막 상태 → Linear → 영상당 판정 1개
 ```
-
-## Quick Start
-
-[uv](https://docs.astral.sh/uv/)를 설치한 뒤 **모노레포 루트**에서 실행합니다.
-영상 없이 합성 좌표를 만들고, 작은 GRU를 CPU에서 3 epoch 학습하는 예제입니다.
-
-```sh
-uv sync --locked
-uv run --locked presentation-training-smoke \
-  --output .local-data/presentation-attitude/demo
-```
-
-**입력:** 명령이 직접 생성하는 합성 시퀀스 12개(학습 8개·검증 4개).
-각 시퀀스는 `[8~20프레임, 1043]` 형태이며, 별도 테스트 시퀀스 4개도 생성합니다.
-
-**실행 결과 예시** — 기본 설정으로 확인한 출력입니다.
-
-```text
-epoch 1: train=0.729900 validation=0.554458
-epoch 2: train=0.506110 validation=0.388161
-epoch 3: train=0.354907 validation=0.280806
-Synthetic pipeline check complete: 6 optimizer steps; no attitude performance claim.
-```
-
-`demo/training/best.pt`에 모델, `demo/training/summary.json`에 학습 기록이 저장됩니다.
-여기서 구분하는 두 클래스는 합성 숫자 패턴이며, 이 결과로 실제 발표 태도 성능을 판단할 수 없습니다.
-모든 실행 명령의 `--output`에는 새 폴더를 지정하세요.
 
 ## How to Run
 

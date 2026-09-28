@@ -1,58 +1,71 @@
 # English Assessment Systems
 
-[Repository layout](docs/repository_structure.md)
-[한국어](README.md)
+[한국어](README.md) · [Projects](#projects) · [Quick Start](#quick-start) · [Repository layout](docs/repository_structure.md)
 
-**Assessment workflows, from presentation video to writing and speech.**
+## About
 
-A portfolio monorepo rebuilding work from Creverse. Each project can be explored
-independently with shared application dependencies and a separate CUDA training environment. Company code, private datasets
-and trained weights are not included.
+**Presentation-video analysis, English writing data generation and child English ASR in one repository.**
+
+This portfolio monorepo reconstructs three areas of work at Creverse.
+Each project can be explored independently. The presentation and writing modules share
+Python 3.13 and `uv.lock`; child ASR training uses a separate CUDA environment.
+Company code, internal data and trained weights are not included.
 
 ## Projects
 
 ### [Presentation Attitude Assessment →](presentation_attitude_assessment/README.en.md)
 
-Extract face and hand movement from video, prepare landmark sequences, and train
-a small classifier. Includes evaluation and a local upload API with an analysis worker.
+**A whole-video attitude assessment pipeline using face and hand landmarks.**
+FFmpeg reads video frames; MediaPipe coordinates are normalized and smoothed before
+they reach a PyTorch GRU. Explore the preprocessing visuals, synthetic training and
+evaluation examples, and a FastAPI upload demo.
 
-**MediaPipe · FFmpeg · PyTorch · FastAPI**
+`FFmpeg` · `MediaPipe` · `PyTorch` · `FastAPI`
 
-The pipeline is implemented. A validated attitude classifier still requires real labeled data.
+### [Writing Data Synthesis →](writing_data_synthesis/README.en.md)
 
-### [English Writing Data Synthesis →](writing_data_synthesis/README.en.md)
+**Generate and assess English writing against criteria for a requested grade and genre.**
+The workflow selects one of 39 rubric combinations across kindergarten through grade 12,
+then connects generation, assessment and result storage in Python.
+A Mock API and UI run without a model server.
 
-Generate essays for a target grade and proficiency level, then assess them against
-a rubric through an explicit Python workflow. Includes an API and a Next.js demo.
-
-**Python · OpenAI-compatible SDK · FastAPI · SQLite**
-
-The generation, validation and storage flow is verified with fixed Mock outputs. Real model quality,
-acceptance/retry rules and batch dataset export remain unverified or unimplemented.
+`Python` · `OpenAI-compatible SDK` · `FastAPI` · `SQLite`
 
 ### [Child Speech Recognition →](child_speech_recognition/README.en.md)
 
-Fine-tune Parakeet for Korean children's English speech. Fixed Test WER improved
-from **14.45% to 8.50%** with native NeMo training. Includes experiment results,
-before/after transcripts and a private listening-example builder.
+**Fine-tune Parakeet for Korean children's English speech.**
+WER on the fixed AI Hub Test split decreased from **14.45% to 8.50%**.
+Public metrics and transcript examples are available; source audio and reference files
+are not redistributed.
 
-**NVIDIA NeMo · Parakeet TDT · PyTorch · AI Hub**
+`NVIDIA NeMo` · `Parakeet TDT` · `PyTorch` · `AI Hub`
 
-Results describe this reconstruction, not the historical company system.
-Audio, reference labels and checkpoints are not redistributed.
+## Quick Start
 
-## Get started
-
-From the repository root:
+Install [uv](https://docs.astral.sh/uv/) and prepare the shared environment from the repository root:
 
 ```sh
-uv sync --all-packages --locked
+uv sync --locked
 ```
 
-The presentation and writing projects use **Python 3.13** and the root `uv.lock`.
-Open a project above for its run commands.
+Choose a runnable example:
 
-[Python setup and dependencies](docs/python_environment.md) ·
-[MIT License](LICENSE)
+| Project | Start here | What you can inspect |
+|---|---|---|
+| Presentation attitude | [Quick Start](presentation_attitude_assessment/README.en.md#quick-start) | Training and evaluation with synthetic coordinates |
+| Writing data | [Quick Start](writing_data_synthesis/README.en.md#quick-start) | Mock generation, assessment and SQLite storage |
+| Child ASR | [Result and instructions](child_speech_recognition/README.en.md#quick-start) | Public fixed-Test metrics |
 
-Third-party media retain their original terms.
+For CUDA training or workflows needing source data, follow the corresponding project guide.
+[Shared Python environment](docs/python_environment.md) · [Repository layout](docs/repository_structure.md)
+
+## Repository Layout
+
+| Path | Contents |
+|---|---|
+| `presentation_attitude_assessment/` | Video preprocessing, training and upload API |
+| `writing_data_synthesis/` | Grade rubrics, generation and assessment |
+| `child_speech_recognition/` | Child ASR experiments and public results |
+| `docs/` | Shared environment and folder conventions |
+
+[MIT License](LICENSE). Third-party data and media retain their original terms.

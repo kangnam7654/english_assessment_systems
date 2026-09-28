@@ -15,7 +15,7 @@ def main():
         "--port", type=int, default=43187, help="API port (default: 43187)"
     )
     args = parser.parse_args()
-    ui_dir = workspace_root() / "presentation_attitude_assessment/frontend/dist"
+    ui_dir = workspace_root() / "presentation_attitude_assessment/frontend/out"
     uvicorn.run(
         create_app(ui_dir=ui_dir if (ui_dir / "index.html").is_file() else None),
         host="127.0.0.1",

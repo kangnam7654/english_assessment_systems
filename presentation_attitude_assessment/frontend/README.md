@@ -1,6 +1,7 @@
 # 발표 영상 분석 UI
 
-React + TypeScript + Vite로 구현한 로컬 포트폴리오 시연 화면이다.
+Next.js + React + TypeScript + Tailwind CSS로 구현한 로컬 포트폴리오 시연 화면이다.
+작문 UI와 같은 프론트엔드 스택을 사용한다. 기존 화면 스타일은 CSS로 유지한다.
 영상 선택·드롭 → 브라우저 미리보기 → 업로드 → 상태 조회 → 실제 특징 분석 결과 확인을 연결한다.
 사용자가 처리 모드를 고르지 않으며 현재 요청은 `features`로 고정한다.
 실제 태도 학습 체크포인트가 없으므로 모델 판정을 만들어서 표시하지 않는다.
@@ -21,7 +22,7 @@ uv run --locked presentation-serve
 uv run --locked presentation-worker
 ```
 
-[추론 UI](http://127.0.0.1:43187/ui/)를 연다. 빌드한 정적 파일을 FastAPI가 `/ui/`에서 제공하므로
+[추론 UI](http://127.0.0.1:43187/ui/)를 연다. Next.js 정적 내보내기(`frontend/out`)를 FastAPI가 `/ui/`에서 제공하므로
 별도 프런트엔드 서버는 필요하지 않다. 빌드 없이 시작하면 기존 API만 제공한다.
 이 경우 빌드 후 API를 재시작한다. 같은 origin의 `/jobs`, `/health`를 사용하며 CORS를 추가하지 않았다.
 API와 워커는 같은 `PAA_DATA_DIR`를 사용해야 한다.
@@ -32,7 +33,7 @@ API와 워커는 같은 `PAA_DATA_DIR`를 사용해야 한다.
 npm run dev --prefix presentation_attitude_assessment/frontend
 ```
 
-개발 주소는 `http://127.0.0.1:43188/ui/`이며 API 43187로 프록시한다.
+개발 주소는 `http://127.0.0.1:43188/ui/`이며 Next.js 개발 서버가 API 43187로 프록시한다.
 포트 충돌 시 자동으로 다른 포트를 고르지 않는다. Node.js 22.23.1에서 빌드를 확인했다.
 
 ## 화면 동작
@@ -53,15 +54,18 @@ npm run dev --prefix presentation_attitude_assessment/frontend
 
 | 파일 | 역할 |
 |---|---|
+| `app/` | 정적 내보내기 페이지·메타데이터 |
 | `src/api.ts` | API 타입·오류·업로드 전송률 |
 | `src/useAnalysis.ts` | 작업 상태 조회·재시도·최근 작업 복원·요청 정리 |
 | `src/App.tsx` | 영상 입력·결과·오류 화면 |
 | `src/style.css` | 공통 토큰·데스크톱 두 열·모바일 한 열·접근성 스타일 |
 
-`npm run build`로 TypeScript 검사와 배포 빌드를 수행한다.
-2026-09-08 Chrome에서 실제 공개 클립과 H.264 변환본 업로드·특징 결과·영상 재생·JSON 저장·
-새로고침 복원·잘못된 확장자 거절·손상 영상 실패와 재시도를 확인했다.
-데스크톱 1536×1024, 모바일 390×844에서 확인했으며 실제 태도 모델 추론 검증은 아니다.
+`npm run build`로 TypeScript 검사와 정적 배포 빌드를 수행하고 `npm run lint`로 소스를 검사한다.
+2026-09-28에는 Next.js 정적 빌드를 FastAPI `/ui/`에서 열어 H.264 영상 선택·미리보기,
+판정 예시 전환, 개발 서버의 `/health`·`/jobs` 프록시를 확인했다. 브라우저 콘솔 오류와
+390px 화면 가로 넘침은 없었다. 이 변경 후 분석 워커까지 거치는 전체 실행은 다시 검증하지 않았다.
+이전 UI 버전에서 공개 클립 업로드·특징 결과·영상 재생·JSON 저장·새로고침 복원·
+잘못된 확장자 거절·손상 영상 실패와 재시도를 확인했다. 실제 태도 모델 추론 검증은 아니다.
 공개 영상과 테스트 산출물은 UI 소스에 포함하지 않는다.
 
 ## 모델 판정 화면 예시

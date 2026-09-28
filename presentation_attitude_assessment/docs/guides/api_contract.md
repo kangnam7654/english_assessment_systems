@@ -175,7 +175,7 @@ stateDiagram-v2
 `GET /health`의 `api: ready`, `queue: sqlite`는 API·DB 접근만 뜻한다.
 `worker: "separate process; not checked"`는 워커 상태를 확인하지 않았다는 명시적 값이다.
 이 응답으로 모델 준비·워커 생존·전체 서비스 정상 동작을 표시하지 않는다.
-배포 빌드 UI는 같은 origin의 `/ui/`에서 제공한다. 개발용 Vite 서버는 API 프록시를 사용하며 CORS는 추가하지 않았다.
+Next.js 정적 내보내기 UI는 같은 origin의 `/ui/`에서 제공한다. 개발용 Next.js 서버는 API 프록시를 사용하며 CORS는 추가하지 않았다.
 
 ## 후속 구현 순서
 

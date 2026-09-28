@@ -1,59 +1,157 @@
 # Child Speech Recognition
 
-[한국어](README.md)
+[한국어](README.md) · [Results](#results) · [Experiment record](docs/EXPERIMENTS.md) · [Repository layout](../docs/repository_structure.md)
 
-[Repository layout](../docs/repository_structure.md)
-**Adapting English ASR to Korean children's speech.**
+## About
 
-Parakeet fine-tuning reduced word error rate from **14.45% to 8.50%** on a fixed
-4,567-utterance Test split — a **41.2% relative reduction in word errors**.
+**Fine-tuning Parakeet to transcribe Korean children's English speech more accurately.**
 
-This project reconstructs a Creverse task: improving transcription for non-native
-children. These are new experiments using AI Hub data, not results from the
-historical company system. No company code or private company data are included.
+This portfolio project reconstructs work on children's English transcription at Creverse.
+It is a new experiment on AI Hub data; the results below are not metrics from the historical company system.
+Company code, internal data and weights are not included.
 
-## Result
+## Quick Start
 
-| Fixed Test · 7.41 hours | Pretrained Parakeet | Fine-tuned Parakeet |
+You can inspect the published metrics without setting up the training environment.
+Run this from the monorepo root:
+
+```sh
+python3 -m json.tool child_speech_recognition/results/test.json
+```
+
+`before.wer` of 0.14448 means 14.45%; `after.wer` of 0.08497 means 8.50%.
+Audio and trained model weights are not in the repository.
+
+## Flow
+
+```mermaid
+flowchart LR
+    A[AI Hub audio and source labels] --> B[Review and curate labels]
+    B --> C[Speaker-group split]
+    C --> D[NeMo Parakeet training]
+    D --> E[Select on Validation]
+    E --> F[Compare on fixed Test]
+```
+
+| Step | Implementation |
+|---|---|
+| Review labels | Check typos and unclear markers; compare some recordings with local Whisper transcripts |
+| Prepare data | Split the AI Hub 541 free-speech subset by speaker group |
+| Train | Parakeet TDT 0.6B v2, NVIDIA NeMo, an explicit PyTorch loop and AdamW |
+| Select a model | Measure Validation WER every 0.25 epoch and keep the lowest |
+| Evaluate | Compare WER and CER on identical Test audio, references and text normalization |
+
+### Label Review
+
+If a transcript is wrong, the model learns the wrong target. Before training,
+we checked the source labels for typos and unclear markers such as `NNN`. We also
+compared some recordings with local Whisper transcripts. A disagreement alone
+wasn't enough to change a label. Uncertain text stayed as it was, and recordings
+marked `NNN` were excluded.
+
+We captured these rules in the [`asr-review-labels` command](src/child_speech/cli/review_labels.py).
+`queue` lists labels to revisit; `apply` uses only changes approved by a reviewer.
+The source ZIP stays untouched. These **fictional examples** show what happens:
+
+| Source label | Action |
+|---|---|
+| `I can spel.` | Correct `spel` to `spell` if the typo is confirmed |
+| `NNN sees a rose.` | Exclude because the missing words cannot be recovered |
+| `I saw a tree.` | Keep the source even if Whisper writes `I see a tree.` |
+
+The [review guide](docs/EXPERIMENTS.md#label-review) covers the command and approval
+file format. It is also available [in Korean](docs/LABEL_REVIEW.md).
+
+### Data & Model
+
+The source is the **free-speech portion of the official Validation set** in
+[AI Hub's children's English speech dataset](https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=541).
+The Train/Validation/Test sets below are our own repartition, not the provider's
+official evaluation splits.
+
+| Split | Utterances | Duration | Purpose |
+|---|---:|---:|---|
+| Train | 41,183 | 58.87 hours | Fine-tune the model |
+| Validation | 5,178 | 7.16 hours | Select a checkpoint during training |
+| Test | 4,567 | 7.41 hours | Compare the selected model with the baseline |
+
+The **2.75-epoch checkpoint** had the lowest Validation WER during the three-epoch
+run, at **10.78%**. We used Test only after choosing that checkpoint; selecting it
+by Test score would make the final result look better than it is. The target of
+less than 10% Validation WER was not reached. The [experiment record](docs/EXPERIMENTS.md)
+has the full setup.
+
+## Results
+
+**WER fell from 14.45% to 8.50% on the same 4,567 Test recordings.**
+
+| Metric | Before fine-tuning | After fine-tuning |
 |---|---:|---:|
 | Word error rate ↓ | 14.45% | **8.50%** |
 | Character error rate ↓ | 8.14% | **4.54%** |
 
-The checkpoint was selected at **2.75 epochs using Validation WER (10.78%)**.
-The same Test audio, reference text and normalization were used before and after.
-The Test result is below 10%; the Validation target of below 10% was not reached.
+WER counts substitutions, deletions and insertions against the reference words.
+The relative reduction in word errors was **41.2%**.
+[Exact metrics](results/test.json) · [Validation record](results/validation.json)
 
-[Exact metrics](results/test.json) · [Validation curve](results/validation.json) ·
-[Experiment details](docs/EXPERIMENTS.md)
+### Transcript examples
 
-## What changed in the transcripts?
-
-Actual model outputs on four Test recordings:
-
-| Before | After | Reference-based word errors |
+| Before | After | Word errors against reference |
 |---|---|---:|
-| It was my favourite sandwich. | It was my favorite sandwich. | 1 → 0 |
-| Also there are yummy pizza trees in it. | Also, there are yummy pizza cheese in it. | 1 → 0 |
 | Grandpa's house is in Soul. | Grandpa's house is in Seoul | 1 → 0 |
-| And Grandpa read me a book. | And grandpa reads me a book | **0 → 1** |
+| And Grandpa read me a book. | And grandpa reads me a book | 0 → 1 |
 
-Three improvements and one regression were deliberately selected for illustration;
-these examples are not a random sample. The first is a spelling-convention change,
-not proof of better acoustic recognition. Reference labels are supplied dataset
-labels, not newly adjudicated transcripts. [Selection rule and outputs](results/examples.json)
+We picked one improvement and one regression to illustrate the outputs. They are
+not a random sample; the Test WER above is the measure of overall performance.
+The references are the dataset's supplied labels. [More examples and the selection rule](results/examples.json)
 
-## Listen with authorized data
+This is not an official AI Hub benchmark score. The same Test data had been seen
+in earlier experiments, so it is not a fresh external holdout. Speaker separation
+used metadata; we did not independently verify each person's identity.
 
-**Listen locally:** the [example builder](src/child_speech/reporting/build_examples.py) creates an HTML
-page containing those recordings, references and predictions. AI Hub's
-[FAQ](https://www.aihub.or.kr/aihubnews/faq/list.do) permits sharing research outputs
-but restricts redistribution of source data. AI Hub audio and reference-label files are
-therefore excluded from this repository.
+## How to Run
+
+### Prerequisites
+
+Training requires a separate **Linux/CUDA and NeMo environment** and authorized AI Hub audio.
+NeMo is not part of the shared application environment.
+Follow the [environment and fixed-split setup](docs/EXPERIMENTS.md#run-the-code) first.
+
+### Data Preparation
+
+1. Obtain authorized access to the [AI Hub dataset](https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=541).
+   Place the official Validation free-speech labels `VL_eng_free_01.zip` and audio
+   `VS_eng_free_01.zip` in `.local-data/aihub541/`.
+2. [Review labels](docs/EXPERIMENTS.md#label-review) and apply only approved changes.
+   The command writes `eligible.jsonl` and `excluded.jsonl`; it does not create
+   Train/Validation/Test manifests.
+3. Training needs speaker-group-separated `splits/{train,validation,test}.jsonl`.
+   The recorded experiment checked metadata groups and duplicate audio hashes,
+   then repartitioned at roughly 80:10:10. Its approvals and fixed manifests are
+   private. The public review command does not generate these splits, so a new
+   split is a separate experiment with potentially different metrics.
+
+### Train & Test
+
+On the CUDA host, from the repository root, after the environment and data are ready:
+`ASR_DATA_DIR` must contain the source audio ZIP and recorded
+`splits/{train,validation,test}.jsonl` files. Choose a new experiment output directory.
+
+```sh
+export ASR_DATA_DIR="$PWD/.local-data/aihub541"
+export ASR_RUN_DIR="$PWD/.local-data/asr-nemo-reproduction"
+.local-data/asr-nemo-venv/bin/python -m child_speech.cli.train
+.local-data/asr-nemo-venv/bin/python -m child_speech.cli.evaluate_test
+```
+
+Run the second command only after Validation checkpoint selection.
+The data, split manifests and checkpoint are not public, so the repository alone cannot
+reproduce the reported training result.
 
 <details>
-<summary>Build the local listening examples</summary>
+<summary><strong>Build local listening examples with authorized audio</strong></summary>
 
-Run from the repository root with authorized AI Hub audio and the paired prediction files.
+Prepare the paired prediction files, then run:
 
 ```sh
 uv pip install --python .venv/bin/python --no-deps -e child_speech_recognition
@@ -65,60 +163,35 @@ uv pip install --python .venv/bin/python --no-deps -e child_speech_recognition
   --public-output child_speech_recognition/results/examples.json
 ```
 
-Open `.local-data/asr-listening/index.html` locally. Do not upload the generated page:
-it embeds the original audio. Access to the dataset and local prediction files is required.
-The prediction files and trained checkpoint are not bundled, so the public repository
-alone cannot regenerate these exact listening examples.
+Open `.local-data/asr-listening/index.html` locally.
+The HTML embeds the source audio and must remain private.
 
 </details>
 
-## Pipeline
+## Explore the Code
 
-```text
-Authorized AI Hub audio + cleaned, fixed split manifests
-    → native NeMo Parakeet + AdamW
-    → Validation every 0.25 epoch → best checkpoint
-    → fixed Test before/after → metrics + private listening examples
-```
+Python code lives in [`src/child_speech`](src/child_speech).
 
-Training uses NVIDIA's native NeMo model and CUDA TDT loss inside an explicit
-PyTorch training loop. It does not use Lightning Trainer. BatchNorm running
-statistics are frozen; model weights remain trainable.
-
-## Code and reproduction
-
-```text
-src/child_speech/
-├── cli/         # Command-line entry points
-├── training/    # AI Hub fine-tuning
-├── evaluation/  # Fixed Test evaluation
-├── reporting/   # Before/after comparison and private listening
-└── common/      # Model and audio loading
-```
-
-Run entry points from the repository root with `python -m child_speech.cli.<module>`.
-
-| Location | Purpose |
+| Area | Start here |
 |---|---|
-| `src/child_speech/common/runtime.py` | Model, tokenizer, audio loading and TDT loss |
-| `src/child_speech/training/train.py` | Three-epoch training, checkpointing and Validation selection |
-| `src/child_speech/evaluation/evaluate_test.py` | Evaluate the selected checkpoint against its pretrained baseline |
-| `src/child_speech/reporting/build_examples.py` | Paired-output checks and private audio examples |
-| `results/` | Small public metrics and model-output excerpts |
+| Audio and model loading | [`common/`](src/child_speech/common) |
+| Label candidates and approvals | [`data/`](src/child_speech/data) |
+| Fine-tuning | [`training/`](src/child_speech/training) |
+| Fixed Test evaluation | [`evaluation/`](src/child_speech/evaluation) |
+| Before/after reporting and local listening | [`reporting/`](src/child_speech/reporting) |
+| Commands | [`cli/`](src/child_speech/cli) |
 
-See [environment and run instructions](docs/EXPERIMENTS.md#run-the-code). The CUDA/NeMo
-runtime is separate from the monorepo's application environment. The scripts were
-extracted from the completed experiment and checked after relocation; a fresh
-three-epoch run of this reorganized copy has not been performed.
+Public aggregate metrics are in [`results/`](results); experiment details are in
+[`docs/EXPERIMENTS.md`](docs/EXPERIMENTS.md).
 
-## Scope of the evidence
+## Checks
 
-The data are a locally repartitioned subset of **AI Hub 541, 학습용 아동 영어 음성 데이터**,
-not an official AI Hub benchmark. Training used 41,183 utterances (58.87 hours).
-Speaker separation uses a conservative metadata proxy, not independently verified
-speaker identities. This Test had also been observed in earlier experiments;
-it is not a new, untouched external evaluation. A single split and seed do not
-establish performance for every child, accent or classroom.
+Check public results and example handling without ML dependencies, from the repository root:
 
-Source: [AI Hub dataset](https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=541) ·
-[Parakeet model and license](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2)
+```sh
+PYTHONPATH=child_speech_recognition/src python3 -m unittest discover -s child_speech_recognition/tests -v
+```
+
+Model source: [Parakeet model and license](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2)
+
+[← Back to the monorepo](../README.en.md)

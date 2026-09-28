@@ -1,57 +1,69 @@
 # English Assessment Systems
 
-[모노레포 구조 기준](docs/repository_structure.md)
-[English](README.en.md)
+[English](README.en.md) · [프로젝트](#projects) · [Quick Start](#quick-start) · [공통 디렉터리 기준](docs/repository_structure.md)
 
-**발표 영상 분석부터 영어 쓰기·음성 인식까지, 평가 업무의 재구현.**
+## About
 
-크레버스에서 수행했던 업무를 다시 구현하는 포트폴리오 모노레포입니다.
-각 프로젝트는 독립적으로 살펴볼 수 있으며 애플리케이션 Python 환경을 공유합니다. GPU 학습용 CUDA 환경은 별도로 관리합니다.
+**발표 영상 분석, 영어 글쓰기 데이터 생성, 아동 영어 음성 인식을 한곳에 모았습니다.**
+
+크레버스에서 수행했던 업무를 바탕으로 각 기능을 다시 구현한 포트폴리오 모노레포입니다.
+세 프로젝트는 독립적으로 살펴볼 수 있습니다. 발표 태도 평가와 글쓰기 모듈은
+Python 3.13·`uv.lock`을 공유하고, 아동 ASR 학습은 별도 CUDA 환경에서 실행합니다.
 회사 코드·내부 데이터·학습 가중치는 포함하지 않습니다.
 
-## 프로젝트
+## Projects
 
-### [발표 태도 평가 →](presentation_attitude_assessment/README.md)
+### [Presentation Attitude Assessment →](presentation_attitude_assessment/README.md)
 
-영상에서 얼굴·손의 움직임을 추출하고, 랜드마크 시퀀스를 전처리해 작은 분류 모델을
-학습합니다. 평가 코드와 분석 워커를 연결한 로컬 업로드 API도 포함합니다.
+**발표 영상 하나에서 얼굴·손 랜드마크를 추출해 영상 전체의 태도를 판정하는 구조입니다.**
+FFmpeg로 프레임을 읽고 MediaPipe 좌표를 정규화·평활화해 PyTorch GRU에 전달합니다.
+전처리 비교 이미지, 합성 데이터 학습·평가 예제, FastAPI 업로드 데모를 볼 수 있습니다.
 
-**MediaPipe · FFmpeg · PyTorch · FastAPI**
+`FFmpeg` · `MediaPipe` · `PyTorch` · `FastAPI`
 
-파이프라인은 구현됐으며, 검증된 태도 분류 모델을 위해 실제 라벨 데이터가 필요합니다.
+### [Writing Data Synthesis →](writing_data_synthesis/README.md)
 
-### [영어 쓰기 데이터 합성 →](writing_data_synthesis/README.md)
+**요청한 학년·글 유형의 기준으로 영어 글을 만들고 검수합니다.**
+유치원부터 12학년까지 39개 루브릭 조합 중 하나를 고르고,
+생성·검수·결과 저장을 Python 워크플로로 연결합니다.
+모델 서버 없이 Mock API와 UI를 실행할 수 있습니다.
 
-학년·수준에 맞는 에세이를 생성하고, Python 실행기를 통해 루브릭에 따라
-평가합니다. API와 Next.js 데모를 포함합니다.
+`Python` · `OpenAI 호환 SDK` · `FastAPI` · `SQLite`
 
-**Python · OpenAI 호환 SDK · FastAPI · SQLite**
+### [Child Speech Recognition →](child_speech_recognition/README.md)
 
-고정된 Mock 응답으로 생성·검증·저장 흐름을 확인했습니다. 실제 모델 품질은 미검증이며, 결과 채택·재생성 규칙과 배치 데이터셋 내보내기는 아직 구현하지 않았습니다.
+**한국 아동의 영어 음성에 맞춰 Parakeet을 파인튜닝했습니다.**
+AI Hub 음성의 고정 Test에서 WER가 **14.45% → 8.50%**로 줄었습니다.
+공개 가능한 평가 수치와 전사 예시를 볼 수 있으며, 음성·정답 파일은 재배포하지 않습니다.
 
-### [아동 영어 음성 인식 →](child_speech_recognition/README.md)
+`NVIDIA NeMo` · `Parakeet TDT` · `PyTorch` · `AI Hub`
 
-한국 아동의 영어 음성에 맞춰 Parakeet을 파인튜닝했습니다.
-NeMo 학습으로 고정 Test WER를 **14.45% → 8.50%**로 낮췄습니다.
-실험 결과·전사 비교와 로컬 음성 청취 예시 생성 코드를 포함합니다.
+## Quick Start
 
-**NVIDIA NeMo · Parakeet TDT · PyTorch · AI Hub**
-
-현재 재구현의 평가 결과이며 당시 회사 시스템의 성능은 아닙니다.
-원본 음성·정답 라벨·가중치는 재배포하지 않습니다.
-
-## 시작하기
-
-저장소 루트에서:
+[uv](https://docs.astral.sh/uv/)를 설치한 뒤 저장소 루트에서 공통 환경을 준비합니다.
 
 ```sh
-uv sync --all-packages --locked
+uv sync --locked
 ```
 
-발표 태도 평가와 쓰기 데이터 합성 프로젝트는 **Python 3.13**과 루트 `uv.lock`을 공유합니다.
-실행 방법은 위 프로젝트별 README에 있습니다.
+바로 실행할 수 있는 예제:
 
-[Python 설치·의존성 안내](docs/python_environment.md) ·
-[MIT License](LICENSE)
+| 프로젝트 | 시작할 곳 | 확인할 내용 |
+|---|---|---|
+| 발표 태도 평가 | [Quick Start](presentation_attitude_assessment/README.md#quick-start) | 합성 좌표로 학습·평가 흐름 확인 |
+| 글쓰기 데이터 생성 | [Quick Start](writing_data_synthesis/README.md#quick-start) | Mock 생성·검수·SQLite 저장 확인 |
+| 아동 음성 인식 | [결과와 실행 방법](child_speech_recognition/README.md#quick-start) | 공개된 Test 결과 확인 |
 
-외부 영상에는 원본의 이용 조건이 적용됩니다.
+CUDA 학습 환경이나 실제 입력 데이터가 필요한 작업은 각 프로젝트의 안내를 따릅니다.
+[공통 Python 환경](docs/python_environment.md) · [디렉터리 기준](docs/repository_structure.md)
+
+## Repository Layout
+
+| 경로 | 내용 |
+|---|---|
+| `presentation_attitude_assessment/` | 영상 전처리·학습·분석 API |
+| `writing_data_synthesis/` | 학년별 루브릭·글 생성 및 검수 |
+| `child_speech_recognition/` | 아동 ASR 실험·공개 결과 |
+| `docs/` | 공통 환경과 폴더 구조 안내 |
+
+[MIT License](LICENSE). 외부 데이터와 영상에는 각각 원본의 이용 조건이 적용됩니다.

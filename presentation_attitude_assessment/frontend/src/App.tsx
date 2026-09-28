@@ -47,15 +47,8 @@ export default function App() {
     return () => controller.abort();
   }, []);
   useEffect(() => {
-    if (!file) {
-      setPreview("");
-      return;
-    }
-    const url = URL.createObjectURL(file);
-    setPreview(url);
-    setPreviewError(false);
-    return () => URL.revokeObjectURL(url);
-  }, [file]);
+    if (preview) return () => URL.revokeObjectURL(preview);
+  }, [preview]);
   function select(next?: File) {
     if (!next || analysis.busy) return;
     if (!/\.(mp4|m4v|mov|mkv|webm|avi)$/i.test(next.name)) {
@@ -70,12 +63,15 @@ export default function App() {
     }
     analysis.reset();
     setFileError("");
+    setPreview(URL.createObjectURL(next));
+    setPreviewError(false);
     setFile(next);
   }
   function clear() {
     if (analysis.busy) return;
     analysis.reset();
     setFile(null);
+    setPreview("");
     setFileError("");
     if (input.current) input.current.value = "";
   }

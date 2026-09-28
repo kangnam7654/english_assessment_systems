@@ -1,58 +1,150 @@
-# 아동 영어 음성 인식
+# Child Speech Recognition
 
-[English](README.en.md)
+[English](README.en.md) · [결과](#results) · [실험 기록](docs/EXPERIMENTS.md) · [공통 디렉터리 기준](../docs/repository_structure.md)
 
-[공통 디렉터리 기준](../docs/repository_structure.md)
-**한국 아동의 영어 음성에 맞춰 ASR 모델을 파인튜닝했습니다.**
+## About
 
-고정된 Test 음성 4,567개에서 Parakeet의 단어 오류율을 **14.45% → 8.50%**로
-낮췄습니다. 단어 오류가 상대적으로 **41.2% 감소**한 결과입니다.
+**한국 아동의 영어 음성을 더 정확히 받아쓰도록 Parakeet을 파인튜닝했습니다.**
 
-크레버스에서 수행했던 비원어민 아동 음성 전사 개선 업무를 재구현한 프로젝트입니다.
-아래 결과는 AI Hub 데이터로 새롭게 진행한 실험이며, 당시 회사 시스템의 성능이 아닙니다.
-회사 코드와 내부 데이터는 포함하지 않습니다.
+크레버스에서 수행했던 아동 영어 전사 개선 업무를 바탕으로 한 포트폴리오 재구현입니다.
+AI Hub 음성으로 새로 진행한 실험이며, 아래 수치는 당시 회사 시스템의 성능이 아닙니다.
+회사 코드·내부 데이터·가중치는 포함하지 않습니다.
 
-## 결과
+## Quick Start
 
-| 고정 Test · 7.41시간 | 학습 전 | 학습 후 |
+학습 환경을 설치하지 않아도 결과 수치는 볼 수 있습니다. 모노레포 루트에서 실행하세요.
+
+```sh
+python3 -m json.tool child_speech_recognition/results/test.json
+```
+
+`before.wer`의 0.14448은 14.45%, `after.wer`의 0.08497은 8.50%입니다.
+음성 파일과 학습된 모델은 저장소에 없습니다.
+
+## Flow
+
+```mermaid
+flowchart LR
+    A[AI Hub 음성·원본 라벨] --> B[라벨 검수·정제]
+    B --> C[화자 그룹별 데이터 분리]
+    C --> D[NeMo Parakeet 학습]
+    D --> E[Validation으로 모델 선택]
+    E --> F[고정 Test에서 전후 비교]
+```
+
+| 단계 | 구현 |
+|---|---|
+| 라벨 검수 | 오타와 불명확한 표식을 확인하고, 일부 음성은 로컬 Whisper 전사와 대조 |
+| 데이터 준비 | AI Hub 541 자유발화 음성을 화자 그룹별로 나눔 |
+| 학습 | Parakeet TDT 0.6B v2, NVIDIA NeMo, PyTorch 학습 루프와 AdamW |
+| 모델 선택 | 0.25 epoch마다 Validation WER 측정, 가장 낮은 모델 선택 |
+| 성능 측정 | 동일한 Test 음성·정답·텍스트 정규화로 학습 전후 WER·CER 비교 |
+
+### Label Review
+
+전사문이 틀리면 모델은 틀린 문장을 정답으로 배웁니다. 그래서 학습 전에 원본 라벨의
+오타와 `NNN` 같은 불명확한 표식을 확인했습니다. 일부 음성은 로컬 Whisper가 받아쓴
+문장과도 비교했습니다. 두 문장이 다르다는 이유만으로 라벨을 바꾸지는 않았습니다.
+확실하지 않은 문장은 그대로 두고, `NNN`으로 표시된 녹음은 제외했습니다.
+
+이 규칙을 [`asr-review-labels` 명령](src/child_speech/cli/review_labels.py)으로 정리했습니다.
+`queue`는 다시 볼 라벨을 모으고, `apply`는 검토자가 승인한 수정만 반영합니다.
+원본 ZIP은 그대로 둡니다. 동작 방식은 다음 **가상 예시**로 볼 수 있습니다.
+
+| 원본 라벨 | 처리 |
+|---|---|
+| `I can spel.` | 오타로 확인되면 `spell`로 수정 |
+| `NNN sees a rose.` | 정답을 알 수 없어 제외 |
+| `I saw a tree.` | Whisper가 `I see a tree.`라고 써도 원문은 일단 유지 |
+
+명령 사용법과 승인 파일 형식은 [라벨 검수 안내](docs/LABEL_REVIEW.md)에 적었습니다.
+
+### Data & Model
+
+사용 데이터는 [AI Hub 「학습용 아동 영어 음성 데이터」](https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=541)의
+**공식 Validation 중 자유발화 음성·라벨**입니다. 아래 Train/Validation/Test는 이 일부를
+자체 재분할한 것이며 AI Hub 공식 평가 세트가 아닙니다.
+
+| 데이터 | 음성 수 | 길이 | 용도 |
+|---|---:|---:|---|
+| Train | 41,183개 | 58.87시간 | 모델 학습 |
+| Validation | 5,178개 | 7.16시간 | 학습 중 모델 선택 |
+| Test | 4,567개 | 7.41시간 | 선택한 모델의 최종 비교 |
+
+3 epoch 학습 중 **Validation WER가 가장 낮았던 2.75 epoch 모델(10.78%)**을 골랐습니다.
+Test는 모델을 고른 뒤 학습 전후를 비교할 때만 썼습니다. Test 점수까지 보고 모델을
+골랐다면 최종 성능이 실제보다 좋게 보일 수 있습니다. 목표였던 Validation WER 10%
+미만에는 이르지 못했습니다. 자세한 설정은 [실험 기록](docs/EXPERIMENTS.md)에 있습니다.
+
+## Results
+
+**같은 Test 음성 4,567개에서 단어 오류율이 14.45%에서 8.50%로 감소했습니다.**
+
+| 지표 | 학습 전 | 학습 후 |
 |---|---:|---:|
 | 단어 오류율 WER ↓ | 14.45% | **8.50%** |
 | 문자 오류율 CER ↓ | 8.14% | **4.54%** |
 
-**Validation WER 10.78%를 기록한 2.75 epoch 모델**을 선택한 뒤 Test를 평가했습니다.
-전후에 동일한 음성·정답·텍스트 정규화를 사용했습니다.
-Test에서는 10% 미만을 달성했지만, Validation의 10% 미만 목표는 미달입니다.
+WER는 정답과 비교해 잘못 쓴 단어, 빠뜨린 단어, 추가한 단어의 비율입니다.
+이번 결과에서 단어 오류는 상대적으로 **41.2% 감소**했습니다.
+[정확한 수치](results/test.json) · [Validation 기록](results/validation.json)
 
-[정확한 평가 수치](results/test.json) · [학습 중 평가 기록](results/validation.json) ·
-[실험 설정과 실행 방법](docs/EXPERIMENTS.md)
+### 실제 전사 예시
 
-## 실제 전사는 어떻게 달라졌나요?
-
-Test 녹음에 대한 실제 모델 출력입니다.
-
-| 학습 전 | 학습 후 | 정답 라벨 기준 단어 오류 수 |
+| 학습 전 | 학습 후 | 정답 기준 단어 오류 |
 |---|---|---:|
-| It was my favourite sandwich. | It was my favorite sandwich. | 1 → 0 |
-| Also there are yummy pizza trees in it. | Also, there are yummy pizza cheese in it. | 1 → 0 |
 | Grandpa's house is in Soul. | Grandpa's house is in Seoul | 1 → 0 |
-| And Grandpa read me a book. | And grandpa reads me a book | **0 → 1** |
+| And Grandpa read me a book. | And grandpa reads me a book | 0 → 1 |
 
-설명을 위해 개선 사례 3개와 악화 사례 1개를 골랐으며 무작위 표본은 아닙니다.
-첫 사례는 미국식·영국식 철자 차이이므로, 음향 인식 능력의 개선으로 단정할 수 없습니다.
-정답은 제공된 데이터셋 라벨이며, 새로 사람이 검수한 전사는 아닙니다.
-[예시 선택 기준과 출력](results/examples.json)
+좋아진 예 하나와 나빠진 예 하나를 골랐습니다. 무작위 표본은 아니므로 전체 성능은
+위 Test WER를 기준으로 봐야 합니다. 정답은 데이터셋에 제공된 라벨입니다.
+[다른 예시와 선택 기준](results/examples.json)
 
-## 승인받은 데이터로 음성 재생
+이 수치는 AI Hub 공식 벤치마크 점수가 아닙니다. 이전 실험에서도 같은 Test 데이터를
+본 적이 있어 완전히 새로운 외부 검증 결과도 아닙니다. 화자 구분은 메타데이터를
+기준으로 했으며, 실제로 다른 사람인지까지 확인하지는 못했습니다.
 
-**음성은 로컬에서 직접 들어볼 수 있습니다.**
-AI Hub [공식 FAQ](https://www.aihub.or.kr/aihubnews/faq/list.do)는 연구 결과물의 공유와
-원본 데이터 재배포를 구분합니다. 따라서 공개 저장소에는 AI Hub 원본 음성·정답 라벨 파일을 넣지 않고,
-승인받아 보유한 데이터를 이용해 오디오·정답·전사 결과가 담긴 HTML 페이지를 만듭니다.
+## How to Run
+
+### Prerequisites
+
+학습에는 별도 **Linux/CUDA·NeMo 환경**과 접근 권한이 있는 AI Hub 음성이 필요합니다.
+공통 Python 환경에는 NeMo를 설치하지 않습니다.
+[전용 환경 설치와 고정 데이터 분할 준비](docs/EXPERIMENTS.md#run-the-code)를 먼저 따르세요.
+
+### Data Preparation
+
+1. 위 [AI Hub 데이터셋](https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=541)의 이용 권한을 확보한 뒤,
+   이 실험에 사용한 공식 Validation 자유발화 라벨 `VL_eng_free_01.zip`과 음성
+   `VS_eng_free_01.zip`을 `.local-data/aihub541/`에 둡니다.
+2. [라벨 검수 절차](docs/LABEL_REVIEW.md)로 후보를 확인하고 승인한 수정만 적용합니다.
+   결과는 `eligible.jsonl`·`excluded.jsonl`이며, 이 단계에서 Train/Validation/Test는
+   아직 만들어지지 않습니다.
+3. 학습에는 화자 그룹별로 분리한 `splits/{train,validation,test}.jsonl`이 필요합니다.
+   기존 실험은 화자 메타데이터와 음성 해시의 중복을 확인하고 약 80:10:10으로 자체
+   분할했습니다. 당시의 승인 파일과 고정 분할 목록은 비공개이며, 공개된 검수 스크립트는
+   분할을 생성하지 않습니다. 새 데이터로 분할하면 별도의 실험으로 기록해야 합니다.
+
+### Train & Test
+
+전용 환경과 데이터가 준비된 CUDA 호스트에서 저장소 루트를 기준으로 실행합니다.
+`ASR_DATA_DIR`에는 원본 음성 ZIP과 기록된 `splits/{train,validation,test}.jsonl`이 있어야 합니다.
+새 실험용 출력 디렉터리를 지정합니다.
+
+```sh
+export ASR_DATA_DIR="$PWD/.local-data/aihub541"
+export ASR_RUN_DIR="$PWD/.local-data/asr-nemo-reproduction"
+.local-data/asr-nemo-venv/bin/python -m child_speech.cli.train
+.local-data/asr-nemo-venv/bin/python -m child_speech.cli.evaluate_test
+```
+
+두 번째 명령은 Validation으로 모델을 고른 뒤 실행합니다.
+데이터·분할 목록·체크포인트가 공개되지 않으므로 저장소만으로 같은 학습 수치를 재현할 수는 없습니다.
 
 <details>
-<summary>로컬 청취 예시 생성 방법</summary>
+<summary><strong>권한이 있는 음성으로 로컬 청취 예시 만들기</strong></summary>
 
-승인받은 AI Hub 음성과 학습 전후 예측 파일을 준비한 뒤 저장소 루트에서 실행합니다.
+학습 전후 예측 파일도 준비한 뒤 실행합니다.
 
 ```sh
 uv pip install --python .venv/bin/python --no-deps -e child_speech_recognition
@@ -64,60 +156,35 @@ uv pip install --python .venv/bin/python --no-deps -e child_speech_recognition
   --public-output child_speech_recognition/results/examples.json
 ```
 
-생성된 `.local-data/asr-listening/index.html`을 브라우저에서 열면 됩니다.
-페이지 안에 원본 음성이 포함되므로 HTML도 공개 업로드하지 않습니다.
-데이터 접근 권한과 로컬 평가 출력 파일이 필요합니다.
-예측 파일과 학습된 체크포인트는 저장소에 포함되지 않으므로, 저장소만 내려받아
-동일한 청취 예시를 바로 생성할 수 있는 것은 아닙니다.
+생성된 `.local-data/asr-listening/index.html`을 로컬 브라우저에서 엽니다.
+이 HTML에는 원본 음성이 포함되므로 공개하지 않습니다.
 
 </details>
 
-## 처리 흐름
+## 코드 둘러보기
 
-```text
-AI Hub 음성 + 정제된 고정 Train/Validation/Test 목록
-    → NeMo Parakeet + AdamW 학습
-    → 0.25 epoch마다 Validation 평가 → 최고 모델 선택
-    → 고정 Test 전후 비교 → 수치와 로컬 청취 예시
-```
+Python 코드는 [`src/child_speech`](src/child_speech)에 있습니다.
 
-NeMo 모델과 CUDA TDT loss를 사용하며, 학습 순서는 명시적인 PyTorch 루프로 관리합니다.
-Lightning Trainer를 사용하는 구조는 아닙니다.
-BatchNorm의 통계는 고정하고 모델 가중치는 학습합니다.
-
-## 코드 구성
-
-```text
-src/child_speech/
-├── cli/         # 실행 진입점
-├── training/    # AI Hub 파인튜닝
-├── evaluation/  # 고정 Test 평가
-├── reporting/   # 학습 전후 비교·로컬 청취
-└── common/      # 모델·음성 로딩
-```
-
-실행 명령은 저장소 루트에서 `python -m child_speech.cli.<모듈>` 형식을 사용합니다.
-
-| 위치 | 역할 |
+| 관심 영역 | 시작할 곳 |
 |---|---|
-| `src/child_speech/common/runtime.py` | 모델·토크나이저·음성 로딩·TDT loss |
-| `src/child_speech/training/train.py` | 3 epoch 학습·체크포인트·Validation 모델 선택 |
-| `src/child_speech/evaluation/evaluate_test.py` | 선택한 모델과 사전학습 모델의 Test 비교 |
-| `src/child_speech/reporting/build_examples.py` | 전후 출력 검증·로컬 오디오 예시 생성 |
-| `results/` | 공개 가능한 집계 지표와 모델 출력 예시 |
+| 음성·모델 로딩 | [`common/`](src/child_speech/common) |
+| 라벨 후보·승인 처리 | [`data/`](src/child_speech/data) |
+| 파인튜닝 | [`training/`](src/child_speech/training) |
+| 고정 Test 평가 | [`evaluation/`](src/child_speech/evaluation) |
+| 전후 비교·로컬 청취 | [`reporting/`](src/child_speech/reporting) |
+| 실행 명령 | [`cli/`](src/child_speech/cli) |
 
-[실행 방법](docs/EXPERIMENTS.md#run-the-code)을 참고하세요.
-NeMo CUDA 환경은 모노레포의 애플리케이션 환경과 분리했습니다.
-완료된 실험에서 코드를 추출해 경로를 정리하고 검증했으며,
-정리된 사본으로 3 epoch 전체를 새로 학습하지는 않았습니다.
+공개 가능한 집계 지표는 [`results/`](results)에, 실험 조건은
+[`docs/EXPERIMENTS.md`](docs/EXPERIMENTS.md)에 있습니다.
 
-## 결과를 해석할 때
+## 검사
 
-데이터는 **AI Hub 541, 학습용 아동 영어 음성 데이터**의 일부를 자체 분할한 것으로,
-공식 벤치마크 점수가 아닙니다. Train은 41,183개, 약 58.87시간입니다.
-화자는 메타데이터 기반의 보수적인 그룹으로 분리했으며 실제 동일인 여부를 별도로 검증하지는 않았습니다.
-Test는 이전 실험에서도 관찰했던 세트이므로 완전히 새로운 외부 검증은 아닙니다.
-단일 분할·seed 결과를 모든 아동·발음·교실 환경으로 일반화할 수는 없습니다.
+ML 의존성 없이 결과와 전사 예시 처리 코드를 검사합니다. 저장소 루트에서:
 
-출처: [AI Hub 데이터셋](https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=541) ·
-[Parakeet 모델·라이선스](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2)
+```sh
+PYTHONPATH=child_speech_recognition/src python3 -m unittest discover -s child_speech_recognition/tests -v
+```
+
+모델 출처: [Parakeet 모델·라이선스](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2)
+
+[← 모노레포로 돌아가기](../README.md)

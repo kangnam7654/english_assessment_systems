@@ -1,6 +1,6 @@
 # Experiment record
 
-[English overview](../README.md) · [한국어 개요](../README.md)
+[English overview](../README.en.md) · [한국어 개요](../README.md) · [한국어 라벨 검수](LABEL_REVIEW.md)
 
 ## Data and selection
 
@@ -20,7 +20,70 @@ were checked. The historical review decisions and full split manifests remain pr
 
 Training scripts require the exact prepared manifests, checked against
 [recorded hashes](../results/protocol.json). This repository does not reconstruct the
-entire historical manual-review process from a new download.
+entire historical manual-review process from a new download. The reusable review
+command below implements the documented rules, but the approved decisions and
+recorded split manifests are private.
+
+## Label review
+
+Two obvious spelling/punctuation corrections were first approved from text
+review; they were not audio-verified at that point. The 70 preview recordings
+were then transcribed with **local Whisper** to find disagreements. Its
+hypotheses were review candidates, not replacement labels, and agreed with the
+two corrected examples. Ambiguous wording and grammar were retained.
+A standalone run of at least three `N` characters
+excluded 84 recordings from the full free-speech label subset. No LLM rewrote
+the reference transcripts in this reconstruction.
+
+`child_speech.cli.review_labels` provides a dependency-free version of the
+candidate and approval steps. It reads the original label ZIP without modifying
+it and refuses to overwrite an output directory. Run from the repository root:
+
+```sh
+export ASR_DATA_DIR="$PWD/.local-data/aihub541"
+PYTHONPATH=child_speech_recognition/src python3 -m child_speech.cli.review_labels queue \
+  --labels "$ASR_DATA_DIR/VL_eng_free_01.zip" \
+  --suggestions "$ASR_DATA_DIR/local-asr-predictions.jsonl" \
+  --output-dir "$ASR_DATA_DIR/review-queue-new"
+```
+
+`--suggestions` is optional. When supplied, each JSONL row needs
+`audio_filename` (or `audio`) and `hypothesis`. A disagreement, duplicate
+apostrophe, or explicit `NNN` marker enters `review-queue.jsonl`; none triggers
+an automatic correction. Listen to the audio before approving uncertain cases.
+The command writes the source ZIP SHA-256 to `summary.json`.
+
+Create a **private** decisions file using that source hash. The following is a
+format example with fictional text, not a released dataset label:
+
+```json
+{
+  "source_sha256": "<summary.json source_sha256>",
+  "corrections": [
+    {
+      "audio_filename": "example.wav",
+      "before": "I can spel.",
+      "after": "I can spell.",
+      "reason": "clear spelling typo confirmed by reviewer",
+      "status": "approved"
+    }
+  ]
+}
+```
+
+```sh
+PYTHONPATH=child_speech_recognition/src python3 -m child_speech.cli.review_labels apply \
+  --labels "$ASR_DATA_DIR/VL_eng_free_01.zip" \
+  --decisions "$ASR_DATA_DIR/approved-decisions.json" \
+  --output-dir "$ASR_DATA_DIR/curated-new"
+```
+
+The command checks the source hash and exact original text, applies only
+`approved` corrections, writes `eligible.jsonl` and `excluded.jsonl`, and
+reports counts in `summary.json`. All outputs contain private label data and
+belong outside Git. The new command documents the preparation rule; it was
+not the script used during the historical training run and does not by itself
+recreate the recorded Train/Validation/Test assignment.
 
 ## Experiments completed
 
