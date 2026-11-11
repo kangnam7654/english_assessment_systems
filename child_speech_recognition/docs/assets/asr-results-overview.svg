@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1062" viewBox="0 0 600 1062" role="img" aria-labelledby="asr-title asr-desc">
+  <title id="asr-title">Child English ASR results overview</title>
+  <desc id="asr-desc">New AI Hub experiment, not the portfolio&#x27;s historical company WER. Test WER 14.45% before and 8.50% after fine-tuning on the same 4,567 Test recordings. Improved example: “Grandpa&#x27;s house is in Soul.” became “Grandpa&#x27;s house is in Seoul”, word errors 1 → 0. Regressed example: “And Grandpa read me a book.” became “And grandpa reads me a book”, word errors 0 → 1. Illustrative examples, not a random sample.</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; fill: #111827; }
+    .tag { font-size: 20px; font-weight: 700; fill: #1d4ed8; letter-spacing: 1px; }
+    .h1 { font-size: 36px; font-weight: 700; }
+    .note { font-size: 22px; fill: #374151; }
+    .label { font-size: 24px; font-weight: 700; }
+    .big { font-size: 64px; font-weight: 700; }
+    .before { fill: #6b7280; }
+    .after { fill: #047857; }
+    .arrow { font-size: 48px; fill: #6b7280; }
+    .small { font-size: 20px; fill: #4b5563; }
+    .sentence { font-size: 24px; }
+    .improved { font-size: 22px; font-weight: 700; fill: #047857; }
+    .regressed { font-size: 22px; font-weight: 700; fill: #b45309; }
+    .rule { stroke: #d1d5db; stroke-width: 2; }
+  </style>
+  <rect width="600" height="1062" fill="#ffffff"/>
+  <text x="32" y="56" class="tag">NEW AI HUB EXPERIMENT</text>
+  <text x="32" y="104" class="h1">Child English ASR results</text>
+  <text x="32" y="144" class="note">Parakeet fine-tuned on AI Hub data.</text>
+  <text x="32" y="174" class="note">Not the portfolio&#x27;s historical company WER.</text>
+  <line x1="32" y1="200" x2="568" y2="200" class="rule"/>
+  <text x="32" y="244" class="label">Test WER, lower is better</text>
+  <text x="32" y="320" class="big before">14.45%</text>
+  <text x="300" y="320" class="arrow" text-anchor="middle">→</text>
+  <text x="568" y="320" class="big after" text-anchor="end">8.50%</text>
+  <text x="32" y="356" class="small">Before fine-tuning</text>
+  <text x="568" y="356" class="small" text-anchor="end">After fine-tuning</text>
+  <text x="32" y="400" class="note">Same 4,567 Test recordings for both</text>
+  <text x="32" y="430" class="note">Own data split, not an official benchmark.</text>
+  <line x1="32" y1="456" x2="568" y2="456" class="rule"/>
+  <text x="32" y="500" class="label">Published model outputs</text>
+  <text x="32" y="546" class="improved">Improved: word errors 1 → 0</text>
+  <text x="32" y="582" class="small">Before</text>
+  <text x="136" y="582" class="sentence">Grandpa&#x27;s house is in Soul.</text>
+  <text x="32" y="618" class="small">After</text>
+  <text x="136" y="618" class="sentence">Grandpa&#x27;s house is in Seoul</text>
+  <text x="32" y="664" class="regressed">Regressed: word errors 0 → 1</text>
+  <text x="32" y="700" class="small">Before</text>
+  <text x="136" y="700" class="sentence">And Grandpa read me a book.</text>
+  <text x="32" y="736" class="small">After</text>
+  <text x="136" y="736" class="sentence">And grandpa reads me a book</text>
+  <line x1="32" y1="766" x2="568" y2="766" class="rule"/>
+  <text x="32" y="810" class="note">Showing 2 of 4 published examples.</text>
+  <text x="32" y="840" class="note">Illustrative, not a random sample;</text>
+  <text x="32" y="870" class="note">judge overall quality by Test WER.</text>
+  <text x="32" y="910" class="small">Stored selection rule:</text>
+  <text x="32" y="938" class="small">First three improved and first regressed examples</text>
+  <text x="32" y="966" class="small">in filename order; 5–12 reference words, &lt;=8</text>
+  <text x="32" y="994" class="small">seconds; one or two errors versus zero.</text>
+  <text x="32" y="1022" class="small">Illustrative selection, not random sampling.</text>
+</svg>

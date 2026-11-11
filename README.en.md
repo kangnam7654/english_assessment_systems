@@ -38,6 +38,11 @@ WER on the fixed AI Hub Test split decreased from **14.45% to 8.50%**.
 Public metrics and transcript examples are available; source audio and reference files
 are not redistributed.
 
+[![Results overview of the new AI Hub experiment. Test WER on the same 4,567 Test recordings: 14.45% before fine-tuning, 8.50% after. One improved and one regressed transcript example, not a random sample.](child_speech_recognition/docs/assets/asr-results-overview.svg)](child_speech_recognition/README.en.md#results)
+
+These values come from a new AI Hub experiment, not the historical company-system WER cited in the portfolio.
+[Detailed results and caveats](child_speech_recognition/README.en.md#results)
+
 `NVIDIA NeMo` · `Parakeet TDT` · `PyTorch` · `AI Hub`
 
 ## Quick Start

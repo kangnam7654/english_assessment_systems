@@ -85,6 +85,12 @@ has the full setup.
 
 **WER fell from 14.45% to 8.50% on the same 4,567 Test recordings.**
 
+![Results overview of the new AI Hub experiment. Test WER on the same 4,567 Test recordings: 14.45% before fine-tuning, 8.50% after. Two published model outputs: improved "Grandpa's house is in Soul." to "Grandpa's house is in Seoul" (word errors 1 → 0) and regressed "And Grandpa read me a book." to "And grandpa reads me a book" (word errors 0 → 1). Illustrative examples, not a random sample.](docs/assets/asr-results-overview.svg)
+
+These numbers come from a new experiment on AI Hub data, not the historical company-system WER
+cited in the portfolio. The graphic is generated only from the public [Test metrics](results/test.json)
+and [transcript examples](results/examples.json).
+
 | Metric | Before fine-tuning | After fine-tuning |
 |---|---:|---:|
 | Word error rate ↓ | 14.45% | **8.50%** |
@@ -178,7 +184,7 @@ Python code lives in [`src/child_speech`](src/child_speech).
 | Label candidates and approvals | [`data/`](src/child_speech/data) |
 | Fine-tuning | [`training/`](src/child_speech/training) |
 | Fixed Test evaluation | [`evaluation/`](src/child_speech/evaluation) |
-| Before/after reporting and local listening | [`reporting/`](src/child_speech/reporting) |
+| Before/after reporting, results graphic and local listening | [`reporting/`](src/child_speech/reporting) |
 | Commands | [`cli/`](src/child_speech/cli) |
 
 Public aggregate metrics are in [`results/`](results); experiment details are in
@@ -190,6 +196,12 @@ Check public results and example handling without ML dependencies, from the repo
 
 ```sh
 PYTHONPATH=child_speech_recognition/src python3 -m unittest discover -s child_speech_recognition/tests -v
+```
+
+Check that the results graphic matches the public JSON; drop `--check` to regenerate it:
+
+```sh
+PYTHONPATH=child_speech_recognition/src python3 -m child_speech.reporting.results_overview --check
 ```
 
 Model source: [Parakeet model and license](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2)

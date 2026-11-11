@@ -36,6 +36,11 @@ FFmpeg로 프레임을 읽고 MediaPipe 좌표를 정규화·평활화해 PyTorc
 AI Hub 음성의 고정 Test에서 WER가 **14.45% → 8.50%**로 줄었습니다.
 공개 가능한 평가 수치와 전사 예시를 볼 수 있으며, 음성·정답 파일은 재배포하지 않습니다.
 
+[![새 AI Hub 실험 결과 요약. 같은 Test 음성 4,567개에서 WER가 학습 전 14.45%, 학습 후 8.50%. 좋아진 전사 예시와 나빠진 전사 예시를 하나씩 표시하며, 무작위 표본은 아닙니다.](child_speech_recognition/docs/assets/asr-results-overview.svg)](child_speech_recognition/README.md#results)
+
+이 수치는 AI Hub 데이터로 새로 진행한 실험 결과로, 포트폴리오에 적힌 과거 회사 시스템의 WER와는 다릅니다.
+[자세한 결과와 주의 사항](child_speech_recognition/README.md#results)
+
 `NVIDIA NeMo` · `Parakeet TDT` · `PyTorch` · `AI Hub`
 
 ## Quick Start
