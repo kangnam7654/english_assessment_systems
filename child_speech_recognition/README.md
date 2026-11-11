@@ -80,6 +80,11 @@ Test는 모델을 고른 뒤 학습 전후를 비교할 때만 썼습니다. Tes
 
 **같은 Test 음성 4,567개에서 단어 오류율이 14.45%에서 8.50%로 감소했습니다.**
 
+![새 AI Hub 실험 결과 요약. 같은 Test 음성 4,567개에서 WER가 학습 전 14.45%, 학습 후 8.50%. 공개된 모델 출력 예시 두 개: 좋아진 예 "Grandpa's house is in Soul." → "Grandpa's house is in Seoul"(단어 오류 1 → 0), 나빠진 예 "And Grandpa read me a book." → "And grandpa reads me a book"(단어 오류 0 → 1). 무작위 표본이 아닌 예시입니다.](docs/assets/asr-results-overview.svg)
+
+AI Hub 데이터로 새로 진행한 실험의 수치이며, 포트폴리오에 적힌 과거 회사 시스템의 WER와는
+다른 결과입니다. 그림은 공개된 [Test 결과](results/test.json)와 [전사 예시](results/examples.json)만으로 만들었습니다.
+
 | 지표 | 학습 전 | 학습 후 |
 |---|---:|---:|
 | 단어 오류율 WER ↓ | 14.45% | **8.50%** |
@@ -171,7 +176,7 @@ Python 코드는 [`src/child_speech`](src/child_speech)에 있습니다.
 | 라벨 후보·승인 처리 | [`data/`](src/child_speech/data) |
 | 파인튜닝 | [`training/`](src/child_speech/training) |
 | 고정 Test 평가 | [`evaluation/`](src/child_speech/evaluation) |
-| 전후 비교·로컬 청취 | [`reporting/`](src/child_speech/reporting) |
+| 전후 비교·결과 그림·로컬 청취 | [`reporting/`](src/child_speech/reporting) |
 | 실행 명령 | [`cli/`](src/child_speech/cli) |
 
 공개 가능한 집계 지표는 [`results/`](results)에, 실험 조건은
@@ -183,6 +188,12 @@ ML 의존성 없이 결과와 전사 예시 처리 코드를 검사합니다. �
 
 ```sh
 PYTHONPATH=child_speech_recognition/src python3 -m unittest discover -s child_speech_recognition/tests -v
+```
+
+결과 그림이 공개 JSON과 일치하는지 확인합니다. `--check`를 빼면 그림을 다시 만듭니다.
+
+```sh
+PYTHONPATH=child_speech_recognition/src python3 -m child_speech.reporting.results_overview --check
 ```
 
 모델 출처: [Parakeet 모델·라이선스](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2)
